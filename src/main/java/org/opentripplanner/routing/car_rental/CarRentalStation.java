@@ -11,10 +11,6 @@ import java.util.Locale;
 
 public class CarRentalStation extends BikeRentalStation {
 
-    public CarRentalStation() {
-        super();
-    }
-
     public boolean equals(Object o) {
         if (!(o instanceof CarRentalStation)) {
             return false;
