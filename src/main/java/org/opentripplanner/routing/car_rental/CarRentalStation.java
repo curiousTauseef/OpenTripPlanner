@@ -28,7 +28,7 @@ public class CarRentalStation extends BikeRentalStation {
     }
 
     public String toString() {
-        return String.format(Locale.US, "Car rental station %s at %.6f, %.6f", name, y, x);
+        return String.format(Locale.US, "Car rental station %s at %.6f, %.6f, id=" + id, name, y, x);
     }
 
 

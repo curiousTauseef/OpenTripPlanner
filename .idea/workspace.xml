@@ -2,12 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac10c414-85c1-4e02-aa67-1ad62cac0ebe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalDataSource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/car_rental/CarRentalStation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalUpdater.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/ComtradeCarRentalDataSource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/GenericJsonCarRentalDataSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/cluster/AnalystWorker.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/cluster/AnalystWorker.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/geocoder/bano/BanoGeocoderTest.class" afterPath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/geocoder/bano/BanoGeocoderTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/broker/Broker.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/broker/Broker.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/broker/BrokerHttpHandler.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/broker/BrokerHttpHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/GraphUpdaterConfigurator.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/GraphUpdaterConfigurator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/cluster/JobSimulator.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/cluster/JobSimulator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/automata/NFA.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/automata/NFA.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/visualizer/ShowGraph.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/visualizer/ShowGraph.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/broker/WorkerCatalog.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/broker/WorkerCatalog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/car_rental/CarRentalStation.java" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/car_rental/CarRentalStation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalUpdater.java" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalUpdater.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/ComtradeCarRentalDataSource.java" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/ComtradeCarRentalDataSource.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/GraphUpdaterConfigurator.java" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/GraphUpdaterConfigurator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="otp.iws" />
@@ -29,69 +38,7 @@
     <favorites_list name="otp" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="GraphUpdaterConfigurator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/GraphUpdaterConfigurator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="97" column="22" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CarRentalUpdater.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalUpdater.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1669#1712#0" expanded="true" />
-                <element signature="e#4720#4738#0" expanded="true" />
-                <element signature="e#6296#6314#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BikeRentalUpdater.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/bike_rental/BikeRentalUpdater.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="94" column="54" selection-start-line="94" selection-start-column="54" selection-end-line="94" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ComtradeCarRentalDataSource.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/ComtradeCarRentalDataSource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5730337">
-              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JCDecauxBikeRentalDataSource.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/bike_rental/JCDecauxBikeRentalDataSource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -113,11 +60,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/client/js/otp/config.js" />
-        <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/GraphUpdaterConfigurator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/car_rental/CarRentalStation.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalDataSource.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/ComtradeCarRentalDataSource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/GraphUpdaterConfigurator.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalUpdater.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/car_rental/CarRentalStation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/GenericJsonCarRentalDataSource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/ComtradeCarRentalDataSource.java" />
       </list>
     </option>
   </component>
@@ -161,8 +109,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -340,6 +286,40 @@
               <option name="myItemId" value="org" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opentripplanner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="otp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="OTP_Ljubljana" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="org" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -365,6 +345,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -373,6 +355,13 @@
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\klemen\Documents\OpenTripPlanner\OTP_Ljubljana\src\main\java\org\opentripplanner\updater\car_rental" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Ljubljana">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -526,7 +515,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="org.opentripplanner.standalone.OTPMain" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="--build C:\OTP\ljubljana --inMemory" />
+      <option name="PROGRAM_PARAMETERS" value="--build C:\OTP\ljubljana --inMemory --verbose --visualize" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
@@ -556,31 +545,31 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32897604" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32897604" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23273809" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2607143" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985657" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985657" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -603,6 +592,60 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/GraphUpdaterConfigurator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="97" column="22" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalUpdater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4201#4202#0" expanded="true" />
+            <element signature="e#4249#4250#0" expanded="true" />
+            <element signature="e#4367#4385#0" expanded="true" />
+            <element signature="e#4442#4450#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/bike_rental/BikeRentalUpdater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="94" column="54" selection-start-line="94" selection-start-column="54" selection-end-line="94" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/ComtradeCarRentalDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/bike_rental/JCDecauxBikeRentalDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/js/otp/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6152263">
@@ -624,7 +667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26741573">
           <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -636,38 +678,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalDataSource.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/bike_rental/BikeRentalUpdater.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0764045">
-          <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
-          <folding />
+        <state vertical-scroll-proportion="0.28651685">
+          <caret line="94" column="54" selection-start-line="94" selection-start-column="54" selection-end-line="94" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/car_rental/CarRentalStation.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/bike_rental/JCDecauxBikeRentalDataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4966292">
-          <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.7325843">
+          <caret line="61" column="65" selection-start-line="61" selection-start-column="65" selection-end-line="61" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2483146">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#742#743#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/GraphUpdaterConfigurator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="97" column="22" selection-start-line="97" selection-start-column="22" selection-end-line="97" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/bike_rental/BikeRentalUpdater.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="94" column="54" selection-start-line="94" selection-start-column="54" selection-end-line="94" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.2483146">
+          <caret line="98" column="53" selection-start-line="98" selection-start-column="53" selection-end-line="98" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -676,31 +720,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalUpdater.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
+        <state vertical-scroll-proportion="-0.7775281">
+          <caret line="46" column="29" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1669#1712#0" expanded="true" />
-            <element signature="e#4720#4738#0" expanded="true" />
-            <element signature="e#6296#6314#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/bike_rental/JCDecauxBikeRentalDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#4201#4202#0" expanded="true" />
+            <element signature="e#4249#4250#0" expanded="true" />
+            <element signature="e#4367#4385#0" expanded="true" />
+            <element signature="e#4442#4450#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/ComtradeCarRentalDataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5730337">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.4914966">
+          <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/car_rental/CarRentalStation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71088433">
+          <caret line="30" column="85" selection-start-line="30" selection-start-column="85" selection-end-line="30" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/GenericJsonCarRentalDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.6717687">
+          <caret line="133" column="83" selection-start-line="133" selection-start-column="83" selection-end-line="133" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

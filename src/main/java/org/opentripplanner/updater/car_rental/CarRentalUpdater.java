@@ -60,11 +60,9 @@ public class CarRentalUpdater extends PollingGraphUpdater {
     }
 
     @Override
-    protected void configurePolling (Graph graph, JsonNode config) throws Exception {
-
+    protected void configurePolling(Graph graph, JsonNode config) throws Exception {
         // Set data source type from config JSON
         String sourceType = config.path("sourceType").asText();
-        String apiKey = config.path("apiKey").asText();
         String networkName = config.path("network").asText();
         CarRentalDataSource source = null;
         if (sourceType != null) {
@@ -79,7 +77,6 @@ public class CarRentalUpdater extends PollingGraphUpdater {
             ((JsonConfigurable) source).configure(graph, config);
         }
 
-        // Configure updater
         LOG.info("Setting up car rental updater.");
         this.graph = graph;
         this.source = source;
@@ -89,10 +86,8 @@ public class CarRentalUpdater extends PollingGraphUpdater {
 
     @Override
     public void setup() throws InterruptedException, ExecutionException {
-        // Creation of network linker library will not modify the graph
         linker = new SimpleStreetSplitter(graph);
 
-        // Adding a bike rental station service needs a graph writer runnable
         updaterManager.executeBlocking(new GraphWriterRunnable() {
             @Override
             public void run(Graph graph) {
@@ -110,7 +105,6 @@ public class CarRentalUpdater extends PollingGraphUpdater {
         }
         List<CarRentalStation> stations = source.getStations();
 
-        // Create graph writer runnable to apply these stations to the graph
         CarRentalGraphWriterRunnable graphWriterRunnable = new CarRentalGraphWriterRunnable(stations);
         updaterManager.execute(graphWriterRunnable);
     }
@@ -129,13 +123,10 @@ public class CarRentalUpdater extends PollingGraphUpdater {
 
         @Override
         public void run(Graph graph) {
-            // Apply stations to graph
             Set<CarRentalStation> stationSet = new HashSet<CarRentalStation>();
             Set<String> defaultNetworks = new HashSet<String>(Arrays.asList(network));
-            /* add any new stations and update bike counts for existing stations */
             for (CarRentalStation station : stations) {
                 if (station.networks == null) {
-                    /* API did not provide a network list, use default */
                     station.networks = defaultNetworks;
                 }
                 service.addBikeRentalStation(station);
@@ -144,7 +135,6 @@ public class CarRentalUpdater extends PollingGraphUpdater {
                 if (vertex == null) {
                     vertex = new BikeRentalStationVertex(graph, station);
                     if (!linker.link(vertex)) {
-                        // the toString includes the text "Bike rental station"
                         LOG.warn("{} not near any streets; it will not be usable.", station);
                     }
                     verticesByStation.put(station, vertex);
@@ -156,7 +146,6 @@ public class CarRentalUpdater extends PollingGraphUpdater {
                     vertex.setSpacesAvailable(station.spacesAvailable);
                 }
             }
-            /* remove existing stations that were not present in the update */
             List<CarRentalStation> toRemove = new ArrayList<CarRentalStation>();
             for (Entry<CarRentalStation, BikeRentalStationVertex> entry : verticesByStation.entrySet()) {
                 CarRentalStation station = entry.getKey();
@@ -168,10 +157,8 @@ public class CarRentalUpdater extends PollingGraphUpdater {
                 }
                 toRemove.add(station);
                 service.removeBikeRentalStation(station);
-                // TODO: need to unsplit any streets that were split
             }
             for (CarRentalStation station : toRemove) {
-                // post-iteration removal to avoid concurrent modification
                 verticesByStation.remove(station);
             }
         }
