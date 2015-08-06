@@ -48,6 +48,7 @@ public abstract class RentABikeAbstractEdge extends Edge {
         this.networks = networks;
     }
 
+    // FIXME sposodim: kolo in avto se tepeta
     protected State traverseRent(State s0) {
         RoutingRequest options = s0.getOptions();
         /*
@@ -80,6 +81,7 @@ public abstract class RentABikeAbstractEdge extends Edge {
         return s1b;
     }
 
+    // FIXME vrnem: kolo in avto se tepeta
     protected State traverseDropoff(State s0) {
         RoutingRequest options = s0.getOptions();
         /*
