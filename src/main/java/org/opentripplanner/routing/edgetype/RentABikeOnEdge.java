@@ -18,6 +18,7 @@ import java.util.Set;
 import org.opentripplanner.routing.core.RoutingRequest;
 import org.opentripplanner.routing.core.State;
 import org.opentripplanner.routing.vertextype.BikeRentalStationVertex;
+import org.opentripplanner.routing.vertextype.CarRentalStationVertex;
 
 /**
  * Renting a bike edge.
@@ -32,6 +33,10 @@ public class RentABikeOnEdge extends RentABikeAbstractEdge {
     private static final long serialVersionUID = 1L;
 
     public RentABikeOnEdge(BikeRentalStationVertex from, BikeRentalStationVertex to, Set<String> networks) {
+        super(from, to, networks);
+    }
+
+    public RentABikeOnEdge(CarRentalStationVertex from, CarRentalStationVertex to, Set<String> networks) {
         super(from, to, networks);
     }
 

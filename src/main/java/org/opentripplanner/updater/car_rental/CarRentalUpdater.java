@@ -27,6 +27,7 @@ import org.opentripplanner.routing.edgetype.loader.LinkRequest;
 import org.opentripplanner.routing.edgetype.loader.NetworkLinkerLibrary;
 import org.opentripplanner.routing.graph.Graph;
 import org.opentripplanner.routing.vertextype.BikeRentalStationVertex;
+import org.opentripplanner.routing.vertextype.CarRentalStationVertex;
 import org.opentripplanner.updater.GraphUpdaterManager;
 import org.opentripplanner.updater.GraphWriterRunnable;
 import org.opentripplanner.updater.PollingGraphUpdater;
@@ -42,7 +43,7 @@ public class CarRentalUpdater extends PollingGraphUpdater {
 
     private static final String DEFAULT_NETWORK_LIST = "default";
 
-    Map<CarRentalStation, BikeRentalStationVertex> verticesByStation = new HashMap<CarRentalStation, BikeRentalStationVertex>();
+    Map<CarRentalStation, CarRentalStationVertex> verticesByStation = new HashMap<CarRentalStation, CarRentalStationVertex>();
 
     private CarRentalDataSource source;
 
@@ -131,15 +132,15 @@ public class CarRentalUpdater extends PollingGraphUpdater {
                 }
                 service.addBikeRentalStation(station);
                 stationSet.add(station);
-                BikeRentalStationVertex vertex = verticesByStation.get(station);
+                CarRentalStationVertex vertex = verticesByStation.get(station);
                 if (vertex == null) {
-                    vertex = new BikeRentalStationVertex(graph, station);
+                    vertex = new CarRentalStationVertex(graph, station);
                     if (!linker.link(vertex)) {
                         LOG.warn("{} not near any streets; it will not be usable.", station);
                     }
-                    System.out.println("Vstavim v graf: ");
-                    System.out.println(vertex);
-                    System.out.println(station);
+                    //System.out.println("\t Vstavim v graf: ");
+                    //System.out.println("\t "+vertex);
+                    //System.out.println("\t "+station);
                     verticesByStation.put(station, vertex);
                     new RentABikeOnEdge(vertex, vertex, station.networks);
                     if (station.allowDropoff)
@@ -150,11 +151,11 @@ public class CarRentalUpdater extends PollingGraphUpdater {
                 }
             }
             List<CarRentalStation> toRemove = new ArrayList<CarRentalStation>();
-            for (Entry<CarRentalStation, BikeRentalStationVertex> entry : verticesByStation.entrySet()) {
+            for (Entry<CarRentalStation, CarRentalStationVertex> entry : verticesByStation.entrySet()) {
                 CarRentalStation station = entry.getKey();
                 if (stationSet.contains(station))
                     continue;
-                BikeRentalStationVertex vertex = entry.getValue();
+                CarRentalStationVertex vertex = entry.getValue();
                 if (graph.containsVertex(vertex)) {
                     graph.removeVertexAndEdges(vertex);
                 }

@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac10c414-85c1-4e02-aa67-1ad62cac0ebe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/car_rental/CarRentalUpdater$CarRentalGraphWriterRunnable.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/car_rental/CarRentalUpdater$CarRentalGraphWriterRunnable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/car_rental/ComtradeCarRentalDataSource.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/car_rental/ComtradeCarRentalDataSource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalDataSource.java" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalDataSource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/vertextype/CarRentalStationVertex.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/vertextype/BikeRentalStationVertex.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/vertextype/BikeRentalStationVertex.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\OTP_Ljubljana\target\classes\org\opentripplanner\updater\car_rental\CarRentalUpdater$1.class" afterPath="C:\Users\klemen\Documents\OpenTripPlanner\OTP_Ljubljana\target\classes\org\opentripplanner\updater\car_rental\CarRentalUpdater$1.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\OTP_Ljubljana\target\classes\org\opentripplanner\updater\car_rental\CarRentalUpdater$CarRentalGraphWriterRunnable.class" afterPath="C:\Users\klemen\Documents\OpenTripPlanner\OTP_Ljubljana\target\classes\org\opentripplanner\updater\car_rental\CarRentalUpdater$CarRentalGraphWriterRunnable.class" />
+      <change type="MODIFICATION" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\OTP_Ljubljana\target\classes\org\opentripplanner\updater\car_rental\CarRentalUpdater.class" afterPath="C:\Users\klemen\Documents\OpenTripPlanner\OTP_Ljubljana\target\classes\org\opentripplanner\updater\car_rental\CarRentalUpdater.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/car_rental/GenericJsonCarRentalDataSource.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/car_rental/GenericJsonCarRentalDataSource.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/edgetype/RentABikeOnEdge.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/edgetype/RentABikeOnEdge.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/vertextype/BikeRentalStationVertex.java" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/vertextype/BikeRentalStationVertex.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalUpdater.java" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalUpdater.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/ComtradeCarRentalDataSource.java" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/ComtradeCarRentalDataSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/GenericJsonCarRentalDataSource.java" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/GenericJsonCarRentalDataSource.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/edgetype/RentABikeOnEdge.java" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/edgetype/RentABikeOnEdge.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="otp.iws" />
@@ -29,26 +35,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CarRentalUpdater.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CarRentalUpdater.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalUpdater.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="133" column="29" selection-start-line="133" selection-start-column="29" selection-end-line="133" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.2003891">
+              <caret line="140" column="22" selection-start-line="140" selection-start-column="22" selection-end-line="140" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4367#4385#0" expanded="true" />
-                <element signature="e#4442#4450#0" expanded="true" />
+                <element signature="e#1738#1780#0" expanded="true" />
+                <element signature="e#4435#4453#0" expanded="true" />
+                <element signature="e#4510#4518#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BikeRentalStationVertex.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/vertextype/BikeRentalStationVertex.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.035019454">
-              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -77,9 +74,12 @@
         <option value="$PROJECT_DIR$/src/client/js/otp/config.js" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/GraphUpdaterConfigurator.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/car_rental/CarRentalStation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/GenericJsonCarRentalDataSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalDataSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/ComtradeCarRentalDataSource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/vertextype/CarRentalStationVertex.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/GenericJsonCarRentalDataSource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/edgetype/RentABikeOnEdge.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/vertextype/BikeRentalStationVertex.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalUpdater.java" />
       </list>
     </option>
@@ -661,8 +661,9 @@
           <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4367#4385#0" expanded="true" />
-            <element signature="e#4442#4450#0" expanded="true" />
+            <element signature="e#1738#1780#0" expanded="true" />
+            <element signature="e#4435#4453#0" expanded="true" />
+            <element signature="e#4510#4518#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -759,16 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/GenericJsonCarRentalDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.6717687">
-          <caret line="133" column="83" selection-start-line="133" selection-start-column="83" selection-end-line="133" selection-end-column="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/GraphUpdaterConfigurator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.6479592">
@@ -791,7 +782,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/ComtradeCarRentalDataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.664966">
+        <state vertical-scroll-proportion="0.6692607">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -799,23 +790,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalUpdater.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/GenericJsonCarRentalDataSource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="133" column="29" selection-start-line="133" selection-start-column="29" selection-end-line="133" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.37159532">
+          <caret line="97" column="64" selection-start-line="97" selection-start-column="64" selection-end-line="97" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4367#4385#0" expanded="true" />
-            <element signature="e#4442#4450#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/vertextype/CarRentalStationVertex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30544746">
+          <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/vertextype/BikeRentalStationVertex.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49027237">
+          <caret line="40" column="76" selection-start-line="40" selection-start-column="76" selection-end-line="40" selection-end-column="76" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/edgetype/RentABikeAbstractEdge.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.035019454">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+          <caret line="41" column="11" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="11" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/edgetype/RentABikeOnEdge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33268481">
+          <caret line="38" column="11" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/car_rental/CarRentalUpdater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2003891">
+          <caret line="140" column="22" selection-start-line="140" selection-start-column="22" selection-end-line="140" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1738#1780#0" expanded="true" />
+            <element signature="e#4435#4453#0" expanded="true" />
+            <element signature="e#4510#4518#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -95,7 +95,7 @@ public abstract class GenericJsonCarRentalDataSource implements CarRentalDataSou
             if (node == null) {
                 continue;
             }
-            CarRentalStation brstation = makeStation(node, i);
+            CarRentalStation brstation = makeStation(node, i + 1);
             if (brstation != null)
                 out.add(brstation);
         }
