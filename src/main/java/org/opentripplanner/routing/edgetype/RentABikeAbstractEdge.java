@@ -15,6 +15,8 @@ package org.opentripplanner.routing.edgetype;
 
 import java.util.Set;
 
+import org.opentripplanner.routing.bike_rental.BikeRentalStation;
+import org.opentripplanner.routing.car_rental.CarRentalStation;
 import org.opentripplanner.routing.core.RoutingRequest;
 import org.opentripplanner.routing.core.State;
 import org.opentripplanner.routing.core.StateEditor;
@@ -25,6 +27,8 @@ import org.opentripplanner.routing.vertextype.BikeRentalStationVertex;
 
 import com.google.common.collect.Sets;
 import com.vividsolutions.jts.geom.LineString;
+import org.opentripplanner.routing.vertextype.CarRentalStationVertex;
+
 import java.util.Locale;
 
 /**
@@ -56,7 +60,9 @@ public abstract class RentABikeAbstractEdge extends Edge {
          */
         if (!options.modes.contains(TraverseMode.BICYCLE))
             return null;
-
+        if( tov instanceof CarRentalStationVertex ) {
+            return null;
+        }
         BikeRentalStationVertex dropoff = (BikeRentalStationVertex) tov;
         if (options.useBikeRentalAvailabilityInformation && dropoff.getBikesAvailable() == 0) {
             return null;
@@ -81,11 +87,13 @@ public abstract class RentABikeAbstractEdge extends Edge {
          */
         if (!s0.isBikeRenting() || !hasCompatibleNetworks(networks, s0.getBikeRentalNetworks()))
             return null;
+        if( tov instanceof CarRentalStationVertex ) {
+            return null;
+        }
         BikeRentalStationVertex pickup = (BikeRentalStationVertex) tov;
         if (options.useBikeRentalAvailabilityInformation && pickup.getSpacesAvailable() == 0) {
             return null;
         }
-
         StateEditor s1e = s0.edit(this);
         s1e.incrementWeight(options.arriveBy ? options.bikeRentalPickupCost
                 : options.bikeRentalDropoffCost);

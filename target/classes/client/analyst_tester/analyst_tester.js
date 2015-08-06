@@ -27,7 +27,7 @@ req.open('GET', 'http://localhost:8080/otp/routers/default', false); // async=fa
 req.setRequestHeader("Accept", "application/json");
 req.onload = function() {
     var resp = JSON.parse(req.responseText);
-    // console.log(resp);
+    //console.log(resp);
     var lat = resp['centerLatitude'];
     var lng = resp['centerLongitude'];
     var center = new L.LatLng(lat, lng);
@@ -44,7 +44,7 @@ function getIsochroneForSurfaceId (surfaceId, name) {
     req.setRequestHeader("Accept", "application/json");
     req.onload = function() {
         var response = JSON.parse(req.responseText);
-        console.log(response);
+        // console.log(response);
         // Each response is a FeatureCollection with 1 feature (a multipolygon with holes)
         // Actually maybe more than one feature if the above call returns multiple isochrones
         var newLayer = L.geoJson(response, {
@@ -70,7 +70,7 @@ function profileRouteThreeIsochrones() {
     req.setRequestHeader("Accept", "application/json");
     req.onload = function() {
         var resp = JSON.parse(req.responseText);
-        console.log(resp);
+        //console.log(resp);
         getIsochroneForSurfaceId(resp.min, "min");
         getIsochroneForSurfaceId(resp.avg, "avg");
         getIsochroneForSurfaceId(resp.max, "max");
@@ -80,13 +80,12 @@ function profileRouteThreeIsochrones() {
 }
 
 function profileRouteIsochrones(banAgency) {
-
     var url = 'http://localhost:8080/otp/routers/default/profile';
     var fromPos = fromMarker.getLatLng();
     var qstring = '?from=' + fromPos.lat + ',' + fromPos.lng;
     qstring += '&analyst=true';
     qstring += '&modes=WALK,BICYCLE,TRANSIT'; // note that TRANSIT or specific transit modes must be included
-    // Fetch bannable routes from http://localhost:8080/otp/routers/default/index/routes
+                                                                                            // Fetch bannable routes from http://localhost:8080/otp/routers/default/index/routes
 
     var req = new XMLHttpRequest();
     req.open('GET', url + qstring, true); // async=true, background call

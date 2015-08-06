@@ -74,7 +74,6 @@ public class PlannerResource extends RoutingResource {
             Router router = otpServer.getRouter(request.routerId);
             GraphPathFinder gpFinder = new GraphPathFinder(router); // we could also get a persistent router-scoped GraphPathFinder but there's no setup cost here
             List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(request);
-
             /* Convert the internal GraphPaths to a TripPlan object that is included in an OTP web service Response. */
             TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
             response.setPlan(plan);
