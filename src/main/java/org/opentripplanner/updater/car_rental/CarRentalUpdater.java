@@ -137,6 +137,9 @@ public class CarRentalUpdater extends PollingGraphUpdater {
                     if (!linker.link(vertex)) {
                         LOG.warn("{} not near any streets; it will not be usable.", station);
                     }
+                    System.out.println("Vstavim v graf: ");
+                    System.out.println(vertex);
+                    System.out.println(station);
                     verticesByStation.put(station, vertex);
                     new RentABikeOnEdge(vertex, vertex, station.networks);
                     if (station.allowDropoff)
