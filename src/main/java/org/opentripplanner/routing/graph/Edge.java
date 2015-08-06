@@ -170,7 +170,6 @@ public abstract class Edge implements Serializable {
         return 0;
     }
 
-
     /**
      * Gets english localized name
      * @return english localized name

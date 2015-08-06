@@ -27,11 +27,7 @@ import org.opentripplanner.routing.edgetype.StreetEdge;
 import org.opentripplanner.routing.edgetype.StreetTransitLink;
 import org.opentripplanner.routing.graph.Graph;
 import org.opentripplanner.routing.graph.Vertex;
-import org.opentripplanner.routing.vertextype.BikeParkVertex;
-import org.opentripplanner.routing.vertextype.BikeRentalStationVertex;
-import org.opentripplanner.routing.vertextype.SplitterVertex;
-import org.opentripplanner.routing.vertextype.StreetVertex;
-import org.opentripplanner.routing.vertextype.TransitStop;
+import org.opentripplanner.routing.vertextype.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -250,8 +246,11 @@ public class SimpleStreetSplitter {
             makeTransitLinkEdges((TransitStop) from, to);
         else if (from instanceof BikeRentalStationVertex)
             makeBikeRentalLinkEdges((BikeRentalStationVertex) from, to);
+        else if (from instanceof CarRentalStationVertex)  // ----------------------- CAR RENTAL, mogoče dodaj transit
+            makeCarRentalLinkEdges((CarRentalStationVertex) from, to);
         else if (from instanceof BikeParkVertex)
             makeBikeParkEdges((BikeParkVertex) from, to);
+
     }
 
     /** Make bike park edges */
@@ -260,7 +259,6 @@ public class SimpleStreetSplitter {
             if (sbpl.getToVertex() == to)
                 return;
         }
-
         new StreetBikeParkLink(from, to);
         new StreetBikeParkLink(to, from);
     }
@@ -286,7 +284,15 @@ public class SimpleStreetSplitter {
             if (sbrl.getToVertex() == to)
                 return;
         }
+        new StreetBikeRentalLink(from, to);
+        new StreetBikeRentalLink(to, from);
+    }
 
+    private void makeCarRentalLinkEdges (CarRentalStationVertex from, StreetVertex to) {
+        for (StreetBikeRentalLink sbrl : Iterables.filter(from.getOutgoing(), StreetBikeRentalLink.class)) {
+            if (sbrl.getToVertex() == to)
+                return;
+        }
         new StreetBikeRentalLink(from, to);
         new StreetBikeRentalLink(to, from);
     }

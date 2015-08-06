@@ -20,6 +20,7 @@ import org.opentripplanner.routing.core.TraverseMode;
 import org.opentripplanner.routing.graph.Edge;
 import org.opentripplanner.routing.graph.Vertex;
 import org.opentripplanner.routing.vertextype.BikeRentalStationVertex;
+import org.opentripplanner.routing.vertextype.CarRentalStationVertex;
 import org.opentripplanner.routing.vertextype.StreetVertex;
 
 import com.vividsolutions.jts.geom.LineString;
@@ -34,6 +35,7 @@ public class StreetBikeRentalLink extends Edge {
     private static final long serialVersionUID = 1L;
 
     private BikeRentalStationVertex bikeRentalStationVertex;
+    private CarRentalStationVertex carRentalstationVertex;
 
     public StreetBikeRentalLink(StreetVertex fromv, BikeRentalStationVertex tov) {
         super(fromv, tov);
@@ -43,6 +45,16 @@ public class StreetBikeRentalLink extends Edge {
     public StreetBikeRentalLink(BikeRentalStationVertex fromv, StreetVertex tov) {
         super(fromv, tov);
         bikeRentalStationVertex = fromv;
+    }
+
+    public StreetBikeRentalLink(StreetVertex fromv, CarRentalStationVertex tov) {
+        super(fromv, tov);
+        carRentalstationVertex = tov;
+    }
+
+    public StreetBikeRentalLink(CarRentalStationVertex fromv, StreetVertex tov) {
+        super(fromv, tov);
+        carRentalstationVertex = fromv;
     }
 
     public String getDirection() {

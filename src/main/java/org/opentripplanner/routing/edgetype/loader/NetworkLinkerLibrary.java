@@ -90,6 +90,7 @@ public class NetworkLinkerLibrary {
      * @param v
      */
     public LinkRequest connectVertexToStreets(BikeRentalStationVertex v) {
+        System.out.println("NetworkLinkerLibrary connectVertexToStreets 5A");
         LinkRequest request = new LinkRequest(this);
         request.connectVertexToStreets(v, new TraverseModeSet(TraverseMode.WALK,
                 TraverseMode.BICYCLE), new LinkRequest.StreetLinkFactory<BikeRentalStationVertex>() {
@@ -108,6 +109,7 @@ public class NetworkLinkerLibrary {
      * @param v
      */
     public LinkRequest connectVertexToStreets(BikeParkVertex v) {
+        System.out.println("NetworkLinkerLibrary connectVertexToStreets 7B");
         LinkRequest request = new LinkRequest(this);
         request.connectVertexToStreets(v, new TraverseModeSet(TraverseMode.WALK,
                 TraverseMode.BICYCLE), new LinkRequest.StreetLinkFactory<BikeParkVertex>() {
