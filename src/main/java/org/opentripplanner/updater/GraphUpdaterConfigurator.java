@@ -94,6 +94,9 @@ public abstract class GraphUpdaterConfigurator {
                 if (type.equals("bike-rental")) {
                     updater = new BikeRentalUpdater();
                 }
+                else if (type.equals("car-rental")){
+                    //updater = new CarRentalUpdater();
+                }
                 else if (type.equals("bike-park")) {
                     updater = new BikeParkUpdater();
                 }
