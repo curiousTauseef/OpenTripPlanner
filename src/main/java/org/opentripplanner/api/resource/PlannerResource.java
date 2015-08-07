@@ -51,7 +51,7 @@ public class PlannerResource extends RoutingResource {
     // parameters in the outgoing response. This is a TriMet requirement.
     // Jersey uses @Context to inject internal types and @InjectParam or @Resource for DI objects.
     @GET
-    @Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML + Q, MediaType.TEXT_XML + Q })
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML + Q, MediaType.TEXT_XML + Q})
     public Response plan(@Context OTPServer otpServer, @Context UriInfo uriInfo) {
 
         /*
@@ -61,7 +61,7 @@ public class PlannerResource extends RoutingResource {
          * TODO: org.opentripplanner.routing.module.PathServiceImpl has COOORD parsing. Abstract that
          *       out so it's used here too...
          */
-        
+
         // Create response object, containing a copy of all request parameters. Maybe they should be in the debug section of the response.
         Response response = new Response(uriInfo);
         RoutingRequest request = null;
@@ -70,7 +70,10 @@ public class PlannerResource extends RoutingResource {
             request = super.buildRequest();
 
             System.out.println("/api/resource/PlannerResource");
-            System.out.println(request);
+            System.out.println("Request: " + request);
+
+
+
             /* Find some good GraphPaths through the OTP Graph. */
             Router router = otpServer.getRouter(request.routerId);
             GraphPathFinder gpFinder = new GraphPathFinder(router); // we could also get a persistent router-scoped GraphPathFinder but there's no setup cost here
@@ -79,9 +82,13 @@ public class PlannerResource extends RoutingResource {
             TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
             response.setPlan(plan);
 
+
+
+
+
         } catch (Exception e) {
             PlannerError error = new PlannerError(e);
-            if(!PlannerError.isPlanningError(e.getClass()))
+            if (!PlannerError.isPlanningError(e.getClass()))
                 LOG.warn("Error while planning path: ", e);
             response.setError(error);
         } finally {
@@ -90,9 +97,10 @@ public class PlannerResource extends RoutingResource {
                     response.debugOutput = request.rctx.debugOutput;
                 }
                 request.cleanup(); // TODO verify that this cleanup step is being done on Analyst web services
-            }       
+            }
         }
+
+        System.out.println("Response: " + response.requestParameters);
         return response;
     }
-
 }

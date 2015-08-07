@@ -136,7 +136,6 @@ public class GraphPathFinder {
          * LongDistancePathService, we do not change the global default but override it here. */
         options.maxTransfers = 4;
         options.longDistance = true;
-
         /* In long distance mode, maxWalk has a different meaning. It's the radius around the origin or destination
          * within which you can walk on the streets. If no value is provided, max walk defaults to the largest
          * double-precision float. This would cause long distance mode to do unbounded street searches and consider

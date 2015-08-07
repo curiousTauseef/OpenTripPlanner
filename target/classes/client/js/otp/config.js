@@ -321,5 +321,5 @@ otp.config.modes = {
     //TRANSLATORS: Travel by: mode of transport (Used in selection in Travel
     //Options widgets)
     'TRANSIT,WALK,BICYCLE_RENT': _tr('Transit & Rented Bicycle'),
-    'ASDF' :_tr("Rented Car")
+    'WALK,CAR_RENT' :_tr("Rented Car")
     };

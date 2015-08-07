@@ -489,7 +489,7 @@ otp.modules.planner.PlannerModule =
 
         var queryParams = itin.tripPlan.queryParams;
 
-        console.log(itin.itinData);
+        //console.log(itin.itinData);
         for(var i=0; i < itin.itinData.legs.length; i++) {
             var leg = itin.itinData.legs[i];
 
