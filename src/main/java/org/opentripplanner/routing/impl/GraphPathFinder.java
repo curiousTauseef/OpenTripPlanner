@@ -121,7 +121,7 @@ public class GraphPathFinder {
         if (options.disableRemainingWeightHeuristic) {
             heuristic = new TrivialRemainingWeightHeuristic();
         } else if (options.modes.isTransit()) {
-           // Only use the BiDi heuristic for transit.
+            // Only use the BiDi heuristic for transit.
             heuristic = new InterleavedBidirectionalHeuristic(options.rctx.graph);
         } else {
             heuristic = new EuclideanRemainingWeightHeuristic();
@@ -292,7 +292,6 @@ public class GraphPathFinder {
 
     /* Try to find N paths through the Graph */
     public List<GraphPath> graphPathFinderEntryPoint (RoutingRequest request) {
-
         // We used to perform a protective clone of the RoutingRequest here.
         // There is no reason to do this if we don't modify the request.
         // Any code that changes them should be performing the copy!
@@ -301,6 +300,7 @@ public class GraphPathFinder {
         try {
             paths = getGraphPathsConsideringIntermediates(request);
             if (paths == null && request.wheelchairAccessible) {
+                System.out.println("routing/impl/GraphPathFinder graphPathFinderEntryPoint nisem našel poti");
                 // There are no paths that meet the user's slope restrictions.
                 // Try again without slope restrictions, and warn the user in the response.
                 RoutingRequest relaxedRequest = request.clone();
