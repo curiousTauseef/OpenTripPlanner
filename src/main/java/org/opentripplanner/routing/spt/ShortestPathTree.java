@@ -15,6 +15,7 @@ package org.opentripplanner.routing.spt;
 
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
+import org.opentripplanner.routing.core.RoutingContext;
 import org.opentripplanner.routing.core.RoutingRequest;
 import org.opentripplanner.routing.core.State;
 import org.opentripplanner.routing.graph.Vertex;
@@ -51,6 +52,12 @@ public class ShortestPathTree {
         System.out.println("Options " + options);
         this.options = options;
         this.dominanceFunction = dominanceFunction;
+
+        /* Tukaj notri poskusi najti vertexe postaje IPD, če sploh obstajajo*/
+        /*
+        RoutingContext RC = options.rctx;
+        RC.graph.getVertices();
+        */
         stateSets = new IdentityHashMap<Vertex, List<State>>();
     }
 
