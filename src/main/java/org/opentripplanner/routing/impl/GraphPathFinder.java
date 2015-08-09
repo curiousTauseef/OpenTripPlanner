@@ -109,7 +109,6 @@ public class GraphPathFinder {
             aStar.setTraverseVisitor(router.graphVisualizer.traverseVisitor);
             // options.disableRemainingWeightHeuristic = true; // DEBUG
         }
-
         // without transit, we'd just just return multiple copies of the same on-street itinerary
         if (!options.modes.isTransit()) {
             options.numItineraries = 1;

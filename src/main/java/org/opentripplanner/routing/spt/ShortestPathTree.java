@@ -47,6 +47,8 @@ public class ShortestPathTree {
     private Map<Vertex, List<State>> stateSets;
 
     public ShortestPathTree (RoutingRequest options, DominanceFunction dominanceFunction) {
+        System.out.println("\nShortestPathTree/constructor");
+        System.out.println("Options " + options);
         this.options = options;
         this.dominanceFunction = dominanceFunction;
         stateSets = new IdentityHashMap<Vertex, List<State>>();
@@ -54,6 +56,7 @@ public class ShortestPathTree {
 
     /** @return a list of GraphPaths, sometimes empty but never null. */
     public List<GraphPath> getPaths(Vertex dest, boolean optimize) {
+        System.out.println("Destination: " + dest);
         List<? extends State> stateList = getStates(dest);
         if (stateList == null)
             return Collections.emptyList();
