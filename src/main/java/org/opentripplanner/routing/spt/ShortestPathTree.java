@@ -57,7 +57,13 @@ public class ShortestPathTree {
     /** @return a list of GraphPaths, sometimes empty but never null. */
     public List<GraphPath> getPaths(Vertex dest, boolean optimize) {
         System.out.println("Destination: " + dest);
+
         List<? extends State> stateList = getStates(dest);
+        System.out.println("StateList: ");
+        for(int i = 0; i < stateList.size(); i++) {
+            System.out.println(stateList.get(i));
+        }
+
         if (stateList == null)
             return Collections.emptyList();
         List<GraphPath> ret = new LinkedList<GraphPath>();
