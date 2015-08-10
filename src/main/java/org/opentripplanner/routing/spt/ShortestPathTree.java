@@ -57,6 +57,7 @@ public class ShortestPathTree {
         this.dominanceFunction = dominanceFunction;
         stateSets = new IdentityHashMap<Vertex, List<State>>();
 
+
         /* Zakaj se tukaj notri ne prikažejo vsi ponujeni servisi. */
         RoutingContext RC = options.rctx;
         Map<Class<?>, Object> services = RC.graph.getService();
@@ -74,21 +75,32 @@ public class ShortestPathTree {
             }
             it.remove();
         }
+
+
+
     }
 
     /**
      * @return a list of GraphPaths, sometimes empty but never null.
      */
     public List<GraphPath> getPaths(Vertex dest, boolean optimize) {
+        /*System.out.println("ShortestPathTree/GetPaths/StateSetsSize: " + stateSets.size());
+        Iterator it = stateSets.entrySet().iterator();
+        while(it.hasNext()){
+            Map.Entry pair = (Map.Entry) it.next();
+            //System.out.println(pair.getKey());
+            //System.out.println(pair.getValue());
+        }*/
 
         List<? extends State> stateList = getStates(dest);
-
 
         System.out.println("Destination: " + dest);
         System.out.println("StateList: " + stateList.size());
         for (int i = 0; i < stateList.size(); i++) {
             System.out.println(stateList.get(i));
         }
+
+
 
         if (stateList == null)
             return Collections.emptyList();

@@ -42,6 +42,7 @@ import java.util.*;
  * In order for inheritance to work, the REST resources are request-scoped (constructed at each request)
  * rather than singleton-scoped (a single instance existing for the lifetime of the OTP server).
  */
+
 @Path("routers/{routerId}/plan") // final element needed here rather than on method to distinguish from routers API
 public class PlannerResource extends RoutingResource {
 
@@ -68,13 +69,13 @@ public class PlannerResource extends RoutingResource {
         try {
             /* Fill in request fields from query parameters via shared superclass method, catching any errors. */
             request = super.buildRequest();
+
             System.out.println("\n/api/resource/PlannerResource");
             System.out.println("Request: " + request);
 
             /* Find some good GraphPaths through the OTP Graph. */
             Router router = otpServer.getRouter(request.routerId);
             System.out.println("Router ID: " + request.routerId);
-
 
             GraphPathFinder gpFinder = new GraphPathFinder(router); // we could also get a persistent router-scoped GraphPathFinder but there's no setup cost here
             List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(request);
