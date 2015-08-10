@@ -250,6 +250,10 @@ public class Graph implements Serializable {
         }
     }
 
+    public Map<Class<?>, Object> getService(){
+        return this._services;
+    }
+
     /**
      * Removes an edge from the graph. This method is not thread-safe.
      * @param e The edge to be removed

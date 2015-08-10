@@ -6,7 +6,6 @@ package org.opentripplanner.updater.car_rental;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -14,19 +13,15 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
-import java.util.prefs.Preferences;
 
 import com.fasterxml.jackson.databind.JsonNode;
 
 import org.opentripplanner.graph_builder.linking.SimpleStreetSplitter;
 import org.opentripplanner.routing.car_rental.CarRentalStation;
-import org.opentripplanner.routing.bike_rental.BikeRentalStationService;
+import org.opentripplanner.routing.car_rental.CarRentalStationService;
 import org.opentripplanner.routing.edgetype.RentABikeOffEdge;
 import org.opentripplanner.routing.edgetype.RentABikeOnEdge;
-import org.opentripplanner.routing.edgetype.loader.LinkRequest;
-import org.opentripplanner.routing.edgetype.loader.NetworkLinkerLibrary;
 import org.opentripplanner.routing.graph.Graph;
-import org.opentripplanner.routing.vertextype.BikeRentalStationVertex;
 import org.opentripplanner.routing.vertextype.CarRentalStationVertex;
 import org.opentripplanner.updater.GraphUpdaterManager;
 import org.opentripplanner.updater.GraphWriterRunnable;
@@ -51,7 +46,7 @@ public class CarRentalUpdater extends PollingGraphUpdater {
 
     private SimpleStreetSplitter linker;
 
-    private BikeRentalStationService service;
+    private CarRentalStationService service;
 
     private String network = "default";
 
@@ -92,7 +87,7 @@ public class CarRentalUpdater extends PollingGraphUpdater {
         updaterManager.executeBlocking(new GraphWriterRunnable() {
             @Override
             public void run(Graph graph) {
-                service = graph.getService(BikeRentalStationService.class, true);
+                service = graph.getService(CarRentalStationService.class, true);
             }
         });
     }
@@ -130,7 +125,7 @@ public class CarRentalUpdater extends PollingGraphUpdater {
                 if (station.networks == null) {
                     station.networks = defaultNetworks;
                 }
-                service.addBikeRentalStation(station);
+                service.addCarRentalStation(station);
                 stationSet.add(station);
                 CarRentalStationVertex vertex = verticesByStation.get(station);
                 if (vertex == null) {
@@ -143,7 +138,7 @@ public class CarRentalUpdater extends PollingGraphUpdater {
                     if (station.allowDropoff)
                         new RentABikeOffEdge(vertex, vertex, station.networks);
                 } else {
-                    vertex.setBikesAvailable(station.bikesAvailable);
+                    vertex.setCarsAvailable(station.bikesAvailable);
                     vertex.setSpacesAvailable(station.spacesAvailable);
                 }
             }
@@ -157,7 +152,7 @@ public class CarRentalUpdater extends PollingGraphUpdater {
                     graph.removeVertexAndEdges(vertex);
                 }
                 toRemove.add(station);
-                service.removeBikeRentalStation(station);
+                service.removeCarRentalStation(station);
             }
             for (CarRentalStation station : toRemove) {
                 verticesByStation.remove(station);
