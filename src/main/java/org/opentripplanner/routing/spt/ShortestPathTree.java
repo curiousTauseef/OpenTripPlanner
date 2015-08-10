@@ -16,6 +16,8 @@ package org.opentripplanner.routing.spt;
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
 import org.opentripplanner.routing.bike_rental.BikeRentalStationService;
+import org.opentripplanner.routing.car_rental.CarRentalStation;
+import org.opentripplanner.routing.car_rental.CarRentalStationService;
 import org.opentripplanner.routing.core.RoutingContext;
 import org.opentripplanner.routing.core.RoutingRequest;
 import org.opentripplanner.routing.core.State;
@@ -64,6 +66,12 @@ public class ShortestPathTree {
         while (it.hasNext()) {
             Map.Entry pair = (Map.Entry) it.next();
             System.out.println("Service: " + pair.getKey() + " = " + pair.getValue());
+            if(pair.getValue() instanceof CarRentalStationService){
+                System.out.println(((CarRentalStationService) pair.getValue()).getCarRentalStations());
+            }
+            if(pair.getValue() instanceof BikeRentalStationService){
+                System.out.println(((BikeRentalStationService) pair.getValue()).getBikeRentalStations());
+            }
             it.remove();
         }
     }
@@ -75,8 +83,9 @@ public class ShortestPathTree {
 
         List<? extends State> stateList = getStates(dest);
 
+
         System.out.println("Destination: " + dest);
-        System.out.println("StateList: ");
+        System.out.println("StateList: " + stateList.size());
         for (int i = 0; i < stateList.size(); i++) {
             System.out.println(stateList.get(i));
         }
