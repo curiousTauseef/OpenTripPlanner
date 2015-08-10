@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 public class CarPark implements Serializable {
-    private static final long serialVersionUID = 8311460609708089384L;
+    private static final long serialVersionUID = 7222460609708089384L;
 
     /**
      * Unique ID of the bike park. Creator should ensure the ID is unique server-wide (prefix by a
