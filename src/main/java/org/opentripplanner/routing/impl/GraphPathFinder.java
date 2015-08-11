@@ -16,6 +16,7 @@ package org.opentripplanner.routing.impl;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import org.onebusaway.gtfs.model.AgencyAndId;
+
 import static org.opentripplanner.routing.automata.Nonterminal.choice;
 import static org.opentripplanner.routing.automata.Nonterminal.optional;
 import static org.opentripplanner.routing.automata.Nonterminal.plus;
@@ -53,20 +54,20 @@ import java.util.*;
  * This class contains the logic for repeatedly building shortest path trees and accumulating paths through
  * the graph until the requested number of them have been found.
  * It is used in point-to-point (i.e. not one-to-many / analyst) routing.
- *
+ * <p>
  * Its exact behavior will depend on whether the routing request allows transit.
- *
+ * <p>
  * When using transit it will incorporate techniques from what we called "long distance" mode, which is designed to
  * provide reasonable response times when routing over large graphs (e.g. the entire Netherlands or New York State).
  * In this case it only uses the street network at the first and last legs of the trip, and all other transfers
  * between transit vehicles will occur via SimpleTransfer edges which are pre-computed by the graph builder.
- * 
+ * <p>
  * More information is available on the OTP wiki at:
  * https://github.com/openplans/OpenTripPlanner/wiki/LargeGraphs
- *
+ * <p>
  * One instance of this class should be constructed per search (i.e. per RoutingRequest: it is request-scoped).
  * Its behavior is undefined if it is reused for more than one search.
- *
+ * <p>
  * It is very close to being an abstract library class with only static functions. However it turns out to be convenient
  * and harmless to have the OTPServer object etc. in fields, to avoid passing context around in function parameters.
  */
@@ -102,7 +103,7 @@ public class GraphPathFinder {
         if (options.rctx == null) {
             options.setRoutingContext(router.graph);
             /* Use a pathparser that constrains the search to use SimpleTransfers. */
-            options.rctx.pathParsers = new PathParser[] { new Parser() };
+            options.rctx.pathParsers = new PathParser[]{new Parser()};
         }
         // If this Router has a GraphVisualizer attached to it, set it as a callback for the AStar search
         if (router.graphVisualizer != null) {
@@ -191,11 +192,11 @@ public class GraphPathFinder {
 
     public static class Parser extends PathParser {
 
-        static final int STREET       = 1;
-        static final int LINK         = 2;
-        static final int STATION      = 3;
-        static final int ONBOARD      = 4;
-        static final int TRANSFER     = 5;
+        static final int STREET = 1;
+        static final int LINK = 2;
+        static final int STATION = 3;
+        static final int ONBOARD = 4;
+        static final int TRANSFER = 5;
         static final int STATION_STOP = 6;
         static final int STOP_STATION = 7;
 
@@ -235,19 +236,19 @@ public class GraphPathFinder {
 
             /* An itinerary that includes a ride on public transit. It might begin on- or offboard. 
              * if it begins onboard, it doesn't necessarily have subsequent transit legs. */
-            Nonterminal transitItinerary = choice( 
+            Nonterminal transitItinerary = choice(
                     seq(beginning, middle, end),
                     seq(onboardBeginning, optional(middle), end));
             
             /* A streets-only itinerary, which might begin or end at a stop or its station, 
              * but does not actually ride transit. */
             Nonterminal streetItinerary = choice(TRANSFER, seq(
-                    optional(STATION_STOP), optional(LINK), 
+                    optional(STATION_STOP), optional(LINK),
                     streetLeg,
                     optional(LINK), optional(STOP_STATION)));
-            
+
             Nonterminal itinerary = choice(streetItinerary, transitItinerary);
-            
+
             DFA = itinerary.toDFA().minimize();
             // System.out.println(DFA.toGraphViz());
             // System.out.println(DFA.dumpTable());
@@ -267,21 +268,21 @@ public class GraphPathFinder {
         public int terminalFor(State state) {
             Edge e = state.getBackEdge();
             if (e == null) {
-                throw new RuntimeException ("terminalFor should never be called on States without back edges!");
+                throw new RuntimeException("terminalFor should never be called on States without back edges!");
             }
             /* OnboardEdge currently includes BoardAlight edges. */
-            if (e instanceof OnboardEdge)       return ONBOARD;
-            if (e instanceof StationEdge)       return STATION;
+            if (e instanceof OnboardEdge) return ONBOARD;
+            if (e instanceof StationEdge) return STATION;
             if (e instanceof StationStopEdge) {
                 return state.getVertex() instanceof TransitStop ? STATION_STOP : STOP_STATION;
             }
             // There should perhaps be a shared superclass of all transfer edges to simplify this. 
-            if (e instanceof SimpleTransfer)    return TRANSFER;
-            if (e instanceof TransferEdge)      return TRANSFER;
+            if (e instanceof SimpleTransfer) return TRANSFER;
+            if (e instanceof TransferEdge) return TRANSFER;
             if (e instanceof TimedTransferEdge) return TRANSFER;
             if (e instanceof StreetTransitLink) return LINK;
             if (e instanceof IntersectionTransitLink) return LINK;
-            if (e instanceof PathwayEdge)       return LINK;
+            if (e instanceof PathwayEdge) return LINK;
             // Is it really correct to clasify all other edges as STREET?
             return STREET;
         }
@@ -289,7 +290,7 @@ public class GraphPathFinder {
     }
 
     /* Try to find N paths through the Graph */
-    public List<GraphPath> graphPathFinderEntryPoint (RoutingRequest request) {
+    public List<GraphPath> graphPathFinderEntryPoint(RoutingRequest request) {
         // We used to perform a protective clone of the RoutingRequest here.
         // There is no reason to do this if we don't modify the request.
         // Any code that changes them should be performing the copy!
@@ -342,7 +343,7 @@ public class GraphPathFinder {
      * Break up a RoutingRequest with intermediate places into separate requests, in the given order.
      * If there are no intermediate places, issue a single request.
      */
-    private List<GraphPath> getGraphPathsConsideringIntermediates (RoutingRequest request) {
+    private List<GraphPath> getGraphPathsConsideringIntermediates(RoutingRequest request) {
         if (request.hasIntermediatePlaces()) {
             long time = request.dateTime;
             GenericLocation from = request.from;

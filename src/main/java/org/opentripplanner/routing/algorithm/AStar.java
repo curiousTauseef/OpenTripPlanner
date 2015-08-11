@@ -226,7 +226,6 @@ public class AStar {
                     // report to the visitor if there is one
                     if (traverseVisitor != null)
                         traverseVisitor.visitEnqueue(v);
-                    
                     runState.pq.insert(v, estimate);
                 } 
             }
