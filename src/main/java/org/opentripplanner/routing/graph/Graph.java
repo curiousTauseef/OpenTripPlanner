@@ -255,18 +255,6 @@ public class Graph implements Serializable {
         return this._services;
     }
 
-    public HashMap<Class<?>, Object> getCarService(){
-        HashMap<Class<?>, Object> vrni = new HashMap<Class<?>, Object>();
-        Iterator it = _services.entrySet().iterator();
-        while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry) it.next();
-            if(pair.getValue() instanceof CarRentalStationService){
-                System.out.println(((CarRentalStationService) pair.getValue()).getCarRentalStations());
-            }
-        }
-        return vrni;
-    }
-
     /**
      * Removes an edge from the graph. This method is not thread-safe.
      * @param e The edge to be removed

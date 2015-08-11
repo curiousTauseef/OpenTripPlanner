@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac10c414-85c1-4e02-aa67-1ad62cac0ebe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/algorithm/AStar.java" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/algorithm/AStar.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/graph/Graph.java" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/graph/Graph.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opentripplanner/api/resource/PlannerResource.java" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/api/resource/PlannerResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/spt/ShortestPathTree.java" afterPath="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/spt/ShortestPathTree.java" />
     </list>
     <ignored path="otp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,48 +28,12 @@
       <file leaf-file-name="PlannerResource.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/api/resource/PlannerResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2950558">
-              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.53168046">
+              <caret line="81" column="46" selection-start-line="81" selection-start-column="46" selection-end-line="81" selection-end-column="46" />
               <folding>
-                <element signature="e#0#6236#0" expanded="true" />
+                <element signature="e#0#6246#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GraphPathFinder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/impl/GraphPathFinder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="101" column="10" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShortestPathTree.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/spt/ShortestPathTree.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="93" column="8" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
-              <folding>
-                <element signature="e#4750#4761#0" expanded="true" />
-                <element signature="e#5077#5078#0" expanded="true" />
-                <element signature="e#5150#5151#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AStar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/algorithm/AStar.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="109" column="10" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -125,9 +87,9 @@
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/car_park/CarPark.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/car_rental/CarRentalStationService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/impl/GraphPathFinder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/graph/Graph.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/spt/ShortestPathTree.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/algorithm/AStar.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/graph/Graph.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/api/resource/PlannerResource.java" />
       </list>
     </option>
@@ -823,7 +785,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28649238" sideWeight="0.49761903" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5740741" sideWeight="0.49761903" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24107143" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -853,7 +815,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1169,30 +1131,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/core/RoutingRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="367" column="26" selection-start-line="367" selection-start-column="26" selection-end-line="367" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/graph/Graph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="261" column="51" selection-start-line="261" selection-start-column="51" selection-end-line="261" selection-end-column="51" />
-          <folding>
-            <element signature="e#10121#10122#0" expanded="true" />
-            <element signature="e#10158#10159#0" expanded="true" />
-            <element signature="e#10267#10285#0" expanded="true" />
-            <element signature="e#17932#17962#0" expanded="true" />
-            <element signature="e#18205#18235#0" expanded="true" />
-            <element signature="e#18422#18452#1" expanded="true" />
-            <element signature="e#27851#27881#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/api/model/error/PlannerError.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1230,9 +1168,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/impl/GraphPathFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="101" column="10" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/spt/ShortestPathTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.41467306">
           <caret line="93" column="8" selection-start-line="93" selection-start-column="8" selection-end-line="93" selection-end-column="8" />
           <folding>
             <element signature="e#4750#4761#0" expanded="true" />
@@ -1242,30 +1190,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/impl/GraphPathFinder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="101" column="10" selection-start-line="101" selection-start-column="10" selection-end-line="101" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/algorithm/AStar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.49601275">
           <caret line="109" column="10" selection-start-line="109" selection-start-column="10" selection-end-line="109" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/core/RoutingRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="967" column="0" selection-start-line="967" selection-start-column="0" selection-end-line="967" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/graph/Graph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5958084">
+          <caret line="256" column="4" selection-start-line="256" selection-start-column="4" selection-end-line="256" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#10121#10122#0" expanded="true" />
+            <element signature="e#10158#10159#0" expanded="true" />
+            <element signature="e#11558#11559#0" expanded="true" />
+            <element signature="e#11600#11601#0" expanded="true" />
+            <element signature="e#11879#11880#0" expanded="true" />
+            <element signature="e#11925#11926#0" expanded="true" />
+            <element signature="e#12045#12046#0" expanded="true" />
+            <element signature="e#12090#12091#0" expanded="true" />
+            <element signature="e#12363#12364#0" expanded="true" />
+            <element signature="e#12402#12403#0" expanded="true" />
+            <element signature="e#17366#17367#0" expanded="true" />
+            <element signature="e#17435#17436#0" expanded="true" />
+            <element signature="e#17534#17535#0" expanded="true" />
+            <element signature="e#17596#17597#0" expanded="true" />
+            <element signature="e#17651#17652#0" expanded="true" />
+            <element signature="e#17708#17709#0" expanded="true" />
+            <element signature="e#17796#17797#0" expanded="true" />
+            <element signature="e#17849#17850#0" expanded="true" />
+            <element signature="e#18438#18439#0" expanded="true" />
+            <element signature="e#18488#18489#0" expanded="true" />
+            <element signature="e#19425#19426#0" expanded="true" />
+            <element signature="e#19461#19462#0" expanded="true" />
+            <element signature="e#20928#20929#0" expanded="true" />
+            <element signature="e#21012#21013#0" expanded="true" />
+            <element signature="e#21050#21051#0" expanded="true" />
+            <element signature="e#21079#21080#0" expanded="true" />
+            <element signature="e#21128#21129#0" expanded="true" />
+            <element signature="e#21164#21165#0" expanded="true" />
+            <element signature="e#21198#21199#0" expanded="true" />
+            <element signature="e#21236#21237#0" expanded="true" />
+            <element signature="e#24145#24146#0" expanded="true" />
+            <element signature="e#24196#24197#0" expanded="true" />
+            <element signature="e#24340#24341#0" expanded="true" />
+            <element signature="e#24378#24379#0" expanded="true" />
+            <element signature="e#24432#24433#0" expanded="true" />
+            <element signature="e#24467#24468#0" expanded="true" />
+            <element signature="e#33315#33316#0" expanded="true" />
+            <element signature="e#33350#33351#0" expanded="true" />
+            <element signature="e#34352#34353#0" expanded="true" />
+            <element signature="e#34386#34387#0" expanded="true" />
+            <element signature="e#34433#34434#0" expanded="true" />
+            <element signature="e#34464#34465#0" expanded="true" />
+            <element signature="e#36280#36281#0" expanded="true" />
+            <element signature="e#36316#36317#0" expanded="true" />
+            <element signature="e#37460#37461#0" expanded="true" />
+            <element signature="e#37520#37521#0" expanded="true" />
+            <element signature="e#38328#38329#0" expanded="true" />
+            <element signature="e#38364#38365#0" expanded="true" />
+            <element signature="e#40210#40211#0" expanded="true" />
+            <element signature="e#40260#40261#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/api/resource/PlannerResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2950558">
-          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.53168046">
+          <caret line="81" column="46" selection-start-line="81" selection-start-column="46" selection-end-line="81" selection-end-column="46" />
           <folding>
-            <element signature="e#0#6236#0" expanded="true" />
+            <element signature="e#0#6246#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>

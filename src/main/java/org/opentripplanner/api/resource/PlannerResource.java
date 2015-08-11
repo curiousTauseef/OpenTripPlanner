@@ -78,14 +78,14 @@ public class PlannerResource extends RoutingResource {
             /* Find some good GraphPaths through the OTP Graph. */
             Router router = otpServer.getRouter(request.routerId);
 
-            if(request.modes.toString().equals("TraverseMode (WALK, CAR)")){
+            if (request.modes.toString().equals("TraverseMode (WALK, CAR)")) {
+                //TODO realiziraj svoje metode
 
 
+            }
 
-
-            }else{
-                GraphPathFinder gpFinder = new GraphPathFinder(router); // we could also get a persistent router-scoped GraphPathFinder but there's no setup cost here
-                List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(request);
+            GraphPathFinder gpFinder = new GraphPathFinder(router); // we could also get a persistent router-scoped GraphPathFinder but there's no setup cost here
+            List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(request);
 
                 /*
                 System.out.println("\nList of edges on our path: ");
@@ -95,9 +95,9 @@ public class PlannerResource extends RoutingResource {
                 */
 
                 /* Convert the internal GraphPaths to a TripPlan object that is included in an OTP web service Response. */
-                //System.out.println("\nGraphPath converted to Plan (it contains other informations as well): ");
+            //System.out.println("\nGraphPath converted to Plan (it contains other informations as well): ");
 
-                TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
+            TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
 
                 /*for (int i = 0; i < plan.itinerary.size(); i++) {
                     for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
@@ -108,8 +108,8 @@ public class PlannerResource extends RoutingResource {
                     }
                 }*/
 
-                response.setPlan(plan);
-            }
+            response.setPlan(plan);
+
         } catch (Exception e) {
             PlannerError error = new PlannerError(e);
             if (!PlannerError.isPlanningError(e.getClass()))
