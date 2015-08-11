@@ -24,6 +24,8 @@ import javax.ws.rs.core.UriInfo;
 import org.opentripplanner.api.common.RoutingResource;
 import org.opentripplanner.api.model.TripPlan;
 import org.opentripplanner.api.model.error.PlannerError;
+import org.opentripplanner.common.model.GenericLocation;
+import org.opentripplanner.routing.core.RoutingContext;
 import org.opentripplanner.routing.core.RoutingRequest;
 import org.opentripplanner.routing.impl.GraphPathFinder;
 import org.opentripplanner.routing.spt.GraphPath;
@@ -31,6 +33,7 @@ import org.opentripplanner.standalone.OTPServer;
 import org.opentripplanner.standalone.Router;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.opentripplanner.routing.car_rental.CarRentalStationService;
 
 import java.util.*;
 
@@ -72,32 +75,41 @@ public class PlannerResource extends RoutingResource {
 
             System.out.println("\n/api/resource/PlannerResource");
             System.out.println("Request: " + request);
-
             /* Find some good GraphPaths through the OTP Graph. */
             Router router = otpServer.getRouter(request.routerId);
-            System.out.println("Router ID: " + request.routerId);
 
-            GraphPathFinder gpFinder = new GraphPathFinder(router); // we could also get a persistent router-scoped GraphPathFinder but there's no setup cost here
-            List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(request);
-            System.out.println("\nList of edges on our path: ");
-            for (int i = 0; i < paths.get(0).edges.size(); i++) {
-                System.out.println(paths.get(0).edges.get(i));
-            }
+            if(request.modes.toString().equals("TraverseMode (WALK, CAR)")){
 
-            /* Convert the internal GraphPaths to a TripPlan object that is included in an OTP web service Response. */
-            System.out.println("\nGraphPath converted to Plan (it contains other informations as well): ");
-            TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
-            for (int i = 0; i < plan.itinerary.size(); i++) {
-                for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
-                    System.out.print(j + 1 + " " + plan.itinerary.get(i).legs.get(j).mode + " : ");
-                    System.out.print(plan.itinerary.get(i).legs.get(j).from.name + " : ");
-                    System.out.print(plan.itinerary.get(i).legs.get(j).to.name + " : ");
-                    System.out.println(plan.itinerary.get(i).legs.get(j).distance + " meters");
+
+
+
+            }else{
+                GraphPathFinder gpFinder = new GraphPathFinder(router); // we could also get a persistent router-scoped GraphPathFinder but there's no setup cost here
+                List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(request);
+
+                /*
+                System.out.println("\nList of edges on our path: ");
+                for (int i = 0; i < paths.get(0).edges.size(); i++) {
+                    System.out.println(paths.get(0).edges.get(i));
                 }
+                */
+
+                /* Convert the internal GraphPaths to a TripPlan object that is included in an OTP web service Response. */
+                //System.out.println("\nGraphPath converted to Plan (it contains other informations as well): ");
+
+                TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
+
+                /*for (int i = 0; i < plan.itinerary.size(); i++) {
+                    for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
+                        System.out.print(j + 1 + " " + plan.itinerary.get(i).legs.get(j).mode + " : ");
+                        System.out.print(plan.itinerary.get(i).legs.get(j).from.name + " : ");
+                        System.out.print(plan.itinerary.get(i).legs.get(j).to.name + " : ");
+                        System.out.println(plan.itinerary.get(i).legs.get(j).distance + " meters");
+                    }
+                }*/
+
+                response.setPlan(plan);
             }
-            response.setPlan(plan);
-
-
         } catch (Exception e) {
             PlannerError error = new PlannerError(e);
             if (!PlannerError.isPlanningError(e.getClass()))

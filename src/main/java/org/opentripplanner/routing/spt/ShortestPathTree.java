@@ -51,8 +51,8 @@ public class ShortestPathTree {
     private Map<Vertex, List<State>> stateSets;
 
     public ShortestPathTree(RoutingRequest options, DominanceFunction dominanceFunction) {
-        System.out.println("\nShortestPathTree/constructor");
-        System.out.println("Options " + options);
+        //System.out.println("\nShortestPathTree/constructor");
+        //System.out.println("Options " + options);
         this.options = options;
         this.dominanceFunction = dominanceFunction;
         stateSets = new IdentityHashMap<Vertex, List<State>>();
@@ -61,9 +61,9 @@ public class ShortestPathTree {
         /* Zakaj se tukaj notri ne prikažejo vsi ponujeni servisi. */
         RoutingContext RC = options.rctx;
         Map<Class<?>, Object> services = RC.graph.getService();
-        System.out.println("Service size: " + services.size());
+        //System.out.println("Service size: " + services.size());
         Iterator it = services.entrySet().iterator();
-        System.out.println("List of services: ");
+        /*System.out.println("List of services: ");
         while (it.hasNext()) {
             Map.Entry pair = (Map.Entry) it.next();
             System.out.println("Service: " + pair.getKey() + " = " + pair.getValue());
@@ -75,6 +75,7 @@ public class ShortestPathTree {
             }
             it.remove();
         }
+        */
 
     }
 
@@ -82,21 +83,25 @@ public class ShortestPathTree {
      * @return a list of GraphPaths, sometimes empty but never null.
      */
     public List<GraphPath> getPaths(Vertex dest, boolean optimize) {
+        /*
         System.out.println("ShortestPathTree/GetPaths/StateSetsSize: " + stateSets.size());
-        /*Iterator it = stateSets.entrySet().iterator();
+        Iterator it = stateSets.entrySet().iterator();
         while(it.hasNext()){
             Map.Entry pair = (Map.Entry) it.next();
             System.out.print(pair.getKey() + "   ");
             System.out.println("State: "+pair.getValue());
-        }*/
+        }
+        */
 
         List<? extends State> stateList = getStates(dest);
 
+        /*
         System.out.println("Destination: " + dest);
         System.out.println("StateList: " + stateList.size());
         for (int i = 0; i < stateList.size(); i++) {
             System.out.println(stateList.get(i));
         }
+        */
         
         if (stateList == null)
             return Collections.emptyList();

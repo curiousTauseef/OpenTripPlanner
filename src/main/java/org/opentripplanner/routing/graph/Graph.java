@@ -60,6 +60,7 @@ import org.opentripplanner.graph_builder.annotation.GraphBuilderAnnotation;
 import org.opentripplanner.graph_builder.annotation.NoFutureDates;
 import org.opentripplanner.model.GraphBundle;
 import org.opentripplanner.routing.alertpatch.AlertPatch;
+import org.opentripplanner.routing.car_rental.CarRentalStationService;
 import org.opentripplanner.routing.core.MortonVertexComparatorFactory;
 import org.opentripplanner.routing.core.TransferTable;
 import org.opentripplanner.routing.core.TraverseMode;
@@ -252,6 +253,18 @@ public class Graph implements Serializable {
 
     public Map<Class<?>, Object> getService(){
         return this._services;
+    }
+
+    public HashMap<Class<?>, Object> getCarService(){
+        HashMap<Class<?>, Object> vrni = new HashMap<Class<?>, Object>();
+        Iterator it = _services.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry) it.next();
+            if(pair.getValue() instanceof CarRentalStationService){
+                System.out.println(((CarRentalStationService) pair.getValue()).getCarRentalStations());
+            }
+        }
+        return vrni;
     }
 
     /**

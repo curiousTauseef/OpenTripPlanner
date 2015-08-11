@@ -102,10 +102,12 @@ public class AStar {
     
     /** set up the search, optionally not adding the initial state to the queue (for multi-state Dijkstra) */
     private void startSearch(RoutingRequest options, SearchTerminationStrategy terminationStrategy, long abortTime, boolean addToQueue) {
+        /*
         System.out.println("\nAStar/StartSearch");
         System.out.println("RoutingRequest: " + options);
         System.out.println("SearchTerminationStrategy: "+ terminationStrategy );
         System.out.println("Abort time: "+ abortTime + " addToQueue " +  addToQueue);
+        */
 
         runState = new RunState( options, terminationStrategy );
         runState.rctx = options.getRoutingContext();
