@@ -76,17 +76,14 @@ public class PlannerResource extends RoutingResource {
         Response response = new Response(uriInfo);
         RoutingRequest request = null;
         try {
-
             /* Fill in request fields from query parameters via shared superclass method, catching any errors. */
             request = super.buildRequest();
-
-            System.out.println("\n/api/resource/PlannerResource");
-            System.out.println("Request: " + request);
             /* Find some good GraphPaths through the OTP Graph. */
             Router router = otpServer.getRouter(request.routerId);
 
             if (request.modes.toString().equals("TraverseMode (WALK, CAR)")) {
                 // TODO dodaj štetje parkingov na postaji
+                // TODO dodaj primerjavo peš vs avto naj izvere boljšega
 
                 Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
                 GenericLocation start = request.from;
@@ -120,12 +117,12 @@ public class PlannerResource extends RoutingResource {
 
                 pathsFromStation.addAll(pathsBetweenStation);
                 pathsFromStation.addAll(pathsToStation);
-
+                
                 TripPlan plan = GraphPathToTripPlanConverter.generatePlan(pathsFromStation, request);
                 Itinerary skupni = new Itinerary();
                 List<Itinerary> skupinIterary = new ArrayList<Itinerary>();
 
-                for (int i = 0; i < plan.itinerary.size(); i++) {
+                for (int i = plan.itinerary.size()-1; i >= 0; i--) {
                     for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
                         skupni.addLeg(plan.itinerary.get(i).legs.get(j));
                     }

@@ -27,33 +27,13 @@
       <file leaf-file-name="PlannerResource.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/api/resource/PlannerResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75635594">
-              <caret line="125" column="45" selection-start-line="125" selection-start-column="45" selection-end-line="125" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.42372882">
+              <caret line="119" column="16" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
               <folding>
-                <element signature="e#0#11401#0" expanded="true" />
+                <element signature="e#0#11369#0" expanded="true" />
                 <element signature="imports" expanded="true" />
-                <element signature="e#6878#6889#0" expanded="true" />
+                <element signature="e#6843#6854#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RoutingRequest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/core/RoutingRequest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="967" column="0" selection-start-line="967" selection-start-column="0" selection-end-line="967" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TripPlan.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/api/model/TripPlan.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -1209,26 +1189,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/api/model/TripPlan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/bike_rental/BikeRentalStation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33272058">
           <caret line="39" column="18" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/core/RoutingRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="967" column="0" selection-start-line="967" selection-start-column="0" selection-end-line="967" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1241,14 +1205,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/core/RoutingRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.0042372">
+          <caret line="967" column="0" selection-start-line="967" selection-start-column="0" selection-end-line="967" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/api/model/TripPlan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/api/resource/PlannerResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75635594">
-          <caret line="125" column="45" selection-start-line="125" selection-start-column="45" selection-end-line="125" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.42372882">
+          <caret line="119" column="16" selection-start-line="119" selection-start-column="16" selection-end-line="119" selection-end-column="16" />
           <folding>
-            <element signature="e#0#11401#0" expanded="true" />
+            <element signature="e#0#11369#0" expanded="true" />
             <element signature="imports" expanded="true" />
-            <element signature="e#6878#6889#0" expanded="true" />
+            <element signature="e#6843#6854#0" expanded="true" />
           </folding>
         </state>
       </provider>
