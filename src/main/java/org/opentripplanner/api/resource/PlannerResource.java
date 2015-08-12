@@ -89,8 +89,8 @@ public class PlannerResource extends RoutingResource {
                 Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
                 GenericLocation start = request.from;
                 GenericLocation end = request.to;
-                CarRentalStation startStation = closestStation(start, stations, router, request);
-                CarRentalStation endStation = closestStation(end, stations, router, request);
+                CarRentalStation startStation = closestStation(start, stations, router, request, "start");
+                CarRentalStation endStation = closestStation(end, stations, router, request, "end");
                 if(startStation == endStation){
                     RoutingRequest walkingRequest = new RoutingRequest();
                     walkingRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
@@ -116,14 +116,14 @@ public class PlannerResource extends RoutingResource {
                     betweenStations.setFromString("::" + Double.toString(startStation.y) + "," + Double.toString(startStation.x));
                     betweenStations.setToString("::" + Double.toString(endStation.y) + "," + Double.toString(endStation.x));
                     GraphPathFinder gpFinderBetweenStation = new GraphPathFinder(router);
-                    List<GraphPath> pathsBetweenStation = gpFinderToStation.graphPathFinderEntryPoint(betweenStations);
+                    List<GraphPath> pathsBetweenStation = gpFinderBetweenStation.graphPathFinderEntryPoint(betweenStations);
 
                     RoutingRequest fromStation = new RoutingRequest();
                     fromStation.setModes(new TraverseModeSet(TraverseMode.WALK));
                     fromStation.setFromString("::" + Double.toString(endStation.y) + "," + Double.toString(endStation.x));
                     fromStation.to = end;
                     GraphPathFinder gpFinderFromStation = new GraphPathFinder(router);
-                    List<GraphPath> pathsFromStation = gpFinderToStation.graphPathFinderEntryPoint(fromStation);
+                    List<GraphPath> pathsFromStation = gpFinderFromStation.graphPathFinderEntryPoint(fromStation);
 
                     pathsFromStation.addAll(pathsBetweenStation);
                     pathsFromStation.addAll(pathsToStation);
@@ -167,34 +167,56 @@ public class PlannerResource extends RoutingResource {
         return response;
     }
 
-    public static CarRentalStation closestStation(GenericLocation location, Collection<CarRentalStation> stations, Router router, RoutingRequest request) {
+    public static CarRentalStation closestStation(GenericLocation location, Collection<CarRentalStation> stations, Router router, RoutingRequest request, String nacin) {
         Iterator it = stations.iterator();
         CarRentalStation vrni = null;
         double števec = Double.MAX_VALUE;
         while (it.hasNext()) {
             CarRentalStation postaja = (CarRentalStation) it.next();
             try {
-                //if (postaja.spacesAvailable > 0) {    // FIXME <------ Odkomentiraj if stavek.
-                RoutingRequest meritevRequest = new RoutingRequest();
-                meritevRequest.from = location;
-                meritevRequest.setToString("::" + Double.toString(postaja.y) + "," + Double.toString(postaja.x));
-                meritevRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
-                GraphPathFinder gpFinder = new GraphPathFinder(router);
-                List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(meritevRequest);
-                TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
-                double števec2 = 0;
-                for (int i = 0; i < plan.itinerary.size(); i++) {
-                    for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
-                        števec2 += plan.itinerary.get(i).legs.get(j).distance;
+                if(nacin.equals("start")){
+                    //if(postaja.bikesAvailable > 0){ FIXME <------ Odkomentiraj if stavek
+                    RoutingRequest meritevRequest = new RoutingRequest();
+                    meritevRequest.from = location;
+                    meritevRequest.setToString("::" + Double.toString(postaja.y) + "," + Double.toString(postaja.x));
+                    meritevRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
+                    GraphPathFinder gpFinder = new GraphPathFinder(router);
+                    List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(meritevRequest);
+                    TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
+                    double števec2 = 0;
+                    for (int i = 0; i < plan.itinerary.size(); i++) {
+                        for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
+                            števec2 += plan.itinerary.get(i).legs.get(j).distance;
+                        }
                     }
-                }
-                if (števec2 < števec) {
-                    števec = števec2;
-                    vrni = postaja;
+                    if (števec2 < števec) {
+                        števec = števec2;
+                        vrni = postaja;
+                    }
+                    //}
+                }else if(nacin.equals("end")){
+                    //if (postaja.spacesAvailable > 0) { FIXME <------ Odkomentiraj if stavek
+                    RoutingRequest meritevRequest = new RoutingRequest();
+                    meritevRequest.from = location;
+                    meritevRequest.setToString("::" + Double.toString(postaja.y) + "," + Double.toString(postaja.x));
+                    meritevRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
+                    GraphPathFinder gpFinder = new GraphPathFinder(router);
+                    List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(meritevRequest);
+                    TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
+                    double števec2 = 0;
+                    for (int i = 0; i < plan.itinerary.size(); i++) {
+                        for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
+                            števec2 += plan.itinerary.get(i).legs.get(j).distance;
+                        }
+                    }
+                    if (števec2 < števec) {
+                        števec = števec2;
+                        vrni = postaja;
+                    }
+                    //}
                 }
             }catch (Exception e){
             }
-            //}
         }
         return vrni;
     }

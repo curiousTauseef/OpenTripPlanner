@@ -10,6 +10,7 @@ import java.util.Locale;
 
 
 public class CarRentalStation extends BikeRentalStation {
+    private static final long serialVersionUID = -4171101340290493331L;
 
     public boolean equals(Object o) {
         if (!(o instanceof CarRentalStation)) {
