@@ -91,7 +91,7 @@ public abstract class GraphPathToTripPlanConverter {
         if (plan != null) {
             for (Itinerary i : plan.itinerary) {
                 /* Communicate the fact that the only way we were able to get a response was by removing a slope limit. */
-                i.tooSloped = request.rctx.slopeRestrictionRemoved;
+                //i.tooSloped = request.rctx.slopeRestrictionRemoved; // FIXME odkomentiraj me
                 /* fix up from/to on first/last legs */
                 if (i.legs.size() == 0) {
                     LOG.warn("itinerary has no legs");
@@ -103,7 +103,7 @@ public abstract class GraphPathToTripPlanConverter {
                 lastLeg.to.orig = plan.to.orig;
             }
         }
-        request.rctx.debugOutput.finishedRendering();
+        //request.rctx.debugOutput.finishedRendering(); // FIXME odkomentiraj me
         return plan;
     }
 
