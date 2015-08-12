@@ -82,87 +82,72 @@ public class PlannerResource extends RoutingResource {
             Router router = otpServer.getRouter(request.routerId);
 
             if (request.modes.toString().equals("TraverseMode (WALK, CAR)")) {
-                // TODO dodaj štetje parkingov na postaji
-                // TODO dodaj primerjavo peš vs avto naj izvere boljšega
 
+                // TODO dodaj štetje parkingov na postaji
+
+                boolean shouldIwalk = false;
                 Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
                 GenericLocation start = request.from;
                 GenericLocation end = request.to;
                 CarRentalStation startStation = closestStation(start, stations, router, request);
                 CarRentalStation endStation = closestStation(end, stations, router, request);
                 if(startStation == endStation){
-                    System.out.println("Walking...");
+                    RoutingRequest walkingRequest = new RoutingRequest();
+                    walkingRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
+                    walkingRequest.from = start;
+                    walkingRequest.to = end;
+                    GraphPathFinder gpFinderWalking = new GraphPathFinder(router);
+                    List<GraphPath> pathsWalking = gpFinderWalking.graphPathFinderEntryPoint(walkingRequest);
+                    TripPlan planWalking = GraphPathToTripPlanConverter.generatePlan(pathsWalking, request);
+                    response.setPlan(planWalking);
+                    shouldIwalk = true;
                 }
+                if(!shouldIwalk){
 
-                RoutingRequest toStation = new RoutingRequest();
-                toStation.setModes(new TraverseModeSet(TraverseMode.WALK));
-                toStation.from = start;
-                toStation.setToString("::" + Double.toString(startStation.y) + "," + Double.toString(startStation.x));
-                GraphPathFinder gpFinderToStation = new GraphPathFinder(router);
-                List<GraphPath> pathsToStation = gpFinderToStation.graphPathFinderEntryPoint(toStation);
+                    RoutingRequest toStation = new RoutingRequest();
+                    toStation.setModes(new TraverseModeSet(TraverseMode.WALK));
+                    toStation.from = start;
+                    toStation.setToString("::" + Double.toString(startStation.y) + "," + Double.toString(startStation.x));
+                    GraphPathFinder gpFinderToStation = new GraphPathFinder(router);
+                    List<GraphPath> pathsToStation = gpFinderToStation.graphPathFinderEntryPoint(toStation);
 
-                RoutingRequest betweenStations = new RoutingRequest();
-                betweenStations.setModes(new TraverseModeSet(TraverseMode.CAR));
-                betweenStations.setFromString("::" + Double.toString(startStation.y) + "," + Double.toString(startStation.x));
-                betweenStations.setToString("::" + Double.toString(endStation.y) + "," + Double.toString(endStation.x));
-                GraphPathFinder gpFinderBetweenStation = new GraphPathFinder(router);
-                List<GraphPath> pathsBetweenStation = gpFinderToStation.graphPathFinderEntryPoint(betweenStations);
+                    RoutingRequest betweenStations = new RoutingRequest();
+                    betweenStations.setModes(new TraverseModeSet(TraverseMode.CAR));
+                    betweenStations.setFromString("::" + Double.toString(startStation.y) + "," + Double.toString(startStation.x));
+                    betweenStations.setToString("::" + Double.toString(endStation.y) + "," + Double.toString(endStation.x));
+                    GraphPathFinder gpFinderBetweenStation = new GraphPathFinder(router);
+                    List<GraphPath> pathsBetweenStation = gpFinderToStation.graphPathFinderEntryPoint(betweenStations);
 
-                RoutingRequest fromStation = new RoutingRequest();
-                fromStation.setModes(new TraverseModeSet(TraverseMode.WALK));
-                fromStation.setFromString("::" + Double.toString(endStation.y) + "," + Double.toString(endStation.x));
-                fromStation.to = end;
-                GraphPathFinder gpFinderFromStation = new GraphPathFinder(router);
-                List<GraphPath> pathsFromStation = gpFinderToStation.graphPathFinderEntryPoint(fromStation);
+                    RoutingRequest fromStation = new RoutingRequest();
+                    fromStation.setModes(new TraverseModeSet(TraverseMode.WALK));
+                    fromStation.setFromString("::" + Double.toString(endStation.y) + "," + Double.toString(endStation.x));
+                    fromStation.to = end;
+                    GraphPathFinder gpFinderFromStation = new GraphPathFinder(router);
+                    List<GraphPath> pathsFromStation = gpFinderToStation.graphPathFinderEntryPoint(fromStation);
 
-                pathsFromStation.addAll(pathsBetweenStation);
-                pathsFromStation.addAll(pathsToStation);
-                
-                TripPlan plan = GraphPathToTripPlanConverter.generatePlan(pathsFromStation, request);
-                Itinerary skupni = new Itinerary();
-                List<Itinerary> skupinIterary = new ArrayList<Itinerary>();
+                    pathsFromStation.addAll(pathsBetweenStation);
+                    pathsFromStation.addAll(pathsToStation);
 
-                for (int i = plan.itinerary.size()-1; i >= 0; i--) {
-                    for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
-                        skupni.addLeg(plan.itinerary.get(i).legs.get(j));
+                    TripPlan plan = GraphPathToTripPlanConverter.generatePlan(pathsFromStation, request);
+                    Itinerary skupni = new Itinerary();
+                    List<Itinerary> skupinIterary = new ArrayList<Itinerary>();
+
+                    for (int i = plan.itinerary.size()-1; i >= 0; i--) {
+                        for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
+                            skupni.addLeg(plan.itinerary.get(i).legs.get(j));
+                        }
                     }
+
+                    skupinIterary.add(skupni);
+                    plan.itinerary = skupinIterary;
+                    response.setPlan(plan);
                 }
-
-                skupinIterary.add(skupni);
-                plan.itinerary = skupinIterary;
-                response.setPlan(plan);
-
             } else {
                 GraphPathFinder gpFinder = new GraphPathFinder(router);
                 List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(request);
                 TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
-                System.out.println(plan.itinerary.size());
                 response.setPlan(plan);
             }
-
-            //GraphPathFinder gpFinder = new GraphPathFinder(router); // we could also get a persistent router-scoped GraphPathFinder but there's no setup cost here
-            //List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(request);
-
-                /*
-                System.out.println("\nList of edges on our path: ");
-                for (int i = 0; i < paths.get(0).edges.size(); i++) {
-                    System.out.println(paths.get(0).edges.get(i));
-                }
-                */
-
-            /* Convert the internal GraphPaths to a TripPlan object that is included in an OTP web service Response. */
-            //System.out.println("\nGraphPath converted to Plan (it contains other informations as well): ");
-            //TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
-                /*for (int i = 0; i < plan.itinerary.size(); i++) {
-                    for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
-                        System.out.print(j + 1 + " " + plan.itinerary.get(i).legs.get(j).mode + " : ");
-                        System.out.print(plan.itinerary.get(i).legs.get(j).from.name + " : ");
-                        System.out.print(plan.itinerary.get(i).legs.get(j).to.name + " : ");
-                        System.out.println(plan.itinerary.get(i).legs.get(j).distance + " meters");
-                    }
-                }*/
-
-            //response.setPlan(plan);
 
         } catch (Exception e) {
             PlannerError error = new PlannerError(e);
