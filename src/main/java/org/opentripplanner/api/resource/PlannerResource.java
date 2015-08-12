@@ -86,28 +86,45 @@ public class PlannerResource extends RoutingResource {
             Router router = otpServer.getRouter(request.routerId);
 
             if (request.modes.toString().equals("TraverseMode (WALK, CAR)")) {
-                // 46.062288322607856,14.515128135681152  46.063479426751435,14.514634609222412  1.7976931348623157E308 Wed Aug 12 11:25:00 CEST 2015 false QUICK WALK 1
-                // TODO realiziraj svoje metode
-
+                // TODO dodaj štetje parkingov na postaji
 
                 Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
                 GenericLocation start = request.from;
                 GenericLocation end = request.to;
                 CarRentalStation startStation = closestStation(start, stations, router, request);
-                //CarRentalStation endStation = closestStation(end, stations, router, request);
-
+                CarRentalStation endStation = closestStation(end, stations, router, request);
+                if(startStation == endStation){
+                    System.out.println("Walking...");
+                }
 
                 RoutingRequest toStation = new RoutingRequest();
                 toStation.setModes(new TraverseModeSet(TraverseMode.WALK));
                 toStation.from = start;
+                toStation.setToString("::" + Double.toString(startStation.y) + "," + Double.toString(startStation.x));
+                GraphPathFinder gpFinderToStation = new GraphPathFinder(router);
+                List<GraphPath> pathsToStation = gpFinderToStation.graphPathFinderEntryPoint(toStation);
 
                 RoutingRequest betweenStations = new RoutingRequest();
-                toStation.setModes(new TraverseModeSet(TraverseMode.CAR));
-
+                betweenStations.setModes(new TraverseModeSet(TraverseMode.CAR));
+                betweenStations.setFromString("::" + Double.toString(startStation.y) + "," + Double.toString(startStation.x));
+                betweenStations.setToString("::" + Double.toString(endStation.y) + "," + Double.toString(endStation.x));
+                GraphPathFinder gpFinderBetweenStation = new GraphPathFinder(router);
+                List<GraphPath> pathsBetweenStation = gpFinderToStation.graphPathFinderEntryPoint(betweenStations);
 
                 RoutingRequest fromStation = new RoutingRequest();
                 fromStation.setModes(new TraverseModeSet(TraverseMode.WALK));
+                fromStation.setFromString("::" + Double.toString(endStation.y) + "," + Double.toString(endStation.x));
                 fromStation.to = end;
+                GraphPathFinder gpFinderFromStation = new GraphPathFinder(router);
+                List<GraphPath> pathsFromStation = gpFinderToStation.graphPathFinderEntryPoint(fromStation);
+
+                TripPlan plan = GraphPathToTripPlanConverter.generatePlan(pathsToStation, request);
+
+
+
+
+                //------------------------------------------------------------------------------------------------------
+                // MOKANA KODA
 
 
                 RoutingRequest test1 = new RoutingRequest();
@@ -127,7 +144,7 @@ public class PlannerResource extends RoutingResource {
                 List<GraphPath> paths2 = gpFinder.graphPathFinderEntryPoint(test2);
 
                 paths2.addAll(paths);
-                TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths2, request);
+                TripPlan plan22 = GraphPathToTripPlanConverter.generatePlan(paths2, request);
 
                 Itinerary skupni = new Itinerary();
                 List<Itinerary> skupinIterary = new ArrayList<Itinerary>();
