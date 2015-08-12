@@ -121,50 +121,20 @@ public class PlannerResource extends RoutingResource {
                 pathsFromStation.addAll(pathsBetweenStation);
                 pathsFromStation.addAll(pathsToStation);
 
-                TripPlan plan2 = GraphPathToTripPlanConverter.generatePlan(pathsFromStation, request);
-                Itinerary skupni2 = new Itinerary();
-                List<Itinerary> skupinIterary2 = new ArrayList<Itinerary>();
-
-                for (int i = 0; i < plan2.itinerary.size(); i++) {
-                    for (int j = 0; j < plan2.itinerary.get(i).legs.size(); j++) {
-                        skupni2.addLeg(plan2.itinerary.get(i).legs.get(j));
-                    }
-                }
-
-                skupinIterary2.add(skupni2);
-                plan2.itinerary = skupinIterary2;
-                response.setPlan(plan2);
-
-
-                /*
-                RoutingRequest test1 = new RoutingRequest();
-                test1.setModes(new TraverseModeSet(TraverseMode.WALK));
-                test1.setFromString("::46.062288322607856,14.515128135681152");
-                test1.setToString("::46.063479426751435,14.514634609222412");
-                GraphPathFinder gpFinder = new GraphPathFinder(router);
-                List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(test1);
-
-                RoutingRequest test2 = new RoutingRequest();
-                test2.setModes(new TraverseModeSet(TraverseMode.BICYCLE));
-                test2.setFromString("::46.06232554500132,14.515085220336914");
-                test2.setToString("::46.06056117595413,14.516673088073729");
-                GraphPathFinder gpFinder2 = new GraphPathFinder(router);
-                List<GraphPath> paths2 = gpFinder.graphPathFinderEntryPoint(test2);
-
-                paths2.addAll(paths);
-                TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths2, request);
-
+                TripPlan plan = GraphPathToTripPlanConverter.generatePlan(pathsFromStation, request);
                 Itinerary skupni = new Itinerary();
                 List<Itinerary> skupinIterary = new ArrayList<Itinerary>();
+
                 for (int i = 0; i < plan.itinerary.size(); i++) {
                     for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
                         skupni.addLeg(plan.itinerary.get(i).legs.get(j));
                     }
                 }
+
                 skupinIterary.add(skupni);
                 plan.itinerary = skupinIterary;
                 response.setPlan(plan);
-                */
+
             } else {
                 GraphPathFinder gpFinder = new GraphPathFinder(router);
                 List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(request);
