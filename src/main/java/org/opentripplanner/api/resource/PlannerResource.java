@@ -21,15 +21,18 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
+import org.glassfish.jersey.server.internal.routing.Routing;
 import org.opentripplanner.api.common.RoutingResource;
 import org.opentripplanner.api.model.Itinerary;
 import org.opentripplanner.api.model.TripPlan;
 import org.opentripplanner.api.model.error.PlannerError;
 import org.opentripplanner.common.model.GenericLocation;
+import org.opentripplanner.routing.car_rental.CarRentalStation;
 import org.opentripplanner.routing.core.RoutingContext;
 import org.opentripplanner.routing.core.RoutingRequest;
 import org.opentripplanner.routing.core.TraverseMode;
 import org.opentripplanner.routing.core.TraverseModeSet;
+import org.opentripplanner.routing.graph.Graph;
 import org.opentripplanner.routing.impl.GraphPathFinder;
 import org.opentripplanner.routing.spt.GraphPath;
 import org.opentripplanner.standalone.OTPServer;
@@ -83,8 +86,10 @@ public class PlannerResource extends RoutingResource {
             Router router = otpServer.getRouter(request.routerId);
 
             if (request.modes.toString().equals("TraverseMode (WALK, CAR)")) {
-                // 46.062288322607856, 14.515128135681152  46.063479426751435,14.514634609222412  1.7976931348623157E308 Wed Aug 12 11:25:00 CEST 2015 false QUICK WALK 1
+                // 46.062288322607856,14.515128135681152  46.063479426751435,14.514634609222412  1.7976931348623157E308 Wed Aug 12 11:25:00 CEST 2015 false QUICK WALK 1
                 //TODO realiziraj svoje metode
+
+                Collection<CarRentalStation> servisi = router.graph.getCarRentalStations();
 
                 RoutingRequest test1 = new RoutingRequest();
                 test1.setModes(new TraverseModeSet(TraverseMode.WALK));
@@ -102,10 +107,8 @@ public class PlannerResource extends RoutingResource {
                 GraphPathFinder gpFinder2 = new GraphPathFinder(router);
                 List<GraphPath> paths2 = gpFinder.graphPathFinderEntryPoint(test2);
 
-
-                paths.addAll(paths2);
-                TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
-
+                paths2.addAll(paths);
+                TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths2, request);
 
                 Itinerary skupni = new Itinerary();
                 List<Itinerary> skupinIterary = new ArrayList<Itinerary>();
@@ -114,10 +117,9 @@ public class PlannerResource extends RoutingResource {
                         skupni.addLeg(plan.itinerary.get(i).legs.get(j));
                     }
                 }
+
                 skupinIterary.add(skupni);
-
                 plan.itinerary = skupinIterary;
-
                 response.setPlan(plan);
 
             }else {
