@@ -87,9 +87,28 @@ public class PlannerResource extends RoutingResource {
 
             if (request.modes.toString().equals("TraverseMode (WALK, CAR)")) {
                 // 46.062288322607856,14.515128135681152  46.063479426751435,14.514634609222412  1.7976931348623157E308 Wed Aug 12 11:25:00 CEST 2015 false QUICK WALK 1
-                //TODO realiziraj svoje metode
+                // TODO realiziraj svoje metode
 
-                Collection<CarRentalStation> servisi = router.graph.getCarRentalStations();
+
+                Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
+                GenericLocation start = request.from;
+                GenericLocation end = request.to;
+                CarRentalStation startStation = closestStation(start, stations, router, request);
+                //CarRentalStation endStation = closestStation(end, stations, router, request);
+
+
+                RoutingRequest toStation = new RoutingRequest();
+                toStation.setModes(new TraverseModeSet(TraverseMode.WALK));
+                toStation.from = start;
+
+                RoutingRequest betweenStations = new RoutingRequest();
+                toStation.setModes(new TraverseModeSet(TraverseMode.CAR));
+
+
+                RoutingRequest fromStation = new RoutingRequest();
+                fromStation.setModes(new TraverseModeSet(TraverseMode.WALK));
+                fromStation.to = end;
+
 
                 RoutingRequest test1 = new RoutingRequest();
                 test1.setModes(new TraverseModeSet(TraverseMode.WALK));
@@ -112,7 +131,7 @@ public class PlannerResource extends RoutingResource {
 
                 Itinerary skupni = new Itinerary();
                 List<Itinerary> skupinIterary = new ArrayList<Itinerary>();
-                for(int i = 0; i < plan.itinerary.size(); i++ ) {
+                for (int i = 0; i < plan.itinerary.size(); i++) {
                     for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
                         skupni.addLeg(plan.itinerary.get(i).legs.get(j));
                     }
@@ -122,7 +141,7 @@ public class PlannerResource extends RoutingResource {
                 plan.itinerary = skupinIterary;
                 response.setPlan(plan);
 
-            }else {
+            } else {
                 GraphPathFinder gpFinder = new GraphPathFinder(router);
                 List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(request);
                 TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
@@ -171,4 +190,38 @@ public class PlannerResource extends RoutingResource {
         System.out.println("\nResponse: " + response.requestParameters);
         return response;
     }
+
+    public static CarRentalStation closestStation(GenericLocation location, Collection<CarRentalStation> stations, Router router, RoutingRequest request) {
+        Iterator it = stations.iterator();
+        CarRentalStation vrni = null;
+        double števec = Double.MAX_VALUE;
+        while (it.hasNext()) {
+            CarRentalStation postaja = (CarRentalStation) it.next();
+            try {
+                //if (postaja.spacesAvailable > 0) {    // FIXME <------ Odkomentiraj if stavek.
+                RoutingRequest meritevRequest = new RoutingRequest();
+                meritevRequest.from = location;
+                meritevRequest.setToString("::" + Double.toString(postaja.y) + "," + Double.toString(postaja.x));
+                meritevRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
+                GraphPathFinder gpFinder = new GraphPathFinder(router);
+                List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(meritevRequest);
+                TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
+                double števec2 = 0;
+                for (int i = 0; i < plan.itinerary.size(); i++) {
+                    for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
+                        števec2 += plan.itinerary.get(i).legs.get(j).distance;
+                    }
+                }
+                if (števec2 < števec) {
+                    števec = števec2;
+                    vrni = postaja;
+                }
+            }catch (Exception e){
+            }
+            //}
+        }
+        return vrni;
+    }
+
+
 }
