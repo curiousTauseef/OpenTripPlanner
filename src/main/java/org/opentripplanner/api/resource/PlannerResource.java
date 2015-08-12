@@ -132,9 +132,11 @@ public class PlannerResource extends RoutingResource {
                     Itinerary skupni = new Itinerary();
                     List<Itinerary> skupinIterary = new ArrayList<Itinerary>();
 
+                    System.out.println("\n PlannerResources");
                     for (int i = plan.itinerary.size()-1; i >= 0; i--) {
                         for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
                             skupni.addLeg(plan.itinerary.get(i).legs.get(j));
+                            System.out.println(plan.itinerary.get(i).legs.get(j));
                         }
                     }
 
@@ -146,6 +148,15 @@ public class PlannerResource extends RoutingResource {
                 GraphPathFinder gpFinder = new GraphPathFinder(router);
                 List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(request);
                 TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
+
+                System.out.println("\n PlannerResources");
+                for (int i = 0; i < plan.itinerary.size(); i++) {
+                    for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
+                        System.out.println(plan.itinerary.get(i).legs.get(j));
+                    }
+                }
+
+
                 response.setPlan(plan);
             }
 
