@@ -174,21 +174,21 @@ public class PlannerResource extends RoutingResource {
         while (it.hasNext()) {
             CarRentalStation postaja = (CarRentalStation) it.next();
             try {
+                RoutingRequest meritevRequest = new RoutingRequest();
+                meritevRequest.from = location;
+                meritevRequest.setToString("::" + Double.toString(postaja.y) + "," + Double.toString(postaja.x));
+                meritevRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
+                GraphPathFinder gpFinder = new GraphPathFinder(router);
+                List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(meritevRequest);
+                TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
+                double števec2 = 0;
+                for (int i = 0; i < plan.itinerary.size(); i++) {
+                    for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
+                        števec2 += plan.itinerary.get(i).legs.get(j).distance;
+                    }
+                }
                 if(nacin.equals("start")){
                     //if(postaja.bikesAvailable > 0){ FIXME <------ Odkomentiraj if stavek
-                    RoutingRequest meritevRequest = new RoutingRequest();
-                    meritevRequest.from = location;
-                    meritevRequest.setToString("::" + Double.toString(postaja.y) + "," + Double.toString(postaja.x));
-                    meritevRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
-                    GraphPathFinder gpFinder = new GraphPathFinder(router);
-                    List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(meritevRequest);
-                    TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
-                    double števec2 = 0;
-                    for (int i = 0; i < plan.itinerary.size(); i++) {
-                        for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
-                            števec2 += plan.itinerary.get(i).legs.get(j).distance;
-                        }
-                    }
                     if (števec2 < števec) {
                         števec = števec2;
                         vrni = postaja;
@@ -196,19 +196,6 @@ public class PlannerResource extends RoutingResource {
                     //}
                 }else if(nacin.equals("end")){
                     //if (postaja.spacesAvailable > 0) { FIXME <------ Odkomentiraj if stavek
-                    RoutingRequest meritevRequest = new RoutingRequest();
-                    meritevRequest.from = location;
-                    meritevRequest.setToString("::" + Double.toString(postaja.y) + "," + Double.toString(postaja.x));
-                    meritevRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
-                    GraphPathFinder gpFinder = new GraphPathFinder(router);
-                    List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(meritevRequest);
-                    TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
-                    double števec2 = 0;
-                    for (int i = 0; i < plan.itinerary.size(); i++) {
-                        for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
-                            števec2 += plan.itinerary.get(i).legs.get(j).distance;
-                        }
-                    }
                     if (števec2 < števec) {
                         števec = števec2;
                         vrni = postaja;
