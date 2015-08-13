@@ -132,7 +132,6 @@ public class PlannerResource extends RoutingResource {
                     plan.from = plan.itinerary.get(2).legs.get(0).from;
                     plan.to = plan.itinerary.get(0).legs.get(0).to;
 
-                    TripPlan skupniPlan = new TripPlan();
                     Itinerary skupniItinerary = new Itinerary();
                     List<Itinerary> skupnaListaItinerary = new ArrayList<Itinerary>();
                     skupniItinerary.startTime = plan.itinerary.get(2).legs.get(0).startTime;
@@ -165,25 +164,6 @@ public class PlannerResource extends RoutingResource {
                 TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
                 response.setPlan(plan);
 
-                /*
-                System.out.println("");
-                for (int i = plan.itinerary.size()-1; i >= 0; i--) {
-                    System.out.println("Iterary: ");
-                    System.out.println("Start time: " + plan.itinerary.get(i).startTime.getTime());
-                    System.out.println("End time " +plan.itinerary.get(i).endTime.getTime());
-                    System.out.println("Duration " +plan.itinerary.get(i).duration);
-                    for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
-                        System.out.println("    Leg: ");
-                        System.out.println("    Mode: " + plan.itinerary.get(i).legs.get(j).mode);
-                        System.out.println("    Start Time: " + plan.itinerary.get(i).legs.get(j).startTime.getTime());
-                        System.out.println("    End Time: "+plan.itinerary.get(i).legs.get(j).endTime.getTime());
-                        System.out.println("    Distance: "+plan.itinerary.get(i).legs.get(j).distance);
-                        System.out.println("    From: " + plan.itinerary.get(i).legs.get(j).from.name);
-                        System.out.println("    To: "+plan.itinerary.get(i).legs.get(j).to.name);
-                        System.out.println("");
-                    }
-                }
-                */
             }
 
         } catch (Exception e) {
