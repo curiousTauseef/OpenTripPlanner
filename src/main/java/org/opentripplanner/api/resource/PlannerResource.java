@@ -21,8 +21,8 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
+import java.awt.*;
 import java.util.Calendar;
-import org.glassfish.jersey.server.internal.routing.Routing;
 import org.opentripplanner.api.common.RoutingResource;
 import org.opentripplanner.api.model.Itinerary;
 import org.opentripplanner.api.model.Leg;
@@ -30,20 +30,18 @@ import org.opentripplanner.api.model.TripPlan;
 import org.opentripplanner.api.model.error.PlannerError;
 import org.opentripplanner.common.model.GenericLocation;
 import org.opentripplanner.routing.car_rental.CarRentalStation;
-import org.opentripplanner.routing.core.RoutingContext;
 import org.opentripplanner.routing.core.RoutingRequest;
 import org.opentripplanner.routing.core.TraverseMode;
 import org.opentripplanner.routing.core.TraverseModeSet;
-import org.opentripplanner.routing.graph.Graph;
 import org.opentripplanner.routing.impl.GraphPathFinder;
 import org.opentripplanner.routing.spt.GraphPath;
 import org.opentripplanner.standalone.OTPServer;
 import org.opentripplanner.standalone.Router;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.opentripplanner.routing.car_rental.CarRentalStationService;
 
 import java.util.*;
+import java.util.List;
 
 /**
  * This is the primary entry point for the trip planning web service.
@@ -103,7 +101,6 @@ public class PlannerResource extends RoutingResource {
                     shouldIwalk = true;
                 }
                 if (!shouldIwalk) {
-
                     RoutingRequest toStation = new RoutingRequest();
                     toStation.setModes(new TraverseModeSet(TraverseMode.WALK));
                     toStation.from = start;
@@ -153,7 +150,6 @@ public class PlannerResource extends RoutingResource {
                         }
                         past_leg = obdelujem;
                     }
-
                     skupnaListaItinerary.add(skupniItinerary);
                     plan.itinerary = skupnaListaItinerary;
                     response.setPlan(plan);
@@ -163,7 +159,6 @@ public class PlannerResource extends RoutingResource {
                 List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(request);
                 TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
                 response.setPlan(plan);
-
             }
 
         } catch (Exception e) {
@@ -179,8 +174,6 @@ public class PlannerResource extends RoutingResource {
                 request.cleanup(); // TODO verify that this cleanup step is being done on Analyst web services
             }
         }
-
-        System.out.println("\nResponse: " + response.requestParameters);
         return response;
     }
 
