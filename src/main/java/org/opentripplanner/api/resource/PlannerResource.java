@@ -83,8 +83,6 @@ public class PlannerResource extends RoutingResource {
 
             if (request.modes.toString().equals("TraverseMode (WALK, CAR)")) {
 
-                // TODO dodaj štetje parkingov na postaji
-
                 boolean shouldIwalk = false;
                 Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
                 GenericLocation start = request.from;
@@ -127,20 +125,34 @@ public class PlannerResource extends RoutingResource {
 
                     pathsFromStation.addAll(pathsBetweenStation);
                     pathsFromStation.addAll(pathsToStation);
-
                     TripPlan plan = GraphPathToTripPlanConverter.generatePlan(pathsFromStation, request);
-                    Itinerary skupni = new Itinerary();
+
+
+                    TripPlan skupniPlan = new TripPlan();
+                    Itinerary skupniItinerary = new Itinerary();
                     List<Itinerary> skupinIterary = new ArrayList<Itinerary>();
 
-                    System.out.println("\n PlannerResources");
+                    // TODO uredi še spodnje iterarije in lege
+
+                    System.out.println("");
                     for (int i = plan.itinerary.size()-1; i >= 0; i--) {
+                        System.out.println("Iterary: ");
+                        System.out.println("Start time: " + plan.itinerary.get(i).startTime.getTime());
+                        System.out.println("End time " +plan.itinerary.get(i).endTime.getTime());
+                        System.out.println("Duration " +plan.itinerary.get(i).duration);
                         for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
-                            skupni.addLeg(plan.itinerary.get(i).legs.get(j));
-                            System.out.println(plan.itinerary.get(i).legs.get(j));
+                            skupniItinerary.addLeg(plan.itinerary.get(i).legs.get(j));
+                            System.out.println("    Leg: ");
+                            System.out.println("    Mode: " + plan.itinerary.get(i).legs.get(j).mode);
+                            System.out.println("    Start Time: " + plan.itinerary.get(i).legs.get(j).startTime.getTime());
+                            System.out.println("    End Time: "+plan.itinerary.get(i).legs.get(j).endTime.getTime());
+                            System.out.println("    Distance: "+plan.itinerary.get(i).legs.get(j).distance);
+                            System.out.println("    From: " + plan.itinerary.get(i).legs.get(j).from.name);
+                            System.out.println("    To: "+plan.itinerary.get(i).legs.get(j).to.name);
+                            System.out.println("");
                         }
                     }
-
-                    skupinIterary.add(skupni);
+                    skupinIterary.add(skupniItinerary);
                     plan.itinerary = skupinIterary;
                     response.setPlan(plan);
                 }
@@ -149,13 +161,26 @@ public class PlannerResource extends RoutingResource {
                 List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(request);
                 TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
 
-                System.out.println("\n PlannerResources");
-                for (int i = 0; i < plan.itinerary.size(); i++) {
+                /*
+                System.out.println("");
+                for (int i = plan.itinerary.size()-1; i >= 0; i--) {
+                    System.out.println("Iterary: ");
+                    System.out.println("Start time: " + plan.itinerary.get(i).startTime.getTime());
+                    System.out.println("End time " +plan.itinerary.get(i).endTime.getTime());
+                    System.out.println("Duration " +plan.itinerary.get(i).duration);
                     for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
-                        System.out.println(plan.itinerary.get(i).legs.get(j));
+                        skupniItinerary.addLeg(plan.itinerary.get(i).legs.get(j));
+                        System.out.println("    Leg: ");
+                        System.out.println("    Mode: " + plan.itinerary.get(i).legs.get(j).mode);
+                        System.out.println("    Start Time: " + plan.itinerary.get(i).legs.get(j).startTime.getTime());
+                        System.out.println("    End Time: "+plan.itinerary.get(i).legs.get(j).endTime.getTime());
+                        System.out.println("    Distance: "+plan.itinerary.get(i).legs.get(j).distance);
+                        System.out.println("    From: " + plan.itinerary.get(i).legs.get(j).from.name);
+                        System.out.println("    To: "+plan.itinerary.get(i).legs.get(j).to.name);
+                        System.out.println("");
                     }
                 }
-
+                */
 
                 response.setPlan(plan);
             }
