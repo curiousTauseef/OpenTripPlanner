@@ -64,6 +64,24 @@ otp.core.Map = otp.Class({
         if(otp.config.maxZoom) mapProps['maxZoom'] = otp.config.maxZoom; //_.extend(mapProps, { maxZoom : otp.config.maxZoom });
 
         this.lmap = new L.Map('map', mapProps);
+        
+        // TODO Adding marker to map
+        var resourcePath = otp.config.resourcePath || "";
+        L.Icon.Default.imagePath = resourcePath + 'images/leaflet/';
+        var marker = L.marker([46.09192, 14.4817]).addTo(this.lmap);
+        marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+
+        /*
+        ZOOMIRANJE
+        this.lmap.on('zoomend', function() {
+            if (map.getZoom() === 13) {
+                this.lmap.featureLayer.setFilter(function() { return true; });
+            else {
+                this.lmap.featureLayer.setFilter(function() { return false; });
+            }
+        }
+        */
+
 
         this.layer_control = L.control.layers(this.baseLayers).addTo(this.lmap);
         L.control.zoom({ position : 'topright' }).addTo(this.lmap);

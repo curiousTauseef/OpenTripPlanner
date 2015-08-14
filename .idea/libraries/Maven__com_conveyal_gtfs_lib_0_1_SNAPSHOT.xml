@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: com.conveyal:gtfs-lib:0.1-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/conveyal/gtfs-lib/0.1-SNAPSHOT/gtfs-lib-0.1-20150729.230049-7.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/conveyal/gtfs-lib/0.1-SNAPSHOT/gtfs-lib-0.1-20150806.134212-8.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/com/conveyal/gtfs-lib/0.1-SNAPSHOT/gtfs-lib-0.1-20150729.230049-7-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/conveyal/gtfs-lib/0.1-SNAPSHOT/gtfs-lib-0.1-20150806.134212-8-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/conveyal/gtfs-lib/0.1-SNAPSHOT/gtfs-lib-0.1-20150729.230049-7-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/conveyal/gtfs-lib/0.1-SNAPSHOT/gtfs-lib-0.1-20150806.134212-8-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
