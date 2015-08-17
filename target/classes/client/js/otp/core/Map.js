@@ -66,30 +66,16 @@ otp.core.Map = otp.Class({
         this.lmap = new L.Map('map', mapProps);
         
         // TODO Adding marker to map
-
-
-        /*
-        $.get( "http://opendata.si/promet/parkirisca/lpt/", function( data ) {
-            var resourcePath = otp.config.resourcePath || "";
-            L.Icon.Default.imagePath = resourcePath + 'images/leaflet/';
-            var marker = L.marker([46.09192, 14.4817]).addTo(this.lmap);
-            marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-        });
-*/
         
         var resourcePath = otp.config.resourcePath || "";
         L.Icon.Default.imagePath = resourcePath + 'images/leaflet/';
-        var marker = L.marker([46.09192, 14.4817]).addTo(this.lmap);
-        marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
 
+        var parkirisca = preberiPodatke("http://opendata.si/promet/parkirisca/lpt/").Parkirisca;
         var dogodkiNaCestah = preberiPodatke("http://opendata.si/promet/events/");
-        var parkirisca = preberiPodatke("http://opendata.si/promet/parkirisca/lpt/");
         var bicikeLjPostaje = preberiPodatke("http://opendata.si/promet/bicikelj/list/");
         var stevciPrometa = preberiPodatke("http://opendata.si/promet/counters/");
 
-
-        console.log(JSON.stringify(parkirisca));
-
+        parseParkirisca(parkirisca, this.lmap);
 
         this.layer_control = L.control.layers(this.baseLayers).addTo(this.lmap);
         L.control.zoom({ position : 'topright' }).addTo(this.lmap);

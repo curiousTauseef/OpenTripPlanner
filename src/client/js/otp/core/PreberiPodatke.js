@@ -13,6 +13,22 @@ function preberiPodatke(url){
 }
 
 
-function parseParkirisca(parkiriscaObject){
+function parseParkirisca(ObjPa, map){
+
+    var marker = L.marker([46.09192, 14.4817]).addTo(map);
+    marker.bindPopup("<b>Hello world22!</b><br>I am a popup22.").openPopup();
+
+    ObjPa.forEach(function(entry) {
+        var ime = entry.Ime;
+        var pZaInvalide = entry.Invalidi_St_mest;
+        var vsehMest = entry.St_mest;
+        var vsehZasedenih = entry.P_kratkotrajniki;
+        var y = entry.KoordinataY_wgs;
+        var x = entry.KoordinataX_wgs;
+        var opis = entry.Opis;
+        console.log(opis);
+    });
+    
+    
 	
 }
