@@ -12,8 +12,30 @@ function preberiPodatke(url){
 	return vrni;
 }
 
+var resourcePath = otp.config.resourcePath || "";
 
-function parseParkirisca(ObjPa, map){
+var blueParking = L.icon({
+    iconUrl: resourcePath + 'images/parking/parkingBlue.png',
+    iconSize:     [25, 25],
+});
+
+var greenParking = L.icon({
+    iconUrl: resourcePath + 'images/parking/parkingGreen.png',
+    iconSize:     [25, 25],
+});
+
+var redParking = L.icon({
+    iconUrl: resourcePath + 'images/parking/parkingRed.png',
+    iconSize:     [25, 25],
+});
+
+var greyParking = L.icon({
+    iconUrl: resourcePath + 'images/parking/parkingGrey.png',
+    iconSize:     [25, 25],
+});
+
+
+function parseParkirisca(ObjPa){
 
     var parkings_array = [];
 
@@ -25,35 +47,31 @@ function parseParkirisca(ObjPa, map){
         var x = entry.KoordinataX_wgs;
         var opis = entry.Opis;
         var delavnik = entry.U_delovnik;
+        if(!delavnik){
+            delavnik = "";
+        }
         if(y !== null && x !== null){
             if(y !== undefined && x !== undefined){
                 if(entry.zasedenost){
-                // rdeča  če je zasedenost nad 90%
-                // modra če je zasedenost vmes
-                // zelena če je zasedenost pod 10%
-                
-                var marker = L.marker([y, x])
-                marker.bindPopup(ime).openPopup();
-                parkings_array[parkings_array.length] = marker;
-
                 var vsehZasedenih = entry.zasedenost.P_kratkotrajniki;
+                var prosta_mesta = parseInt(Math.abs(vsehMest)) - parseInt(Math.abs(vsehZasedenih));
                 var procentZasedenost = parseInt(Math.abs(vsehZasedenih)) * 1.0 / parseInt(Math.abs(vsehMest));
-                
-                /*
-                console.log("")
-                console.log(y);
-                console.log(x);
-                console.log(ime)
-                console.log("vseh zasedenih: "+vsehZasedenih)
-                console.log("vseh mest: "+vsehMest)
-                console.log("procent: "+procentZasedenost);
-                console.log("");
-                */
-
+                if(procentZasedenost >= 0.9){
+                    var marker = L.marker([y, x], {icon: redParking});               
+                    marker.bindPopup(ime + "<br># Mesta za invalide: " + pZaInvalide +"<br> # vseh mest: " + vsehMest + "<br> # prostih: " + prosta_mesta + "<br> # zasedenih: " + vsehZasedenih + "<br> " + opis +"<br> " + delavnik).openPopup();
+                    parkings_array[parkings_array.length] = marker;
+                } else if( procentZasedenost <= 0.1){
+                    var marker = L.marker([y, x], {icon: greenParking});               
+                    marker.bindPopup(ime + "<br># Mesta za invalide: " + pZaInvalide +"<br> # vseh mest: " + vsehMest + "<br> # prostih: " + prosta_mesta + "<br> # zasedenih: " + vsehZasedenih + "<br> " + opis +"<br> " + delavnik).openPopup();
+                    parkings_array[parkings_array.length] = marker;
+                }else {
+                    var marker = L.marker([y, x], {icon: blueParking});               
+                    marker.bindPopup(ime + "<br># Mesta za invalide: " + pZaInvalide +"<br> # vseh mest: " + vsehMest + "<br> # prostih: " + prosta_mesta + "<br> # zasedenih: " + vsehZasedenih + "<br> " + opis +"<br> " + delavnik).openPopup();
+                    parkings_array[parkings_array.length] = marker;
+                }
                 } else {
-                    // vstavi sivo
-                    var marker = L.marker([y, x])
-                    marker.bindPopup(ime).openPopup();
+                    var marker = L.marker([y, x], {icon: greyParking})
+                    marker.bindPopup(ime + "<br># Mesta za invalide: " + pZaInvalide +"<br> # vseh mest: " + vsehMest + "<br> # prostih: " + prosta_mesta + "<br> # zasedenih: " + vsehZasedenih + "<br> " + opis +"<br> " + delavnik).openPopup();
                     parkings_array[parkings_array.length] = marker;                }
             }
         }        

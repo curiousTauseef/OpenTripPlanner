@@ -241,7 +241,6 @@ var LargeIcon100Pct = L.Icon.extend({
     }
 });
 
-
 otp.modules.planner.IconFactory = otp.Class({
     
     startFlag : new StartFlagIcon(),

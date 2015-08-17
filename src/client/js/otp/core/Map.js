@@ -75,7 +75,7 @@ otp.core.Map = otp.Class({
         var bicikeLjPostaje = preberiPodatke("http://opendata.si/promet/bicikelj/list/");
         var stevciPrometa = preberiPodatke("http://opendata.si/promet/counters/");
 
-        var markerjiParkirisca = parseParkirisca(parkirisca, this.lmap);
+        var markerjiParkirisca = parseParkirisca(parkirisca);
 
         var overlaysFromAPI = {
             "Parkirišča": markerjiParkirisca
