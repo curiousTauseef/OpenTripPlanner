@@ -66,18 +66,60 @@ otp.core.Map = otp.Class({
         this.lmap = new L.Map('map', mapProps);
         
         // TODO Adding marker to map
+
+
+        /*
+        $.get( "http://opendata.si/promet/parkirisca/lpt/", function( data ) {
+            var resourcePath = otp.config.resourcePath || "";
+            L.Icon.Default.imagePath = resourcePath + 'images/leaflet/';
+            var marker = L.marker([46.09192, 14.4817]).addTo(this.lmap);
+            marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+        });
+*/
+        
         var resourcePath = otp.config.resourcePath || "";
         L.Icon.Default.imagePath = resourcePath + 'images/leaflet/';
         var marker = L.marker([46.09192, 14.4817]).addTo(this.lmap);
         marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
 
-        this.lmap.on('zoomend', function() {
-            if (map.getZoom() === 13) {
-                this.lmap.featureLayer.setFilter(function() { return true; });
-            else {
-                this.lmap.featureLayer.setFilter(function() { return false; });
+        var dogodkiNaCestah;
+        var parkirisca;
+        var bicikeLjPostaje;
+        var stevciPrometa;
+
+        $.ajax({
+            method: "GET",
+            url: "http://opendata.si/promet/events/",
+            async: false,
+            success: function (data) {
+                dogodkiNaCestah = data;
             }
-        }
+        });
+        $.ajax({
+            method: "GET",
+            url: "http://opendata.si/promet/parkirisca/lpt/",
+            async: false,
+            success: function (data) {
+                parkirisca = data;
+            }
+        });
+        $.ajax({
+            method: "GET",
+            url: "http://opendata.si/promet/bicikelj/list/",
+            async: false,
+            success: function (data) {
+                bicikeLjPostaje = data;
+            }
+        });
+        $.ajax({
+            method: "GET",
+            url: "http://opendata.si/promet/counters/",
+            async: false,
+            success: function (data) {
+                stevciPrometa = data;
+            }
+        });
+        console.log(JSON.stringify(dogodkiNaCestah));
 
 
         this.layer_control = L.control.layers(this.baseLayers).addTo(this.lmap);
