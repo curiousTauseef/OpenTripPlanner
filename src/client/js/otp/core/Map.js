@@ -82,43 +82,11 @@ otp.core.Map = otp.Class({
         var marker = L.marker([46.09192, 14.4817]).addTo(this.lmap);
         marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
 
-        var dogodkiNaCestah;
-        var parkirisca;
-        var bicikeLjPostaje;
-        var stevciPrometa;
+        var dogodkiNaCestah = preberiPodatke("http://opendata.si/promet/events/");
+        var parkirisca = preberiPodatke("http://opendata.si/promet/parkirisca/lpt/");
+        var bicikeLjPostaje = preberiPodatke("http://opendata.si/promet/bicikelj/list/");
+        var stevciPrometa = preberiPodatke("http://opendata.si/promet/counters/");
 
-        $.ajax({
-            method: "GET",
-            url: "http://opendata.si/promet/events/",
-            async: false,
-            success: function (data) {
-                dogodkiNaCestah = data;
-            }
-        });
-        $.ajax({
-            method: "GET",
-            url: "http://opendata.si/promet/parkirisca/lpt/",
-            async: false,
-            success: function (data) {
-                parkirisca = data;
-            }
-        });
-        $.ajax({
-            method: "GET",
-            url: "http://opendata.si/promet/bicikelj/list/",
-            async: false,
-            success: function (data) {
-                bicikeLjPostaje = data;
-            }
-        });
-        $.ajax({
-            method: "GET",
-            url: "http://opendata.si/promet/counters/",
-            async: false,
-            success: function (data) {
-                stevciPrometa = data;
-            }
-        });
 
 
         this.layer_control = L.control.layers(this.baseLayers).addTo(this.lmap);
