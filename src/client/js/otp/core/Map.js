@@ -81,7 +81,8 @@ otp.core.Map = otp.Class({
 
         var overlaysFromAPI = {
             "Parkirišča": markerjiParkirisca,
-            "BicikeLJ": markerjiBicikeLJ
+            "BicikeLJ": markerjiBicikeLJ,
+            "Števci prometa": markerjiStevci
         }
 
         this.layer_control = L.control.layers(this.baseLayers, overlaysFromAPI).addTo(this.lmap);

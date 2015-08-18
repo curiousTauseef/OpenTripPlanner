@@ -54,6 +54,27 @@ var greyBicikelj = L.icon({
     iconSize:     [25, 25],
 });
 
+var blueStopwatch = L.icon({
+    iconUrl: resourcePath + 'images/stevci/stopwatchBlue.png',
+    iconSize:     [25, 25],
+});
+
+var greenStopwatch = L.icon({
+    iconUrl: resourcePath + 'images/stevci/stopwatchGreen.png',
+    iconSize:     [25, 25],
+});
+
+var redStopwatch = L.icon({
+    iconUrl: resourcePath + 'images/stevci/stopwatchRed.png',
+    iconSize:     [25, 25],
+});
+
+var greyStopwatch = L.icon({
+    iconUrl: resourcePath + 'images/stevci/stopwatchGrey.png',
+    iconSize:     [25, 25],
+});
+
+
 
 function parseParkirisca(ObjPa){
 
@@ -134,16 +155,12 @@ function parserBicikelj(objBLJ){
                 }
             }
     });
-
-
     var bicikeLJ_layer = L.layerGroup(bicikeLJ_array);
     return bicikeLJ_layer; 
 }
 
 function parseStevecPrometa(objST){
     var stevci_array = [];
-
-
     objST.forEach(function(stevec){
         var ime = stevec.stevci_cestaOpis;
         var smer = stevec.stevci_smerOpis;
@@ -151,9 +168,27 @@ function parseStevecPrometa(objST){
         var y = stevec.stevci_geoY_wgs;
         var zasedenost = parseInt(stevec.stevci_occ);
         var opis = stevec.summary;
-        console.log(zasedenost);
+        if(zasedenost){
+            if(zasedenost >= 750){
+                var marker = L.marker([y, x], {icon: redStopwatch})
+                marker.bindPopup(opis);
+                stevci_array[stevci_array.length] = marker;
+            }else if(zasedenost <= 250){
+                var marker = L.marker([y, x], {icon: greenStopwatch})
+                marker.bindPopup(opis);
+                stevci_array[stevci_array.length] = marker;
+            }else{
+                var marker = L.marker([y, x], {icon: blueStopwatch})
+                marker.bindPopup(ime + " " + smer + "<br>" + opis);
+                stevci_array[stevci_array.length] = marker;
+            }
+        }else{
+            var marker = L.marker([y, x], {icon: greyStopwatch})
+            marker.bindPopup(opis);
+            stevci_array[stevci_array.length] = marker;
+        }
+        
     });
-
     var stevci_layer = L.layerGroup(stevci_array);
     return stevci_layer;
 }
