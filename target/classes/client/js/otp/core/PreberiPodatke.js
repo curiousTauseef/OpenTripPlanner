@@ -116,19 +116,19 @@ function parserBicikelj(objBLJ){
                 if(y !== undefined && x !== undefined){
                     if(available > 5 && free > 5){
                         var marker = L.marker([y, x], {icon: greenBicikelj})
-                        marker.bindPopup(ime + "<br> # vseh mest: " + total + "<br> # prosta kolesa: " + available + "<br> # prosta mesta: " + free + "<br> # koles v okvari: " + ticket);
+                        marker.bindPopup(ime + "<br> # vseh mest: " + total + "<br> # prosta kolesa: " + available + "<br> # prosta mesta: " + free + "<br> # kolesa v okvari: " + ticket);
                         bicikeLJ_array[bicikeLJ_array.length] = marker;
                     } else if (available > 0 || free > 0){
                         var marker = L.marker([y, x], {icon: blueBicikelj})
-                        marker.bindPopup(ime + "<br> # vseh mest: " + total + "<br> # prosta kolesa: " + available + "<br> # prosta mesta: " + free + "<br> # koles v okvari: " + ticket);
+                        marker.bindPopup(ime + "<br> # vseh mest: " + total + "<br> # prosta kolesa: " + available + "<br> # prosta mesta: " + free + "<br> # kolesa v okvari: " + ticket);
                         bicikeLJ_array[bicikeLJ_array.length] = marker;
                     } else if ( available === 0 || free === 0){
                         var marker = L.marker([y, x], {icon: redBicikelj})
-                        marker.bindPopup(ime + "<br> # vseh mest: " + total + "<br> # prosta kolesa: " + available + "<br> # prosta mesta: " + free + "<br> # koles v okvari: " + ticket);
+                        marker.bindPopup(ime + "<br> # vseh mest: " + total + "<br> # prosta kolesa: " + available + "<br> # prosta mesta: " + free + "<br> # kolesa v okvari: " + ticket);
                         bicikeLJ_array[bicikeLJ_array.length] = marker;
                     } else {
                         var marker = L.marker([y, x], {icon: greyBicikelj})
-                        marker.bindPopup(ime + "<br> # vseh mest: " + total + "<br> # prosta kolesa: " + available + "<br> # prosta mesta: " + free + "<br> # koles v okvari: " + ticket);
+                        marker.bindPopup(ime + "<br> # vseh mest: " + total + "<br> # prosta kolesa: " + available + "<br> # prosta mesta: " + free + "<br> # kolesa v okvari: " + ticket);
                         bicikeLJ_array[bicikeLJ_array.length] = marker;
                     }
                 }
@@ -138,4 +138,22 @@ function parserBicikelj(objBLJ){
 
     var bicikeLJ_layer = L.layerGroup(bicikeLJ_array);
     return bicikeLJ_layer; 
+}
+
+function parseStevecPrometa(objST){
+    var stevci_array = [];
+
+
+    objST.forEach(function(stevec){
+        var ime = stevec.stevci_cestaOpis;
+        var smer = stevec.stevci_smerOpis;
+        var x = stevec.stevci_geoX_wgs;
+        var y = stevec.stevci_geoY_wgs;
+        var zasedenost = parseInt(stevec.stevci_occ);
+        var opis = stevec.summary;
+        console.log(zasedenost);
+    });
+
+    var stevci_layer = L.layerGroup(stevci_array);
+    return stevci_layer;
 }

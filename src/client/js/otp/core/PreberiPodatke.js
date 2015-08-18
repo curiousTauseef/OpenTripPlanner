@@ -139,3 +139,21 @@ function parserBicikelj(objBLJ){
     var bicikeLJ_layer = L.layerGroup(bicikeLJ_array);
     return bicikeLJ_layer; 
 }
+
+function parseStevecPrometa(objST){
+    var stevci_array = [];
+
+
+    objST.forEach(function(stevec){
+        var ime = stevec.stevci_cestaOpis;
+        var smer = stevec.stevci_smerOpis;
+        var x = stevec.stevci_geoX_wgs;
+        var y = stevec.stevci_geoY_wgs;
+        var zasedenost = parseInt(stevec.stevci_occ);
+        var opis = stevec.summary;
+        console.log(zasedenost);
+    });
+
+    var stevci_layer = L.layerGroup(stevci_array);
+    return stevci_layer;
+}

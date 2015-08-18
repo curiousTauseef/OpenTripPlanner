@@ -72,11 +72,12 @@ otp.core.Map = otp.Class({
 
         var parkirisca = preberiPodatke("http://opendata.si/promet/parkirisca/lpt/").Parkirisca;
         var bicikeLjPostaje = preberiPodatke("http://opendata.si/promet/bicikelj/list/").markers;
+        var stevciPrometa = preberiPodatke("http://opendata.si/promet/counters/").feed.entry;
         var dogodkiNaCestah = preberiPodatke("http://opendata.si/promet/events/");
-        var stevciPrometa = preberiPodatke("http://opendata.si/promet/counters/");
 
         var markerjiParkirisca = parseParkirisca(parkirisca);
         var markerjiBicikeLJ = parserBicikelj(bicikeLjPostaje);
+        var markerjiStevci = parseStevecPrometa(stevciPrometa);
 
         var overlaysFromAPI = {
             "Parkirišča": markerjiParkirisca,
