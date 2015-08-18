@@ -96,6 +96,10 @@ public class CarRental {
                 }
                 past_leg = obdelujem;
             }
+            
+            skupniItinerary.startTime = plan.itinerary.get(0).startTime;
+            skupniItinerary.endTime = plan.itinerary.get(0).endTime;
+            
             skupnaListaItinerary.add(skupniItinerary);
             plan.itinerary = skupnaListaItinerary;
             return plan;
