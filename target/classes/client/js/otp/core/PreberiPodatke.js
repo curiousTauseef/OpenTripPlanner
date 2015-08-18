@@ -74,12 +74,33 @@ var greyStopwatch = L.icon({
     iconSize:     [25, 25],
 });
 
+var work = L.icon({
+    iconUrl: resourcePath + 'images/dogodki/work.jpg',
+    iconSize:     [25, 25],
+});
 
+var closed22 = L.icon({
+    iconUrl: resourcePath + 'images/dogodki/closed.jpg',
+    iconSize:     [25, 25],
+});
+
+var jam = L.icon({
+    iconUrl: resourcePath + 'images/dogodki/jam.jpg',
+    iconSize:     [25, 25],
+});
+
+var truck = L.icon({
+    iconUrl: resourcePath + 'images/dogodki/truck.jpg',
+    iconSize:     [25, 25],
+});
+
+var warning = L.icon({
+    iconUrl: resourcePath + 'images/dogodki/warnning.jpg',
+    iconSize:     [25, 25],
+});
 
 function parseParkirisca(ObjPa){
-
     var parkings_array = [];
-
     ObjPa.forEach(function(entry) {
         var ime = entry.Ime;
         var pZaInvalide = entry.Invalidi_St_mest;
@@ -122,9 +143,7 @@ function parseParkirisca(ObjPa){
 }
 
 function parserBicikelj(objBLJ){
-
     var bicikeLJ_array = [];
-
     jQuery.each(objBLJ, function(i, tren) {
             var ime = tren.name;
             var y = tren.lat;
@@ -139,7 +158,7 @@ function parserBicikelj(objBLJ){
                         var marker = L.marker([y, x], {icon: greenBicikelj})
                         marker.bindPopup(ime + "<br> # vseh mest: " + total + "<br> # prosta kolesa: " + available + "<br> # prosta mesta: " + free + "<br> # kolesa v okvari: " + ticket);
                         bicikeLJ_array[bicikeLJ_array.length] = marker;
-                    } else if (available > 0 || free > 0){
+                    } else if (available > 0 && free > 0){
                         var marker = L.marker([y, x], {icon: blueBicikelj})
                         marker.bindPopup(ime + "<br> # vseh mest: " + total + "<br> # prosta kolesa: " + available + "<br> # prosta mesta: " + free + "<br> # kolesa v okvari: " + ticket);
                         bicikeLJ_array[bicikeLJ_array.length] = marker;
@@ -187,8 +206,40 @@ function parseStevecPrometa(objST){
             marker.bindPopup(opis);
             stevci_array[stevci_array.length] = marker;
         }
-        
     });
     var stevci_layer = L.layerGroup(stevci_array);
     return stevci_layer;
+}
+
+function parserDogodkiNaCestah(objDG){
+    var dogodki_array = [];
+    objDG.forEach(function(dog){
+        var vzrok = dog.vzrok;
+        var opis = dog.opis;
+        var y = dog.y_wgs;
+        var x = dog.x_wgs;
+        if(vzrok === "Izredni dogodek"){
+            var marker = L.marker([y, x], {icon: warning})
+            marker.bindPopup(opis);
+            dogodki_array[dogodki_array.length] = marker;
+        } else if(vzrok === "Delo na cesti"){
+            var marker = L.marker([y, x], {icon: work})
+            marker.bindPopup(opis);
+            dogodki_array[dogodki_array.length] = marker;
+        } else if(vzrok === "Zaprta cesta"){
+            var marker = L.marker([y, x], {icon: closed22})
+            marker.bindPopup(opis);
+            dogodki_array[dogodki_array.length] = marker;
+        } else if(vzrok === "Prepoved za tovornjake"){
+            var marker = L.marker([y, x], {icon: truck})
+            marker.bindPopup(opis);
+            dogodki_array[dogodki_array.length] = marker;
+        } else if(vzrok === "Zastoj"){
+            var marker = L.marker([y, x], {icon: jam})
+            marker.bindPopup(opis);
+            dogodki_array[dogodki_array.length] = marker;
+        }
+    });
+    var dogodki_layer = L.layerGroup(dogodki_array);
+    return dogodki_layer; 
 }

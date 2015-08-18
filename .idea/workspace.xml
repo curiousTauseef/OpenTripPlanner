@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac10c414-85c1-4e02-aa67-1ad62cac0ebe" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/images/dogodki/closed.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/client/images/dogodki/closed.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/images/dogodki/jam.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/client/images/dogodki/jam.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/images/dogodki/truck.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/client/images/dogodki/truck.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/images/dogodki/warnning.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/client/images/dogodki/warnning.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/images/dogodki/work.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/client/images/dogodki/work.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/core/Map.js" afterPath="$PROJECT_DIR$/src/client/js/otp/core/Map.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/core/Map.js" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/core/Map.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/core/PreberiPodatke.js" afterPath="$PROJECT_DIR$/src/client/js/otp/core/PreberiPodatke.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/core/PreberiPodatke.js" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/core/PreberiPodatke.js" />
     </list>
     <ignored path="otp.iws" />
     <ignored path=".idea/workspace.xml" />
