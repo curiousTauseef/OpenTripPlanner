@@ -76,7 +76,7 @@ public class PlannerResource extends RoutingResource {
 
             if (request.modes.toString().equals("TraverseMode (WALK, CAR)")) {
                 Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
-                CarRental carRental = new CarRental(stations, request, router);
+                CarRentalRequest carRental = new CarRentalRequest(stations, request, router);
                 response.setPlan(carRental.getPlan(request.from, request.to));
             } else {
                 GraphPathFinder gpFinder = new GraphPathFinder(router);
