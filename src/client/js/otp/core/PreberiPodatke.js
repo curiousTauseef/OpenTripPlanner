@@ -1,3 +1,9 @@
+/*
+ *
+ * Klemen Koželj 17.8.2015
+ *
+ */
+
 
 function preberiPodatke(url){
 	var vrni;
@@ -96,6 +102,26 @@ var truck = L.icon({
 
 var warning = L.icon({
     iconUrl: resourcePath + 'images/dogodki/warnning.jpg',
+    iconSize:     [25, 25],
+});
+
+var blueCar = L.icon({
+    iconUrl: resourcePath + 'images/car/carBlue.png',
+    iconSize:     [25, 25],
+});
+
+var greenCar = L.icon({
+    iconUrl: resourcePath + 'images/car/carGreen.png',
+    iconSize:     [25, 25],
+});
+
+var redCar = L.icon({
+    iconUrl: resourcePath + 'images/car/carRed.png',
+    iconSize:     [25, 25],
+});
+
+var greyCar = L.icon({
+    iconUrl: resourcePath + 'images/car/carGrey.jpg',
     iconSize:     [25, 25],
 });
 
@@ -243,3 +269,62 @@ function parserDogodkiNaCestah(objDG){
     var dogodki_layer = L.layerGroup(dogodki_array);
     return dogodki_layer; 
 }
+
+function parserCarSharingPostaje(objCS){
+    var carRental_array = [];
+    objCS.forEach(function(stat){
+        var ime = stat.name;
+        var cars = parseInt(stat.numberOfCars);
+        var places = parseInt(stat.parkingPlaces);
+        var y = stat.geoLocation.latitude;
+        var x = stat.geoLocation.longitude;
+        if(places === 0 || cars === 0){
+            var marker = L.marker([y, x], {icon: redCar})
+            marker.bindPopup(ime + "<br> # avtomobilov: " + cars + "<br> # prostorov: " + places);
+            carRental_array[carRental_array.length] = marker;
+        }else if( places > 4 && cars > 4){
+            var marker = L.marker([y, x], {icon: greenCar})
+            marker.bindPopup(ime + "<br> # avtomobilov: " + cars + "<br> # prostorov: " + places);
+            carRental_array[carRental_array.length] = marker;
+        }else{
+            var marker = L.marker([y, x], {icon: blueCar})
+            marker.bindPopup(ime + "<br> # avtomobilov: " + cars + "<br> # prostorov: " + places);
+            carRental_array[carRental_array.length] = marker;
+        }
+    });
+    var carRental_layer = L.layerGroup(carRental_array);
+    return carRental_layer;
+}
+
+/*
+        Del kode is Map.js
+
+        this.lmap = new L.Map('map', mapProps);
+               
+        var resourcePath = otp.config.resourcePath || "";
+        L.Icon.Default.imagePath = resourcePath + 'images/leaflet/';
+
+        var parkirisca = preberiPodatke("http://opendata.si/promet/parkirisca/lpt/").Parkirisca;
+        var bicikeLjPostaje = preberiPodatke("http://opendata.si/promet/bicikelj/list/").markers;
+        var stevciPrometa = preberiPodatke("http://opendata.si/promet/counters/").feed.entry;
+        var dogodkiNaCestah = preberiPodatke("http://opendata.si/promet/events/").dogodki.dogodek;
+        var carSharingPostaje = preberiPodatke("https://maas-api.comtrade.com/api/locations?list=all");
+
+        var markerjiParkirisca = parseParkirisca(parkirisca);
+        var markerjiBicikeLJ = parserBicikelj(bicikeLjPostaje);
+        var markerjiStevci = parseStevecPrometa(stevciPrometa);
+        var markerjiDogodki = parserDogodkiNaCestah(dogodkiNaCestah);
+        var markerjiCarSharing = parserCarSharingPostaje(carSharingPostaje);
+
+        var overlaysFromAPI = {
+            "Parkirišča": markerjiParkirisca,
+            "BicikeLJ": markerjiBicikeLJ,
+            "Avant2go": markerjiCarSharing,
+            "Števci prometa": markerjiStevci,
+            "Dogodki na cestah": markerjiDogodki
+        }
+
+        this.layer_control = L.control.layers(this.baseLayers, overlaysFromAPI).addTo(this.lmap);
+        L.control.zoom({ position : 'topright' }).addTo(this.lmap);
+
+*/

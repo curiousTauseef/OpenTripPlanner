@@ -31,8 +31,6 @@ otp.core.Map = otp.Class({
         var this_ = this;
         this.webapp = webapp;
         
-        
-                
         //var baseLayers = {};
         var defaultBaseLayer = null;
         
@@ -53,7 +51,6 @@ otp.core.Map = otp.Class({
             }
         }
         
-
         var mapProps = { 
             layers  : [ defaultBaseLayer ],
             center : (otp.config.initLatLng || new L.LatLng(0,0)),
@@ -64,9 +61,7 @@ otp.core.Map = otp.Class({
         if(otp.config.maxZoom) mapProps['maxZoom'] = otp.config.maxZoom; //_.extend(mapProps, { maxZoom : otp.config.maxZoom });
 
         this.lmap = new L.Map('map', mapProps);
-        
-        // TODO Adding marker to map
-        
+               
         var resourcePath = otp.config.resourcePath || "";
         L.Icon.Default.imagePath = resourcePath + 'images/leaflet/';
 
@@ -74,15 +69,18 @@ otp.core.Map = otp.Class({
         var bicikeLjPostaje = preberiPodatke("http://opendata.si/promet/bicikelj/list/").markers;
         var stevciPrometa = preberiPodatke("http://opendata.si/promet/counters/").feed.entry;
         var dogodkiNaCestah = preberiPodatke("http://opendata.si/promet/events/").dogodki.dogodek;
+        var carSharingPostaje = preberiPodatke("https://maas-api.comtrade.com/api/locations?list=all");
 
         var markerjiParkirisca = parseParkirisca(parkirisca);
         var markerjiBicikeLJ = parserBicikelj(bicikeLjPostaje);
         var markerjiStevci = parseStevecPrometa(stevciPrometa);
         var markerjiDogodki = parserDogodkiNaCestah(dogodkiNaCestah);
+        var markerjiCarSharing = parserCarSharingPostaje(carSharingPostaje);
 
         var overlaysFromAPI = {
             "Parkirišča": markerjiParkirisca,
             "BicikeLJ": markerjiBicikeLJ,
+            "Avant2go": markerjiCarSharing,
             "Števci prometa": markerjiStevci,
             "Dogodki na cestah": markerjiDogodki
         }
