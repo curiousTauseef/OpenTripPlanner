@@ -109,42 +109,13 @@ public class CarRentalRequest {
                     pastLeg = lg;
                 }
             }
+            skupniItinerary.startTime = skupniItinerary.legs.get(0).startTime;
+            skupniItinerary.endTime = skupniItinerary.legs.get(skupniItinerary.legs.size() - 1 ).endTime;
+            plan.from = skupniItinerary.legs.get(0).from;
+            plan.to = skupniItinerary.legs.get(skupniItinerary.legs.size() - 1).to;
             skupnaListaItinerary.add(skupniItinerary);
             plan.itinerary = skupnaListaItinerary;
-
-            /*
-            plan.from = plan.itinerary.get(2).legs.get(0).from;
-            plan.to = plan.itinerary.get(0).legs.get(0).to;
-
-            Itinerary skupniItinerary = new Itinerary();
-            List<Itinerary> skupnaListaItinerary = new ArrayList<Itinerary>();
-            skupniItinerary.startTime = plan.itinerary.get(2).legs.get(0).startTime;
-            skupniItinerary.endTime = plan.itinerary.get(0).legs.get(0).endTime;
-
-            Leg past_leg = new Leg();
-            for (int i = plan.itinerary.size() - 1; i >= 0; i--) {
-                Leg obdelujem = plan.itinerary.get(i).legs.get(0);
-                if (i == plan.itinerary.size() - 1) {
-                    skupniItinerary.addLeg(obdelujem);
-                } else {
-                    Double duraton = obdelujem.getDuration();
-                    obdelujem.startTime = past_leg.endTime;
-                    Calendar obdelujemEndTime = (Calendar) obdelujem.startTime.clone();
-                    obdelujemEndTime.add(Calendar.SECOND, duraton.intValue());
-                    obdelujem.endTime = obdelujemEndTime;
-                    skupniItinerary.addLeg(obdelujem);
-                }
-                past_leg = obdelujem;
-            }
-            
-            skupniItinerary.startTime = plan.itinerary.get(0).startTime;
-            skupniItinerary.endTime = plan.itinerary.get(0).endTime;
-            
-            skupnaListaItinerary.add(skupniItinerary);
-            plan.itinerary = skupnaListaItinerary;
-            */
             return plan;
-
         }
         return null;
     }
