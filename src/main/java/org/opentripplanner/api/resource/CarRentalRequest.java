@@ -155,11 +155,6 @@ public class CarRentalRequest {
         return vrni;
     }
 
-    public static boolean distanceMeter(GenericLocation start, GenericLocation finish){
-        // TODO dobiši me
-        return false;
-    }
-
     public static Itinerary mergePath(TripPlan plan){
         Itinerary skupniItinerary = new Itinerary();
         Leg pastLeg = new Leg();
