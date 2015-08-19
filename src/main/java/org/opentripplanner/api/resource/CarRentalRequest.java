@@ -33,22 +33,29 @@ public class CarRentalRequest {
         TraverseModeSet tms = new TraverseModeSet();
 
 
-        boolean shouldIwalk = false;
+        boolean alternativePathWasUsed = false;
         Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
         CarRentalStation startStation = closestStation(start, stations, router, request, "start");
         CarRentalStation endStation = closestStation(end, stations, router, request, "end");
-        if (startStation == endStation) { // FIXME dodaj še 2 scenarija
-            RoutingRequest walkingRequest = new RoutingRequest();
-            walkingRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
-            walkingRequest.from = start;
-            walkingRequest.to = end;
+        if (startStation == endStation) { // FIXME odstrani zadnji robni primer
+            alternativePathWasUsed = true;
+            RoutingRequest alternativeRequest = new RoutingRequest();
+            alternativeRequest.from = start;
+            alternativeRequest.to = end;
+            if(mode == 0){
+                alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
+            }else if ( mode == 1){
+                alternativeRequest.setModes(new TraverseModeSet(TraverseMode.TRANSIT));
+            }else if (mode == 2){
+                alternativeRequest.allowBikeRental = true;
+                alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
+            }
             GraphPathFinder gpFinderWalking = new GraphPathFinder(router);
-            List<GraphPath> pathsWalking = gpFinderWalking.graphPathFinderEntryPoint(walkingRequest);
-            TripPlan planWalking = GraphPathToTripPlanConverter.generatePlan(pathsWalking, request);
-            shouldIwalk = true;
-            return planWalking;
+            List<GraphPath> pathsWalking = gpFinderWalking.graphPathFinderEntryPoint(alternativeRequest);
+            TripPlan alternativePlan = GraphPathToTripPlanConverter.generatePlan(pathsWalking, request);
+            return alternativePlan;
         }
-        if (!shouldIwalk) {
+        if (!alternativePathWasUsed) {
             RoutingRequest toStation = new RoutingRequest();
             RoutingRequest betweenStations = new RoutingRequest();
             RoutingRequest fromStation = new RoutingRequest();
