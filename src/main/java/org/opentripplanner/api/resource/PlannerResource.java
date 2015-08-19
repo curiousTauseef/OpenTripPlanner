@@ -74,17 +74,26 @@ public class PlannerResource extends RoutingResource {
             /* Find some good GraphPaths through the OTP Graph. */
             Router router = otpServer.getRouter(request.routerId);
 
+            System.out.println("\nRequest: " + request);
+
+            System.out.println(request.modes);
+
             if (request.modes.toString().equals("TraverseMode (WALK, CAR)")) {
                 Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
                 CarRentalRequest carRental = new CarRentalRequest(stations, request, router);
                 response.setPlan(carRental.getPlan(request.from, request.to));
+            } else if (request.modes.toString().equals("TraverseMode (WALK, CAR, TRAM, SUBWAY, RAIL, BUS, FERRY, CABLE_CAR, GONDOLA, FUNICULAR, TRANSIT, TRAINISH, BUSISH)")) {
+                Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
+                // TODO car sharing + transit
+            } else if (request.modes.toString().equals("TraverseMode (WALK, BICYCLE, CAR)")){
+                Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
+                // TODO car sharing + bike sharing
             } else {
                 GraphPathFinder gpFinder = new GraphPathFinder(router);
                 List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(request);
                 TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);
                 response.setPlan(plan);
             }
-
         } catch (Exception e) {
             PlannerError error = new PlannerError(e);
             if (!PlannerError.isPlanningError(e.getClass()))
@@ -98,6 +107,7 @@ public class PlannerResource extends RoutingResource {
                 request.cleanup(); // TODO verify that this cleanup step is being done on Analyst web services
             }
         }
+        System.out.println("\nResponse: " + response);
         return response;
     }
 }

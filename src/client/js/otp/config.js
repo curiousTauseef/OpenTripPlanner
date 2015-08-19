@@ -288,7 +288,7 @@ otp.config.modes = {
         "BUSISH,WALK"         : _tr("Bus Only"), 
     //TRANSLATORS: Travel by: mode of transport (Used in selection in Travel
     //Options widgets)
-        "TRAINISH,WALK"       : _tr("Rail Only"), 
+    //    "TRAINISH,WALK"       : _tr("Rail Only"), 
     //TRANSLATORS: Travel by: mode of transport (Used in selection in Travel
     //Options widgets)
         "BICYCLE"             : _tr('Bicycle Only'),
@@ -318,8 +318,8 @@ otp.config.modes = {
     //TRANSLATORS: Travel by: mode of transport (Used in selection in Travel
     //Options widgets)
     'WALK,BICYCLE_RENT'        :_tr('Rented Bicycle'),
-    //TRANSLATORS: Travel by: mode of transport (Used in selection in Travel
-    //Options widgets)
+    'WALK,CAR_RENT' :_tr('Rented Car'),
     'TRANSIT,WALK,BICYCLE_RENT': _tr('Transit & Rented Bicycle'),
-    'WALK,CAR_RENT' :_tr("Rented Car")
+    'TRANSIT,WALK,CAR_RENT' :_tr('Transit & Renter Car'),
+    'BICYCLE_RENT,CAR_RENT' :_tr('Rented Bicycle & Rented Car')
     };
