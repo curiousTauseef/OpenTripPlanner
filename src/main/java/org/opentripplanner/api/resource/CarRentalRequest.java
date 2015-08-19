@@ -30,29 +30,28 @@ public class CarRentalRequest {
     }
 
     public TripPlan getPlan(GenericLocation start, GenericLocation end, int mode) {
-        TraverseModeSet tms = new TraverseModeSet();
-
-
         boolean alternativePathWasUsed = false;
         Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
         CarRentalStation startStation = closestStation(start, stations, router, request, "start");
         CarRentalStation endStation = closestStation(end, stations, router, request, "end");
-        if (startStation == endStation) { // FIXME odstrani zadnji robni primer
+
+        RoutingRequest alternativeRequest = new RoutingRequest();
+        alternativeRequest.from = start;
+        alternativeRequest.to = end;
+        if(mode == 0){
+            alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
+        }else if ( mode == 1){
+            alternativeRequest.setModes(new TraverseModeSet(TraverseMode.TRANSIT));
+        }else if (mode == 2){
+            alternativeRequest.allowBikeRental = true;
+            alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
+        }
+        GraphPathFinder gpFinderWalking = new GraphPathFinder(router);
+        List<GraphPath> pathsWalking = gpFinderWalking.graphPathFinderEntryPoint(alternativeRequest);
+        TripPlan alternativePlan = GraphPathToTripPlanConverter.generatePlan(pathsWalking, request);
+
+        if (startStation == endStation) {
             alternativePathWasUsed = true;
-            RoutingRequest alternativeRequest = new RoutingRequest();
-            alternativeRequest.from = start;
-            alternativeRequest.to = end;
-            if(mode == 0){
-                alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
-            }else if ( mode == 1){
-                alternativeRequest.setModes(new TraverseModeSet(TraverseMode.TRANSIT));
-            }else if (mode == 2){
-                alternativeRequest.allowBikeRental = true;
-                alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
-            }
-            GraphPathFinder gpFinderWalking = new GraphPathFinder(router);
-            List<GraphPath> pathsWalking = gpFinderWalking.graphPathFinderEntryPoint(alternativeRequest);
-            TripPlan alternativePlan = GraphPathToTripPlanConverter.generatePlan(pathsWalking, request);
             return alternativePlan;
         }
         if (!alternativePathWasUsed) {
@@ -91,17 +90,25 @@ public class CarRentalRequest {
 
             pathsToStation.addAll(pathsBetweenStation);
             pathsToStation.addAll(pathsFromStation);
-            TripPlan plan = GraphPathToTripPlanConverter.generatePlan(pathsToStation, request);
+            TripPlan mainPlan = GraphPathToTripPlanConverter.generatePlan(pathsToStation, request);
 
-            Itinerary skupniItinerary = mergePath(plan);
+            Itinerary skupniItinerary = mergePath(mainPlan);
             List<Itinerary> skupnaListaItinerary = new ArrayList<Itinerary>();
 
-            plan.from = skupniItinerary.legs.get(0).from;
-            plan.to = skupniItinerary.legs.get(skupniItinerary.legs.size() - 1).to;
+            mainPlan.from = skupniItinerary.legs.get(0).from;
+            mainPlan.to = skupniItinerary.legs.get(skupniItinerary.legs.size() - 1).to;
 
             skupnaListaItinerary.add(skupniItinerary);
-            plan.itinerary = skupnaListaItinerary;
-            return plan;
+            mainPlan.itinerary = skupnaListaItinerary;
+
+            double mainDuration = mainPlan.itinerary.get(0).duration;
+            double alternativeDuration = alternativePlan.itinerary.get(0).duration;
+
+            if( mainDuration > alternativeDuration * 1.3 ){
+                return alternativePlan;
+            }else{
+                return mainPlan;
+            }
         }
         return null;
     }
@@ -146,6 +153,11 @@ public class CarRentalRequest {
             }
         }
         return vrni;
+    }
+
+    public static boolean distanceMeter(GenericLocation start, GenericLocation finish){
+        // TODO dobiši me
+        return false;
     }
 
     public static Itinerary mergePath(TripPlan plan){
