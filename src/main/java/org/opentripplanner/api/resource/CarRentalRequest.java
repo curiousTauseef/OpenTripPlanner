@@ -37,7 +37,7 @@ public class CarRentalRequest {
         Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
         CarRentalStation startStation = closestStation(start, stations, router, request, "start");
         CarRentalStation endStation = closestStation(end, stations, router, request, "end");
-        if (startStation == endStation && mode == 0) { // FIXME uredi pogoje
+        if (startStation == endStation) { // FIXME dodaj še 2 scenarija
             RoutingRequest walkingRequest = new RoutingRequest();
             walkingRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
             walkingRequest.from = start;
@@ -50,69 +50,48 @@ public class CarRentalRequest {
         }
         if (!shouldIwalk) {
             RoutingRequest toStation = new RoutingRequest();
+            RoutingRequest betweenStations = new RoutingRequest();
+            RoutingRequest fromStation = new RoutingRequest();
+
             if (mode == 0) {
                 toStation.setModes(new TraverseModeSet(TraverseMode.WALK));
+                fromStation.setModes(new TraverseModeSet(TraverseMode.WALK));
             } else if (mode == 1) {
                 toStation.setModes(new TraverseModeSet(TraverseMode.TRANSIT));
+                fromStation.setModes(new TraverseModeSet(TraverseMode.TRANSIT));
             } else if (mode == 2) {
                 toStation.allowBikeRental = true;
+                fromStation.allowBikeRental = true;
                 toStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
+                fromStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
             }
+
             toStation.from = start;
             toStation.setToString("::" + Double.toString(startStation.y) + "," + Double.toString(startStation.x));
             GraphPathFinder gpFinderToStation = new GraphPathFinder(router);
             List<GraphPath> pathsToStation = gpFinderToStation.graphPathFinderEntryPoint(toStation);
 
-            RoutingRequest betweenStations = new RoutingRequest();
             betweenStations.setModes(new TraverseModeSet(TraverseMode.CAR));
             betweenStations.setFromString("::" + Double.toString(startStation.y) + "," + Double.toString(startStation.x));
             betweenStations.setToString("::" + Double.toString(endStation.y) + "," + Double.toString(endStation.x));
             GraphPathFinder gpFinderBetweenStation = new GraphPathFinder(router);
             List<GraphPath> pathsBetweenStation = gpFinderBetweenStation.graphPathFinderEntryPoint(betweenStations);
 
-            RoutingRequest fromStation = new RoutingRequest();
-            if (mode == 0) {
-                fromStation.setModes(new TraverseModeSet(TraverseMode.WALK));
-            } else if (mode == 1) {
-                fromStation.setModes(new TraverseModeSet(TraverseMode.TRANSIT));
-            } else if (mode == 2) {
-                fromStation.allowBikeRental = true;
-                fromStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
-            }
             fromStation.setFromString("::" + Double.toString(endStation.y) + "," + Double.toString(endStation.x));
             fromStation.to = end;
             GraphPathFinder gpFinderFromStation = new GraphPathFinder(router);
             List<GraphPath> pathsFromStation = gpFinderFromStation.graphPathFinderEntryPoint(fromStation);
 
-            //FIXME Od tukaj naprej uredi izris
             pathsToStation.addAll(pathsBetweenStation);
             pathsToStation.addAll(pathsFromStation);
             TripPlan plan = GraphPathToTripPlanConverter.generatePlan(pathsToStation, request);
 
-            Itinerary skupniItinerary = new Itinerary();
+            Itinerary skupniItinerary = mergePath(plan);
             List<Itinerary> skupnaListaItinerary = new ArrayList<Itinerary>();
-            Leg pastLeg = new Leg();
-            for (int i = 0; i < plan.itinerary.size(); i++) {
-                for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
-                    Leg lg = plan.itinerary.get(i).legs.get(j);
-                    if(i == 0 && j == 0){
-                        pastLeg = lg;
-                        skupniItinerary.addLeg(lg);
-                    }else{
-                        Double duraton = lg.getDuration();
-                        lg.startTime = pastLeg.endTime;
-                        Calendar lgEndTime = (Calendar) lg.startTime.clone();
-                        lgEndTime.add(Calendar.SECOND, duraton.intValue());
-                        lg.endTime = lgEndTime;
-                        skupniItinerary.addLeg(lg);
-                    }
-                    pastLeg = lg;
-                }
-            }
-            skupniItinerary.startTime = skupniItinerary.legs.get(0).startTime;
-            skupniItinerary.endTime = skupniItinerary.legs.get(skupniItinerary.legs.size() - 1 ).endTime;
+
             plan.from = skupniItinerary.legs.get(0).from;
             plan.to = skupniItinerary.legs.get(skupniItinerary.legs.size() - 1).to;
+
             skupnaListaItinerary.add(skupniItinerary);
             plan.itinerary = skupnaListaItinerary;
             return plan;
@@ -161,4 +140,30 @@ public class CarRentalRequest {
         }
         return vrni;
     }
+
+    public static Itinerary mergePath(TripPlan plan){
+        Itinerary skupniItinerary = new Itinerary();
+        Leg pastLeg = new Leg();
+        for (int i = 0; i < plan.itinerary.size(); i++) {
+            for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
+                Leg lg = plan.itinerary.get(i).legs.get(j);
+                if(i == 0 && j == 0){
+                    pastLeg = lg;
+                    skupniItinerary.addLeg(lg);
+                }else{
+                    Double duraton = lg.getDuration();
+                    lg.startTime = pastLeg.endTime;
+                    Calendar lgEndTime = (Calendar) lg.startTime.clone();
+                    lgEndTime.add(Calendar.SECOND, duraton.intValue());
+                    lg.endTime = lgEndTime;
+                    skupniItinerary.addLeg(lg);
+                }
+                pastLeg = lg;
+            }
+        }
+        skupniItinerary.startTime = skupniItinerary.legs.get(0).startTime;
+        skupniItinerary.endTime = skupniItinerary.legs.get(skupniItinerary.legs.size() - 1 ).endTime;
+        return skupniItinerary;
+    }
+
 }
