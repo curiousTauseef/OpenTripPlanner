@@ -73,21 +73,20 @@ public class PlannerResource extends RoutingResource {
             request = super.buildRequest();
             /* Find some good GraphPaths through the OTP Graph. */
             Router router = otpServer.getRouter(request.routerId);
-
-            System.out.println("\nRequest: " + request);
-
-            System.out.println(request.modes);
-
+            
             if (request.modes.toString().equals("TraverseMode (WALK, CAR)")) {
                 Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
                 CarRentalRequest carRental = new CarRentalRequest(stations, request, router);
-                response.setPlan(carRental.getPlan(request.from, request.to));
+                response.setPlan(carRental.getPlan(request.from, request.to, 0));
             } else if (request.modes.toString().equals("TraverseMode (WALK, CAR, TRAM, SUBWAY, RAIL, BUS, FERRY, CABLE_CAR, GONDOLA, FUNICULAR, TRANSIT, TRAINISH, BUSISH)")) {
                 Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
-                // TODO car sharing + transit
+                CarRentalRequest carRental = new CarRentalRequest(stations, request, router);
+                response.setPlan(carRental.getPlan(request.from, request.to, 1));
+                System.out.println("CarSharing + Transit");
             } else if (request.modes.toString().equals("TraverseMode (WALK, BICYCLE, CAR)")){
                 Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
-                // TODO car sharing + bike sharing
+                CarRentalRequest carRental = new CarRentalRequest(stations, request, router);
+                response.setPlan(carRental.getPlan(request.from, request.to, 2));
             } else {
                 GraphPathFinder gpFinder = new GraphPathFinder(router);
                 List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(request);

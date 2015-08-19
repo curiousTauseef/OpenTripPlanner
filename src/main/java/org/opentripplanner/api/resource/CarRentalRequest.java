@@ -30,12 +30,15 @@ public class CarRentalRequest {
         this.router = router;
     }
 
-    public TripPlan getPlan(GenericLocation start, GenericLocation end) {
+    public TripPlan getPlan(GenericLocation start, GenericLocation end, int mode) {
+        TraverseModeSet tms = new TraverseModeSet();
+
+
         boolean shouldIwalk = false;
         Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
         CarRentalStation startStation = closestStation(start, stations, router, request, "start");
         CarRentalStation endStation = closestStation(end, stations, router, request, "end");
-        if (startStation == endStation) {
+        if (startStation == endStation) { // FIXME dodaj še en pogoj
             RoutingRequest walkingRequest = new RoutingRequest();
             walkingRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
             walkingRequest.from = start;
@@ -48,11 +51,21 @@ public class CarRentalRequest {
         }
         if (!shouldIwalk) {
             RoutingRequest toStation = new RoutingRequest();
-            toStation.setModes(new TraverseModeSet(TraverseMode.WALK));
+            if(mode == 0){
+                toStation.setModes(new TraverseModeSet(TraverseMode.WALK));
+            }else if( mode == 1){
+                toStation.setModes(new TraverseModeSet(TraverseMode.TRANSIT));
+            }else if(mode == 2){
+                toStation.allowBikeRental = true;
+                toStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
+            }
             toStation.from = start;
             toStation.setToString("::" + Double.toString(startStation.y) + "," + Double.toString(startStation.x));
             GraphPathFinder gpFinderToStation = new GraphPathFinder(router);
             List<GraphPath> pathsToStation = gpFinderToStation.graphPathFinderEntryPoint(toStation);
+
+            //TripPlan plan = GraphPathToTripPlanConverter.generatePlan(pathsToStation, request);
+            //return plan;
 
             RoutingRequest betweenStations = new RoutingRequest();
             betweenStations.setModes(new TraverseModeSet(TraverseMode.CAR));
@@ -62,7 +75,14 @@ public class CarRentalRequest {
             List<GraphPath> pathsBetweenStation = gpFinderBetweenStation.graphPathFinderEntryPoint(betweenStations);
 
             RoutingRequest fromStation = new RoutingRequest();
-            fromStation.setModes(new TraverseModeSet(TraverseMode.WALK));
+            if(mode == 0){
+                fromStation.setModes(new TraverseModeSet(TraverseMode.WALK));
+            }else if( mode == 1){
+                fromStation.setModes(new TraverseModeSet(TraverseMode.TRANSIT));
+            }else if(mode == 2){
+                fromStation.allowBikeRental = true;
+                fromStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
+            }
             fromStation.setFromString("::" + Double.toString(endStation.y) + "," + Double.toString(endStation.x));
             fromStation.to = end;
             GraphPathFinder gpFinderFromStation = new GraphPathFinder(router);
@@ -103,6 +123,7 @@ public class CarRentalRequest {
             skupnaListaItinerary.add(skupniItinerary);
             plan.itinerary = skupnaListaItinerary;
             return plan;
+
         }
         return null;
     }
