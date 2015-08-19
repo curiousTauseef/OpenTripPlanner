@@ -73,17 +73,19 @@ public class PlannerResource extends RoutingResource {
             request = super.buildRequest();
             /* Find some good GraphPaths through the OTP Graph. */
             Router router = otpServer.getRouter(request.routerId);
-            
             if (request.modes.toString().equals("TraverseMode (WALK, CAR)")) {
+                // Only CarSharing
                 Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
                 CarRentalRequest carRental = new CarRentalRequest(stations, request, router);
                 response.setPlan(carRental.getPlan(request.from, request.to, 0));
             } else if (request.modes.toString().equals("TraverseMode (WALK, CAR, TRAM, SUBWAY, RAIL, BUS, FERRY, CABLE_CAR, GONDOLA, FUNICULAR, TRANSIT, TRAINISH, BUSISH)")) {
+                // Transit + CarSharing + Transit
                 Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
                 CarRentalRequest carRental = new CarRentalRequest(stations, request, router);
                 response.setPlan(carRental.getPlan(request.from, request.to, 1));
                 System.out.println("CarSharing + Transit");
             } else if (request.modes.toString().equals("TraverseMode (WALK, BICYCLE, CAR)")){
+                // BicikeLJ + CarSharing + BicikeLJ
                 Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
                 CarRentalRequest carRental = new CarRentalRequest(stations, request, router);
                 response.setPlan(carRental.getPlan(request.from, request.to, 2));
@@ -106,7 +108,6 @@ public class PlannerResource extends RoutingResource {
                 request.cleanup(); // TODO verify that this cleanup step is being done on Analyst web services
             }
         }
-        System.out.println("\nResponse: " + response);
         return response;
     }
 }

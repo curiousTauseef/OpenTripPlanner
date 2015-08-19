@@ -16,7 +16,6 @@ import java.util.*;
 
 /**
  * Created by klemen on 12.8.2015.
- *
  */
 public class CarRentalRequest {
 
@@ -24,7 +23,7 @@ public class CarRentalRequest {
     RoutingRequest request;
     Router router;
 
-    public CarRentalRequest(Collection<CarRentalStation> stations, RoutingRequest request, Router router){
+    public CarRentalRequest(Collection<CarRentalStation> stations, RoutingRequest request, Router router) {
         this.stations = stations;
         this.request = request;
         this.router = router;
@@ -38,7 +37,7 @@ public class CarRentalRequest {
         Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
         CarRentalStation startStation = closestStation(start, stations, router, request, "start");
         CarRentalStation endStation = closestStation(end, stations, router, request, "end");
-        if (startStation == endStation) { // FIXME dodaj še en pogoj
+        if (startStation == endStation && mode == 0) { // FIXME uredi pogoje
             RoutingRequest walkingRequest = new RoutingRequest();
             walkingRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
             walkingRequest.from = start;
@@ -51,11 +50,11 @@ public class CarRentalRequest {
         }
         if (!shouldIwalk) {
             RoutingRequest toStation = new RoutingRequest();
-            if(mode == 0){
+            if (mode == 0) {
                 toStation.setModes(new TraverseModeSet(TraverseMode.WALK));
-            }else if( mode == 1){
+            } else if (mode == 1) {
                 toStation.setModes(new TraverseModeSet(TraverseMode.TRANSIT));
-            }else if(mode == 2){
+            } else if (mode == 2) {
                 toStation.allowBikeRental = true;
                 toStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
             }
@@ -63,9 +62,6 @@ public class CarRentalRequest {
             toStation.setToString("::" + Double.toString(startStation.y) + "," + Double.toString(startStation.x));
             GraphPathFinder gpFinderToStation = new GraphPathFinder(router);
             List<GraphPath> pathsToStation = gpFinderToStation.graphPathFinderEntryPoint(toStation);
-
-            //TripPlan plan = GraphPathToTripPlanConverter.generatePlan(pathsToStation, request);
-            //return plan;
 
             RoutingRequest betweenStations = new RoutingRequest();
             betweenStations.setModes(new TraverseModeSet(TraverseMode.CAR));
@@ -75,11 +71,11 @@ public class CarRentalRequest {
             List<GraphPath> pathsBetweenStation = gpFinderBetweenStation.graphPathFinderEntryPoint(betweenStations);
 
             RoutingRequest fromStation = new RoutingRequest();
-            if(mode == 0){
+            if (mode == 0) {
                 fromStation.setModes(new TraverseModeSet(TraverseMode.WALK));
-            }else if( mode == 1){
+            } else if (mode == 1) {
                 fromStation.setModes(new TraverseModeSet(TraverseMode.TRANSIT));
-            }else if(mode == 2){
+            } else if (mode == 2) {
                 fromStation.allowBikeRental = true;
                 fromStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
             }
@@ -88,10 +84,35 @@ public class CarRentalRequest {
             GraphPathFinder gpFinderFromStation = new GraphPathFinder(router);
             List<GraphPath> pathsFromStation = gpFinderFromStation.graphPathFinderEntryPoint(fromStation);
 
-            pathsFromStation.addAll(pathsBetweenStation);
-            pathsFromStation.addAll(pathsToStation);
-            TripPlan plan = GraphPathToTripPlanConverter.generatePlan(pathsFromStation, request);
+            //FIXME Od tukaj naprej uredi izris
+            pathsToStation.addAll(pathsBetweenStation);
+            pathsToStation.addAll(pathsFromStation);
+            TripPlan plan = GraphPathToTripPlanConverter.generatePlan(pathsToStation, request);
 
+            Itinerary skupniItinerary = new Itinerary();
+            List<Itinerary> skupnaListaItinerary = new ArrayList<Itinerary>();
+            Leg pastLeg = new Leg();
+            for (int i = 0; i < plan.itinerary.size(); i++) {
+                for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
+                    Leg lg = plan.itinerary.get(i).legs.get(j);
+                    if(i == 0 && j == 0){
+                        pastLeg = lg;
+                        skupniItinerary.addLeg(lg);
+                    }else{
+                        Double duraton = lg.getDuration();
+                        lg.startTime = pastLeg.endTime;
+                        Calendar lgEndTime = (Calendar) lg.startTime.clone();
+                        lgEndTime.add(Calendar.SECOND, duraton.intValue());
+                        lg.endTime = lgEndTime;
+                        skupniItinerary.addLeg(lg);
+                    }
+                    pastLeg = lg;
+                }
+            }
+            skupnaListaItinerary.add(skupniItinerary);
+            plan.itinerary = skupnaListaItinerary;
+
+            /*
             plan.from = plan.itinerary.get(2).legs.get(0).from;
             plan.to = plan.itinerary.get(0).legs.get(0).to;
 
@@ -101,7 +122,6 @@ public class CarRentalRequest {
             skupniItinerary.endTime = plan.itinerary.get(0).legs.get(0).endTime;
 
             Leg past_leg = new Leg();
-            System.out.println("");
             for (int i = plan.itinerary.size() - 1; i >= 0; i--) {
                 Leg obdelujem = plan.itinerary.get(i).legs.get(0);
                 if (i == plan.itinerary.size() - 1) {
@@ -122,6 +142,7 @@ public class CarRentalRequest {
             
             skupnaListaItinerary.add(skupniItinerary);
             plan.itinerary = skupnaListaItinerary;
+            */
             return plan;
 
         }
