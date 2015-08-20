@@ -38,13 +38,13 @@ public class CarRentalRequest {
         RoutingRequest alternativeRequest = new RoutingRequest();
         alternativeRequest.from = start;
         alternativeRequest.to = end;
-        if(mode == 0){
+        if (mode == 0) {
             alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
-        }else if ( mode == 1){
+        } else if (mode == 1) {
             alternativeRequest.allowBikeRental = true;
             alternativeRequest.useBikeRentalAvailabilityInformation = true;
             alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE, TraverseMode.TRANSIT));
-        }else if (mode == 2){
+        } else if (mode == 2) {
             alternativeRequest.allowBikeRental = true;
             alternativeRequest.useBikeRentalAvailabilityInformation = true;
             alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
@@ -113,9 +113,9 @@ public class CarRentalRequest {
             double mainDuration = mainPlan.itinerary.get(0).duration;
             double alternativeDuration = alternativePlan.itinerary.get(0).duration;
 
-            if( mainDuration > alternativeDuration * 1.3 ){
+            if (mainDuration > alternativeDuration * 1.3) {
                 return alternativePlan;
-            }else{
+            } else {
                 return mainPlan;
             }
 
@@ -165,16 +165,16 @@ public class CarRentalRequest {
         return vrni;
     }
 
-    public static Itinerary mergePath(TripPlan plan){
+    public static Itinerary mergePath(TripPlan plan) {
         Itinerary skupniItinerary = new Itinerary();
         Leg pastLeg = new Leg();
         for (int i = 0; i < plan.itinerary.size(); i++) {
             for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
                 Leg lg = plan.itinerary.get(i).legs.get(j);
-                if(i == 0 && j == 0){
+                if (i == 0 && j == 0) {
                     pastLeg = lg;
                     skupniItinerary.addLeg(lg);
-                }else{
+                } else {
                     Double duraton = lg.getDuration();
                     lg.startTime = pastLeg.endTime;
                     Calendar lgEndTime = (Calendar) lg.startTime.clone();
@@ -186,8 +186,7 @@ public class CarRentalRequest {
             }
         }
         skupniItinerary.startTime = skupniItinerary.legs.get(0).startTime;
-        skupniItinerary.endTime = skupniItinerary.legs.get(skupniItinerary.legs.size() - 1 ).endTime;
+        skupniItinerary.endTime = skupniItinerary.legs.get(skupniItinerary.legs.size() - 1).endTime;
         return skupniItinerary;
     }
-
 }
