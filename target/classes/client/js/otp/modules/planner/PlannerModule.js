@@ -609,7 +609,7 @@ otp.modules.planner.PlannerModule =
         if(mode === "RAIL") return '#b00';
         if(mode === "BUS") return '#080';
         if(mode === "TRAM") return '#800';
-        if(mode === "CAR") return '#444';
+        if(mode === "CAR") return '#e57200'; // default was grey #444 
         return '#aaa';
     },
 

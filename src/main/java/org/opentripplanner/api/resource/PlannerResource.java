@@ -90,6 +90,7 @@ public class PlannerResource extends RoutingResource {
                 CarRentalRequest carRental = new CarRentalRequest(stations, request, router);
                 response.setPlan(carRental.getPlan(request.from, request.to, 2));
             } else {
+                // Default
                 GraphPathFinder gpFinder = new GraphPathFinder(router);
                 List<GraphPath> paths = gpFinder.graphPathFinderEntryPoint(request);
                 TripPlan plan = GraphPathToTripPlanConverter.generatePlan(paths, request);

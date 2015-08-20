@@ -321,5 +321,5 @@ otp.config.modes = {
     'WALK,CAR_RENT' :_tr('Rented Car'),
     'TRANSIT,WALK,BICYCLE_RENT': _tr('Transit & Rented Bicycle'),
     'TRANSIT,WALK,CAR_RENT' :_tr('Transit & Renter Car'),
-    'BICYCLE_RENT,CAR_RENT' :_tr('Rented Bicycle & Rented Car')
+    'CAR_RENT,BICYCLE_RENT' :_tr('Rented Car & Rented Bicycle')
     };
