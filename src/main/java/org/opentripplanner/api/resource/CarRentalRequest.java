@@ -67,7 +67,9 @@ public class CarRentalRequest {
                 fromStation.setModes(new TraverseModeSet(TraverseMode.TRANSIT));
             } else if (mode == 2) {
                 toStation.allowBikeRental = true;
+                toStation.useBikeRentalAvailabilityInformation = true;
                 fromStation.allowBikeRental = true;
+                fromStation.useBikeRentalAvailabilityInformation = true;
                 toStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
                 fromStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
             }
