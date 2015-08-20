@@ -41,9 +41,12 @@ public class CarRentalRequest {
         if(mode == 0){
             alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
         }else if ( mode == 1){
-            alternativeRequest.setModes(new TraverseModeSet(TraverseMode.TRANSIT));
+            alternativeRequest.allowBikeRental = true;
+            alternativeRequest.useBikeRentalAvailabilityInformation = true;
+            alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE, TraverseMode.TRANSIT));
         }else if (mode == 2){
             alternativeRequest.allowBikeRental = true;
+            alternativeRequest.useBikeRentalAvailabilityInformation = true;
             alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
         }
         GraphPathFinder gpFinderWalking = new GraphPathFinder(router);
@@ -63,8 +66,12 @@ public class CarRentalRequest {
                 toStation.setModes(new TraverseModeSet(TraverseMode.WALK));
                 fromStation.setModes(new TraverseModeSet(TraverseMode.WALK));
             } else if (mode == 1) {
-                toStation.setModes(new TraverseModeSet(TraverseMode.TRANSIT));
-                fromStation.setModes(new TraverseModeSet(TraverseMode.TRANSIT));
+                toStation.allowBikeRental = true;
+                toStation.useBikeRentalAvailabilityInformation = true;
+                fromStation.allowBikeRental = true;
+                fromStation.useBikeRentalAvailabilityInformation = true;
+                toStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE, TraverseMode.TRANSIT));
+                fromStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE, TraverseMode.TRANSIT));
             } else if (mode == 2) {
                 toStation.allowBikeRental = true;
                 toStation.useBikeRentalAvailabilityInformation = true;
@@ -111,6 +118,7 @@ public class CarRentalRequest {
             }else{
                 return mainPlan;
             }
+
         }
         return null;
     }

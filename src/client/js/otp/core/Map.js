@@ -78,11 +78,11 @@ otp.core.Map = otp.Class({
         var markerjiCarSharing = parserCarSharingPostaje(carSharingPostaje);
 
         var overlaysFromAPI = {
-            "Parkirišča": markerjiParkirisca,
-            "BicikeLJ": markerjiBicikeLJ,
-            "Avant2go": markerjiCarSharing,
-            "Števci prometa": markerjiStevci,
-            "Dogodki na cestah": markerjiDogodki
+            "Parking Spots": markerjiParkirisca,
+            "BikeSharing": markerjiBicikeLJ,
+            "CarSharing": markerjiCarSharing,
+            "Traffic Counters": markerjiStevci,
+            "Traffic Events": markerjiDogodki
         }
 
         this.layer_control = L.control.layers(this.baseLayers, overlaysFromAPI).addTo(this.lmap);

@@ -289,7 +289,5 @@ public class DefaultFareServiceImpl implements FareService, Serializable {
             LOG.debug("No fare for a ride sequence: {}", rides);
         }
         return bestFare;
-
     }
-
 }

@@ -20,6 +20,7 @@ import org.onebusaway.gtfs.model.FareRule;
 import org.onebusaway.gtfs.model.Route;
 import org.onebusaway.gtfs.services.GtfsRelationalDao;
 import org.opentripplanner.routing.bike_rental.TimeBasedBikeRentalFareServiceFactory;
+import org.opentripplanner.routing.car_rental.TimeBasedCarRentalFareServiceFactory;
 import org.opentripplanner.routing.core.Fare.FareType;
 import org.opentripplanner.routing.core.FareRuleSet;
 import org.opentripplanner.routing.fares.MultipleFareServiceFactory;
@@ -170,7 +171,12 @@ public class DefaultFareServiceFactory implements FareServiceFactory {
             retval = new MultipleFareServiceFactory.AddingMultipleFareServiceFactory();
             break;
         case "bike-rental-time-based":
+            System.out.println("routing/impl/DefaultFareServiceFactory BikeRental");
             retval = new TimeBasedBikeRentalFareServiceFactory();
+            break;
+        case "car-retal-time-based":
+            System.out.println("routing/impl/DefaultFareServiceFactory CarRental");
+            retval = new TimeBasedCarRentalFareServiceFactory();
             break;
         case "san-francisco":
             retval = new SFBayFareServiceFactory();

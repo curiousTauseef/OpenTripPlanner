@@ -113,7 +113,7 @@ public class RoutingRequest implements Cloneable, Serializable {
     public boolean wheelchairAccessible = false;
 
     /** The maximum number of itineraries to return. */
-    public int numItineraries = 3;
+    public int numItineraries = 1; // FIXME sem nastavil na 1 iz 3
 
     /** The maximum slope of streets for wheelchair trips. */
     public double maxSlope = 0.0833333333333; // ADA max wheelchair ramp slope is a good default.
