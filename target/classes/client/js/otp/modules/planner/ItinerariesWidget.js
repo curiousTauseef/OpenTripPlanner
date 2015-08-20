@@ -428,10 +428,12 @@ otp.widgets.ItinerariesWidget =
 
         // add alerts, if applicable
         alerts = alerts || [];
+        /* FIXME MAX WALKING DISTANCE COMMENDED OUT!!!
         if(itin.totalWalk > itin.tripPlan.queryParams.maxWalkDistance) {
             //TRANSLATORS: Shown as alert text before showing itinerary.
             alerts.push(_tr("Total walk distance for this trip exceeds specified maximum"));
         }
+        */
 
         for(var i = 0; i < alerts.length; i++) {
             itinDiv.append("<div class='otp-itinAlertRow'>"+alerts[i]+"</div>");
