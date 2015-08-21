@@ -32,8 +32,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 
 public class TimeBasedBikeRentalFareServiceFactory implements FareServiceFactory {
 
-    private static Logger log = LoggerFactory
-            .getLogger(TimeBasedBikeRentalFareServiceFactory.class);
+    private static Logger log = LoggerFactory.getLogger(TimeBasedBikeRentalFareServiceFactory.class);
 
     // Each entry is <max time, cents at that time>; the list is sorted in
     // ascending time order
