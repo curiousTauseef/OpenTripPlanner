@@ -27,6 +27,7 @@ import org.opentripplanner.api.model.error.PlannerError;
 import org.opentripplanner.routing.car_rental.CarRentalStation;
 import org.opentripplanner.routing.core.RoutingRequest;
 import org.opentripplanner.routing.impl.GraphPathFinder;
+import org.opentripplanner.routing.services.FareService;
 import org.opentripplanner.routing.spt.GraphPath;
 import org.opentripplanner.standalone.OTPServer;
 import org.opentripplanner.standalone.Router;
@@ -69,13 +70,23 @@ public class PlannerResource extends RoutingResource {
         Response response = new Response(uriInfo);
         RoutingRequest request = null;
 
-
         try {
             /* Fill in request fields from query parameters via shared superclass method, catching any errors. */
             request = super.buildRequest();
             /* Find some good GraphPaths through the OTP Graph. */
 
+
             Router router = otpServer.getRouter(request.routerId);
+
+            FareService fareService = router.graph.getService(FareService.class);
+
+            List<FareService> services = fareService.getFareServices();
+
+            for(FareService fs : services){
+                System.out.println("Fare service: " + fs.getClass());
+            }
+
+
             if (request.modes.toString().equals("TraverseMode (CARRENT)")) {
                 // Only CarSharing
                 Collection<CarRentalStation> stations = router.graph.getCarRentalStations();

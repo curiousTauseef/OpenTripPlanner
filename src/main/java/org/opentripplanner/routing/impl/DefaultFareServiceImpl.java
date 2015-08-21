@@ -197,6 +197,11 @@ public class DefaultFareServiceImpl implements FareService, Serializable {
         return hasFare ? fare : null;
     }
 
+    @Override
+    public List<FareService> getFareServices() {
+        return null;
+    }
+
     protected float getLowestCost(FareType fareType, List<Ride> rides,
             Collection<FareRuleSet> fareRules) {
         // Dynamic algorithm to calculate fare cost.

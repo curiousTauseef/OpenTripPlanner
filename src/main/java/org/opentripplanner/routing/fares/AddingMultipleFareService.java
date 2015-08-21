@@ -89,4 +89,8 @@ public class AddingMultipleFareService implements FareService, Serializable {
         // Can be null here if no sub-service has returned fare
         return fare;
     }
+
+    public List<FareService> getFareServices(){
+        return this.subServices;
+    }
 }

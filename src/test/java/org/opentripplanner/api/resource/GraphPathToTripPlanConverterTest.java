@@ -1909,6 +1909,11 @@ public class GraphPathToTripPlanConverterTest {
             fare.addFare(FareType.special, new WrappedCurrency(), 8);
             return fare;
         }
+
+        @Override
+        public List<FareService> getFareServices() {
+            return null;
+        }
     }
 
     /**

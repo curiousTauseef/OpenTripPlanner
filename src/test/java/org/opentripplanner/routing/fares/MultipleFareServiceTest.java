@@ -15,6 +15,7 @@ package org.opentripplanner.routing.fares;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import junit.framework.TestCase;
 
@@ -41,6 +42,11 @@ public class MultipleFareServiceTest extends TestCase {
         @Override
         public Fare getCost(GraphPath path) {
             return fare;
+        }
+
+        @Override
+        public List<FareService> getFareServices() {
+            return null;
         }
     }
 

@@ -370,6 +370,11 @@ public class NycFareServiceImpl implements FareService, Serializable {
 		return fare;
 	}
 
+	@Override
+	public List<FareService> getFareServices() {
+		return null;
+	}
+
 	private List<AgencyAndId> makeMtaStopList(String... stops) {
 
 		ArrayList<AgencyAndId> out = new ArrayList<AgencyAndId>();

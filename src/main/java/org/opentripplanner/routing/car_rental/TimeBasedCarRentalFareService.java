@@ -69,4 +69,9 @@ public class TimeBasedCarRentalFareService implements FareService, Serializable 
         fare.addFare(Fare.FareType.regular, new WrappedCurrency(currency), cost);
         return fare;
     }
+
+    @Override
+    public List<FareService> getFareServices() {
+        return null;
+    }
 }

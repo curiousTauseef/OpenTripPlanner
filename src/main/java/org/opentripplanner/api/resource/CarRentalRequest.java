@@ -39,12 +39,15 @@ public class CarRentalRequest {
         alternativeRequest.from = start;
         alternativeRequest.to = end;
         if (mode == 0) {
+            // Basic CarSharing
             alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
         } else if (mode == 1) {
+            // CarSharing + Transit
             alternativeRequest.allowBikeRental = true;
             alternativeRequest.useBikeRentalAvailabilityInformation = true;
             alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE, TraverseMode.TRANSIT));
         } else if (mode == 2) {
+            // CarSharing + BikeSharing
             alternativeRequest.allowBikeRental = true;
             alternativeRequest.useBikeRentalAvailabilityInformation = true;
             alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
@@ -63,9 +66,11 @@ public class CarRentalRequest {
             RoutingRequest fromStation = new RoutingRequest();
 
             if (mode == 0) {
+                // Basic CarSharing
                 toStation.setModes(new TraverseModeSet(TraverseMode.WALK));
                 fromStation.setModes(new TraverseModeSet(TraverseMode.WALK));
             } else if (mode == 1) {
+                // CarSharing + Transit
                 toStation.allowBikeRental = true;
                 toStation.useBikeRentalAvailabilityInformation = true;
                 fromStation.allowBikeRental = true;
@@ -73,6 +78,7 @@ public class CarRentalRequest {
                 toStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE, TraverseMode.TRANSIT));
                 fromStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE, TraverseMode.TRANSIT));
             } else if (mode == 2) {
+                // CarSharing + BikeSharing
                 toStation.allowBikeRental = true;
                 toStation.useBikeRentalAvailabilityInformation = true;
                 fromStation.allowBikeRental = true;
@@ -101,6 +107,7 @@ public class CarRentalRequest {
             pathsToStation.addAll(pathsFromStation);
             TripPlan mainPlan = GraphPathToTripPlanConverter.generatePlan(pathsToStation, request);
 
+            // TODO v skupniItinerary dodaj cene
             Itinerary skupniItinerary = mergePath(mainPlan);
             List<Itinerary> skupnaListaItinerary = new ArrayList<Itinerary>();
 
