@@ -513,7 +513,7 @@ public abstract class RoutingResource {
             request.setOptimize(optimize);
 
         /* Temporary code to get bike/car parking and renting working. */
-        if (modes != null) modes.applyToRoutingRequest(request);
+        if (modes != null) modes.applyToRoutingRequest(request); // FIXME TUKAJ POPRAVI
 
         if (request.allowBikeRental && bikeSpeed == null) {
             //slower bike speed for bike sharing, based on empirical evidence from DC.

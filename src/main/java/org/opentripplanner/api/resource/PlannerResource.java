@@ -68,22 +68,25 @@ public class PlannerResource extends RoutingResource {
         // Create response object, containing a copy of all request parameters. Maybe they should be in the debug section of the response.
         Response response = new Response(uriInfo);
         RoutingRequest request = null;
+
+
         try {
             /* Fill in request fields from query parameters via shared superclass method, catching any errors. */
             request = super.buildRequest();
             /* Find some good GraphPaths through the OTP Graph. */
+
             Router router = otpServer.getRouter(request.routerId);
-            if (request.modes.toString().equals("TraverseMode (WALK, CAR)")) {
+            if (request.modes.toString().equals("TraverseMode (CARRENT)")) {
                 // Only CarSharing
                 Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
                 CarRentalRequest carRental = new CarRentalRequest(stations, request, router);
                 response.setPlan(carRental.getPlan(request.from, request.to, 0));
-            } else if (request.modes.toString().equals("TraverseMode (WALK, CAR, TRAM, SUBWAY, RAIL, BUS, FERRY, CABLE_CAR, GONDOLA, FUNICULAR, TRANSIT, TRAINISH, BUSISH)")) {
+            } else if (request.modes.toString().equals("TraverseMode (TRAM, SUBWAY, RAIL, BUS, FERRY, CABLE_CAR, GONDOLA, FUNICULAR, TRANSIT, TRAINISH, BUSISH, CARRENT)")) {
                 // Transit + CarSharing + Transit
                 Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
                 CarRentalRequest carRental = new CarRentalRequest(stations, request, router);
                 response.setPlan(carRental.getPlan(request.from, request.to, 1));
-            } else if (request.modes.toString().equals("TraverseMode (WALK, BICYCLE, CAR)")){
+            } else if (request.modes.toString().equals("TraverseMode (BICYCLE, CARRENT)")){
                 // BicikeLJ + CarSharing + BicikeLJ
                 Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
                 CarRentalRequest carRental = new CarRentalRequest(stations, request, router);

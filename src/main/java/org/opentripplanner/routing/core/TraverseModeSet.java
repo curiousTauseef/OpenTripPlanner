@@ -35,6 +35,8 @@ public class TraverseModeSet implements Cloneable, Serializable {
 
     private static final int MODE_CAR = 4;
 
+    private static final int MODE_CARRENT = 8;
+
     private static final int MODE_BUS = 16;
 
     private static final int MODE_TRAM = 32;
@@ -97,6 +99,8 @@ public class TraverseModeSet implements Cloneable, Serializable {
             return MODE_WALK;
         case CAR:
             return MODE_CAR;
+        case CARRENT:
+            return MODE_CARRENT;
         case BUS:
             return MODE_BUS;
         case TRAM:

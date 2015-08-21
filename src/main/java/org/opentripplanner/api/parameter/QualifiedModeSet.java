@@ -41,13 +41,14 @@ public class QualifiedModeSet implements Serializable {
         /* Start with an empty mode set. */
         TraverseModeSet modes = new TraverseModeSet();
         req.setModes(modes);
-        
+
         /* First, copy over all the unqualified modes and see if we are using transit. FIXME HACK */
         for (QualifiedMode qMode : qModes) {
             modes.setMode(qMode.mode, true);
         }
+
         boolean usingTransit = modes.isTransit();
-        
+
         // We used to always set WALK to true, but this forced walking when someone wanted to use a bike.
         // We also want it to be possible to force biking-only (e.g. this is done in some consistency tests).
         // TODO clearly define mode semantics: does presence of mode mean it is allowable, preferred... ?
