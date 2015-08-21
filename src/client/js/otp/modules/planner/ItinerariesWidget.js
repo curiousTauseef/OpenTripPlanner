@@ -333,6 +333,8 @@ otp.widgets.ItinerariesWidget =
     renderItinerary : function(itin, index, alerts) {
         var this_ = this;
 
+        console.log(itin);
+
         // render legs
         var divId = this.module.id+"-itinAccord-"+index;
         var accordHtml = "<div id='"+divId+"' class='otp-itinAccord'></div>";
@@ -488,9 +490,13 @@ otp.widgets.ItinerariesWidget =
             }*/
            //TRANSLATORS: cost of trip
             tripSummary.append('<div class="otp-itinTripSummaryLabel">' + _tr("Fare") +'</div><div class="otp-itinTripSummaryText">'+itin.getFareStr()+'</div>');
+
         }
-
-
+        
+        if(itin.itinData.fare) {
+            // TODO dodaj razlikovanje med cenami za CarSharing oziroma BikeSharing
+            tripSummary.append('<div class="otp-itinTripSummaryLabel">' + _tr("Fare") +'</div><div class="otp-itinTripSummaryText">'+itin.getFareStr()+'</div>');
+        }
 
         var tripSummaryFooter = $('<div class="otp-itinTripSummaryFooter" />');
 
