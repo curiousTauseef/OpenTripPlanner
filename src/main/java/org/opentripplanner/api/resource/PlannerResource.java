@@ -80,12 +80,21 @@ public class PlannerResource extends RoutingResource {
 
             FareService fareService = router.graph.getService(FareService.class);
 
+
+            /*
             List<FareService> services = fareService.getFareServices();
-
             for(FareService fs : services){
-                System.out.println("Fare service: " + fs.getClass());
-            }
+                if(fs instanceof TimeBasedBikeRentalFareService){
+                    TimeBasedBikeRentalFareService fa = (TimeBasedBikeRentalFareService) fs;
 
+
+                } else if (fs instanceof TimeBasedCarRentalFareService){
+                    TimeBasedCarRentalFareService fa = (TimeBasedCarRentalFareService) fs;
+                    Currency cr = fa.getCurrency();
+                    System.out.println(cr.toString());
+                }
+            }
+            */
 
             if (request.modes.toString().equals("TraverseMode (CARRENT)")) {
                 // Only CarSharing

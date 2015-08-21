@@ -85,4 +85,8 @@ public class TimeBasedBikeRentalFareService implements FareService, Serializable
     public List<FareService> getFareServices() {
         return null;
     }
+
+    public Currency getCurrency(){
+        return this.currency;
+    }
 }

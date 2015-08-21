@@ -93,4 +93,6 @@ public class AddingMultipleFareService implements FareService, Serializable {
     public List<FareService> getFareServices(){
         return this.subServices;
     }
+
+
 }

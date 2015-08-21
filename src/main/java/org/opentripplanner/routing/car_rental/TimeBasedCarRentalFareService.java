@@ -6,7 +6,7 @@ import org.opentripplanner.routing.core.State;
 import org.opentripplanner.routing.core.WrappedCurrency;
 import org.opentripplanner.routing.services.FareService;
 import org.opentripplanner.routing.spt.GraphPath;
-import org.opentripplanner.routing.vertextype.BikeRentalStationVertex;
+import org.opentripplanner.routing.vertextype.CarRentalStationVertex;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,23 +40,23 @@ public class TimeBasedCarRentalFareService implements FareService, Serializable 
         long start = -1;
 
         for (State state : path.states) {
-            if (state.getVertex() instanceof BikeRentalStationVertex
-                    && state.getBackState().getVertex() instanceof BikeRentalStationVertex) {
+            if (state.getVertex() instanceof CarRentalStationVertex
+                    && state.getBackState().getVertex() instanceof CarRentalStationVertex) {
                 if (start == -1) {
                     start = state.getTimeSeconds();
                 } else {
-                    int time_on_bike = (int) (state.getTimeSeconds() - start);
+                    int driving_time = (int) (state.getTimeSeconds() - start);
                     int ride_cost = -1;
                     for (P2<Integer> bracket : pricing_by_second) {
                         int time = bracket.first;
-                        if (time_on_bike < time) {
+                        if (driving_time < time) {
                             ride_cost = bracket.second;
                             break;
                         }
                     }
                     if (ride_cost == -1) {
                         log.warn("Car rental has no associated pricing (too long?) : "
-                                + time_on_bike + " seconds");
+                                + driving_time + " seconds");
                     } else {
                         cost += ride_cost;
                     }
@@ -73,5 +73,9 @@ public class TimeBasedCarRentalFareService implements FareService, Serializable 
     @Override
     public List<FareService> getFareServices() {
         return null;
+    }
+
+    public Currency getCurrency(){
+        return this.currency;
     }
 }
