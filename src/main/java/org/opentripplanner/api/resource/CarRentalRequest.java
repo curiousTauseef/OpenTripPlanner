@@ -31,29 +31,49 @@ public class CarRentalRequest {
 
     public TripPlan getPlan(GenericLocation start, GenericLocation end, int mode) {
         TimeBasedCarRentalFareService carFare = router.graph.getCarFareService();
-        TimeBasedBikeRentalFareService bikeFare = router.graph.getBikeFareService();
+
+        RoutingRequest alternativeRequest = new RoutingRequest();
+        RoutingRequest toStation = new RoutingRequest();
+        RoutingRequest betweenStations = new RoutingRequest();
+        RoutingRequest fromStation = new RoutingRequest();
 
         boolean alternativePathWasUsed = false;
         Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
         CarRentalStation startStation = closestStation(start, stations, router, request, "start");
         CarRentalStation endStation = closestStation(end, stations, router, request, "end");
 
-        RoutingRequest alternativeRequest = new RoutingRequest();
         alternativeRequest.from = start;
         alternativeRequest.to = end;
         if (mode == 0) {
             // Basic CarSharing
             alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
+
+            toStation.setModes(new TraverseModeSet(TraverseMode.WALK));
+            fromStation.setModes(new TraverseModeSet(TraverseMode.WALK));
         } else if (mode == 1) {
             // CarSharing + Transit
             alternativeRequest.allowBikeRental = true;
             alternativeRequest.useBikeRentalAvailabilityInformation = true;
-            alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE, TraverseMode.TRANSIT));
+            alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.TRANSIT));
+
+            toStation.allowBikeRental = true;
+            toStation.useBikeRentalAvailabilityInformation = true;
+            fromStation.allowBikeRental = true;
+            fromStation.useBikeRentalAvailabilityInformation = true;
+            toStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.TRANSIT));
+            fromStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.TRANSIT));
         } else if (mode == 2) {
             // CarSharing + BikeSharing
             alternativeRequest.allowBikeRental = true;
             alternativeRequest.useBikeRentalAvailabilityInformation = true;
             alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
+
+            toStation.allowBikeRental = true;
+            toStation.useBikeRentalAvailabilityInformation = true;
+            fromStation.allowBikeRental = true;
+            fromStation.useBikeRentalAvailabilityInformation = true;
+            toStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
+            fromStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
         }
         GraphPathFinder gpFinderWalking = new GraphPathFinder(router);
         List<GraphPath> pathsWalking = gpFinderWalking.graphPathFinderEntryPoint(alternativeRequest);
@@ -64,31 +84,6 @@ public class CarRentalRequest {
             return alternativePlan;
         }
         if (!alternativePathWasUsed) {
-            RoutingRequest toStation = new RoutingRequest();
-            RoutingRequest betweenStations = new RoutingRequest();
-            RoutingRequest fromStation = new RoutingRequest();
-
-            if (mode == 0) {
-                // Basic CarSharing
-                toStation.setModes(new TraverseModeSet(TraverseMode.WALK));
-                fromStation.setModes(new TraverseModeSet(TraverseMode.WALK));
-            } else if (mode == 1) {
-                // CarSharing + Transit
-                toStation.allowBikeRental = true;
-                toStation.useBikeRentalAvailabilityInformation = true;
-                fromStation.allowBikeRental = true;
-                fromStation.useBikeRentalAvailabilityInformation = true;
-                toStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE, TraverseMode.TRANSIT));
-                fromStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE, TraverseMode.TRANSIT));
-            } else if (mode == 2) {
-                // CarSharing + BikeSharing
-                toStation.allowBikeRental = true;
-                toStation.useBikeRentalAvailabilityInformation = true;
-                fromStation.allowBikeRental = true;
-                fromStation.useBikeRentalAvailabilityInformation = true;
-                toStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
-                fromStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
-            }
 
             toStation.from = start;
             toStation.setToString("::" + Double.toString(startStation.y) + "," + Double.toString(startStation.x));
@@ -118,31 +113,37 @@ public class CarRentalRequest {
 
             //----------------------------------------------------------------------------------------------------------
 
+            Fare skupnaFare = new Fare();
+
             GraphPath carSharingPath = pathsBetweenStation.get(0);
             Fare carSharingFare = carFare.getCost2(carSharingPath);
             double distance = carSharingPlan.itinerary.get(0).legs.get(0).distance;
             if (distance > 150000) {
                 carSharingFare.addCost2(1000);
             }
-            if (mode == 0) {
-                // CarSharing
-                skupniItinerary.fare = carSharingFare;
-            } else if (mode == 1) {
-                // CarSharing + Transit
-                System.out.println(toStationPlan.itinerary.get(0).fare);
-                System.out.println(fromStationPlan.itinerary.get(0).fare);
 
-            } else if (mode == 2) {
-                // CarSharing + BikeSharing
-                System.out.println(toStationPlan.itinerary.get(0).duration);
-                System.out.println(toStationPlan.itinerary.get(0).fare);
+            Fare fareToStation = toStationPlan.itinerary.get(0).fare;
+            Fare fareFromStation = fromStationPlan.itinerary.get(0).fare;
 
-                System.out.println(fromStationPlan.itinerary.get(0).duration);
-                System.out.println(fromStationPlan.itinerary.get(0).fare);
+            int cents = 0;
+
+            // TODO dodaj v skupni fare
+            for (Map.Entry<Fare.FareType, Money> entry : fareToStation.fare.entrySet()) {
+                cents += entry.getValue().getCents();
             }
 
-            //----------------------------------------------------------------------------------------------------------
+            for (Map.Entry<Fare.FareType, Money> entry : carSharingFare.fare.entrySet()) {
+                cents += entry.getValue().getCents();
+            }
 
+            for (Map.Entry<Fare.FareType, Money> entry : fareFromStation.fare.entrySet()) {
+                cents += entry.getValue().getCents();
+            }
+            // sem notri prifuraj eure
+            //skupnaFare.addFare(Fare.FareType.regular, null, cents );
+
+
+            skupniItinerary.fare = skupnaFare;
             mainPlan.from = skupniItinerary.legs.get(0).from;
             mainPlan.to = skupniItinerary.legs.get(skupniItinerary.legs.size() - 1).to;
 

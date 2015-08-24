@@ -33,7 +33,7 @@ public class Money implements Comparable<Money> {
     private int cents; 
 
     public Money() {}
-    
+
     public Money(WrappedCurrency currency, int cents) {
         this.currency = currency;
         this.cents = cents;
