@@ -59,9 +59,12 @@ import org.opentripplanner.common.geometry.GraphUtils;
 import org.opentripplanner.graph_builder.annotation.GraphBuilderAnnotation;
 import org.opentripplanner.graph_builder.annotation.NoFutureDates;
 import org.opentripplanner.model.GraphBundle;
+import org.opentripplanner.profile.DCFareCalculator;
 import org.opentripplanner.routing.alertpatch.AlertPatch;
+import org.opentripplanner.routing.bike_rental.TimeBasedBikeRentalFareService;
 import org.opentripplanner.routing.car_rental.CarRentalStation;
 import org.opentripplanner.routing.car_rental.CarRentalStationService;
+import org.opentripplanner.routing.car_rental.TimeBasedCarRentalFareService;
 import org.opentripplanner.routing.core.MortonVertexComparatorFactory;
 import org.opentripplanner.routing.core.TransferTable;
 import org.opentripplanner.routing.core.TraverseMode;
@@ -69,6 +72,7 @@ import org.opentripplanner.routing.edgetype.EdgeWithCleanup;
 import org.opentripplanner.routing.edgetype.StreetEdge;
 import org.opentripplanner.routing.edgetype.TripPattern;
 import org.opentripplanner.routing.impl.DefaultStreetVertexIndexFactory;
+import org.opentripplanner.routing.services.FareService;
 import org.opentripplanner.routing.services.StreetVertexIndexFactory;
 import org.opentripplanner.routing.services.StreetVertexIndexService;
 import org.opentripplanner.routing.services.notes.StreetNotesService;
@@ -264,6 +268,28 @@ public class Graph implements Serializable {
             }
         }
         return vrni;
+    }
+
+    public TimeBasedBikeRentalFareService getBikeFareService(){
+        FareService fareService = this.getService(FareService.class);
+        List<FareService> services = fareService.getFareServices();
+        for(FareService fs : services){
+            if(fs instanceof TimeBasedBikeRentalFareService){
+                return(TimeBasedBikeRentalFareService) fs;
+            }
+        }
+        return null;
+    }
+
+    public TimeBasedCarRentalFareService getCarFareService(){
+        FareService fareService = this.getService(FareService.class);
+        List<FareService> services = fareService.getFareServices();
+        for(FareService fs : services){
+            if(fs instanceof TimeBasedCarRentalFareService){
+                return(TimeBasedCarRentalFareService) fs;
+            }
+        }
+        return null;
     }
 
     /**

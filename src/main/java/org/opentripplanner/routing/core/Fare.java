@@ -62,6 +62,12 @@ public class Fare {
         }
     }
 
+    public void addCost2(int add){
+        for(Money cost : fare.values()){
+            cost.addCost(add);
+        }
+    }
+
     public String toString() {
         StringBuffer buffer = new StringBuffer("Fare(");
         for (FareType type : fare.keySet()) {

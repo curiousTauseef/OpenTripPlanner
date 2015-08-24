@@ -38,6 +38,12 @@ public class Money implements Comparable<Money> {
         this.currency = currency;
         this.cents = cents;
     }
+
+    public void addCost(int add){
+        System.out.println(cents);
+        this.cents += add;
+        System.out.println(cents);
+    }
     
     public String toString() {
         NumberFormat nf = NumberFormat.getCurrencyInstance();

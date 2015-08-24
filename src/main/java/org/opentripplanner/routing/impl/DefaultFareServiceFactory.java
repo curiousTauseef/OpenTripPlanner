@@ -171,11 +171,9 @@ public class DefaultFareServiceFactory implements FareServiceFactory {
             retval = new MultipleFareServiceFactory.AddingMultipleFareServiceFactory();
             break;
         case "bike-rental-time-based":
-            System.out.println("routing/impl/DefaultFareServiceFactory BikeRental");
             retval = new TimeBasedBikeRentalFareServiceFactory();
             break;
         case "car-rental-time-based":
-            System.out.println("routing/impl/DefaultFareServiceFactory CarRental");
             retval = new TimeBasedCarRentalFareServiceFactory();
             break;
         case "san-francisco":

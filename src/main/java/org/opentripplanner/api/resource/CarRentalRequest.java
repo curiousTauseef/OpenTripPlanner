@@ -4,10 +4,10 @@ import org.opentripplanner.api.model.Itinerary;
 import org.opentripplanner.api.model.Leg;
 import org.opentripplanner.api.model.TripPlan;
 import org.opentripplanner.common.model.GenericLocation;
+import org.opentripplanner.routing.bike_rental.TimeBasedBikeRentalFareService;
 import org.opentripplanner.routing.car_rental.CarRentalStation;
-import org.opentripplanner.routing.core.RoutingRequest;
-import org.opentripplanner.routing.core.TraverseMode;
-import org.opentripplanner.routing.core.TraverseModeSet;
+import org.opentripplanner.routing.car_rental.TimeBasedCarRentalFareService;
+import org.opentripplanner.routing.core.*;
 import org.opentripplanner.routing.impl.GraphPathFinder;
 import org.opentripplanner.routing.spt.GraphPath;
 import org.opentripplanner.standalone.Router;
@@ -30,6 +30,9 @@ public class CarRentalRequest {
     }
 
     public TripPlan getPlan(GenericLocation start, GenericLocation end, int mode) {
+        TimeBasedCarRentalFareService carFare = router.graph.getCarFareService();
+        TimeBasedBikeRentalFareService bikeFare = router.graph.getBikeFareService();
+
         boolean alternativePathWasUsed = false;
         Collection<CarRentalStation> stations = router.graph.getCarRentalStations();
         CarRentalStation startStation = closestStation(start, stations, router, request, "start");
@@ -91,25 +94,54 @@ public class CarRentalRequest {
             toStation.setToString("::" + Double.toString(startStation.y) + "," + Double.toString(startStation.x));
             GraphPathFinder gpFinderToStation = new GraphPathFinder(router);
             List<GraphPath> pathsToStation = gpFinderToStation.graphPathFinderEntryPoint(toStation);
+            TripPlan toStationPlan = GraphPathToTripPlanConverter.generatePlan(pathsToStation, request);
 
             betweenStations.setModes(new TraverseModeSet(TraverseMode.CAR));
             betweenStations.setFromString("::" + Double.toString(startStation.y) + "," + Double.toString(startStation.x));
             betweenStations.setToString("::" + Double.toString(endStation.y) + "," + Double.toString(endStation.x));
             GraphPathFinder gpFinderBetweenStation = new GraphPathFinder(router);
             List<GraphPath> pathsBetweenStation = gpFinderBetweenStation.graphPathFinderEntryPoint(betweenStations);
+            TripPlan carSharingPlan = GraphPathToTripPlanConverter.generatePlan(pathsBetweenStation, request);
 
             fromStation.setFromString("::" + Double.toString(endStation.y) + "," + Double.toString(endStation.x));
             fromStation.to = end;
             GraphPathFinder gpFinderFromStation = new GraphPathFinder(router);
             List<GraphPath> pathsFromStation = gpFinderFromStation.graphPathFinderEntryPoint(fromStation);
+            TripPlan fromStationPlan = GraphPathToTripPlanConverter.generatePlan(pathsFromStation, request);
 
             pathsToStation.addAll(pathsBetweenStation);
             pathsToStation.addAll(pathsFromStation);
             TripPlan mainPlan = GraphPathToTripPlanConverter.generatePlan(pathsToStation, request);
 
-            // TODO v skupniItinerary dodaj cene
             Itinerary skupniItinerary = mergePath(mainPlan);
             List<Itinerary> skupnaListaItinerary = new ArrayList<Itinerary>();
+
+            //----------------------------------------------------------------------------------------------------------
+
+            GraphPath carSharingPath = pathsBetweenStation.get(0);
+            Fare carSharingFare = carFare.getCost2(carSharingPath);
+            double distance = carSharingPlan.itinerary.get(0).legs.get(0).distance;
+            if (distance > 150000) {
+                carSharingFare.addCost2(1000);
+            }
+            if (mode == 0) {
+                // CarSharing
+                skupniItinerary.fare = carSharingFare;
+            } else if (mode == 1) {
+                // CarSharing + Transit
+                System.out.println(toStationPlan.itinerary.get(0).fare);
+                System.out.println(fromStationPlan.itinerary.get(0).fare);
+
+            } else if (mode == 2) {
+                // CarSharing + BikeSharing
+                System.out.println(toStationPlan.itinerary.get(0).duration);
+                System.out.println(toStationPlan.itinerary.get(0).fare);
+
+                System.out.println(fromStationPlan.itinerary.get(0).duration);
+                System.out.println(fromStationPlan.itinerary.get(0).fare);
+            }
+
+            //----------------------------------------------------------------------------------------------------------
 
             mainPlan.from = skupniItinerary.legs.get(0).from;
             mainPlan.to = skupniItinerary.legs.get(skupniItinerary.legs.size() - 1).to;
@@ -125,7 +157,6 @@ public class CarRentalRequest {
             } else {
                 return mainPlan;
             }
-
         }
         return null;
     }
@@ -152,19 +183,19 @@ public class CarRentalRequest {
                     }
                 }
                 if (nacin.equals("start")) {
-                    //if(postaja.bikesAvailable > 0){ FIXME <------ Odkomentiraj if stavek
-                    if (števec2 < števec) {
-                        števec = števec2;
-                        vrni = postaja;
+                    if (postaja.bikesAvailable > 0) {
+                        if (števec2 < števec) {
+                            števec = števec2;
+                            vrni = postaja;
+                        }
                     }
-                    //}
                 } else if (nacin.equals("end")) {
-                    //if (postaja.spacesAvailable > 0) { FIXME <------ Odkomentiraj if stavek
-                    if (števec2 < števec) {
-                        števec = števec2;
-                        vrni = postaja;
+                    if (postaja.spacesAvailable > 0) {
+                        if (števec2 < števec) {
+                            števec = števec2;
+                            vrni = postaja;
+                        }
                     }
-                    //}
                 }
             } catch (Exception e) {
             }

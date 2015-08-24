@@ -36,37 +36,39 @@ public class TimeBasedCarRentalFareService implements FareService, Serializable 
 
     @Override
     public Fare getCost(GraphPath path) {
+        Fare fare = new Fare();
+        fare.addFare(Fare.FareType.regular, new WrappedCurrency(currency), 0);
+        return fare;
+    }
+
+    public Fare getCost2(GraphPath path) {
         int cost = 0;
         long start = -1;
 
         for (State state : path.states) {
-            if (state.getVertex() instanceof CarRentalStationVertex
-                    && state.getBackState().getVertex() instanceof CarRentalStationVertex) {
-                if (start == -1) {
-                    start = state.getTimeSeconds();
-                } else {
-                    int driving_time = (int) (state.getTimeSeconds() - start);
-                    int ride_cost = -1;
-                    for (P2<Integer> bracket : pricing_by_second) {
-                        int time = bracket.first;
-                        if (driving_time < time) {
-                            ride_cost = bracket.second;
-                            break;
-                        }
+            if (start == -1) {
+                start = state.getTimeSeconds();
+            } else {
+                int driving_time = (int) (state.getTimeSeconds() - start);
+                int ride_cost = -1;
+                for (P2<Integer> bracket : pricing_by_second) {
+                    int time = bracket.first;
+                    if (driving_time < time) {
+                        ride_cost = bracket.second;
+                        break;
                     }
-                    if (ride_cost == -1) {
-                        log.warn("Car rental has no associated pricing (too long?) : "
-                                + driving_time + " seconds");
-                    } else {
-                        cost += ride_cost;
-                    }
-                    start = -1;
                 }
+                if (ride_cost == -1) {
+                    log.warn("Car rental has no associated pricing (too long?) : "
+                            + driving_time + " seconds");
+                } else {
+                    cost += ride_cost;
+                }
+                start = -1;
             }
         }
-
         Fare fare = new Fare();
-        fare.addFare(Fare.FareType.regular, new WrappedCurrency(currency), cost);
+        fare.addFare(Fare.FareType.regular, new WrappedCurrency(currency), cost/100);
         return fare;
     }
 
@@ -75,7 +77,7 @@ public class TimeBasedCarRentalFareService implements FareService, Serializable 
         return null;
     }
 
-    public Currency getCurrency(){
+    public Currency getCurrency() {
         return this.currency;
     }
 }

@@ -24,7 +24,9 @@ import javax.ws.rs.core.UriInfo;
 import org.opentripplanner.api.common.RoutingResource;
 import org.opentripplanner.api.model.TripPlan;
 import org.opentripplanner.api.model.error.PlannerError;
+import org.opentripplanner.routing.bike_rental.TimeBasedBikeRentalFareService;
 import org.opentripplanner.routing.car_rental.CarRentalStation;
+import org.opentripplanner.routing.car_rental.TimeBasedCarRentalFareService;
 import org.opentripplanner.routing.core.RoutingRequest;
 import org.opentripplanner.routing.impl.GraphPathFinder;
 import org.opentripplanner.routing.services.FareService;
@@ -75,26 +77,7 @@ public class PlannerResource extends RoutingResource {
             request = super.buildRequest();
             /* Find some good GraphPaths through the OTP Graph. */
 
-
             Router router = otpServer.getRouter(request.routerId);
-
-            FareService fareService = router.graph.getService(FareService.class);
-
-
-            /*
-            List<FareService> services = fareService.getFareServices();
-            for(FareService fs : services){
-                if(fs instanceof TimeBasedBikeRentalFareService){
-                    TimeBasedBikeRentalFareService fa = (TimeBasedBikeRentalFareService) fs;
-
-
-                } else if (fs instanceof TimeBasedCarRentalFareService){
-                    TimeBasedCarRentalFareService fa = (TimeBasedCarRentalFareService) fs;
-                    Currency cr = fa.getCurrency();
-                    System.out.println(cr.toString());
-                }
-            }
-            */
 
             if (request.modes.toString().equals("TraverseMode (CARRENT)")) {
                 // Only CarSharing
