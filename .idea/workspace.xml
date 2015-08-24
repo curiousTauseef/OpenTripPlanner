@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac10c414-85c1-4e02-aa67-1ad62cac0ebe" name="Default" comment="" />
+    <list default="true" id="ac10c414-85c1-4e02-aa67-1ad62cac0ebe" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/core/PreberiPodatke.js" afterPath="$PROJECT_DIR$/src/client/js/otp/core/PreberiPodatke.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="otp.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -236,7 +239,7 @@
       <recent name="C:\Users\klemen\Documents\OpenTripPlanner\OTP_Ljubljana\src\main\java\org\opentripplanner\updater\car_rental" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Slovenia">
+  <component name="RunManager" selected="Application.Ljubljana">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
