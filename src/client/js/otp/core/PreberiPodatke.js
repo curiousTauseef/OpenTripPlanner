@@ -20,109 +20,109 @@ function preberiPodatke(url){
 
 var resourcePath = otp.config.resourcePath || "";
 
-var blueParking = L.icon({
-    iconUrl: resourcePath + 'images/parking/parkingBlue.png',
-    iconSize:     [25, 25],
+var yellowParking = L.icon({
+    iconUrl: resourcePath + 'images/parking/parkyellow.png',
+    iconSize:     [25, 45],
 });
 
 var greenParking = L.icon({
-    iconUrl: resourcePath + 'images/parking/parkingGreen.png',
-    iconSize:     [25, 25],
+    iconUrl: resourcePath + 'images/parking/parkgreen.png',
+    iconSize:     [25, 45],
 });
 
 var redParking = L.icon({
-    iconUrl: resourcePath + 'images/parking/parkingRed.png',
-    iconSize:     [25, 25],
+    iconUrl: resourcePath + 'images/parking/parkred.png',
+    iconSize:     [25, 45],
 });
 
 var greyParking = L.icon({
-    iconUrl: resourcePath + 'images/parking/parkingGrey.png',
-    iconSize:     [25, 25],
+    iconUrl: resourcePath + 'images/parking/parkgrey.png',
+    iconSize:     [25, 45],
 });
 
-var blueBicikelj = L.icon({
-    iconUrl: resourcePath + 'images/bicikelj/bicikeljBlue.png',
-    iconSize:     [25, 25],
+var yellowBicikelj = L.icon({
+    iconUrl: resourcePath + 'images/bicikelj/bikeyellow.png',
+    iconSize:     [25, 45],
 });
 
 var greenBicikelj = L.icon({
-    iconUrl: resourcePath + 'images/bicikelj/bicikeljGreen.png',
-    iconSize:     [25, 25],
+    iconUrl: resourcePath + 'images/bicikelj/bikegreen.png',
+    iconSize:     [25, 45],
 });
 
 var redBicikelj = L.icon({
-    iconUrl: resourcePath + 'images/bicikelj/bicikeljRed.png',
-    iconSize:     [25, 25],
+    iconUrl: resourcePath + 'images/bicikelj/bikered.png',
+    iconSize:     [25, 45],
 });
 
 var greyBicikelj = L.icon({
-    iconUrl: resourcePath + 'images/bicikelj/bicikeljGrey.png',
-    iconSize:     [25, 25],
+    iconUrl: resourcePath + 'images/bicikelj/bikegrey.png',
+    iconSize:     [25, 45],
 });
 
-var blueStopwatch = L.icon({
-    iconUrl: resourcePath + 'images/stevci/stopwatchBlue.png',
-    iconSize:     [25, 25],
+var yellowStopwatch = L.icon({
+    iconUrl: resourcePath + 'images/stevci/counteryellow.png',
+    iconSize:     [25, 45],
 });
 
 var greenStopwatch = L.icon({
-    iconUrl: resourcePath + 'images/stevci/stopwatchGreen.png',
-    iconSize:     [25, 25],
+    iconUrl: resourcePath + 'images/stevci/countergreen.png',
+    iconSize:     [25, 45],
 });
 
 var redStopwatch = L.icon({
-    iconUrl: resourcePath + 'images/stevci/stopwatchRed.png',
-    iconSize:     [25, 25],
+    iconUrl: resourcePath + 'images/stevci/counterred.png',
+    iconSize:     [25, 45],
 });
 
 var greyStopwatch = L.icon({
-    iconUrl: resourcePath + 'images/stevci/stopwatchGrey.png',
-    iconSize:     [25, 25],
+    iconUrl: resourcePath + 'images/stevci/countergrey.png',
+    iconSize:     [25, 45],
 });
 
 var work = L.icon({
-    iconUrl: resourcePath + 'images/dogodki/work.jpg',
-    iconSize:     [25, 25],
+    iconUrl: resourcePath + 'images/dogodki/work.png',
+    iconSize:     [30, 30],
 });
 
 var closed22 = L.icon({
-    iconUrl: resourcePath + 'images/dogodki/closed.jpg',
-    iconSize:     [25, 25],
+    iconUrl: resourcePath + 'images/dogodki/closed.png',
+    iconSize:     [30, 30],
 });
 
 var jam = L.icon({
-    iconUrl: resourcePath + 'images/dogodki/jam.jpg',
-    iconSize:     [25, 25],
+    iconUrl: resourcePath + 'images/dogodki/jam.png',
+    iconSize:     [30, 30],
 });
 
 var truck = L.icon({
-    iconUrl: resourcePath + 'images/dogodki/truck.jpg',
-    iconSize:     [25, 25],
+    iconUrl: resourcePath + 'images/dogodki/trucks.png',
+    iconSize:     [30, 30],
 });
 
 var warning = L.icon({
-    iconUrl: resourcePath + 'images/dogodki/warnning.jpg',
-    iconSize:     [25, 25],
+    iconUrl: resourcePath + 'images/dogodki/warning.png',
+    iconSize:     [30, 30],
 });
 
-var blueCar = L.icon({
-    iconUrl: resourcePath + 'images/car/carBlue.png',
-    iconSize:     [25, 25],
+var yellowCar = L.icon({
+    iconUrl: resourcePath + 'images/car/caryellow.png',
+    iconSize:     [25, 45],
 });
 
 var greenCar = L.icon({
-    iconUrl: resourcePath + 'images/car/carGreen.png',
-    iconSize:     [25, 25],
+    iconUrl: resourcePath + 'images/car/cargreen.png',
+    iconSize:     [25, 45],
 });
 
 var redCar = L.icon({
-    iconUrl: resourcePath + 'images/car/carRed.png',
-    iconSize:     [25, 25],
+    iconUrl: resourcePath + 'images/car/carred.png',
+    iconSize:     [25, 45],
 });
 
 var greyCar = L.icon({
-    iconUrl: resourcePath + 'images/car/carGrey.jpg',
-    iconSize:     [25, 25],
+    iconUrl: resourcePath + 'images/car/cargrey.png',
+    iconSize:     [25, 45],
 });
 
 function parseParkirisca(ObjPa){
@@ -153,7 +153,7 @@ function parseParkirisca(ObjPa){
                     marker.bindPopup(ime + "<br># Mesta za invalide: " + pZaInvalide +"<br> # vseh mest: " + vsehMest + "<br> # prostih: " + prosta_mesta + "<br> # zasedenih: " + vsehZasedenih + "<br> " + opis +"<br> " + delavnik).openPopup();
                     parkings_array[parkings_array.length] = marker;
                 }else {
-                    var marker = L.marker([y, x], {icon: blueParking});               
+                    var marker = L.marker([y, x], {icon: yellowParking});               
                     marker.bindPopup(ime + "<br># Mesta za invalide: " + pZaInvalide +"<br> # vseh mest: " + vsehMest + "<br> # prostih: " + prosta_mesta + "<br> # zasedenih: " + vsehZasedenih + "<br> " + opis +"<br> " + delavnik).openPopup();
                     parkings_array[parkings_array.length] = marker;
                 }
@@ -185,7 +185,7 @@ function parserBicikelj(objBLJ){
                         marker.bindPopup(ime + "<br> # vseh mest: " + total + "<br> # prosta kolesa: " + available + "<br> # prosta mesta: " + free + "<br> # kolesa v okvari: " + ticket);
                         bicikeLJ_array[bicikeLJ_array.length] = marker;
                     } else if (available > 0 && free > 0){
-                        var marker = L.marker([y, x], {icon: blueBicikelj})
+                        var marker = L.marker([y, x], {icon: yellowBicikelj})
                         marker.bindPopup(ime + "<br> # vseh mest: " + total + "<br> # prosta kolesa: " + available + "<br> # prosta mesta: " + free + "<br> # kolesa v okvari: " + ticket);
                         bicikeLJ_array[bicikeLJ_array.length] = marker;
                     } else if ( available === 0 || free === 0){
@@ -223,7 +223,7 @@ function parseStevecPrometa(objST){
                 marker.bindPopup(opis);
                 stevci_array[stevci_array.length] = marker;
             }else{
-                var marker = L.marker([y, x], {icon: blueStopwatch})
+                var marker = L.marker([y, x], {icon: yellowStopwatch})
                 marker.bindPopup(ime + " " + smer + "<br>" + opis);
                 stevci_array[stevci_array.length] = marker;
             }
@@ -287,7 +287,7 @@ function parserCarSharingPostaje(objCS){
             marker.bindPopup(ime + "<br> # avtomobilov: " + cars + "<br> # prostorov: " + places);
             carRental_array[carRental_array.length] = marker;
         }else{
-            var marker = L.marker([y, x], {icon: blueCar})
+            var marker = L.marker([y, x], {icon: yellowCar})
             marker.bindPopup(ime + "<br> # avtomobilov: " + cars + "<br> # prostorov: " + places);
             carRental_array[carRental_array.length] = marker;
         }
