@@ -322,7 +322,7 @@ otp.widgets.ItinerariesWidget =
         if(mode === "RAIL") return '#b00';
         if(mode === "BUS") return '#0f0';
         if(mode === "TRAM") return '#f00';
-        if(mode === "CAR") return '#e57200'; // default was grey #444 
+        if(mode === "CAR") return '#990099'; // default was grey #444, rumena '#e57200
         return '#aaa';
     },
 
