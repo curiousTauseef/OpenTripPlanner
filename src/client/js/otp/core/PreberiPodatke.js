@@ -186,35 +186,31 @@ function parseParkirisca(ObjPa){
 
 function parserBicikelj(objBLJ){
     var bicikeLJ_array = [];
-    jQuery.each(objBLJ, function(i, tren) {
-            var ime = tren.name;
-            var y = tren.lat;
-            var x = tren.lng;
-            var available = parseInt(tren.station.available);
-            var total = parseInt(tren.station.total);
-            var ticket = parseInt(tren.station.ticket);
-            var free = parseInt(tren.station.free);
-            if(y !== null && x !== null){
-                if(y !== undefined && x !== undefined){
-                    if(available > 5 && free > 5){
-                        var marker = L.marker([y, x], {icon: greenBicikelj})
-                        marker.bindPopup(ime + "<br> # vseh mest: " + total + "<br> # prosta kolesa: " + available + "<br> # prosta mesta: " + free + "<br> # kolesa v okvari: " + ticket);
-                        bicikeLJ_array[bicikeLJ_array.length] = marker;
-                    } else if (available > 0 && free > 0){
-                        var marker = L.marker([y, x], {icon: yellowBicikelj})
-                        marker.bindPopup(ime + "<br> # vseh mest: " + total + "<br> # prosta kolesa: " + available + "<br> # prosta mesta: " + free + "<br> # kolesa v okvari: " + ticket);
-                        bicikeLJ_array[bicikeLJ_array.length] = marker;
-                    } else if ( available === 0 || free === 0){
-                        var marker = L.marker([y, x], {icon: redBicikelj})
-                        marker.bindPopup(ime + "<br> # vseh mest: " + total + "<br> # prosta kolesa: " + available + "<br> # prosta mesta: " + free + "<br> # kolesa v okvari: " + ticket);
-                        bicikeLJ_array[bicikeLJ_array.length] = marker;
-                    } else {
-                        var marker = L.marker([y, x], {icon: greyBicikelj})
-                        marker.bindPopup(ime + "<br> # vseh mest: " + total + "<br> # prosta kolesa: " + available + "<br> # prosta mesta: " + free + "<br> # kolesa v okvari: " + ticket);
-                        bicikeLJ_array[bicikeLJ_array.length] = marker;
-                    }
-                }
-            }
+    objBLJ.forEach(function(entry){
+        var ime = entry.name;
+        var address = entry.address;
+        var x = entry.position.lng;
+        var y = entry.position.lat;
+        var all = parseInt(entry.bike_stands);
+        var bikes = parseInt(entry.available_bikes);
+        var stands = parseInt(entry.bike_stands);
+        if(bikes > 5 && stands > 5){
+            var marker = L.marker([y, x], {icon: greenBicikelj})
+            marker.bindPopup(ime + "<br> # vseh mest: " + all + "<br> # prosta kolesa: " + bikes + "<br> # prosta mesta: " + stands);
+            bicikeLJ_array[bicikeLJ_array.length] = marker;
+        } else if (bikes > 0 && stands > 0){
+            var marker = L.marker([y, x], {icon: yellowBicikelj})
+            marker.bindPopup(ime + "<br> # vseh mest: " + all + "<br> # prosta kolesa: " + bikes + "<br> # prosta mesta: " + stands);
+            bicikeLJ_array[bicikeLJ_array.length] = marker;
+        } else if ( bikes === 0 || stands === 0){
+            var marker = L.marker([y, x], {icon: redBicikelj})
+            marker.bindPopup(ime + "<br> # vseh mest: " + all + "<br> # prosta kolesa: " + bikes + "<br> # prosta mesta: " + stands);
+            bicikeLJ_array[bicikeLJ_array.length] = marker;
+        } else {
+            var marker = L.marker([y, x], {icon: greyBicikelj})
+            marker.bindPopup(ime + "<br> # vseh mest: " + all + "<br> # prosta kolesa: " + bikes + "<br> # prosta mesta: " + stands);
+            bicikeLJ_array[bicikeLJ_array.length] = marker;
+        }
     });
     var bicikeLJ_layer = L.layerGroup(bicikeLJ_array);
     return bicikeLJ_layer; 

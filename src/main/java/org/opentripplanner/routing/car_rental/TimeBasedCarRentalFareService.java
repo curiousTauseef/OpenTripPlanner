@@ -1,5 +1,6 @@
 package org.opentripplanner.routing.car_rental;
 
+import org.opentripplanner.api.model.TripPlan;
 import org.opentripplanner.common.model.P2;
 import org.opentripplanner.routing.core.Fare;
 import org.opentripplanner.routing.core.State;
@@ -41,31 +42,26 @@ public class TimeBasedCarRentalFareService implements FareService, Serializable 
         return fare;
     }
 
-    public Fare getCost2(GraphPath path) {
+    public Fare getCost2(TripPlan plan) {
         int cost = 0;
-        long start = -1;
-
-        for (State state : path.states) {
-            if (start == -1) {
-                start = state.getTimeSeconds();
-            } else {
-                int driving_time = (int) (state.getTimeSeconds() - start);
-                int ride_cost = -1;
-                for (P2<Integer> bracket : pricing_by_second) {
-                    int time = bracket.first;
-                    if (driving_time < time) {
-                        ride_cost = bracket.second;
-                        break;
-                    }
-                }
-                if (ride_cost == -1) {
-                    log.warn("Car rental has no associated pricing (too long?) : "
-                            + driving_time + " seconds");
-                } else {
-                    cost += ride_cost;
-                }
-                start = -1;
+        int last_hour = 0;
+        long seconds = plan.itinerary.get(0).duration;
+        long numberOfHours = (seconds % 86400 ) / 3600;
+        long numberOfMinutes = ((seconds % 86400 ) % 3600 ) / 60;
+        for(int i = 0; i < numberOfHours; i++){
+            try{
+                cost += pricing_by_second.get(i).second;
+            }catch (Exception e){
+                cost += pricing_by_second.get(pricing_by_second.size()-1).second;
             }
+            last_hour = i;
+        }
+        try{
+            int price = pricing_by_second.get(last_hour).second;
+            cost += price * (numberOfMinutes*1.0/60);
+        }catch (Exception e){
+            int price = pricing_by_second.get(pricing_by_second.size()-1).second;
+            cost += price * (numberOfMinutes*1.0/60);
         }
         Fare fare = new Fare();
         fare.addFare(Fare.FareType.regular, new WrappedCurrency(currency), cost);

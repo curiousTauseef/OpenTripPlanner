@@ -66,7 +66,7 @@ otp.core.Map = otp.Class({
         L.Icon.Default.imagePath = resourcePath + 'images/leaflet/';
 
         var parkirisca = preberiPodatke("http://opendata.si/promet/parkirisca/lpt/").Parkirisca;
-        var bicikeLjPostaje = preberiPodatke("http://opendata.si/promet/bicikelj/list/").markers;
+        var bicikeLjPostaje = preberiPodatke("https://api.jcdecaux.com/vls/v1/stations?contract=Ljubljana&apiKey=722650953d5c72b413270edb95d83d4e1c3e48c1");
         var stevciPrometa = preberiPodatke("http://opendata.si/promet/counters/").feed.entry;
         var dogodkiNaCestah = preberiPodatke("http://opendata.si/promet/events/").dogodki.dogodek;
         var carSharingPostaje = preberiPodatke("https://maas-api.comtrade.com/api/locations?list=all");
