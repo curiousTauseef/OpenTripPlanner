@@ -79,6 +79,10 @@ public abstract class GraphUpdaterConfigurator {
     private static GraphUpdaterManager applyConfigurationToGraph(Graph graph, GraphUpdaterManager updaterManager, JsonNode config) {
 
         try {
+            graph.CarSharingRatio = config.path("CarSharingDistanceRatio").asDouble();
+        } catch (Exception e) {
+        }
+        try {
             graph.CarSharingDistanceLimit = config.path("CarSharingDistanceLimit").asInt();
             graph.CarSharingDistanceLimitPenalty = config.path("CarSharingDistanceLimitPenalty").asInt();
         } catch (Exception e) {

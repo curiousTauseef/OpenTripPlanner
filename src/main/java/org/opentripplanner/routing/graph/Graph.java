@@ -217,6 +217,8 @@ public class Graph implements Serializable {
     /** True if schedule-based services exist in this Graph (including GTFS frequencies with exact_times = 1). */
     public boolean hasScheduledService = false;
 
+
+    public double CarSharingRatio = 1.5;
     public int CarSharingDistanceLimit = Integer.MAX_VALUE;
     public int CarSharingDistanceLimitPenalty = 0;
 

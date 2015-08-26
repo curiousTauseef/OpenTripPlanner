@@ -140,7 +140,10 @@ public class CarRentalRequest {
             double mainDuration = mainPlan.itinerary.get(0).duration;
             double alternativeDuration = alternativePlan.itinerary.get(0).duration;
 
-            if (mainDuration > alternativeDuration * 1.3) {
+            System.out.println("MainDuration: " + mainDuration);
+            System.out.println("AlternativeDuration: " + alternativeDuration);
+
+            if (mainDuration > alternativeDuration * router.graph.CarSharingRatio) {
                 return alternativePlan;
             } else {
                 return mainPlan;
@@ -197,11 +200,13 @@ public class CarRentalRequest {
         for (int i = 0; i < plan.itinerary.size(); i++) {
             for (int j = 0; j < plan.itinerary.get(i).legs.size(); j++) {
                 Leg lg = plan.itinerary.get(i).legs.get(j);
+                Double duraton = lg.getDuration();
                 if (i == 0 && j == 0) {
                     pastLeg = lg;
                     skupniItinerary.addLeg(lg);
+                    skupniItinerary.duration += duraton.longValue();
                 } else {
-                    Double duraton = lg.getDuration();
+                    skupniItinerary.duration += duraton.longValue();
                     lg.startTime = pastLeg.endTime;
                     Calendar lgEndTime = (Calendar) lg.startTime.clone();
                     lgEndTime.add(Calendar.SECOND, duraton.intValue());
