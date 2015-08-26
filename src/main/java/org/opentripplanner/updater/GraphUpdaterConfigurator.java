@@ -30,14 +30,14 @@ import org.slf4j.LoggerFactory;
 /**
  * Upon loading a Graph, configure/decorate it using a JSON tree from Jackson. This mainly involves starting
  * graph updater processes (GTFS-RT, bike rental, etc.), hence the class name.
- * 
+ * <p>
  * When a Graph is loaded, one should call setupGraph() with the JSON tree containing configuration for the Graph.
  * That method creates "graph updaters" according to the given JSON, which should contain an array or object field
  * called "updaters". Each child element represents one updater.
- *
+ * <p>
  * When a graph is unloaded, one must ensure the shutdownGraph() method is called to clean up all resources that may
  * have been used.
- *
+ * <p>
  * If an embedded configuration is present in the graph, we also try to use it. In case of conflicts
  * between two child nodes in both configs (two childs node with the same name) the dynamic (ie
  * provided) configuration takes complete precedence over the embedded one: childrens properties are
@@ -56,7 +56,7 @@ public abstract class GraphUpdaterConfigurator {
         JsonNode embeddedConfig = null; // graph.routerConfig;
         LOG.info("Using configurations: " + (mainConfig == null ? "" : "[main]") + " "
                 + (embeddedConfig == null ? "" : "[embedded]"));
-        
+
         // Apply configuration
         // FIXME why are we returning the same updatermanager object that has been modified ? this method could just create it.
         updaterManager = applyConfigurationToGraph(graph, updaterManager, mainConfig);
@@ -78,37 +78,34 @@ public abstract class GraphUpdaterConfigurator {
      */
     private static GraphUpdaterManager applyConfigurationToGraph(Graph graph, GraphUpdaterManager updaterManager, JsonNode config) {
 
-        for (JsonNode configItem : config.path("updaters")) {
+        try {
+            graph.CarSharingDistanceLimit = config.path("CarSharingDistanceLimit").asInt();
+            graph.CarSharingDistanceLimitPenalty = config.path("CarSharingDistanceLimitPenalty").asInt();
+        } catch (Exception e) {
+        }
 
+        for (JsonNode configItem : config.path("updaters")) {
             // For each sub-node, determine which kind of updater is being created.
             String type = configItem.path("type").asText();
             GraphUpdater updater = null;
             if (type != null) {
                 if (type.equals("bike-rental")) {
                     updater = new BikeRentalUpdater();
-                }
-                else if (type.equals("car-rental")){
+                } else if (type.equals("car-rental")) {
                     updater = new CarRentalUpdater();
-                }
-                else if (type.equals("bike-park")) {
+                } else if (type.equals("bike-park")) {
                     updater = new BikeParkUpdater();
-                }
-                else if (type.equals("stop-time-updater")) {
+                } else if (type.equals("stop-time-updater")) {
                     updater = new PollingStoptimeUpdater();
-                }
-                else if (type.equals("websocket-gtfs-rt-updater")) {
+                } else if (type.equals("websocket-gtfs-rt-updater")) {
                     updater = new WebsocketGtfsRealtimeUpdater();
-                }
-                else if (type.equals("real-time-alerts")) {
+                } else if (type.equals("real-time-alerts")) {
                     updater = new GtfsRealtimeAlertsUpdater();
-                }
-                else if (type.equals("example-updater")) {
+                } else if (type.equals("example-updater")) {
                     updater = new ExampleGraphUpdater();
-                }
-                else if (type.equals("example-polling-updater")) {
+                } else if (type.equals("example-polling-updater")) {
                     updater = new ExamplePollingGraphUpdater();
-                }
-                else if (type.equals("winkki-polling-updater")) {
+                } else if (type.equals("winkki-polling-updater")) {
                     updater = new WinkkiPollingGraphUpdater();
                 }
             }
@@ -127,7 +124,7 @@ public abstract class GraphUpdaterConfigurator {
                     }
                     // Add graph updater to manager
                     updaterManager.addUpdater(updater);
-                    LOG.info ("Configured GraphUpdater: {}", updater);
+                    LOG.info("Configured GraphUpdater: {}", updater);
                 }
             } catch (Exception e) {
                 LOG.error("Can't configure: " + configItem.asText(), e);

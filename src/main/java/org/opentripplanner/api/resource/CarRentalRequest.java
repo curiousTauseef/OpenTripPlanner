@@ -100,29 +100,28 @@ public class CarRentalRequest {
             Itinerary skupniItinerary = mergePath(mainPlan);
             List<Itinerary> skupnaListaItinerary = new ArrayList<Itinerary>();
 
-            if(carFare != null) {
-                Fare skupnaFare = new Fare();
-                Fare carSharingFare = carFare.getCost2(carSharingPlan);
-                double distance = carSharingPlan.itinerary.get(0).legs.get(0).distance;
-                if (distance > 150000) {
-                    carSharingFare.addCost2(1000);
-                }
-                Fare fareToStation = toStationPlan.itinerary.get(0).fare;
-                Fare fareFromStation = fromStationPlan.itinerary.get(0).fare;
-                int cents = 0;
-                for (Map.Entry<Fare.FareType, Money> entry : fareToStation.fare.entrySet()) {
-                    cents += entry.getValue().getCents();
-                }
-                for (Map.Entry<Fare.FareType, Money> entry : carSharingFare.fare.entrySet()) {
-                    cents += entry.getValue().getCents();
-                }
-                for (Map.Entry<Fare.FareType, Money> entry : fareFromStation.fare.entrySet()) {
-                    cents += entry.getValue().getCents();
-                }
-
-                skupnaFare.addFare(Fare.FareType.regular, new WrappedCurrency(carFare.getCurrency()), cents);
-                skupniItinerary.fare = skupnaFare;
+            int cents = 0;
+            Fare skupnaFare = new Fare();
+            Fare fareToStation = toStationPlan.itinerary.get(0).fare;
+            Fare fareFromStation = fromStationPlan.itinerary.get(0).fare;
+            for (Map.Entry<Fare.FareType, Money> entry : fareToStation.fare.entrySet()) {
+                cents += entry.getValue().getCents();
             }
+            for (Map.Entry<Fare.FareType, Money> entry : fareFromStation.fare.entrySet()) {
+                cents += entry.getValue().getCents();
+            }
+
+            Fare carSharingFare = carFare.getCost2(carSharingPlan);
+            double distance = carSharingPlan.itinerary.get(0).legs.get(0).distance;
+            if (distance > router.graph.CarSharingDistanceLimit) {
+                carSharingFare.addCost2(router.graph.CarSharingDistanceLimitPenalty);
+            }
+            for (Map.Entry<Fare.FareType, Money> entry : carSharingFare.fare.entrySet()) {
+                cents += entry.getValue().getCents();
+            }
+
+            skupnaFare.addFare(Fare.FareType.regular, new WrappedCurrency(carFare.getCurrency()), cents);
+            skupniItinerary.fare = skupnaFare;
 
             mainPlan.from = skupniItinerary.legs.get(0).from;
             mainPlan.to = skupniItinerary.legs.get(skupniItinerary.legs.size() - 1).to;
