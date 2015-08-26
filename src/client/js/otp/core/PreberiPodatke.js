@@ -193,7 +193,7 @@ function parserBicikelj(objBLJ){
         var y = entry.position.lat;
         var all = parseInt(entry.bike_stands);
         var bikes = parseInt(entry.available_bikes);
-        var stands = parseInt(entry.bike_stands);
+        var stands = parseInt(entry.available_bike_stands);
         if(bikes > 5 && stands > 5){
             var marker = L.marker([y, x], {icon: greenBicikelj})
             marker.bindPopup(ime + "<br> # vseh mest: " + all + "<br> # prosta kolesa: " + bikes + "<br> # prosta mesta: " + stands);
