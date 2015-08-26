@@ -47,19 +47,10 @@ public class CarRentalRequest {
         if (mode == 0) {
             // Basic CarSharing
             alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK));
-
             toStation.setModes(new TraverseModeSet(TraverseMode.WALK));
             fromStation.setModes(new TraverseModeSet(TraverseMode.WALK));
         } else if (mode == 1) {
-            // CarSharing + Transit
-            alternativeRequest.allowBikeRental = true;
-            alternativeRequest.useBikeRentalAvailabilityInformation = true;
             alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.TRANSIT));
-
-            toStation.allowBikeRental = true;
-            toStation.useBikeRentalAvailabilityInformation = true;
-            fromStation.allowBikeRental = true;
-            fromStation.useBikeRentalAvailabilityInformation = true;
             toStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.TRANSIT));
             fromStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.TRANSIT));
         } else if (mode == 2) {
@@ -67,7 +58,6 @@ public class CarRentalRequest {
             alternativeRequest.allowBikeRental = true;
             alternativeRequest.useBikeRentalAvailabilityInformation = true;
             alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.BICYCLE));
-
             toStation.allowBikeRental = true;
             toStation.useBikeRentalAvailabilityInformation = true;
             fromStation.allowBikeRental = true;
@@ -84,7 +74,6 @@ public class CarRentalRequest {
             return alternativePlan;
         }
         if (!alternativePathWasUsed) {
-
             toStation.from = start;
             toStation.setToString("::" + Double.toString(startStation.y) + "," + Double.toString(startStation.x));
             GraphPathFinder gpFinderToStation = new GraphPathFinder(router);
@@ -114,15 +103,12 @@ public class CarRentalRequest {
             if(carFare != null) {
                 Fare skupnaFare = new Fare();
                 Fare carSharingFare = carFare.getCost2(carSharingPlan);
-                System.out.println("CAR SHARING FARE: " + carSharingFare);
                 double distance = carSharingPlan.itinerary.get(0).legs.get(0).distance;
                 if (distance > 150000) {
                     carSharingFare.addCost2(1000);
                 }
                 Fare fareToStation = toStationPlan.itinerary.get(0).fare;
                 Fare fareFromStation = fromStationPlan.itinerary.get(0).fare;
-                System.out.println("FARE TO STATION: " + fareToStation);
-                System.out.println("FARE FROM STATION: " + fareFromStation);
                 int cents = 0;
                 for (Map.Entry<Fare.FareType, Money> entry : fareToStation.fare.entrySet()) {
                     cents += entry.getValue().getCents();
