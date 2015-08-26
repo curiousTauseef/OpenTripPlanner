@@ -140,9 +140,6 @@ public class CarRentalRequest {
             double mainDuration = mainPlan.itinerary.get(0).duration;
             double alternativeDuration = alternativePlan.itinerary.get(0).duration;
 
-            System.out.println("MainDuration: " + mainDuration);
-            System.out.println("AlternativeDuration: " + alternativeDuration);
-
             if (mainDuration > alternativeDuration * router.graph.CarSharingRatio) {
                 return alternativePlan;
             } else {

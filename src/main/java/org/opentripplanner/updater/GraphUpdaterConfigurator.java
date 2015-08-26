@@ -77,7 +77,6 @@ public abstract class GraphUpdaterConfigurator {
      * @return reference to the same updaterManager as was given as input
      */
     private static GraphUpdaterManager applyConfigurationToGraph(Graph graph, GraphUpdaterManager updaterManager, JsonNode config) {
-
         try {
             graph.CarSharingRatio = config.path("CarSharingDistanceRatio").asDouble();
         } catch (Exception e) {
