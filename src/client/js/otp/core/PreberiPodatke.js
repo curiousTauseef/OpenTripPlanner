@@ -290,7 +290,7 @@ function parserCarSharingPostaje(objCS){
         var places = parseInt(stat.parkingPlaces);
         var y = stat.geoLocation.latitude;
         var x = stat.geoLocation.longitude;
-        if(places && cars){
+        if(places != undefined && cars != undefined || places != null && cars != null){
             if(places === 0 || cars === 0){
                 var marker = L.marker([y, x], {icon: redCar})
                 marker.bindPopup(ime + "<br> # avtomobilov: " + cars + "<br> # prostorov: " + places);
