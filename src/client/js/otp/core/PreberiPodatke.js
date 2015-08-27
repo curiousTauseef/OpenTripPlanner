@@ -290,19 +290,26 @@ function parserCarSharingPostaje(objCS){
         var places = parseInt(stat.parkingPlaces);
         var y = stat.geoLocation.latitude;
         var x = stat.geoLocation.longitude;
-        if(places === 0 || cars === 0){
-            var marker = L.marker([y, x], {icon: redCar})
-            marker.bindPopup(ime + "<br> # avtomobilov: " + cars + "<br> # prostorov: " + places);
-            carRental_array[carRental_array.length] = marker;
-        }else if( places > 4 && cars > 4){
-            var marker = L.marker([y, x], {icon: greenCar})
-            marker.bindPopup(ime + "<br> # avtomobilov: " + cars + "<br> # prostorov: " + places);
-            carRental_array[carRental_array.length] = marker;
-        }else{
-            var marker = L.marker([y, x], {icon: yellowCar})
-            marker.bindPopup(ime + "<br> # avtomobilov: " + cars + "<br> # prostorov: " + places);
+        if(places && cars){
+            if(places === 0 || cars === 0){
+                var marker = L.marker([y, x], {icon: redCar})
+                marker.bindPopup(ime + "<br> # avtomobilov: " + cars + "<br> # prostorov: " + places);
+                carRental_array[carRental_array.length] = marker;
+            }else if( places > 4 && cars > 4){
+                var marker = L.marker([y, x], {icon: greenCar})
+                marker.bindPopup(ime + "<br> # avtomobilov: " + cars + "<br> # prostorov: " + places);
+                carRental_array[carRental_array.length] = marker;
+            } else {
+                var marker = L.marker([y, x], {icon: yellowCar})
+                marker.bindPopup(ime + "<br> # avtomobilov: " + cars + "<br> # prostorov: " + places);
+                carRental_array[carRental_array.length] = marker;
+            }
+        } else {
+           var marker = L.marker([y, x], {icon: greyCar})
+            marker.bindPopup(ime);
             carRental_array[carRental_array.length] = marker;
         }
+
     });
     var carRental_layer = L.layerGroup(carRental_array);
     return carRental_layer;

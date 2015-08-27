@@ -219,8 +219,8 @@ public class Graph implements Serializable {
 
 
     public double CarSharingRatio = 1.5;
-    public int CarSharingDistanceLimit = Integer.MAX_VALUE;
-    public int CarSharingDistanceLimitPenalty = 0;
+    public int CarSharingDistanceLimit = 150000;
+    public int CarSharingDistanceLimitPenalty = 1000;
 
     public Graph(Graph basedOn) {
         this();
