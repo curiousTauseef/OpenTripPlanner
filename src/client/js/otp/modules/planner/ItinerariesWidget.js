@@ -489,7 +489,8 @@ otp.widgets.ItinerariesWidget =
                     otp.util.Itin.distanceString(itin.itinData.walkDistance) + '</div>')
             }*/
            //TRANSLATORS: cost of trip
-            tripSummary.append('<div class="otp-itinTripSummaryLabel">' + _tr("Fare") +'</div><div class="otp-itinTripSummaryText">'+itin.getFareStr()+'</div>');
+           // COMMENDED OUT
+           // tripSummary.append('<div class="otp-itinTripSummaryLabel">' + _tr("Fare") +'</div><div class="otp-itinTripSummaryText">'+itin.getFareStr()+'</div>');
 
         }
         
