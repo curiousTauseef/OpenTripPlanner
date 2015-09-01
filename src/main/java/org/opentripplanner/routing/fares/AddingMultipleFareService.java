@@ -85,7 +85,6 @@ public class AddingMultipleFareService implements FareService, Serializable {
                 fare = newFare;
             }
         }
-
         // Can be null here if no sub-service has returned fare
         return fare;
     }

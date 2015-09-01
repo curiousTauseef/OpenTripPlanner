@@ -69,18 +69,18 @@ otp.core.Map = otp.Class({
         var bicikeLjPostaje = preberiPodatke("https://api.jcdecaux.com/vls/v1/stations?contract=Ljubljana&apiKey=722650953d5c72b413270edb95d83d4e1c3e48c1");
         var stevciPrometa = preberiPodatke("http://opendata.si/promet/counters/").feed.entry;
         var dogodkiNaCestah = preberiPodatke("http://opendata.si/promet/events/").dogodki.dogodek;
-        //var carSharingPostaje = preberiPodatke("https://maas-api.comtrade.com/api/locations?list=all");
+        var carSharingPostaje = preberiPodatke("https://maas-api.comtrade.com/api/locations?list=all");
 
         var markerjiParkirisca = parseParkirisca(parkirisca);
         var markerjiBicikeLJ = parserBicikelj(bicikeLjPostaje);
         var markerjiStevci = parseStevecPrometa(stevciPrometa);
         var markerjiDogodki = parserDogodkiNaCestah(dogodkiNaCestah);
-        //var markerjiCarSharing = parserCarSharingPostaje(carSharingPostaje);
+        var markerjiCarSharing = parserCarSharingPostaje(carSharingPostaje);
 
         var overlaysFromAPI = {
             "Parking Spots": markerjiParkirisca,
             "BikeSharing": markerjiBicikeLJ,
-            //"CarSharing": markerjiCarSharing,
+            "CarSharing": markerjiCarSharing,
             "Traffic Counters": markerjiStevci,
             "Traffic Events": markerjiDogodki
         }

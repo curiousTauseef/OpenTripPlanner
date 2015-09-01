@@ -13,13 +13,9 @@
 
 package org.opentripplanner.routing.fares;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import org.onebusaway.gtfs.services.GtfsRelationalDao;
-import org.opentripplanner.routing.bike_rental.TimeBasedBikeRentalFareServiceFactory;
 import org.opentripplanner.routing.impl.DefaultFareServiceFactory;
 import org.opentripplanner.routing.services.FareService;
 import org.opentripplanner.routing.services.FareServiceFactory;
@@ -98,5 +94,7 @@ public abstract class MultipleFareServiceFactory implements FareServiceFactory {
         protected FareService makeMultipleFareService(List<FareService> subServices) {
             return new AddingMultipleFareService(subServices);
         }
+
+
     }
 }

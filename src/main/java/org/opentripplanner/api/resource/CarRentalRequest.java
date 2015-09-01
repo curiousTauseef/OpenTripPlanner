@@ -111,22 +111,18 @@ public class CarRentalRequest {
                 for (Map.Entry<Fare.FareType, Money> entry : fareToStation.fare.entrySet()) {
                     cents += entry.getValue().getCents();
                 }
-
                 Fare carSharingFare = carFare.getCost2(carSharingPlan);
                 double distance = carSharingPlan.itinerary.get(0).legs.get(0).distance;
                 if (distance > router.graph.CarSharingDistanceLimit) {
                     carSharingFare.addCost2(router.graph.CarSharingDistanceLimitPenalty);
                 }
-
                 for (Map.Entry<Fare.FareType, Money> entry : carSharingFare.fare.entrySet()) {
                     cents += entry.getValue().getCents();
                 }
-
                 Fare fareFromStation = fromStationPlan.itinerary.get(0).fare;
                 for (Map.Entry<Fare.FareType, Money> entry : fareFromStation.fare.entrySet()) {
                     cents += entry.getValue().getCents();
                 }
-
                 skupnaFare.addFare(Fare.FareType.regular, new WrappedCurrency(carFare.getCurrency()), cents);
                 skupniItinerary.fare = skupnaFare;
             }
