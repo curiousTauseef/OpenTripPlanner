@@ -37,9 +37,6 @@ public class CarRentalRequest {
         } catch (Exception e) {
         }
 
-
-
-
         RoutingRequest alternativeRequest = new RoutingRequest();
         RoutingRequest toStation = new RoutingRequest();
         RoutingRequest betweenStations = new RoutingRequest();

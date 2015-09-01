@@ -44,13 +44,13 @@ public class AddingMultipleFareService implements FareService, Serializable {
     @Override
     public Fare getCost(GraphPath path) {
 
-
-        if(this.dfsf == null){
+        if (this.dfsf == null) {
             dfsf = new DefaultFareServiceFactory();
             try {
-                GtfsContext gtfsc = new GtfsLibrary().readGtfs(new File(OTPMain.pathWithFiles+"\\gtfs.zip"));
+                GtfsContext gtfsc = new GtfsLibrary().readGtfs(new File(OTPMain.pathWithFiles + "\\gtfs.zip"));
                 dfsf.processGtfs(gtfsc.getDao());
-            } catch (Exception e){}
+            } catch (Exception e) {
+            }
         }
 
         FareService fs = dfsf.makeFareService();
@@ -106,18 +106,19 @@ public class AddingMultipleFareService implements FareService, Serializable {
                 fare = newFare;
             }
         }
-        try{
+        try {
             int centsGTFS = 0;
             for (Map.Entry<Fare.FareType, Money> entry : fareGTFS.fare.entrySet()) {
                 centsGTFS += entry.getValue().getCents();
             }
             fare.addCost(centsGTFS);
-        }catch (Exception e){}
+        } catch (Exception e) {
+        }
         // Can be null here if no sub-service has returned fare
         return fare;
     }
 
-    public List<FareService> getFareServices(){
+    public List<FareService> getFareServices() {
         return this.subServices;
     }
 }

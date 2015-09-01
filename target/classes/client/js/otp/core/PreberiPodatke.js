@@ -22,73 +22,61 @@ var resourcePath = otp.config.resourcePath || "";
 
 var yellowParking = L.icon({
     iconUrl: resourcePath + 'images/parking/parkyellow.png',
-    iconSize:     [25, 45],
     iconAnchor:   [12.5, 45]
 });
 
 var greenParking = L.icon({
     iconUrl: resourcePath + 'images/parking/parkgreen.png',
-    iconSize:     [25, 45],
     iconAnchor:   [12.5, 45]
 });
 
 var redParking = L.icon({
     iconUrl: resourcePath + 'images/parking/parkred.png',
-    iconSize:     [25, 45],
     iconAnchor:   [12.5, 45]
 });
 
 var greyParking = L.icon({
     iconUrl: resourcePath + 'images/parking/parkgrey.png',
-    iconSize:     [25, 45],
     iconAnchor:   [12.5, 45]
 });
 
 var yellowBicikelj = L.icon({
     iconUrl: resourcePath + 'images/bicikelj/bikeyellow.png',
-    iconSize:     [25, 45],
     iconAnchor:   [12.5, 45]
 });
 
 var greenBicikelj = L.icon({
     iconUrl: resourcePath + 'images/bicikelj/bikegreen.png',
-    iconSize:     [25, 45],
     iconAnchor:   [12.5, 45]
 });
 
 var redBicikelj = L.icon({
     iconUrl: resourcePath + 'images/bicikelj/bikered.png',
-    iconSize:     [25, 45],
     iconAnchor:   [12.5, 45]
 });
 
 var greyBicikelj = L.icon({
     iconUrl: resourcePath + 'images/bicikelj/bikegrey.png',
-    iconSize:     [25, 45],
     iconAnchor:   [12.5, 45]
 });
 
 var yellowStopwatch = L.icon({
     iconUrl: resourcePath + 'images/stevci/counteryellow.png',
-    iconSize:     [25, 45],
     iconAnchor:   [12.5, 45]
 });
 
 var greenStopwatch = L.icon({
     iconUrl: resourcePath + 'images/stevci/countergreen.png',
-    iconSize:     [25, 45],
     iconAnchor:   [12.5, 45]
 });
 
 var redStopwatch = L.icon({
     iconUrl: resourcePath + 'images/stevci/counterred.png',
-    iconSize:     [25, 45],
     iconAnchor:   [12.5, 45]
 });
 
 var greyStopwatch = L.icon({
     iconUrl: resourcePath + 'images/stevci/countergrey.png',
-    iconSize:     [25, 45],
     iconAnchor:   [12.5, 45]
 });
 
@@ -119,25 +107,21 @@ var warning = L.icon({
 
 var yellowCar = L.icon({
     iconUrl: resourcePath + 'images/car/caryellow.png',
-    iconSize:     [25, 45],
     iconAnchor:   [12.5, 45]
 });
 
 var greenCar = L.icon({
     iconUrl: resourcePath + 'images/car/cargreen.png',
-    iconSize:     [25, 45],
     iconAnchor:   [12.5, 45]
 });
 
 var redCar = L.icon({
     iconUrl: resourcePath + 'images/car/carred.png',
-    iconSize:     [25, 45],
     iconAnchor:   [12.5, 45]
 });
 
 var greyCar = L.icon({
     iconUrl: resourcePath + 'images/car/cargrey.png',
-    iconSize:     [25, 45],
     iconAnchor:   [12.5, 45]
 });
 
