@@ -57,8 +57,7 @@ public class DefaultFareServiceFactory implements FareServiceFactory {
         fillFareRules(null, dao.getAllFareAttributes(), dao.getAllFareRules(), regularFareRules);
     }
 
-    protected void fillFareRules(String agencyId, Collection<FareAttribute> fareAttributes,
-            Collection<FareRule> fareRules, Map<AgencyAndId, FareRuleSet> fareRuleSet) {
+    protected void fillFareRules(String agencyId, Collection<FareAttribute> fareAttributes, Collection<FareRule> fareRules, Map<AgencyAndId, FareRuleSet> fareRuleSet) {
         /*
          * Create an empty FareRuleSet for each FareAttribute, as some FareAttribute may have no
          * rules attached to them.

@@ -4,7 +4,6 @@ import org.opentripplanner.api.model.Itinerary;
 import org.opentripplanner.api.model.Leg;
 import org.opentripplanner.api.model.TripPlan;
 import org.opentripplanner.common.model.GenericLocation;
-import org.opentripplanner.routing.bike_rental.TimeBasedBikeRentalFareService;
 import org.opentripplanner.routing.car_rental.CarRentalStation;
 import org.opentripplanner.routing.car_rental.TimeBasedCarRentalFareService;
 import org.opentripplanner.routing.core.*;

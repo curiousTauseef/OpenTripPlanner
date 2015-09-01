@@ -13,14 +13,21 @@
 
 package org.opentripplanner.routing.fares;
 
+import java.io.File;
 import java.io.Serializable;
 import java.util.List;
 
+import org.opentripplanner.gtfs.GtfsContext;
+import org.opentripplanner.gtfs.GtfsLibrary;
 import org.opentripplanner.routing.core.Fare;
 import org.opentripplanner.routing.core.Fare.FareType;
 import org.opentripplanner.routing.core.Money;
+import org.opentripplanner.routing.impl.DefaultFareServiceFactory;
 import org.opentripplanner.routing.services.FareService;
 import org.opentripplanner.routing.spt.GraphPath;
+import org.opentripplanner.routing.impl.DefaultFareServiceImpl;
+
+
 
 public class AddingMultipleFareService implements FareService, Serializable {
 
@@ -34,6 +41,19 @@ public class AddingMultipleFareService implements FareService, Serializable {
 
     @Override
     public Fare getCost(GraphPath path) {
+
+        System.out.println("AddingMultipleFareService ::: getCost");
+
+        DefaultFareServiceFactory dfsf = new DefaultFareServiceFactory();
+        GtfsLibrary gtfsl = new GtfsLibrary();
+        File gtfsFile = new File("C:\\OTP\\ljubljana\\gtfs.zip"); // FIXME zamenjaj z spremenljivko
+        try {
+            GtfsContext gtfsc = gtfsl.readGtfs(gtfsFile);
+            dfsf.processGtfs(gtfsc.getDao());
+        } catch (Exception e){}
+        FareService fs = dfsf.makeFareService();
+        Fare test = fs.getCost(path);
+        System.out.println("TEST FARE: " + test);
 
         Fare fare = null;
 
