@@ -51,12 +51,16 @@ public class OTPMain {
 
     public static final String OTP_CONFIG_FILENAME = "otp-config.json";
 
+    public static String pathWithFiles = "";
+
     private final CommandLineParameters params;
     public OTPServer otpServer = null;
     public GraphService graphService = null;
 
     /** ENTRY POINT: This is the main method that is called when running otp.jar from the command line. */
     public static void main(String[] args) {
+
+        pathWithFiles = args[1];
 
         /* Parse and validate command line parameters. */
         CommandLineParameters params = new CommandLineParameters();

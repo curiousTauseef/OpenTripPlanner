@@ -7,7 +7,9 @@ import org.opentripplanner.common.model.GenericLocation;
 import org.opentripplanner.routing.car_rental.CarRentalStation;
 import org.opentripplanner.routing.car_rental.TimeBasedCarRentalFareService;
 import org.opentripplanner.routing.core.*;
+import org.opentripplanner.routing.fares.AddingMultipleFareService;
 import org.opentripplanner.routing.impl.GraphPathFinder;
+import org.opentripplanner.routing.services.FareService;
 import org.opentripplanner.routing.spt.GraphPath;
 import org.opentripplanner.standalone.Router;
 
@@ -34,6 +36,9 @@ public class CarRentalRequest {
             carFare = router.graph.getCarFareService();
         } catch (Exception e) {
         }
+
+
+
 
         RoutingRequest alternativeRequest = new RoutingRequest();
         RoutingRequest toStation = new RoutingRequest();
@@ -144,7 +149,6 @@ public class CarRentalRequest {
         }
         return null;
     }
-
 
     public static CarRentalStation closestStation(GenericLocation location, Collection<CarRentalStation> stations, Router router, RoutingRequest request, String nacin) {
         Iterator it = stations.iterator();

@@ -26,7 +26,7 @@ import org.opentripplanner.routing.core.Money;
 import org.opentripplanner.routing.impl.DefaultFareServiceFactory;
 import org.opentripplanner.routing.services.FareService;
 import org.opentripplanner.routing.spt.GraphPath;
-
+import org.opentripplanner.standalone.OTPMain;
 
 
 public class AddingMultipleFareService implements FareService, Serializable {
@@ -44,10 +44,11 @@ public class AddingMultipleFareService implements FareService, Serializable {
     @Override
     public Fare getCost(GraphPath path) {
 
+
         if(this.dfsf == null){
             dfsf = new DefaultFareServiceFactory();
             try {
-                GtfsContext gtfsc = new GtfsLibrary().readGtfs(new File("C:\\OTP\\ljubljana\\gtfs.zip")); // FIXME zamenjaj z spremenljivko
+                GtfsContext gtfsc = new GtfsLibrary().readGtfs(new File(OTPMain.pathWithFiles+"\\gtfs.zip"));
                 dfsf.processGtfs(gtfsc.getDao());
             } catch (Exception e){}
         }
@@ -119,6 +120,4 @@ public class AddingMultipleFareService implements FareService, Serializable {
     public List<FareService> getFareServices(){
         return this.subServices;
     }
-
-
 }
