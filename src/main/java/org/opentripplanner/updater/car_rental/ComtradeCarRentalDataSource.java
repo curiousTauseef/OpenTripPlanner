@@ -18,8 +18,8 @@ public class ComtradeCarRentalDataSource extends GenericJsonCarRentalDataSource 
     public CarRentalStation makeStation(JsonNode node, int id) {
         CarRentalStation station = new CarRentalStation();
         station.id = Integer.toString(id);
-        station.x = node.path("geoLocation").path("longitude").asDouble();
-        station.y = node.path("geoLocation").path("latitude").asDouble();
+        station.x = node.path("geoLocation").path("lng").asDouble();
+        station.y = node.path("geoLocation").path("lat").asDouble();
         station.name = new NonLocalizedString(node.path("name").asText());
         station.bikesAvailable = node.path("numberOfCars").asInt();
         station.spacesAvailable = node.path("parkingPlaces").asInt() - station.bikesAvailable;
