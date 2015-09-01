@@ -162,7 +162,6 @@ public class DefaultFareServiceImpl implements FareService, Serializable {
         return rides;
     }
 
-    // returns price from GTFS
     @Override
     public Fare getCost(GraphPath path) {
 
@@ -172,16 +171,9 @@ public class DefaultFareServiceImpl implements FareService, Serializable {
             return null;
         }
 
-        System.out.println("DefaultFareServiceImpl getCost stevilo vozenj: " + rides.size());
-        System.out.println("DefaultFareServiceImpl fareRulesPerType.entrySet().size(): " + fareRulesPerType.entrySet().size());
-
         Fare fare = new Fare();
         boolean hasFare = false;
         for (Map.Entry<FareType, Collection<FareRuleSet>> kv : fareRulesPerType.entrySet()) {
-
-            System.out.println("key: " + kv.getKey());
-            System.out.println("value: " + kv.getValue());
-
             FareType fareType = kv.getKey();
             Collection<FareRuleSet> fareRules = kv.getValue();
 
@@ -202,7 +194,6 @@ public class DefaultFareServiceImpl implements FareService, Serializable {
                 if (currency != null)
                     fractionDigits = currency.getDefaultFractionDigits();
                 int cents = (int) Math.round(lowestCost * Math.pow(10, fractionDigits));
-                System.out.println("getCost CENTI: " + cents);
                 fare.addFare(fareType, wrappedCurrency, cents);
                 hasFare = true;
             }

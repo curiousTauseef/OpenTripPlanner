@@ -16,6 +16,7 @@ package org.opentripplanner.routing.fares;
 import java.io.File;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import org.opentripplanner.gtfs.GtfsContext;
 import org.opentripplanner.gtfs.GtfsLibrary;
@@ -25,7 +26,6 @@ import org.opentripplanner.routing.core.Money;
 import org.opentripplanner.routing.impl.DefaultFareServiceFactory;
 import org.opentripplanner.routing.services.FareService;
 import org.opentripplanner.routing.spt.GraphPath;
-import org.opentripplanner.routing.impl.DefaultFareServiceImpl;
 
 
 
@@ -35,6 +35,8 @@ public class AddingMultipleFareService implements FareService, Serializable {
 
     private List<FareService> subServices;
 
+    private DefaultFareServiceFactory dfsf = null;
+
     protected AddingMultipleFareService(List<FareService> subServices) {
         this.subServices = subServices;
     }
@@ -42,18 +44,16 @@ public class AddingMultipleFareService implements FareService, Serializable {
     @Override
     public Fare getCost(GraphPath path) {
 
-        System.out.println("AddingMultipleFareService ::: getCost");
+        if(this.dfsf == null){
+            dfsf = new DefaultFareServiceFactory();
+            try {
+                GtfsContext gtfsc = new GtfsLibrary().readGtfs(new File("C:\\OTP\\ljubljana\\gtfs.zip")); // FIXME zamenjaj z spremenljivko
+                dfsf.processGtfs(gtfsc.getDao());
+            } catch (Exception e){}
+        }
 
-        DefaultFareServiceFactory dfsf = new DefaultFareServiceFactory();
-        GtfsLibrary gtfsl = new GtfsLibrary();
-        File gtfsFile = new File("C:\\OTP\\ljubljana\\gtfs.zip"); // FIXME zamenjaj z spremenljivko
-        try {
-            GtfsContext gtfsc = gtfsl.readGtfs(gtfsFile);
-            dfsf.processGtfs(gtfsc.getDao());
-        } catch (Exception e){}
         FareService fs = dfsf.makeFareService();
-        Fare test = fs.getCost(path);
-        System.out.println("TEST FARE: " + test);
+        Fare fareGTFS = fs.getCost(path);
 
         Fare fare = null;
 
@@ -105,6 +105,13 @@ public class AddingMultipleFareService implements FareService, Serializable {
                 fare = newFare;
             }
         }
+        try{
+            int centsGTFS = 0;
+            for (Map.Entry<Fare.FareType, Money> entry : fareGTFS.fare.entrySet()) {
+                centsGTFS += entry.getValue().getCents();
+            }
+            fare.addCost(centsGTFS);
+        }catch (Exception e){}
         // Can be null here if no sub-service has returned fare
         return fare;
     }

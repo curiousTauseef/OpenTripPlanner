@@ -30,9 +30,10 @@ public class CarRentalRequest {
 
     public TripPlan getPlan(GenericLocation start, GenericLocation end, int mode) {
         TimeBasedCarRentalFareService carFare = null;
-        try{
+        try {
             carFare = router.graph.getCarFareService();
-        }catch (Exception e){}
+        } catch (Exception e) {
+        }
 
         RoutingRequest alternativeRequest = new RoutingRequest();
         RoutingRequest toStation = new RoutingRequest();
@@ -102,7 +103,7 @@ public class CarRentalRequest {
             Itinerary skupniItinerary = mergePath(mainPlan);
             List<Itinerary> skupnaListaItinerary = new ArrayList<Itinerary>();
 
-            if(carFare != null){
+            if (carFare != null) {
                 int cents = 0;
                 Fare skupnaFare = new Fare();
 

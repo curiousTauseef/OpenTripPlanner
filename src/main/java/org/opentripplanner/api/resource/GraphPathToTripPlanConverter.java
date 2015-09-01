@@ -151,8 +151,6 @@ public abstract class GraphPathToTripPlanConverter {
 
         State[][] legsStates = sliceStates(states);
 
-        System.out.println("GraphPathToTripPlanConverter: "+fareService.getClass());
-
         if (fareService != null) {
             itinerary.fare = fareService.getCost(path);
         }
