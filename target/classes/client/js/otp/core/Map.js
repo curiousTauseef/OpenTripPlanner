@@ -64,29 +64,17 @@ otp.core.Map = otp.Class({
                
         var resourcePath = otp.config.resourcePath || "";
         L.Icon.Default.imagePath = resourcePath + 'images/leaflet/';
-
-        var parkirisca = preberiPodatke("http://opendata.si/promet/parkirisca/lpt/").Parkirisca;
-        var bicikeLjPostaje = preberiPodatke("https://api.jcdecaux.com/vls/v1/stations?contract=Ljubljana&apiKey=722650953d5c72b413270edb95d83d4e1c3e48c1");
-        var stevciPrometa = preberiPodatke("http://opendata.si/promet/counters/").feed.entry;
-        var dogodkiNaCestah = preberiPodatke("http://opendata.si/promet/events/").dogodki.dogodek;
-        var carSharingPostaje = preberiPodatke("https://maas-api.comtrade.com/api/locations?list=all");
-
-        var markerjiParkirisca = parseParkirisca(parkirisca);
-        var markerjiBicikeLJ = parserBicikelj(bicikeLjPostaje);
-        var markerjiStevci = parseStevecPrometa(stevciPrometa);
-        var markerjiDogodki = parserDogodkiNaCestah(dogodkiNaCestah);
-        var markerjiCarSharing = parserCarSharingPostaje(carSharingPostaje);
-
+CarSharing
         var overlaysFromAPI = {
-            "Parking Spots": markerjiParkirisca,
-            "BikeSharing": markerjiBicikeLJ,
-            "CarSharing": markerjiCarSharing,
-            "Traffic Counters": markerjiStevci,
-            "Traffic Events": markerjiDogodki
+            "Parking Spots": parseParkirisca(preberiPodatke("http://opendata.si/promet/parkirisca/lpt/").Parkirisca),
+            "BikeSharing": parserBicikelj(preberiPodatke("https://api.jcdecaux.com/vls/v1/stations?contract=Ljubljana&apiKey=722650953d5c72b413270edb95d83d4e1c3e48c1")),
+            "CarSharing": parserCarSharingPostaje(preberiPodatke("https://maas-api.comtrade.com/api/locations?list=all")),
+            "Traffic COunters": parseStevecPrometa(preberiPodatke("http://opendata.si/promet/counters/").feed.entry),
+            "Traffic Events": parserDogodkiNaCestah(preberiPodatke("http://opendata.si/promet/events/").dogodki.dogodek)
         }
 
-
         this.layer_control = L.control.layers(this.baseLayers, overlaysFromAPI).addTo(this.lmap);
+        
         L.control.zoom({ position : 'topright' }).addTo(this.lmap);
         //this.lmap.addControl(new L.Control.Zoom({ position : 'topright' }));
        
