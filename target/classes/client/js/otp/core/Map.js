@@ -64,7 +64,7 @@ otp.core.Map = otp.Class({
                
         var resourcePath = otp.config.resourcePath || "";
         L.Icon.Default.imagePath = resourcePath + 'images/leaflet/';
-CarSharing
+        
         var overlaysFromAPI = {
             "Parking Spots": parseParkirisca(preberiPodatke("http://opendata.si/promet/parkirisca/lpt/").Parkirisca),
             "BikeSharing": parserBicikelj(preberiPodatke("https://api.jcdecaux.com/vls/v1/stations?contract=Ljubljana&apiKey=722650953d5c72b413270edb95d83d4e1c3e48c1")),
