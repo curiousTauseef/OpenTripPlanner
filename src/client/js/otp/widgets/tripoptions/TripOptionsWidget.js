@@ -472,8 +472,35 @@ otp.widgets.tripoptions.ModeSelector =
 
         //TRANSLATORS: Label for dropdown Travel by: [mode of transport]
         var html = "<div class='notDraggable'>" + _tr("Travel by") + ": ";
+                
         html += '<select id="'+this.id+'">';
-        _.each(this.modes, function(text, key) {
+
+        /*
+
+        var transit = '<input type="checkbox" name="TraversalMode" value="TRANSIT,WALK">Transit<br>';
+        var bus = '<input type="checkbox" name="TraversalMode" value="BUSISH,WALK">Bus<br>';
+        var bicycle = '<input type="checkbox" name="TraversalMode" value="BICYCLE">Bicycle<br>';
+        var walk = '<input type="checkbox" name="TraversalMode" value="WALK">Walk<br>';
+        var drive = '<input type="checkbox" name="TraversalMode" value="CAR">Drive<br>';
+        var parkAndRide = '<input type="checkbox" name="TraversalMode" value="CAR_PARK,WALK,TRANSIT">Park And Ride<br>';
+        var kissAndRide = '<input type="checkbox" name="TraversalMode" value="CAR,WALK,TRANSIT">Kiss And Ride<br>';
+        var bikeAndRide = '<input type="checkbox" name="TraversalMode" value="BICYCLE_PARK,WALK,TRANSIT">Bike And Ride<br>';
+        var carSharing = '<input type="checkbox" name="TraversalMode" value="CARRENT">CarSharing<br>';
+        var bikeSharing = '<input type="checkbox" name="TraversalMode" value="WALK,BICYCLE_RENT">BikeSharing<br>';
+        $(transit).appendTo(this.$());
+        $(bus).appendTo(this.$());
+        $(bicycle).appendTo(this.$());
+        $(walk).appendTo(this.$());
+        $(drive).appendTo(this.$());
+        $(parkAndRide).appendTo(this.$());
+        $(kissAndRide).appendTo(this.$());
+        $(bikeAndRide).appendTo(this.$());
+        $(carSharing).appendTo(this.$());
+        $(bikeSharing).appendTo(this.$());
+
+        */
+
+        _.each(this.modes, function(text, key) {            
             html += '<option>'+text+'</option>';
         });
         html += '</select>';

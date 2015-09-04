@@ -55,6 +55,7 @@ public class CarRentalRequest {
             toStation.setModes(new TraverseModeSet(TraverseMode.WALK));
             fromStation.setModes(new TraverseModeSet(TraverseMode.WALK));
         } else if (mode == 1) {
+            // CarSharing + Transit
             alternativeRequest.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.TRANSIT));
             toStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.TRANSIT));
             fromStation.setModes(new TraverseModeSet(TraverseMode.WALK, TraverseMode.TRANSIT));
@@ -138,6 +139,9 @@ public class CarRentalRequest {
             double mainDuration = mainPlan.itinerary.get(0).duration;
             double alternativeDuration = alternativePlan.itinerary.get(0).duration;
 
+            //System.out.println("Main Duration: " + mainDuration);
+            //System.out.println("Alternative duration: " + alternativeDuration * router.graph.CarSharingRatio);
+
             if (mainDuration > alternativeDuration * router.graph.CarSharingRatio) {
                 return alternativePlan;
             } else {
@@ -182,8 +186,7 @@ public class CarRentalRequest {
                         }
                     }
                 }
-            } catch (Exception e) {
-            }
+            } catch (Exception e) {}
         }
         return vrni;
     }

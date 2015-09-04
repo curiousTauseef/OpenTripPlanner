@@ -328,6 +328,5 @@ function parserCarSharingPostaje(objCS){
         }
 
         this.layer_control = L.control.layers(this.baseLayers, overlaysFromAPI).addTo(this.lmap);
-        L.control.zoom({ position : 'topright' }).addTo(this.lmap);
 
 */

@@ -69,10 +69,10 @@ otp.core.Map = otp.Class({
             "Parking Spots": parseParkirisca(preberiPodatke("http://opendata.si/promet/parkirisca/lpt/").Parkirisca),
             "BikeSharing": parserBicikelj(preberiPodatke("https://api.jcdecaux.com/vls/v1/stations?contract=Ljubljana&apiKey=722650953d5c72b413270edb95d83d4e1c3e48c1")),
             "CarSharing": parserCarSharingPostaje(preberiPodatke("https://maas-api.comtrade.com/api/locations?list=all")),
-            "Traffic COunters": parseStevecPrometa(preberiPodatke("http://opendata.si/promet/counters/").feed.entry),
+            "Traffic Counters": parseStevecPrometa(preberiPodatke("http://opendata.si/promet/counters/").feed.entry),
             "Traffic Events": parserDogodkiNaCestah(preberiPodatke("http://opendata.si/promet/events/").dogodki.dogodek)
         }
-
+        
         this.layer_control = L.control.layers(this.baseLayers, overlaysFromAPI).addTo(this.lmap);
 
         L.control.zoom({ position : 'topright' }).addTo(this.lmap);
