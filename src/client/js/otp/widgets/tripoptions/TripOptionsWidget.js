@@ -475,18 +475,16 @@ otp.widgets.tripoptions.ModeSelector =
                 
         html += '<select id="'+this.id+'">';
 
-        /*
-
-        var transit = '<input type="checkbox" name="TraversalMode" value="TRANSIT,WALK">Transit<br>';
-        var bus = '<input type="checkbox" name="TraversalMode" value="BUSISH,WALK">Bus<br>';
-        var bicycle = '<input type="checkbox" name="TraversalMode" value="BICYCLE">Bicycle<br>';
-        var walk = '<input type="checkbox" name="TraversalMode" value="WALK">Walk<br>';
-        var drive = '<input type="checkbox" name="TraversalMode" value="CAR">Drive<br>';
-        var parkAndRide = '<input type="checkbox" name="TraversalMode" value="CAR_PARK,WALK,TRANSIT">Park And Ride<br>';
-        var kissAndRide = '<input type="checkbox" name="TraversalMode" value="CAR,WALK,TRANSIT">Kiss And Ride<br>';
-        var bikeAndRide = '<input type="checkbox" name="TraversalMode" value="BICYCLE_PARK,WALK,TRANSIT">Bike And Ride<br>';
-        var carSharing = '<input type="checkbox" name="TraversalMode" value="CARRENT">CarSharing<br>';
-        var bikeSharing = '<input type="checkbox" name="TraversalMode" value="WALK,BICYCLE_RENT">BikeSharing<br>';
+        var transit     = '<input type="checkbox" class="TraversalMode" value="TRANSIT,WALK" checked>Transit<br>';
+        var bus         = '<input type="checkbox" class="TraversalMode" value="BUSISH,WALK">Bus<br>';
+        var bicycle     = '<input type="checkbox" class="TraversalMode" value="BICYCLE">Bicycle<br>';
+        var walk        = '<input type="checkbox" class="TraversalMode" value="WALK">Walk<br>';
+        var drive       = '<input type="checkbox" class="TraversalMode" value="CAR">Drive<br>';
+        var parkAndRide = '<input type="checkbox" class="TraversalMode" value="CAR_PARK,WALK,TRANSIT">Park And Ride<br>';
+        var kissAndRide = '<input type="checkbox" class="TraversalMode" value="CAR,WALK,TRANSIT">Kiss And Ride<br>';
+        var bikeAndRide = '<input type="checkbox" class="TraversalMode" value="BICYCLE_PARK,WALK,TRANSIT">Bike And Ride<br>';
+        var carSharing  = '<input type="checkbox" class="TraversalMode" value="CARRENT">CarSharing<br>';
+        var bikeSharing = '<input type="checkbox" class="TraversalMode" value="WALK,BICYCLE_RENT">BikeSharing<br>';
         $(transit).appendTo(this.$());
         $(bus).appendTo(this.$());
         $(bicycle).appendTo(this.$());
@@ -496,9 +494,7 @@ otp.widgets.tripoptions.ModeSelector =
         $(kissAndRide).appendTo(this.$());
         $(bikeAndRide).appendTo(this.$());
         $(carSharing).appendTo(this.$());
-        $(bikeSharing).appendTo(this.$());
-
-        */
+        $(bikeSharing).appendTo(this.$());        
 
         _.each(this.modes, function(text, key) {            
             html += '<option>'+text+'</option>';
@@ -513,11 +509,31 @@ otp.widgets.tripoptions.ModeSelector =
 
     doAfterLayout : function() {
         var this_ = this;
+        
+        /*
         $("#"+this.id).change(function() {
             this_.tripWidget.inputChanged({
                 mode : _.keys(this_.modes)[this.selectedIndex],
             });
             this_.refreshModeControls();
+        });
+        */
+
+        $(".TraversalMode").change(function(){
+            if(this.value == "CARRENT1"){
+                console.log("Car rental");
+            } else if (this.value == "WALK,BICYCLE_RENT1"){
+                console.log("Bike rental");
+            } else if (this.value == "TRANSIT,WALK1") {
+                console.log("Transit");
+            } else if(this.value == "BICYCLE1"){
+                console.log("Bicycle");
+            } else {
+                this_.tripWidget.inputChanged({
+                    mode : this.value,
+                });
+                this_.refreshModeControls();    
+            }
         });
     },
 
@@ -541,7 +557,16 @@ otp.widgets.tripoptions.ModeSelector =
     refreshModeControls : function() {
         var container = $("#"+this.id+'-widgets');
         container.empty();
-        var mode = _.keys(this.modes)[document.getElementById(this.id).selectedIndex];
+
+        // values dobi vse obkljukane, nato sestavi query
+        var values = $('input:checkbox:checked.TraversalMode').map(function () {
+            return this.value;
+        }).get();
+        var mode;
+        if(values.length === 1){
+            mode = values[0];
+        }
+
         for(var i = 0; i < this.modeControls.length; i++) {
             var control = this.modeControls[i];
             if(control.isApplicableForMode(mode)) {
