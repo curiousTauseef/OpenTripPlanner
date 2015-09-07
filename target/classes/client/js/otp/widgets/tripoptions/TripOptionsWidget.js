@@ -509,31 +509,13 @@ otp.widgets.tripoptions.ModeSelector =
 
     doAfterLayout : function() {
         var this_ = this;
-        
-        /*
-        $("#"+this.id).change(function() {
-            this_.tripWidget.inputChanged({
-                mode : _.keys(this_.modes)[this.selectedIndex],
-            });
-            this_.refreshModeControls();
-        });
-        */
-
         $(".TraversalMode").change(function(){
-            if(this.value == "CARRENT1"){
-                console.log("Car rental");
-            } else if (this.value == "WALK,BICYCLE_RENT1"){
-                console.log("Bike rental");
-            } else if (this.value == "TRANSIT,WALK1") {
-                console.log("Transit");
-            } else if(this.value == "BICYCLE1"){
-                console.log("Bicycle");
-            } else {
+            $(".TraversalMode").prop('checked', false);
+            $(this).prop('checked', true);
                 this_.tripWidget.inputChanged({
                     mode : this.value,
-                });
-                this_.refreshModeControls();    
-            }
+            });
+            this_.refreshModeControls(); 
         });
     },
 
@@ -557,6 +539,8 @@ otp.widgets.tripoptions.ModeSelector =
     refreshModeControls : function() {
         var container = $("#"+this.id+'-widgets');
         container.empty();
+
+        // values dobi vse obkljukane, nato sestavi query
         var values = $('input:checkbox:checked.TraversalMode').map(function () {
             return this.value;
         }).get();
@@ -564,7 +548,7 @@ otp.widgets.tripoptions.ModeSelector =
         if(values.length === 1){
             mode = values[0];
         }
-        // v mode daj obkljukan checkbox
+
         for(var i = 0; i < this.modeControls.length; i++) {
             var control = this.modeControls[i];
             if(control.isApplicableForMode(mode)) {

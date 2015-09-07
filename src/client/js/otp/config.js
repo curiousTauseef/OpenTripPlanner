@@ -105,14 +105,14 @@ otp.config = {
     // maxZoom : 20,
     
     /* Whether the map should be moved to contain the full itinerary when a result is received. */
-    zoomToFitResults    : false,
+    zoomToFitResults    : true,
 
     /**
      * Site name / description / branding display options
      */
 
-    siteName            : "My OTP Instance",
-    siteDescription     : "An OpenTripPlanner deployment.",
+    siteName            : "ComTrade - OTP",
+    siteDescription     : "ComTrade OpenTripPlanner Deployment",
     logoGraphic         : 'images/otp_logo_darkbg_40px.png',
     // bikeshareName    : "",
     //Enable this if you want to show frontend language chooser
@@ -120,7 +120,7 @@ otp.config = {
 
     showLogo            : true,
     showTitle           : true,
-    showModuleSelector  : true,
+    showModuleSelector  : false,
     metric              : false,
 
 
@@ -288,7 +288,7 @@ otp.config.modes = {
         "BUSISH,WALK"         : _tr("Bus Only"), 
     //TRANSLATORS: Travel by: mode of transport (Used in selection in Travel
     //Options widgets)
-    //    "TRAINISH,WALK"       : _tr("Rail Only"), 
+        "TRAINISH,WALK"       : _tr("Rail Only"), 
     //TRANSLATORS: Travel by: mode of transport (Used in selection in Travel
     //Options widgets)
         "BICYCLE"             : _tr("Bicycle Only"),

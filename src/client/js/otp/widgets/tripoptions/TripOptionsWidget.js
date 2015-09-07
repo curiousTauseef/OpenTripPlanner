@@ -509,31 +509,13 @@ otp.widgets.tripoptions.ModeSelector =
 
     doAfterLayout : function() {
         var this_ = this;
-        
-        /*
-        $("#"+this.id).change(function() {
-            this_.tripWidget.inputChanged({
-                mode : _.keys(this_.modes)[this.selectedIndex],
-            });
-            this_.refreshModeControls();
-        });
-        */
-
         $(".TraversalMode").change(function(){
-            if(this.value == "CARRENT1"){
-                console.log("Car rental");
-            } else if (this.value == "WALK,BICYCLE_RENT1"){
-                console.log("Bike rental");
-            } else if (this.value == "TRANSIT,WALK1") {
-                console.log("Transit");
-            } else if(this.value == "BICYCLE1"){
-                console.log("Bicycle");
-            } else {
+            $(".TraversalMode").prop('checked', false);
+            $(this).prop('checked', true);
                 this_.tripWidget.inputChanged({
                     mode : this.value,
-                });
-                this_.refreshModeControls();    
-            }
+            });
+            this_.refreshModeControls(); 
         });
     },
 
