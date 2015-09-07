@@ -475,18 +475,20 @@ otp.widgets.tripoptions.ModeSelector =
                 
         html += '<select id="'+this.id+'">';
 
-        var transit     = '<input type="checkbox" class="TraversalMode" value="TRANSIT,WALK" checked>Transit<br>';
-        var bus         = '<input type="checkbox" class="TraversalMode" value="BUSISH,WALK">Bus<br>';
-        var bicycle     = '<input type="checkbox" class="TraversalMode" value="BICYCLE">Bicycle<br>';
-        var walk        = '<input type="checkbox" class="TraversalMode" value="WALK">Walk<br>';
-        var drive       = '<input type="checkbox" class="TraversalMode" value="CAR">Drive<br>';
-        var parkAndRide = '<input type="checkbox" class="TraversalMode" value="CAR_PARK,WALK,TRANSIT">Park And Ride<br>';
-        var kissAndRide = '<input type="checkbox" class="TraversalMode" value="CAR,WALK,TRANSIT">Kiss And Ride<br>';
-        var bikeAndRide = '<input type="checkbox" class="TraversalMode" value="BICYCLE_PARK,WALK,TRANSIT">Bike And Ride<br>';
-        var carSharing  = '<input type="checkbox" class="TraversalMode" value="CARRENT">CarSharing<br>';
-        var bikeSharing = '<input type="checkbox" class="TraversalMode" value="WALK,BICYCLE_RENT">BikeSharing<br>';
+        var transit     = '<input type="checkbox" class="TraversalMode" id="tmTransit" value="TRANSIT,WALK" checked>Transit<br>';
+        var bus         = '<input type="checkbox" class="TraversalMode" id="tmBus" value="BUSISH,WALK">Bus<br>';
+        var train       = '<input type="checkbox" class="TraversalMode" id="tmTrain" value="TRAINISH,WALK">Train<br>';
+        var bicycle     = '<input type="checkbox" class="TraversalMode" id="tmBicycle" value="BICYCLE">Bicycle<br>';
+        var walk        = '<input type="checkbox" class="TraversalMode" id="tmWalk" value="WALK">Walk<br>';
+        var drive       = '<input type="checkbox" class="TraversalMode" id="tmCar" value="CAR">Drive<br>';
+        var parkAndRide = '<input type="checkbox" class="TraversalMode" id="tmParkRide" value="CAR_PARK,WALK,TRANSIT">Park And Ride<br>';
+        var kissAndRide = '<input type="checkbox" class="TraversalMode" id="tmKissRide" value="CAR,WALK,TRANSIT">Kiss And Ride<br>';
+        var bikeAndRide = '<input type="checkbox" class="TraversalMode" id="tmBikeRide" value="BICYCLE_PARK,WALK,TRANSIT">Bike And Ride<br>';
+        var carSharing  = '<input type="checkbox" class="TraversalMode" id="tmCarSharing" value="CARRENT">CarSharing<br>';
+        var bikeSharing = '<input type="checkbox" class="TraversalMode" id="tmBikeSharing" value="WALK,BICYCLE_RENT">BikeSharing<br>';
         $(transit).appendTo(this.$());
         $(bus).appendTo(this.$());
+        $(train).appendTo(this.$());
         $(bicycle).appendTo(this.$());
         $(walk).appendTo(this.$());
         $(drive).appendTo(this.$());
@@ -507,15 +509,71 @@ otp.widgets.tripoptions.ModeSelector =
         //this.setContent(content);
     },
 
+    //$(this).prop('disabled', true);
+
     doAfterLayout : function() {
         var this_ = this;
         $(".TraversalMode").change(function(){
-            $(".TraversalMode").prop('checked', false);
-            $(this).prop('checked', true);
+            if(this.value === "TRANSIT,WALK"){
+                
+                if($(this).is(":checked")){
+                    $(".TraversalMode").prop('disabled', true);
+                    $(this).prop('disabled', false);
+                    $("#tmCarSharing").prop('disabled', false);
+                    $("#tmBikeSharing").prop('disabled', false);
+                    $("#tmBicycle").prop('disabled', false);
+                }else{
+                    $(".TraversalMode").prop('disabled', false);
+                    $(".TraversalMode").prop('checked', false);
+                }
+
+            } else if (this.value === "WALK,BICYCLE_RENT"){
+
+                if($(this).is(":checked")){
+                    $(".TraversalMode").prop('disabled', true);
+                    $(this).prop('disabled', false);
+                    $("#tmCarSharing").prop('disabled', false);
+                    $("#tmTransit").prop('disabled', false);
+                }else{
+                    $(".TraversalMode").prop('disabled', false);
+                    $(".TraversalMode").prop('checked', false);
+
+                }  
+
+            } else if (this.value === "CARRENT"){
+
+                if($(this).is(":checked")){
+                    $(".TraversalMode").prop('disabled', true);
+                    $(this).prop('disabled', false);
+                    $("#tmTransit").prop('disabled', false);
+                    $("#tmBikeSharing").prop('disabled', false);
+
+                } else{
+                    $(".TraversalMode").prop('disabled', false);
+                    $(".TraversalMode").prop('checked', false);
+
+                }
+
+            } else if (this.value === "BICYCLE"){
+
+                if($(this).is(":checked")){
+                    $(".TraversalMode").prop('disabled', true);
+                    $(this).prop('disabled', false);
+                    $("#tmTransit").prop('disabled', false);
+                    
+                } else {
+                    $(".TraversalMode").prop('disabled', false);
+                    $(".TraversalMode").prop('checked', false);
+                }
+
+            } else {
+                $(".TraversalMode").prop('checked', false);
+                $(this).prop('checked', true);
                 this_.tripWidget.inputChanged({
                     mode : this.value,
-            });
-            this_.refreshModeControls(); 
+                });
+                this_.refreshModeControls(); 
+            }
         });
     },
 
