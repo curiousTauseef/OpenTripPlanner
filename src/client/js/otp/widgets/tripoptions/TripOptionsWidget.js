@@ -504,13 +504,11 @@ otp.widgets.tripoptions.ModeSelector =
 
     },
 
-    //$(this).prop('disabled', true);
-
     doAfterLayout : function() {
         var this_ = this;
         $(".TraversalMode").change(function(){
             var osvezi = true;
-
+            var thisModes = "";
             if(this.value === "TRANSIT,WALK"){
                 if($(this).is(":checked")){ // transit
                     $(".TraversalMode").prop('disabled', true);
@@ -522,22 +520,27 @@ otp.widgets.tripoptions.ModeSelector =
                         this_.tripWidget.inputChanged({
                             mode : "TRANSIT,WALK",
                         });
+                        thisModes = "TRANSIT,WALK";
                     } else if($("#tmTransit").is(":checked") && $("#tmCarSharing").is(":checked") && !$("#tmBikeSharing").is(":checked") && !$("#tmBicycle").is(":checked")){
                         this_.tripWidget.inputChanged({
                             mode : "TRANSIT,CARRENT",
                         });
+                        thisModes = "TRANSIT,CARRENT";
                     } else if($("#tmTransit").is(":checked") && $("#tmCarSharing").is(":checked") && !$("#tmBikeSharing").is(":checked") && !$("#tmBicycle").is(":checked")){
                         this_.tripWidget.inputChanged({
                             mode : "TRANSIT,WALK",
                         });
+                        thisModes = "TRANSIT,WALK";
                     } else if($("#tmTransit").is(":checked") && !$("#tmCarSharing").is(":checked") && $("#tmBikeSharing").is(":checked") && !$("#tmBicycle").is(":checked")){
                         this_.tripWidget.inputChanged({
                             mode : "TRANSIT,WALK,BICYCLE_RENT",
                         });
+                        thisModes = "TRANSIT,WALK,BICYCLE_RENT";
                     } else if ($("#tmTransit").is(":checked") && !$("#tmCarSharing").is(":checked") && !$("#tmBikeSharing").is(":checked") && $("#tmBicycle").is(":checked")){
                         this_.tripWidget.inputChanged({
                             mode : "TRANSIT,BICYCLE",
                         });
+                        thisModes = "TRANSIT,BICYCLE";
                     } else {
                         $(".TraversalMode").prop('disabled', false);
                         $(".TraversalMode").prop('checked', false);
@@ -560,14 +563,17 @@ otp.widgets.tripoptions.ModeSelector =
                         this_.tripWidget.inputChanged({
                             mode : "WALK,BICYCLE_RENT",
                         });
+                        thisModes = "WALK,BICYCLE_RENT";
                     } else if ($("#tmBikeSharing").is(":checked") && $("#tmCarSharing").is(":checked") && !$("#tmTransit").is(":checked")){
                         this_.tripWidget.inputChanged({
                             mode : "CARRENT,BICYCLE",
                         });
+                        thisModes = "CARRENT,BICYCLE";
                     } else if ($("#tmBikeSharing").is(":checked") && !$("#tmCarSharing").is(":checked") && $("#tmTransit").is(":checked")){
                         this_.tripWidget.inputChanged({
                             mode : "TRANSIT,WALK,BICYCLE_RENT",
                         });
+                        thisModes = "TRANSIT,WALK,BICYCLE_RENT";
                     } else {
                         $(".TraversalMode").prop('disabled', false);
                         $(".TraversalMode").prop('checked', false);
@@ -590,14 +596,17 @@ otp.widgets.tripoptions.ModeSelector =
                         this_.tripWidget.inputChanged({
                             mode : "CARRENT",
                         });
+                        thisModes = "CARRENT";
                     } else if ($("#tmCarSharing").is(":checked") && $("#tmBikeSharing").is(":checked") && !$("#tmTransit").is(":checked")){
                         this_.tripWidget.inputChanged({
                             mode : "CARRENT,BICYCLE",
                         });
+                        thisModes = "CARRENT,BICYCLE";
                     } else if ($("#tmCarSharing").is(":checked") && !$("#tmBikeSharing").is(":checked") && $("#tmTransit").is(":checked")){
                         this_.tripWidget.inputChanged({
                             mode : "TRANSIT,CARRENT",
                         });
+                        thisModes = "TRANSIT,CARRENT";
                     } else {
                         $(".TraversalMode").prop('disabled', false);
                         $(".TraversalMode").prop('checked', false);
@@ -619,10 +628,12 @@ otp.widgets.tripoptions.ModeSelector =
                         this_.tripWidget.inputChanged({
                             mode : "BICYCLE",
                         });
+                        thisModes = "BICYCLE";
                     } else if($("#tmBicycle").is(":checked") && $("#tmTransit").is(":checked")){
                         this_.tripWidget.inputChanged({
                             mode : "TRANSIT,BICYCLE",
                         });
+                        thisModes = "TRANSIT,BICYCLE";
                     } else {
                         $(".TraversalMode").prop('disabled', false);
                         $(".TraversalMode").prop('checked', false);
@@ -641,10 +652,11 @@ otp.widgets.tripoptions.ModeSelector =
                     this_.tripWidget.inputChanged({
                         mode : this.value,
                     });
+                    thisModes = this.value;
                 }
             }
             if(osvezi){
-                this_.refreshModeControls(5);
+                this_.refreshModeControls(thisModes);
             }
         });
     },
@@ -665,20 +677,10 @@ otp.widgets.tripoptions.ModeSelector =
 
     controlPadding : "8px",
 
-    refreshModeControls : function(xxx) {
-        console.log(xxx);
+    refreshModeControls : function(thisModes) {
         var container = $("#"+this.id+'-widgets');
         container.empty();
-
-        // values dobi vse obkljukane, nato sestavi query
-        var values = $('input:checkbox:checked.TraversalMode').map(function () {
-            return this.value;
-        }).get();
-        var mode;
-        if(values.length === 1){
-            mode = values[0];
-        }
-
+        var mode = thisModes;
         for(var i = 0; i < this.modeControls.length; i++) {
             var control = this.modeControls[i];
             if(control.isApplicableForMode(mode)) {

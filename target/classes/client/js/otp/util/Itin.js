@@ -74,35 +74,43 @@ otp.util.Itin = {
     },
 
     includesTransit : function(mode) {
-        var modeArr = mode.split(",");
-        for(var i = 0; i < modeArr.length; i++) {
-            if(this.isTransit(modeArr[i])) return true;
+        if(mode) {
+            var modeArr = mode.split(",");
+            for(var i = 0; i < modeArr.length; i++) {
+                if(this.isTransit(modeArr[i])) return true;
+            }
+            return false;
         }
-        return false;
     },
 
     includesWalk : function(mode) {
-        var modeArr = mode.split(",");
-        for(var i = 0; i < modeArr.length; i++) {
-            if(modeArr[i] === "WALK") return true;
+        if(mode) {
+            var modeArr = mode.split(",");
+            for(var i = 0; i < modeArr.length; i++) {
+                if(modeArr[i] === "WALK") return true;
+            }
+            return false;
         }
-        return false;
     },
 
     includesBicycle : function(mode) {
-        var modeArr = mode.split(",");
-        for(var i = 0; i < modeArr.length; i++) {
-            if(modeArr[i] === "BICYCLE") return true;
+        if(mode) {
+            var modeArr = mode.split(",");
+            for(var i = 0; i < modeArr.length; i++) {
+                if(modeArr[i] === "BICYCLE") return true;
+            }
+            return false;
         }
-        return false;
     },
 
     includesAnyBicycle : function(mode) {
-        var modeArr = mode.split(",");
-        for(var i = 0; i < modeArr.length; i++) {
-            if(this.getUnqualifiedMode(modeArr[i]) === "BICYCLE") return true;
+        if(mode){
+            var modeArr = mode.split(",");
+            for(var i = 0; i < modeArr.length; i++) {
+                if(this.getUnqualifiedMode(modeArr[i]) === "BICYCLE") return true;
+            }
+            return false;
         }
-        return false;
     },
 
     absoluteDirectionStrings : {
