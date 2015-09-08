@@ -514,65 +514,141 @@ otp.widgets.tripoptions.ModeSelector =
     doAfterLayout : function() {
         var this_ = this;
         $(".TraversalMode").change(function(){
+            var osvezi = true;
             if(this.value === "TRANSIT,WALK"){
-                
-                if($(this).is(":checked")){
+                if($(this).is(":checked")){ // transit
                     $(".TraversalMode").prop('disabled', true);
                     $(this).prop('disabled', false);
                     $("#tmCarSharing").prop('disabled', false);
                     $("#tmBikeSharing").prop('disabled', false);
                     $("#tmBicycle").prop('disabled', false);
+                    if($("#tmTransit").is(":checked") && !$("#tmCarSharing").is(":checked") && !$("#tmBikeSharing").is(":checked") && !$("#tmBicycle").is(":checked")){
+                        this_.tripWidget.inputChanged({
+                            mode : "TRANSIT,WALK",
+                        });
+                    } else if($("#tmTransit").is(":checked") && $("#tmCarSharing").is(":checked") && !$("#tmBikeSharing").is(":checked") && !$("#tmBicycle").is(":checked")){
+                        this_.tripWidget.inputChanged({
+                            mode : "TRANSIT,CARRENT",
+                        });
+                    } else if($("#tmTransit").is(":checked") && $("#tmCarSharing").is(":checked") && !$("#tmBikeSharing").is(":checked") && !$("#tmBicycle").is(":checked")){
+                        this_.tripWidget.inputChanged({
+                            mode : "TRANSIT,WALK",
+                        });
+                    } else if($("#tmTransit").is(":checked") && !$("#tmCarSharing").is(":checked") && $("#tmBikeSharing").is(":checked") && !$("#tmBicycle").is(":checked")){
+                        this_.tripWidget.inputChanged({
+                            mode : "TRANSIT,WALK,BICYCLE_RENT",
+                        });
+                    } else if ($("#tmTransit").is(":checked") && !$("#tmCarSharing").is(":checked") && !$("#tmBikeSharing").is(":checked") && $("#tmBicycle").is(":checked")){
+                        this_.tripWidget.inputChanged({
+                            mode : "TRANSIT,BICYCLE",
+                        });
+                    } else {
+                        $(".TraversalMode").prop('disabled', false);
+                        $(".TraversalMode").prop('checked', false);
+                        osvezi = false;
+                    }
                 }else{
                     $(".TraversalMode").prop('disabled', false);
                     $(".TraversalMode").prop('checked', false);
+                    osvezi = false;
                 }
 
             } else if (this.value === "WALK,BICYCLE_RENT"){
 
-                if($(this).is(":checked")){
+                if($(this).is(":checked")){ // bike sharing
                     $(".TraversalMode").prop('disabled', true);
                     $(this).prop('disabled', false);
                     $("#tmCarSharing").prop('disabled', false);
                     $("#tmTransit").prop('disabled', false);
+                    if($("#tmBikeSharing").is(":checked") && !$("#tmCarSharing").is(":checked") && !$("#tmTransit").is(":checked")){
+                        this_.tripWidget.inputChanged({
+                            mode : "WALK,BICYCLE_RENT",
+                        });
+                    } else if ($("#tmBikeSharing").is(":checked") && $("#tmCarSharing").is(":checked") && !$("#tmTransit").is(":checked")){
+                        this_.tripWidget.inputChanged({
+                            mode : "CARRENT,BICYCLE",
+                        });
+                    } else if ($("#tmBikeSharing").is(":checked") && !$("#tmCarSharing").is(":checked") && $("#tmTransit").is(":checked")){
+                        this_.tripWidget.inputChanged({
+                            mode : "TRANSIT,WALK,BICYCLE_RENT",
+                        });
+                    } else {
+                        $(".TraversalMode").prop('disabled', false);
+                        $(".TraversalMode").prop('checked', false);
+                        osvezi = false;
+                    }
                 }else{
                     $(".TraversalMode").prop('disabled', false);
                     $(".TraversalMode").prop('checked', false);
-
+                    osvezi = false;
                 }  
 
             } else if (this.value === "CARRENT"){
 
-                if($(this).is(":checked")){
+                if($(this).is(":checked")){ // car sharing
                     $(".TraversalMode").prop('disabled', true);
                     $(this).prop('disabled', false);
                     $("#tmTransit").prop('disabled', false);
                     $("#tmBikeSharing").prop('disabled', false);
-
+                    if($("#tmCarSharing").is(":checked") && !$("#tmBikeSharing").is(":checked") && !$("#tmTransit").is(":checked")){
+                        this_.tripWidget.inputChanged({
+                            mode : "CARRENT",
+                        });
+                    } else if ($("#tmCarSharing").is(":checked") && $("#tmBikeSharing").is(":checked") && !$("#tmTransit").is(":checked")){
+                        this_.tripWidget.inputChanged({
+                            mode : "CARRENT,BICYCLE",
+                        });
+                    } else if ($("#tmCarSharing").is(":checked") && !$("#tmBikeSharing").is(":checked") && $("#tmTransit").is(":checked")){
+                        this_.tripWidget.inputChanged({
+                            mode : "TRANSIT,CARRENT",
+                        });
+                    } else {
+                        $(".TraversalMode").prop('disabled', false);
+                        $(".TraversalMode").prop('checked', false);
+                        osvezi = false;
+                    }
                 } else{
                     $(".TraversalMode").prop('disabled', false);
                     $(".TraversalMode").prop('checked', false);
-
+                    osvezi = false;
                 }
 
             } else if (this.value === "BICYCLE"){
 
-                if($(this).is(":checked")){
+                if($(this).is(":checked")){ // bike
                     $(".TraversalMode").prop('disabled', true);
                     $(this).prop('disabled', false);
                     $("#tmTransit").prop('disabled', false);
-                    
+                    if($("#tmBicycle").is(":checked") && !$("#tmTransit").is(":checked")){
+                        this_.tripWidget.inputChanged({
+                            mode : "BICYCLE",
+                        });
+                    }else if($("#tmBicycle").is(":checked") && $("#tmTransit").is(":checked")){
+                        this_.tripWidget.inputChanged({
+                            mode : "TRANSIT,BICYCLE",
+                        });
+                    } else {
+                        $(".TraversalMode").prop('disabled', false);
+                        $(".TraversalMode").prop('checked', false);
+                        osvezi = false;
+                    }
                 } else {
                     $(".TraversalMode").prop('disabled', false);
                     $(".TraversalMode").prop('checked', false);
+                    osvezi = false;
                 }
 
             } else {
-                $(".TraversalMode").prop('checked', false);
-                $(this).prop('checked', true);
-                this_.tripWidget.inputChanged({
-                    mode : this.value,
-                });
-                this_.refreshModeControls(); 
+                if($(this).is(":checked")){
+                    $(".TraversalMode").prop('checked', false);
+                    $(this).prop('checked', true);
+                    this_.tripWidget.inputChanged({
+                        mode : this.value,
+                    });
+                }
+            }
+            if(osvezi){
+                this_.refreshModeControls();
             }
         });
     },
@@ -586,7 +662,6 @@ otp.widgets.tripoptions.ModeSelector =
             }
             i++;
         }
-
         for(i = 0; i < this.modeControls.length; i++) {
             this.modeControls[i].restorePlan(data);
         }
@@ -616,7 +691,6 @@ otp.widgets.tripoptions.ModeSelector =
             }
         }
     },
-
     addModeControl : function(widget) {
         this.modeControls.push(widget);
     }
