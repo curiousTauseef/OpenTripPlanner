@@ -470,11 +470,6 @@ otp.widgets.tripoptions.ModeSelector =
         this.modeControls = [];
         this.optionLookup = {};
 
-        //TRANSLATORS: Label for dropdown Travel by: [mode of transport]
-        var html = "<div class='notDraggable'>" + _tr("Travel by") + ": ";
-                
-        html += '<select id="'+this.id+'">';
-
         var transit     = '<input type="checkbox" class="TraversalMode" id="tmTransit" value="TRANSIT,WALK" checked>Transit<br>';
         var bus         = '<input type="checkbox" class="TraversalMode" id="tmBus" value="BUSISH,WALK">Bus<br>';
         var train       = '<input type="checkbox" class="TraversalMode" id="tmTrain" value="TRAINISH,WALK">Train<br>';
@@ -496,17 +491,16 @@ otp.widgets.tripoptions.ModeSelector =
         $(kissAndRide).appendTo(this.$());
         $(bikeAndRide).appendTo(this.$());
         $(carSharing).appendTo(this.$());
-        $(bikeSharing).appendTo(this.$());        
+        $(bikeSharing).appendTo(this.$());
 
-        _.each(this.modes, function(text, key) {            
-            html += '<option>'+text+'</option>';
-        });
-        html += '</select>';
-        html += '<div id="'+this.id+'-widgets" style="overflow: hidden;"></div>';
-        html += "</div>";
+        $(".TraversalMode").prop('disabled', true);
+        $("#tmTransit").prop('disabled', false);
+        $("#tmCarSharing").prop('disabled', false);
+        $("#tmBikeSharing").prop('disabled', false);
+        $("#tmBicycle").prop('disabled', false);
 
-        $(html).appendTo(this.$());
-        //this.setContent(content);
+        $('<div class="notDraggable"><div id="' + this.id + '-widgets" style="overflow: hidden;"></div></div>').appendTo(this.$());
+
     },
 
     //$(this).prop('disabled', true);
