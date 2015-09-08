@@ -706,6 +706,15 @@ otp.widgets.tripoptions.ModeSelector =
             if(osvezi){
                 this_.refreshModeControls(thisModes);
             }
+            /*
+            if($('.TraversalMode:checkbox:checked').length === 0){
+                $("#tmTransit").prop('checked', true);
+                this_.tripWidget.inputChanged({
+                        mode : "TRANSIT,WALK",
+                });
+                this_.refreshModeControls(thisModes);
+            }
+            */
         });
     },
 

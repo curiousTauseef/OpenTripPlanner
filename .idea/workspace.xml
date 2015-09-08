@@ -2,6 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac10c414-85c1-4e02-aa67-1ad62cac0ebe" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lucene/_1.cfe" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lucene/_1.cfs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lucene/_1.si" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lucene/segments_2" />
+      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\lucene\_0.cfe" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\lucene\_0.cfs" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\lucene\_0.si" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\lucene\segments_1" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lucene/segments.gen" afterPath="$PROJECT_DIR$/lucene/segments.gen" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/TripOptionsWidget.js" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/TripOptionsWidget.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/TripOptionsWidget.js" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/TripOptionsWidget.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
