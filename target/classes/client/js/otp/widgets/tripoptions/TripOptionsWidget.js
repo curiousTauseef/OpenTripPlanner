@@ -606,7 +606,7 @@ otp.widgets.tripoptions.ModeSelector =
                     $(".TraversalMode").prop('disabled', false);
                     $(".TraversalMode").prop('checked', false);
                     osvezi = false;
-                }  
+                }
 
             } else if (this.value === "CARRENT"){
 
@@ -701,6 +701,10 @@ otp.widgets.tripoptions.ModeSelector =
                         mode : this.value,
                     });
                     thisModes = this.value;
+                }else{
+                    $(".TraversalMode").prop('disabled', false);
+                    $(".TraversalMode").prop('checked', false);
+                    osvezi = false;
                 }
             }
             if(osvezi){

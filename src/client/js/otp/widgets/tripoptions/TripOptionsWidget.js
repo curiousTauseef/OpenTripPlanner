@@ -474,7 +474,7 @@ otp.widgets.tripoptions.ModeSelector =
         var bus         = '<input type="checkbox" class="TraversalMode" id="tmBus" value="BUSISH,WALK" disabled>Bus<br>';
         var train       = '<input type="checkbox" class="TraversalMode" id="tmTrain" value="TRAINISH,WALK" disabled>Train<br>';
         
-        var walk        = '<input type="checkbox" class="TraversalMode" id="tmWalk" value="WALK" disabled>Walk<br>';
+        var walk        = '<input type="checkbox" class="TraversalMode" id="tmWalk" value="WALK" disabled>Walk only<br>';
         var bicycle     = '<input type="checkbox" class="TraversalMode" id="tmBicycle" value="BICYCLE">Bicycle<br>';
         var drive       = '<input type="checkbox" class="TraversalMode" id="tmCar" value="CAR" disabled>Drive<br>';
         
@@ -606,7 +606,7 @@ otp.widgets.tripoptions.ModeSelector =
                     $(".TraversalMode").prop('disabled', false);
                     $(".TraversalMode").prop('checked', false);
                     osvezi = false;
-                }  
+                }
 
             } else if (this.value === "CARRENT"){
 
@@ -701,6 +701,10 @@ otp.widgets.tripoptions.ModeSelector =
                         mode : this.value,
                     });
                     thisModes = this.value;
+                }else{
+                    $(".TraversalMode").prop('disabled', false);
+                    $(".TraversalMode").prop('checked', false);
+                    osvezi = false;
                 }
             }
             if(osvezi){
