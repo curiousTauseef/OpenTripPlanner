@@ -511,11 +511,22 @@ otp.widgets.tripoptions.ModeSelector =
             var thisModes = "";
             if(this.value === "TRANSIT,WALK"){
                 if($(this).is(":checked")){ // transit
+
+                    $("#tmBus").prop("checked", false);
+                    $("#tmTrain").prop("checked", false);
+                    $("#tmWalk").prop("checked", false);
+                    $("#tmCar").prop("checked", false);
+                    $("#tmParkRide").prop("checked", false);
+                    $("#tmKissRide").prop("checked", false);
+                    $("#tmBikeRide").prop("checked", false);
+
                     $(".TraversalMode").prop('disabled', true);
                     $(this).prop('disabled', false);
+                    
                     $("#tmCarSharing").prop('disabled', false);
                     $("#tmBikeSharing").prop('disabled', false);
                     $("#tmBicycle").prop('disabled', false);
+                                        
                     if($("#tmTransit").is(":checked") && !$("#tmCarSharing").is(":checked") && !$("#tmBikeSharing").is(":checked") && !$("#tmBicycle").is(":checked")){
                         this_.tripWidget.inputChanged({
                             mode : "TRANSIT,WALK",
@@ -555,10 +566,22 @@ otp.widgets.tripoptions.ModeSelector =
             } else if (this.value === "WALK,BICYCLE_RENT"){
 
                 if($(this).is(":checked")){ // bike sharing
+
+                    $("#tmBicycle").prop("checked", false);
+                    $("#tmBus").prop("checked", false);
+                    $("#tmTrain").prop("checked", false);
+                    $("#tmWalk").prop("checked", false);
+                    $("#tmCar").prop("checked", false);
+                    $("#tmParkRide").prop("checked", false);
+                    $("#tmKissRide").prop("checked", false);
+                    $("#tmBikeRide").prop("checked", false);
+
                     $(".TraversalMode").prop('disabled', true);
                     $(this).prop('disabled', false);
+                    
                     $("#tmCarSharing").prop('disabled', false);
                     $("#tmTransit").prop('disabled', false);
+
                     if($("#tmBikeSharing").is(":checked") && !$("#tmCarSharing").is(":checked") && !$("#tmTransit").is(":checked")){
                         this_.tripWidget.inputChanged({
                             mode : "WALK,BICYCLE_RENT",
@@ -588,10 +611,22 @@ otp.widgets.tripoptions.ModeSelector =
             } else if (this.value === "CARRENT"){
 
                 if($(this).is(":checked")){ // car sharing
+
+                    $("#tmBicycle").prop("checked", false);
+                    $("#tmBus").prop("checked", false);
+                    $("#tmTrain").prop("checked", false);
+                    $("#tmWalk").prop("checked", false);
+                    $("#tmCar").prop("checked", false);
+                    $("#tmParkRide").prop("checked", false);
+                    $("#tmKissRide").prop("checked", false);
+                    $("#tmBikeRide").prop("checked", false); 
+
                     $(".TraversalMode").prop('disabled', true);
                     $(this).prop('disabled', false);
+                    
                     $("#tmTransit").prop('disabled', false);
                     $("#tmBikeSharing").prop('disabled', false);
+                                      
                     if($("#tmCarSharing").is(":checked") && !$("#tmBikeSharing").is(":checked") && !$("#tmTransit").is(":checked")){
                         this_.tripWidget.inputChanged({
                             mode : "CARRENT",
@@ -621,9 +656,22 @@ otp.widgets.tripoptions.ModeSelector =
             } else if (this.value === "BICYCLE"){
 
                 if($(this).is(":checked")){ // bike
+                    
+                    $("#tmBus").prop("checked", false);
+                    $("#tmTrain").prop("checked", false);
+                    $("#tmWalk").prop("checked", false);
+                    $("#tmCar").prop("checked", false);
+                    $("#tmParkRide").prop("checked", false);
+                    $("#tmKissRide").prop("checked", false);
+                    $("#tmBikeRide").prop("checked", false); 
+                    $("#tmCarSharing").prop("checked", false);
+                    $("#tmBikeSharing").prop("checked", false);
+                    
                     $(".TraversalMode").prop('disabled', true);
                     $(this).prop('disabled', false);
+                    
                     $("#tmTransit").prop('disabled', false);
+                    
                     if($("#tmBicycle").is(":checked") && !$("#tmTransit").is(":checked")){
                         this_.tripWidget.inputChanged({
                             mode : "BICYCLE",
