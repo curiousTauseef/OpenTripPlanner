@@ -471,33 +471,34 @@ otp.widgets.tripoptions.ModeSelector =
         this.optionLookup = {};
 
         var transit     = '<input type="checkbox" class="TraversalMode" id="tmTransit" value="TRANSIT,WALK" checked>Transit<br>';
-        var bus         = '<input type="checkbox" class="TraversalMode" id="tmBus" value="BUSISH,WALK">Bus<br>';
-        var train       = '<input type="checkbox" class="TraversalMode" id="tmTrain" value="TRAINISH,WALK">Train<br>';
+        var bus         = '<input type="checkbox" class="TraversalMode" id="tmBus" value="BUSISH,WALK" disabled>Bus<br>';
+        var train       = '<input type="checkbox" class="TraversalMode" id="tmTrain" value="TRAINISH,WALK" disabled>Train<br>';
+        
+        var walk        = '<input type="checkbox" class="TraversalMode" id="tmWalk" value="WALK" disabled>Walk<br>';
         var bicycle     = '<input type="checkbox" class="TraversalMode" id="tmBicycle" value="BICYCLE">Bicycle<br>';
-        var walk        = '<input type="checkbox" class="TraversalMode" id="tmWalk" value="WALK">Walk<br>';
-        var drive       = '<input type="checkbox" class="TraversalMode" id="tmCar" value="CAR">Drive<br>';
-        var parkAndRide = '<input type="checkbox" class="TraversalMode" id="tmParkRide" value="CAR_PARK,WALK,TRANSIT">Park And Ride<br>';
-        var kissAndRide = '<input type="checkbox" class="TraversalMode" id="tmKissRide" value="CAR,WALK,TRANSIT">Kiss And Ride<br>';
-        var bikeAndRide = '<input type="checkbox" class="TraversalMode" id="tmBikeRide" value="BICYCLE_PARK,WALK,TRANSIT">Bike And Ride<br>';
+        var drive       = '<input type="checkbox" class="TraversalMode" id="tmCar" value="CAR" disabled>Drive<br>';
+        
+        var parkAndRide = '<input type="checkbox" class="TraversalMode" id="tmParkRide" value="CAR_PARK,WALK,TRANSIT" disabled>Park And Ride<br>';
+        var kissAndRide = '<input type="checkbox" class="TraversalMode" id="tmKissRide" value="CAR,WALK,TRANSIT" disabled>Kiss And Ride<br>';
+        var bikeAndRide = '<input type="checkbox" class="TraversalMode" id="tmBikeRide" value="BICYCLE_PARK,WALK,TRANSIT" disabled>Bike And Ride<br>';
+        
         var carSharing  = '<input type="checkbox" class="TraversalMode" id="tmCarSharing" value="CARRENT">CarSharing<br>';
         var bikeSharing = '<input type="checkbox" class="TraversalMode" id="tmBikeSharing" value="WALK,BICYCLE_RENT">BikeSharing<br>';
+        
         $(transit).appendTo(this.$());
         $(bus).appendTo(this.$());
         $(train).appendTo(this.$());
-        $(bicycle).appendTo(this.$());
+        
         $(walk).appendTo(this.$());
+        $(bicycle).appendTo(this.$());
         $(drive).appendTo(this.$());
+
         $(parkAndRide).appendTo(this.$());
         $(kissAndRide).appendTo(this.$());
         $(bikeAndRide).appendTo(this.$());
+
         $(carSharing).appendTo(this.$());
         $(bikeSharing).appendTo(this.$());
-
-        $(".TraversalMode").prop('disabled', true);
-        $("#tmTransit").prop('disabled', false);
-        $("#tmCarSharing").prop('disabled', false);
-        $("#tmBikeSharing").prop('disabled', false);
-        $("#tmBicycle").prop('disabled', false);
 
         $('<div class="notDraggable"><div id="' + this.id + '-widgets" style="overflow: hidden;"></div></div>').appendTo(this.$());
 
@@ -509,6 +510,7 @@ otp.widgets.tripoptions.ModeSelector =
         var this_ = this;
         $(".TraversalMode").change(function(){
             var osvezi = true;
+
             if(this.value === "TRANSIT,WALK"){
                 if($(this).is(":checked")){ // transit
                     $(".TraversalMode").prop('disabled', true);
@@ -617,7 +619,7 @@ otp.widgets.tripoptions.ModeSelector =
                         this_.tripWidget.inputChanged({
                             mode : "BICYCLE",
                         });
-                    }else if($("#tmBicycle").is(":checked") && $("#tmTransit").is(":checked")){
+                    } else if($("#tmBicycle").is(":checked") && $("#tmTransit").is(":checked")){
                         this_.tripWidget.inputChanged({
                             mode : "TRANSIT,BICYCLE",
                         });
@@ -642,7 +644,7 @@ otp.widgets.tripoptions.ModeSelector =
                 }
             }
             if(osvezi){
-                this_.refreshModeControls();
+                this_.refreshModeControls(5);
             }
         });
     },
@@ -663,7 +665,8 @@ otp.widgets.tripoptions.ModeSelector =
 
     controlPadding : "8px",
 
-    refreshModeControls : function() {
+    refreshModeControls : function(xxx) {
+        console.log(xxx);
         var container = $("#"+this.id+'-widgets');
         container.empty();
 
