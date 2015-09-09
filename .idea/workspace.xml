@@ -6,12 +6,8 @@
       <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\lucene\_0.cfs" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\lucene\_0.si" afterPath="" />
       <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\lucene\segments_1" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/core/Map.js" afterPath="$PROJECT_DIR$/src/client/js/otp/core/Map.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/TripOptionsWidget.js" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/TripOptionsWidget.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/config.js" afterPath="$PROJECT_DIR$/src/client/js/otp/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/config.js" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/locale/sl.json" afterPath="$PROJECT_DIR$/src/client/js/otp/locale/sl.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/tripoptions-style.css" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/tripoptions-style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/TripOptionsWidget.js" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/TripOptionsWidget.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="otp.iws" />
@@ -91,7 +87,6 @@
         <option value="$PROJECT_DIR$/src/test/java/org/opentripplanner/routing/fares/MultipleFareServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/core/Fare.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/bike_rental/TimeBasedBikeRentalFareService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/api/resource/PlannerResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/core/Money.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/car_rental/TimeBasedCarRentalFareService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/updater/GraphUpdaterConfigurator.java" />
@@ -105,6 +100,7 @@
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/fares/AddingMultipleFareService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/core/RoutingRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/api/resource/CarRentalRequest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/api/resource/PlannerResource.java" />
       </list>
     </option>
   </component>
@@ -421,7 +417,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32897604" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="1.0" sideWeight="0.4857143" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38779956" sideWeight="0.4857143" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25416666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -837,8 +833,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/api/resource/PlannerResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62126243">
-          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+        <state vertical-scroll-proportion="1.3659492">
+          <caret line="115" column="9" selection-start-line="115" selection-start-column="9" selection-end-line="115" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -511,7 +511,6 @@ otp.widgets.tripoptions.ModeSelector =
             var thisModes = "";
             if(this.value === "TRANSIT,WALK"){
                 if($(this).is(":checked")){ // transit
-
                     $("#tmBus").prop("checked", false);
                     $("#tmTrain").prop("checked", false);
                     $("#tmWalk").prop("checked", false);
@@ -533,21 +532,22 @@ otp.widgets.tripoptions.ModeSelector =
                         });
                         thisModes = "TRANSIT,WALK";
                     } else if($("#tmTransit").is(":checked") && $("#tmCarSharing").is(":checked") && !$("#tmBikeSharing").is(":checked") && !$("#tmBicycle").is(":checked")){
+                        $("#tmBikeSharing").prop('disabled', true);
+                        $("#tmBicycle").prop('disabled', true);
                         this_.tripWidget.inputChanged({
                             mode : "TRANSIT,CARRENT",
                         });
                         thisModes = "TRANSIT,CARRENT";
-                    } else if($("#tmTransit").is(":checked") && $("#tmCarSharing").is(":checked") && !$("#tmBikeSharing").is(":checked") && !$("#tmBicycle").is(":checked")){
-                        this_.tripWidget.inputChanged({
-                            mode : "TRANSIT,WALK",
-                        });
-                        thisModes = "TRANSIT,WALK";
                     } else if($("#tmTransit").is(":checked") && !$("#tmCarSharing").is(":checked") && $("#tmBikeSharing").is(":checked") && !$("#tmBicycle").is(":checked")){
+                        $("#tmCarSharing").prop('disabled', true);
+                        $("#tmBicycle").prop('disabled', true);
                         this_.tripWidget.inputChanged({
                             mode : "TRANSIT,WALK,BICYCLE_RENT",
                         });
                         thisModes = "TRANSIT,WALK,BICYCLE_RENT";
                     } else if ($("#tmTransit").is(":checked") && !$("#tmCarSharing").is(":checked") && !$("#tmBikeSharing").is(":checked") && $("#tmBicycle").is(":checked")){
+                        $("#tmCarSharing").prop('disabled', true);
+                        $("#tmBikeSharing").prop('disabled', true);
                         this_.tripWidget.inputChanged({
                             mode : "TRANSIT,BICYCLE",
                         });
@@ -588,11 +588,13 @@ otp.widgets.tripoptions.ModeSelector =
                         });
                         thisModes = "WALK,BICYCLE_RENT";
                     } else if ($("#tmBikeSharing").is(":checked") && $("#tmCarSharing").is(":checked") && !$("#tmTransit").is(":checked")){
+                        $("#tmTransit").prop('disabled', true);
                         this_.tripWidget.inputChanged({
                             mode : "CARRENT,BICYCLE",
                         });
                         thisModes = "CARRENT,BICYCLE";
                     } else if ($("#tmBikeSharing").is(":checked") && !$("#tmCarSharing").is(":checked") && $("#tmTransit").is(":checked")){
+                        $("#tmCarSharing").prop('disabled', true);
                         this_.tripWidget.inputChanged({
                             mode : "TRANSIT,WALK,BICYCLE_RENT",
                         });
@@ -633,11 +635,13 @@ otp.widgets.tripoptions.ModeSelector =
                         });
                         thisModes = "CARRENT";
                     } else if ($("#tmCarSharing").is(":checked") && $("#tmBikeSharing").is(":checked") && !$("#tmTransit").is(":checked")){
+                        $("#tmTransit").prop('disabled', true);
                         this_.tripWidget.inputChanged({
                             mode : "CARRENT,BICYCLE",
                         });
                         thisModes = "CARRENT,BICYCLE";
                     } else if ($("#tmCarSharing").is(":checked") && !$("#tmBikeSharing").is(":checked") && $("#tmTransit").is(":checked")){
+                        $("#tmBikeSharing").prop('disabled', true);
                         this_.tripWidget.inputChanged({
                             mode : "TRANSIT,CARRENT",
                         });
