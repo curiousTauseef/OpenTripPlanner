@@ -45,3 +45,8 @@
     width: 55px;
 }
 
+/* Traversal mode icons */
+
+.TraversalMode{
+    display: inline-block;
+}
