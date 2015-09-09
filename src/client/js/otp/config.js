@@ -113,13 +113,13 @@ otp.config = {
 
     siteName            : "ComTrade - OTP",
     siteDescription     : "ComTrade OpenTripPlanner Deployment",
-    logoGraphic         : 'images/otp_logo_darkbg_40px.png',
+    logoGraphic         : 'images/ComTrade.png',
     // bikeshareName    : "",
     //Enable this if you want to show frontend language chooser
     showLanguageChooser : true,
 
     showLogo            : true,
-    showTitle           : true,
+    showTitle           : false,
     showModuleSelector  : false,
     metric              : false,
 

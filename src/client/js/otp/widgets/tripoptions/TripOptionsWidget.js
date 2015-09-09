@@ -470,20 +470,20 @@ otp.widgets.tripoptions.ModeSelector =
         this.modeControls = [];
         this.optionLookup = {};
 
-        var transit     = '<input type="checkbox" class="TraversalMode" id="tmTransit" value="TRANSIT,WALK" checked> Transit <label for="tmTransit"></label>';
-        var bus         = '<input type="checkbox" class="TraversalMode" id="tmBus" value="BUSISH,WALK" disabled> Bus <label for="tmBus"></label>';
-        var train       = '<input type="checkbox" class="TraversalMode" id="tmTrain" value="TRAINISH,WALK" disabled> Train <label for="tmTrain"></label><br>';
+        var transit     = '<input type="checkbox" class="TraversalMode" id="tmTransit" value="TRANSIT,WALK" checked>'+ _tr("Transit") +'<label for="tmTransit"></label>';
+        var bus         = '<input type="checkbox" class="TraversalMode" id="tmBus" value="BUSISH,WALK" disabled>'+ _tr("Bus Only") +'<label for="tmBus"></label>';
+        var train       = '<input type="checkbox" class="TraversalMode" id="tmTrain" value="TRAINISH,WALK" disabled> '+ _tr("Rail Only") +' <label for="tmTrain"></label><br>';
         
-        var walk        = '<input type="checkbox" class="TraversalMode" id="tmWalk" value="WALK" disabled> Walk <label for="tmWalk"></label>';
-        var bicycle     = '<input type="checkbox" class="TraversalMode" id="tmBicycle" value="BICYCLE"> Bicycle <label for="tmBicycle"></label>';
-        var drive       = '<input type="checkbox" class="TraversalMode" id="tmCar" value="CAR" disabled> Car <label for="tmCar"></label><br>';
+        var walk        = '<input type="checkbox" class="TraversalMode" id="tmWalk" value="WALK" disabled>' + _tr('Walk Only') + '<label for="tmWalk"></label>';
+        var bicycle     = '<input type="checkbox" class="TraversalMode" id="tmBicycle" value="BICYCLE">' + _tr("Bicycle Only") + '<label for="tmBicycle"></label>';
+        var drive       = '<input type="checkbox" class="TraversalMode" id="tmCar" value="CAR" disabled>' + _tr("Drive Only") + '<label for="tmCar"></label><br>';
         
-        var parkAndRide = '<input type="checkbox" class="TraversalMode" id="tmParkRide" value="CAR_PARK,WALK,TRANSIT" disabled> Park And Ride <label for="tmParkRide"></label>';
-        var kissAndRide = '<input type="checkbox" class="TraversalMode" id="tmKissRide" value="CAR,WALK,TRANSIT" disabled> Kiss And Ride <label for="tmKissRide"></label>';
-        var bikeAndRide = '<input type="checkbox" class="TraversalMode" id="tmBikeRide" value="BICYCLE_PARK,WALK,TRANSIT" disabled> Bike And Ride <label for="tmBikeRide"></label><br>';
+        var parkAndRide = '<input type="checkbox" class="TraversalMode" id="tmParkRide" value="CAR_PARK,WALK,TRANSIT" disabled>' + _tr("Park and Ride") + '<label for="tmParkRide"></label>';
+        var kissAndRide = '<input type="checkbox" class="TraversalMode" id="tmKissRide" value="CAR,WALK,TRANSIT" disabled>'  + _tr("Kiss and Ride") + '<label for="tmKissRide"></label>';
+        var bikeAndRide = '<input type="checkbox" class="TraversalMode" id="tmBikeRide" value="BICYCLE_PARK,WALK,TRANSIT" disabled>' + _tr("Bike and Ride") + '<label for="tmBikeRide"></label><br>';
         
-        var carSharing  = '<input type="checkbox" class="TraversalMode" id="tmCarSharing" value="CARRENT"> CarSharing <label for="tmCarSharing"></label>';
-        var bikeSharing = '<input type="checkbox" class="TraversalMode" id="tmBikeSharing" value="WALK,BICYCLE_RENT"> BikeSharing <label for="tmBikeSharing"></label<br>';
+        var carSharing  = '<input type="checkbox" class="TraversalMode" id="tmCarSharing" value="CARRENT">' + _tr("Rented Car") + '<label for="tmCarSharing"></label>';
+        var bikeSharing = '<input type="checkbox" class="TraversalMode" id="tmBikeSharing" value="WALK,BICYCLE_RENT"> '+ _tr("Rented Bicycle") + '<label for="tmBikeSharing"></label<br>';
         
         $(transit).appendTo(this.$());
         $(bus).appendTo(this.$());

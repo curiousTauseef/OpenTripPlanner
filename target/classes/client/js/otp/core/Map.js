@@ -68,35 +68,35 @@ otp.core.Map = otp.Class({
         var overlaysFromAPI = {};
         
         try {
-            overlaysFromAPI["Parking Spots"] = parseParkirisca(preberiPodatke("http://opendata.si/promet/parkirisca/lpt/").Parkirisca);
+            overlaysFromAPI[_tr("Parking Spots")] = parseParkirisca(preberiPodatke("http://opendata.si/promet/parkirisca/lpt/").Parkirisca);
         }
         catch(err) {
             console.log("Error, no data from: http://opendata.si/promet/parkirisca/lpt/");
         }
 
         try {
-            overlaysFromAPI["Bike Sharing"] = parserBicikelj(preberiPodatke("https://api.jcdecaux.com/vls/v1/stations?contract=Ljubljana&apiKey=722650953d5c72b413270edb95d83d4e1c3e48c1"));
+            overlaysFromAPI[_tr("Bike Sharing")] = parserBicikelj(preberiPodatke("https://api.jcdecaux.com/vls/v1/stations?contract=Ljubljana&apiKey=722650953d5c72b413270edb95d83d4e1c3e48c1"));
         }
         catch(err) {
             console.log("Error, no data from: https://api.jcdecaux.com/vls/v1/stations?contract=Ljubljana&apiKey=722650953d5c72b413270edb95d83d4e1c3e48c1!");
         }
 
         try {
-            overlaysFromAPI["Car Sharing"] = parserCarSharingPostaje(preberiPodatke("https://maas-api.comtrade.com/api/locations?list=all"));
+            overlaysFromAPI[_tr("Car Sharing")] = parserCarSharingPostaje(preberiPodatke("https://maas-api.comtrade.com/api/locations?list=all"));
         }
         catch(err) {
             console.log("Error, no data from: https://maas-api.comtrade.com/api/locations?list=all");
         }
 
         try {
-            overlaysFromAPI["Traffic Counters"] = parserCarSharingPostaje(preberiPodatke("http://opendata.si/promet/counters/"));
+            overlaysFromAPI[_tr("Traffic Counters")] = parserCarSharingPostaje(preberiPodatke("http://opendata.si/promet/counters/"));
         }
         catch(err) {
             console.log("Error, no data from: http://opendata.si/promet/counters/");
         }
 
         try {
-            overlaysFromAPI["Traffic Events"] = parserDogodkiNaCestah(preberiPodatke("http://opendata.si/promet/events/").dogodki.dogodek);
+            overlaysFromAPI[_tr("Traffic Events")] = parserDogodkiNaCestah(preberiPodatke("http://opendata.si/promet/events/").dogodki.dogodek);
         }
         catch(err) {
             console.log("Error, no data from: http://opendata.si/promet/events/");

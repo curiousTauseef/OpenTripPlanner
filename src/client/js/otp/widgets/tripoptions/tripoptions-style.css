@@ -54,7 +54,7 @@
 
 /* Ikonce */
 
-input[type=checkbox] {
+.TraversalMode[type=checkbox] {
     display:none;
 }
 
