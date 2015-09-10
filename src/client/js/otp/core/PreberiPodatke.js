@@ -309,11 +309,11 @@ function parserATMMachines(){
             var x = query["Zemljepisna ¹irina"];
             var y = query["Zemljepisna dol¾ina"];
             var naslov = query["Naslov"];
-            naslov = String(naslov).replace("¹", "&scaron;").replace("è", "&ccaron;").replace("z", "&zcaron;")
-            naslov = String(naslov).replace("©", "&Scaron;").replace("È", "&Ccaron;").replace("®", "&Zcaron;")
+            naslov = String(naslov).replace("¹", "&scaron;").replace("è", "&ccaron;").replace("¾", "&zcaron;");
+            naslov = String(naslov).replace("©", "&Scaron;").replace("È", "&Ccaron;").replace("®", "&Zcaron;");
             var lastnik = query["Naziv banke, lastnice bankomata"];
-            lastnik = String(lastnik).replace("¹", "&scaron;").replace("¾", "&zcaron;").replace("è", "&ccaron;")
-            lastnik = String(lastnik).replace("©", "&Scaron;").replace("®", "&Zcaron;").replace("È", "&Ccaron;")
+            lastnik = String(lastnik).replace("¹", "&scaron;").replace("è", "&ccaron;").replace("¾", "&zcaron;");
+            lastnik = String(lastnik).replace("©", "&Scaron;").replace("È", "&Ccaron;").replace("®", "&Zcaron;");
             var marker = L.marker([x, y], {icon: yellowParking});
             marker.bindPopup("ID: " + ime + "<br>" + lastnik + "<br>Address: " + naslov);
             ATM_array[ATM_array.length] = marker;
