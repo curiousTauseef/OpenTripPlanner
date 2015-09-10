@@ -299,34 +299,26 @@ function parserCarSharingPostaje(objCS){
     return carRental_layer;
 }
 
-/*
-        Del kode is Map.js
-
-        this.lmap = new L.Map('map', mapProps);
-               
-        var resourcePath = otp.config.resourcePath || "";
-        L.Icon.Default.imagePath = resourcePath + 'images/leaflet/';
-
-        var parkirisca = preberiPodatke("http://opendata.si/promet/parkirisca/lpt/").Parkirisca;
-        var bicikeLjPostaje = preberiPodatke("http://opendata.si/promet/bicikelj/list/").markers;
-        var stevciPrometa = preberiPodatke("http://opendata.si/promet/counters/").feed.entry;
-        var dogodkiNaCestah = preberiPodatke("http://opendata.si/promet/events/").dogodki.dogodek;
-        var carSharingPostaje = preberiPodatke("https://maas-api.comtrade.com/api/locations?list=all");
-
-        var markerjiParkirisca = parseParkirisca(parkirisca);
-        var markerjiBicikeLJ = parserBicikelj(bicikeLjPostaje);
-        var markerjiStevci = parseStevecPrometa(stevciPrometa);
-        var markerjiDogodki = parserDogodkiNaCestah(dogodkiNaCestah);
-        var markerjiCarSharing = parserCarSharingPostaje(carSharingPostaje);
-
-        var overlaysFromAPI = {
-            "Parkiri≈°ƒça": markerjiParkirisca,
-            "BicikeLJ": markerjiBicikeLJ,
-            "Avant2go": markerjiCarSharing,
-            "≈†tevci prometa": markerjiStevci,
-            "Dogodki na cestah": markerjiDogodki
+function parserATMMachines(){
+    var ATM_array = [];
+    var ATM_dict = bankomati;  // From Bankomati.js
+    for(var i = 0; i < ATM_dict.length; i++){
+        var query = ATM_dict[i];
+        if(query["Kraj"] == "Ljubljana"){
+            var ime = query["ID bankomata"];
+            var x = query["Zemljepisna πirina"];
+            var y = query["Zemljepisna dolæina"];
+            var naslov = query["Naslov"];
+            naslov = String(naslov).replace("π", "&scaron;").replace("Ë", "&ccaron;").replace("z", "&zcaron;")
+            naslov = String(naslov).replace("©", "&Scaron;").replace("»", "&Ccaron;").replace("Æ", "&Zcaron;")
+            var lastnik = query["Naziv banke, lastnice bankomata"];
+            lastnik = String(lastnik).replace("π", "&scaron;").replace("æ", "&zcaron;").replace("Ë", "&ccaron;")
+            lastnik = String(lastnik).replace("©", "&Scaron;").replace("Æ", "&Zcaron;").replace("»", "&Ccaron;")
+            var marker = L.marker([x, y], {icon: yellowParking});
+            marker.bindPopup("ID: " + ime + "<br>" + lastnik + "<br>Address: " + naslov);
+            ATM_array[ATM_array.length] = marker;
         }
-
-        this.layer_control = L.control.layers(this.baseLayers, overlaysFromAPI).addTo(this.lmap);
-
-*/
+    }
+    var ATM_layer = L.layerGroup(ATM_array);
+    return ATM_layer;
+}

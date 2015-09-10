@@ -101,6 +101,12 @@ otp.core.Map = otp.Class({
         catch(err) {
             console.log("Error, no data from: http://opendata.si/promet/events/");
         }
+        try {
+            overlaysFromAPI["ATM Machines"] = parserATMMachines();
+        }catch(err){
+            console.log("Error handling ATM data.");
+            console.error(err)
+        }
 
         this.layer_control = L.control.layers(this.baseLayers, overlaysFromAPI).addTo(this.lmap);
 
