@@ -45,3 +45,301 @@
     width: 55px;
 }
 
+/* Traversal mode icons */
+
+.TraversalMode{
+    display: inline-block;
+}
+
+
+/* Ikonce */
+
+.TraversalMode[type=checkbox] {
+    display:none;
+}
+
+/* TRANSIT */ 
+
+#tmTransit[type=checkbox] + label {
+    background-image: url("images/testGreen.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmTransit[type=checkbox]:checked + label {
+    background-image: url("images/testRed.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmTransit[type=checkbox]:disabled + label {
+    background-image: url("images/testGrey.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+/* BUS */ 
+
+#tmBus[type=checkbox] + label {
+    background-image: url("images/testGreen.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmBus[type=checkbox]:checked + label {
+    background-image: url("images/testRed.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmBus[type=checkbox]:disabled + label {
+    background-image: url("images/testGrey.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+/* TRAIN */ 
+
+#tmTrain[type=checkbox] + label {
+    background-image: url("images/testGreen.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmTrain[type=checkbox]:checked + label {
+    background-image: url("images/testRed.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmTrain[type=checkbox]:disabled + label {
+    background-image: url("images/testGrey.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+/* WALK */
+
+#tmWalk[type=checkbox] + label {
+    background-image: url("images/testGreen.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmWalk[type=checkbox]:checked + label {
+    background-image: url("images/testRed.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmWalk[type=checkbox]:disabled + label {
+    background-image: url("images/testGrey.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+/* BICYCLE */
+
+#tmBicycle[type=checkbox] + label {
+    background-image: url("images/testGreen.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmBicycle[type=checkbox]:checked + label {
+    background-image: url("images/testRed.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmBicycle[type=checkbox]:disabled + label {
+    background-image: url("images/testGrey.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+/* CAR */
+
+#tmCar[type=checkbox] + label {
+    background-image: url("images/testGreen.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmCar[type=checkbox]:checked + label {
+    background-image: url("images/testRed.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmCar[type=checkbox]:disabled + label {
+    background-image: url("images/testGrey.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+/* PARK AND RIDE */
+
+#tmParkRide[type=checkbox] + label {
+    background-image: url("images/testGreen.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmParkRide[type=checkbox]:checked + label {
+    background-image: url("images/testRed.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmParkRide[type=checkbox]:disabled + label {
+    background-image: url("images/testGrey.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+/* KISS AND RIDE */
+
+#tmKissRide[type=checkbox] + label {
+    background-image: url("images/testGreen.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmKissRide[type=checkbox]:checked + label {
+    background-image: url("images/testRed.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmKissRide[type=checkbox]:disabled + label {
+    background-image: url("images/testGrey.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+/* BIKE AND RIDE */
+
+#tmBikeRide[type=checkbox] + label {
+    background-image: url("images/testGreen.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmBikeRide[type=checkbox]:checked + label {
+    background-image: url("images/testRed.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmBikeRide[type=checkbox]:disabled + label {
+    background-image: url("images/testGrey.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+/* CAR SHARING */
+
+#tmCarSharing[type=checkbox] + label {
+    background-image: url("images/testGreen.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmCarSharing[type=checkbox]:checked + label {
+    background-image: url("images/testRed.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmCarSharing[type=checkbox]:disabled + label {
+    background-image: url("images/testGrey.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+/* BIKE SHARING */
+
+#tmBikeSharing[type=checkbox] + label {
+    background-image: url("images/testGreen.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmBikeSharing[type=checkbox]:checked + label {
+    background-image: url("images/testRed.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
+
+#tmBikeSharing[type=checkbox]:disabled + label {
+    background-image: url("images/testGrey.png");
+    height: 30px;
+    width: 30px;
+    display:inline-block;
+    padding: 0 0 0 0px;
+}
