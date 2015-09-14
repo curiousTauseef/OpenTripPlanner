@@ -1,6 +1,6 @@
 /*
  *
- * Klemen Ko≈æelj 17.8.2015
+ * Klemen Koƒπƒæelj 17.8.2015
  *
  */
 
@@ -145,15 +145,15 @@ function parseParkirisca(ObjPa){
                 var prosta_mesta = parseInt(Math.abs(vsehMest)) - parseInt(Math.abs(vsehZasedenih));
                 var procentZasedenost = parseInt(Math.abs(vsehZasedenih)) * 1.0 / parseInt(Math.abs(vsehMest));
                 if(procentZasedenost >= 0.9){
-                    var marker = L.marker([y, x], {icon: redParking});               
+                    var marker = L.marker([y, x], {icon: redParking});
                     marker.bindPopup(ime + "<br># Mesta za invalide: " + pZaInvalide +"<br> # vseh mest: " + vsehMest + "<br> # prostih: " + prosta_mesta + "<br> # zasedenih: " + vsehZasedenih + "<br> " + opis +"<br> " + delavnik).openPopup();
                     parkings_array[parkings_array.length] = marker;
                 } else if( procentZasedenost <= 0.1){
-                    var marker = L.marker([y, x], {icon: greenParking});               
+                    var marker = L.marker([y, x], {icon: greenParking});
                     marker.bindPopup(ime + "<br># Mesta za invalide: " + pZaInvalide +"<br> # vseh mest: " + vsehMest + "<br> # prostih: " + prosta_mesta + "<br> # zasedenih: " + vsehZasedenih + "<br> " + opis +"<br> " + delavnik).openPopup();
                     parkings_array[parkings_array.length] = marker;
                 }else {
-                    var marker = L.marker([y, x], {icon: yellowParking});               
+                    var marker = L.marker([y, x], {icon: yellowParking});
                     marker.bindPopup(ime + "<br># Mesta za invalide: " + pZaInvalide +"<br> # vseh mest: " + vsehMest + "<br> # prostih: " + prosta_mesta + "<br> # zasedenih: " + vsehZasedenih + "<br> " + opis +"<br> " + delavnik).openPopup();
                     parkings_array[parkings_array.length] = marker;
                 }
@@ -162,7 +162,7 @@ function parseParkirisca(ObjPa){
                     marker.bindPopup(ime + "<br># Mesta za invalide: " + pZaInvalide +"<br> # vseh mest: " + vsehMest + "<br> # prostih: " + prosta_mesta + "<br> # zasedenih: " + vsehZasedenih + "<br> " + opis +"<br> " + delavnik).openPopup();
                     parkings_array[parkings_array.length] = marker;                }
             }
-        }        
+        }
     });
     var parkings_layer = L.layerGroup(parkings_array);
     return parkings_layer;
@@ -197,7 +197,7 @@ function parserBicikelj(objBLJ){
         }
     });
     var bicikeLJ_layer = L.layerGroup(bicikeLJ_array);
-    return bicikeLJ_layer; 
+    return bicikeLJ_layer;
 }
 
 function parseStevecPrometa(objST){
@@ -263,7 +263,7 @@ function parserDogodkiNaCestah(objDG){
         }
     });
     var dogodki_layer = L.layerGroup(dogodki_array);
-    return dogodki_layer; 
+    return dogodki_layer;
 }
 
 function parserCarSharingPostaje(objCS){
@@ -306,18 +306,14 @@ function parserATMMachines(){
         var query = ATM_dict[i];
         if(query["Kraj"] == "Ljubljana"){
             var ime = query["ID bankomata"];
-            var x = query["Zemljepisna πirina"];
-            var y = query["Zemljepisna dolæina"];
+            var x = query["Zemljepisna sirina"];
+            var y = query["Zemljepisna dolzina"];
             var naslov = query["Naslov"];
-            naslov = String(naslov).replace("π", "&scaron;");
-            naslov = String(naslov).replace("Ë", "&ccaron;");
-            naslov = String(naslov).replace("æ", "&zcaron;");
-            naslov = String(naslov).replace("©", "&Scaron;");
-            naslov = String(naslov).replace("»", "&Ccaron;");
-            naslov = String(naslov).replace("Æ", "&Zcaron;");
+            naslov = String(naslov).replace("≈°", "&scaron;").replace("ƒç", "&ccaron;").replace("≈æ", "&zcaron;");
+            naslov = String(naslov).replace("≈†", "&Scaron;").replace("ƒå", "&Ccaron;").replace("≈Ω", "&Zcaron;");
             var lastnik = query["Naziv banke, lastnice bankomata"];
-            lastnik = String(lastnik).replace("π", "&scaron;").replace("Ë", "&ccaron;").replace("æ", "&zcaron;");
-            lastnik = String(lastnik).replace("©", "&Scaron;").replace("»", "&Ccaron;").replace("Æ", "&Zcaron;");
+            lastnik = String(lastnik).replace("≈°", "&scaron;").replace("ƒç", "&ccaron;").replace("≈æ", "&zcaron;");
+            lastnik = String(lastnik).replace("≈†", "&Scaron;").replace("ƒå", "&Ccaron;").replace("≈Ω", "&Zcaron;");
             var marker = L.marker([x, y], {icon: yellowParking});
             marker.bindPopup("ID: " + ime + "<br>" + lastnik + "<br>Address: " + naslov);
             ATM_array[ATM_array.length] = marker;
