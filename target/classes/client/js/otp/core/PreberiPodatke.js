@@ -309,12 +309,8 @@ function parserATMMachines(){
             var x = query["Zemljepisna ¹irina"];
             var y = query["Zemljepisna dol¾ina"];
             var naslov = query["Naslov"];
-            naslov = String(naslov).replace("¹", "&scaron;");
-            naslov = String(naslov).replace("è", "&ccaron;");
-            naslov = String(naslov).replace("¾", "&zcaron;");
-            naslov = String(naslov).replace("©", "&Scaron;");
-            naslov = String(naslov).replace("È", "&Ccaron;");
-            naslov = String(naslov).replace("®", "&Zcaron;");
+            naslov = String(naslov).replace("¹", "&scaron;").replace("è", "&ccaron;").replace("¾", "&zcaron;");
+            naslov = String(naslov).replace("©", "&Scaron;").replace("È", "&Ccaron;").replace("®", "&Zcaron;");
             var lastnik = query["Naziv banke, lastnice bankomata"];
             lastnik = String(lastnik).replace("¹", "&scaron;").replace("è", "&ccaron;").replace("¾", "&zcaron;");
             lastnik = String(lastnik).replace("©", "&Scaron;").replace("È", "&Ccaron;").replace("®", "&Zcaron;");
