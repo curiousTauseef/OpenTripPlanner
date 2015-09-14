@@ -88,8 +88,9 @@ otp.core.Map = otp.Class({
             console.log("Error, no data from: https://maas-api.comtrade.com/api/locations?list=all");
         }
 
+
         try {
-            overlaysFromAPI[_tr("Traffic Counters")] = parserCarSharingPostaje(preberiPodatke("http://opendata.si/promet/counters/"));
+            overlaysFromAPI[_tr("Traffic Counters")] = parseStevecPrometa(preberiPodatke("http://opendata.si/promet/counters/").feed.entry);
         }
         catch(err) {
             console.log("Error, no data from: http://opendata.si/promet/counters/");

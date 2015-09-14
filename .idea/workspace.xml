@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac10c414-85c1-4e02-aa67-1ad62cac0ebe" name="Default" comment="" />
+    <list default="true" id="ac10c414-85c1-4e02-aa67-1ad62cac0ebe" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/cluster/AnalystWorker.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/cluster/AnalystWorker.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/broker/Broker.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/broker/Broker.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/broker/BrokerHttpHandler.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/broker/BrokerHttpHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/broker/WorkerCatalog.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/broker/WorkerCatalog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/core/Map.js" afterPath="$PROJECT_DIR$/src/client/js/otp/core/Map.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/core/Map.js" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/core/Map.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/core/PreberiPodatke.js" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/core/PreberiPodatke.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/index.html" afterPath="$PROJECT_DIR$/target/classes/client/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="otp.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,88 +31,7 @@
     <favorites_list name="otp" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="TripOptionsWidget.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/TripOptionsWidget.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0">
-              <caret line="471" column="0" selection-start-line="471" selection-start-column="0" selection-end-line="471" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Map.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/js/otp/core/Map.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="107" column="30" selection-start-line="107" selection-start-column="30" selection-end-line="107" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PreberiPodatke.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/client/js/otp/core/PreberiPodatke.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.47332186">
-              <caret line="309" column="49" selection-start-line="309" selection-start-column="49" selection-end-line="309" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bankomati.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/js/otp/core/Bankomati.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.0">
-              <caret line="1562" column="85" selection-start-line="1562" selection-start-column="85" selection-end-line="1562" selection-end-column="85" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ContextMenu.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/js/otp/core/ContextMenu.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.4363637">
-              <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sl.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/js/otp/locale/sl.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="en.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/client/js/otp/locale/en.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="96" column="57" selection-start-line="96" selection-start-column="56" selection-end-line="96" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -169,11 +98,11 @@
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/routing/core/RoutingRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/opentripplanner/api/resource/CarRentalRequest.java" />
         <option value="$PROJECT_DIR$/src/client/js/otp/core/bankomati.js" />
-        <option value="$PROJECT_DIR$/src/client/js/otp/core/Map.js" />
+        <option value="$PROJECT_DIR$/src/client/js/otp/core/Bankomati.js" />
         <option value="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/TripOptionsWidget.js" />
         <option value="$PROJECT_DIR$/src/client/js/otp/core/Bankomati.js" />
         <option value="$PROJECT_DIR$/src/client/index.html" />
-        <option value="$PROJECT_DIR$/src/client/js/otp/core/PreberiPodatke.js" />
+        <option value="$PROJECT_DIR$/src/client/js/otp/core/Map.js" />
       </list>
     </option>
   </component>
@@ -196,7 +125,7 @@
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1696" />
-    <option name="height" value="1004" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -223,7 +152,7 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -326,66 +255,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="widgets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="otp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OpenTripPlanner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="otp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="locale" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="otp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OpenTripPlanner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="otp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -414,6 +283,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -652,18 +522,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1004" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3794643" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37908497" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28794643" sideWeight="0.5190476" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32897604" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28794643" sideWeight="0.48095238" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="1.0" sideWeight="0.48333332" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25416666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -975,18 +845,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/i18n/en.po">
+    <entry file="file://$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/TripOptionsWidget.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="975" column="19" selection-start-line="975" selection-start-column="16" selection-end-line="975" selection-end-column="19" />
+          <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/TripOptionsWidget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.005618">
+          <caret line="471" column="0" selection-start-line="471" selection-start-column="0" selection-end-line="471" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/js/otp/locale/sl.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.17708333">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -999,73 +876,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/TripOptionsWidget.js">
+    <entry file="file://$PROJECT_DIR$/src/client/i18n/en.po">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/TripOptionsWidget.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0">
-          <caret line="471" column="0" selection-start-line="471" selection-start-column="0" selection-end-line="471" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/js/otp/core/IndexApi.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.4363637">
-          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/js/otp/core/ContextMenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/js/otp/core/GeocoderBuiltin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/js/otp/core/Map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="107" column="30" selection-start-line="107" selection-start-column="30" selection-end-line="107" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.05730337">
+          <caret line="978" column="13" selection-start-line="978" selection-start-column="13" selection-end-line="978" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/js/otp/core/Bankomati.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.0">
-          <caret line="1562" column="85" selection-start-line="1562" selection-start-column="85" selection-end-line="1562" selection-end-column="85" />
+        <state vertical-scroll-proportion="0.9456869">
+          <caret line="826" column="146" selection-start-line="826" selection-start-column="135" selection-end-line="826" selection-end-column="146" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6900175">
+          <caret line="93" column="34" selection-start-line="93" selection-start-column="25" selection-end-line="93" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/js/otp/core/Map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40734825">
+          <caret line="91" column="129" selection-start-line="91" selection-start-column="129" selection-end-line="91" selection-end-column="129" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/js/otp/core/PreberiPodatke.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47332186">
-          <caret line="309" column="49" selection-start-line="309" selection-start-column="49" selection-end-line="309" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.25239617">
+          <caret line="202" column="27" selection-start-line="202" selection-start-column="9" selection-end-line="202" selection-end-column="27" />
           <folding />
         </state>
       </provider>
