@@ -77,6 +77,8 @@ public class PlannerResource extends RoutingResource {
             request = super.buildRequest();
             /* Find some good GraphPaths through the OTP Graph. */
 
+            System.out.println(request);
+
             Router router = otpServer.getRouter(request.routerId);
 
             if (request.modes.toString().equals("TraverseMode (CARRENT)")) {

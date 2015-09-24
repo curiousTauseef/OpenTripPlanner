@@ -270,8 +270,9 @@ function parserCarSharingPostaje(objCS){
     var carRental_array = [];
     objCS.forEach(function(stat){
         var ime = stat.name;
-        var cars = parseInt(stat.numberOfCars);
-        var places = parseInt(stat.parkingPlaces);
+        var cars = parseInt(stat.reservableCars);
+        console.log(cars);
+        var places = parseInt(stat.parkingPlaces) - cars;
         var y = stat.geoLocation.lat;
         var x = stat.geoLocation.lng;
         if(places != undefined && cars != undefined || places != null && cars != null){

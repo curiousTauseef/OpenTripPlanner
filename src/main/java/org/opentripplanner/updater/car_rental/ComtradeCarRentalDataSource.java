@@ -21,7 +21,7 @@ public class ComtradeCarRentalDataSource extends GenericJsonCarRentalDataSource 
         station.x = node.path("geoLocation").path("lng").asDouble();
         station.y = node.path("geoLocation").path("lat").asDouble();
         station.name = new NonLocalizedString(node.path("name").asText());
-        station.bikesAvailable = node.path("numberOfCars").asInt();
+        station.bikesAvailable = node.path("reservableCars").asInt();
         station.spacesAvailable = node.path("parkingPlaces").asInt() - station.bikesAvailable;
         return station;
     }
