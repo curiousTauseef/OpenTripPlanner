@@ -67,48 +67,48 @@
 
 #tmTransit[type=checkbox] + label {
     background-image: url("images/transit/transitGreen.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
-    margin-left: 25.5px;
+    margin-left: 26px;
 }
 
 #tmTransit[type=checkbox]:checked + label {
     background-image: url("images/transit/transitBlack.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
-    margin-left: 25.5px;
+    margin-left: 26px;
 }
 
 #tmTransit[type=checkbox]:disabled + label {
     background-image: url("images/transit/transitGrey.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
-    margin-left: 25.5px;
+    margin-left: 26px;
 }
 
 /* BUS */ 
 
 #tmBus[type=checkbox] + label {
     background-image: url("images/bus/busGreen.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
 #tmBus[type=checkbox]:checked + label {
     background-image: url("images/bus/busBlack.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
 #tmBus[type=checkbox]:disabled + label {
     background-image: url("images/bus/busGrey.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
@@ -116,22 +116,22 @@
 
 #tmTrain[type=checkbox] + label {
     background-image: url("images/train/trainGreen.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
 #tmTrain[type=checkbox]:checked + label {
     background-image: url("images/train/trainBlack.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
 #tmTrain[type=checkbox]:disabled + label {
     background-image: url("images/train/trainGrey.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
@@ -139,48 +139,48 @@
 
 #tmWalk[type=checkbox] + label {
     background-image: url("images/walk/walkGreen.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
-    margin-left: 25.5px;
+    margin-left: 26px;
 }
 
 #tmWalk[type=checkbox]:checked + label {
     background-image: url("images/walk/walkBlack.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
-    margin-left: 25.5px;
+    margin-left: 26px;
 }
 
 #tmWalk[type=checkbox]:disabled + label {
     background-image: url("images/walk/walkGrey.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
-    margin-left: 25.5px;
+    margin-left: 26px;
 }
 
 /* BICYCLE */
 
 #tmBicycle[type=checkbox] + label {
     background-image: url("images/bike/bikeGreen.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
 #tmBicycle[type=checkbox]:checked + label {
     background-image: url("images/bike/bikeBlack.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
 #tmBicycle[type=checkbox]:disabled + label {
     background-image: url("images/bike/bikeGrey.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
@@ -188,22 +188,22 @@
 
 #tmCar[type=checkbox] + label {
     background-image: url("images/car/carGreen.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
 #tmCar[type=checkbox]:checked + label {
     background-image: url("images/car/carBlack.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
 #tmCar[type=checkbox]:disabled + label {
     background-image: url("images/car/carGrey.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
@@ -211,48 +211,48 @@
 
 #tmParkRide[type=checkbox] + label {
     background-image: url("images/parkRide/parkrideGreen.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
-    margin-left: 25.5px;
+    margin-left: 26px;
 }
 
 #tmParkRide[type=checkbox]:checked + label {
     background-image: url("images/parkRide/parkrideBlack.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
-    margin-left: 25.5px;
+    margin-left: 26px;
 }
 
 #tmParkRide[type=checkbox]:disabled + label {
     background-image: url("images/parkRide/parkrideGrey.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
-    margin-left: 25.5px;
+    margin-left: 26px;
 }
 
 /* KISS AND RIDE */
 
 #tmKissRide[type=checkbox] + label {
     background-image: url("images/kissRide/kissrideGreen.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
 #tmKissRide[type=checkbox]:checked + label {
     background-image: url("images/kissRide/kissrideBlack.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
 #tmKissRide[type=checkbox]:disabled + label {
     background-image: url("images/kissRide/kissrideGrey.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
@@ -260,22 +260,22 @@
 
 #tmBikeRide[type=checkbox] + label {
     background-image: url("images/bikeRide/bikerideGreen.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
 #tmBikeRide[type=checkbox]:checked + label {
     background-image: url("images/bikeRide/bikerideBlack.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
 #tmBikeRide[type=checkbox]:disabled + label {
     background-image: url("images/bikeRide/bikerideGrey.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
@@ -283,47 +283,47 @@
 
 #tmCarSharing[type=checkbox] + label {
     background-image: url("images/carRental/carrentalGreen.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
-    margin-left: 51px;
+    margin-left: 52px;
 }
 
 #tmCarSharing[type=checkbox]:checked + label {
     background-image: url("images/carRental/carrentalBlack.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
-    margin-left: 51px;
+    margin-left: 52px;
 }
 
 #tmCarSharing[type=checkbox]:disabled + label {
     background-image: url("images/carRental/carrentalGrey.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
-    margin-left: 51px;
+    margin-left: 52px;
 }
 
 /* BIKE SHARING */
 
 #tmBikeSharing[type=checkbox] + label {
     background-image: url("images/bikeRental/bikerentalGreen.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
 #tmBikeSharing[type=checkbox]:checked + label {
     background-image: url("images/bikeRental/bikerentalBlack.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
 
 #tmBikeSharing[type=checkbox]:disabled + label {
     background-image: url("images/bikeRental/bikerentalGrey.png");
-    height: 51px;
-    width: 51px;
+    height: 52px;
+    width: 52px;
     display:inline-block;
 }
