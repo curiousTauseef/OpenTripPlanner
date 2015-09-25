@@ -66,7 +66,7 @@
 /* TRANSIT */ 
 
 #tmTransit[type=checkbox] + label {
-    background-image: url("images/transit/transitGreen.png");
+    background-image: url("images/transit/transitGrey.png");
     height: 52px;
     width: 52px;
     display:inline-block;
@@ -74,7 +74,7 @@
 }
 
 #tmTransit[type=checkbox]:checked + label {
-    background-image: url("images/transit/transitBlack.png");
+    background-image: url("images/transit/transitGreen.png");
     height: 52px;
     width: 52px;
     display:inline-block;
@@ -82,7 +82,7 @@
 }
 
 #tmTransit[type=checkbox]:disabled + label {
-    background-image: url("images/transit/transitGrey.png");
+    background-image: url("images/transit/transitWhite.png");
     height: 52px;
     width: 52px;
     display:inline-block;
@@ -92,21 +92,21 @@
 /* BUS */ 
 
 #tmBus[type=checkbox] + label {
-    background-image: url("images/bus/busGreen.png");
+    background-image: url("images/bus/busGrey.png");
     height: 52px;
     width: 52px;
     display:inline-block;
 }
 
 #tmBus[type=checkbox]:checked + label {
-    background-image: url("images/bus/busBlack.png");
+    background-image: url("images/bus/busGreen.png");
     height: 52px;
     width: 52px;
     display:inline-block;
 }
 
 #tmBus[type=checkbox]:disabled + label {
-    background-image: url("images/bus/busGrey.png");
+    background-image: url("images/bus/busWhite.png");
     height: 52px;
     width: 52px;
     display:inline-block;
@@ -115,21 +115,21 @@
 /* TRAIN */ 
 
 #tmTrain[type=checkbox] + label {
-    background-image: url("images/train/trainGreen.png");
+    background-image: url("images/train/trainGrey.png");
     height: 52px;
     width: 52px;
     display:inline-block;
 }
 
 #tmTrain[type=checkbox]:checked + label {
-    background-image: url("images/train/trainBlack.png");
+    background-image: url("images/train/trainGreen.png");
     height: 52px;
     width: 52px;
     display:inline-block;
 }
 
 #tmTrain[type=checkbox]:disabled + label {
-    background-image: url("images/train/trainGrey.png");
+    background-image: url("images/train/trainWhite.png");
     height: 52px;
     width: 52px;
     display:inline-block;
@@ -138,7 +138,7 @@
 /* WALK */
 
 #tmWalk[type=checkbox] + label {
-    background-image: url("images/walk/walkGreen.png");
+    background-image: url("images/walk/walkGrey.png");
     height: 52px;
     width: 52px;
     display:inline-block;
@@ -146,7 +146,7 @@
 }
 
 #tmWalk[type=checkbox]:checked + label {
-    background-image: url("images/walk/walkBlack.png");
+    background-image: url("images/walk/walkGreen.png");
     height: 52px;
     width: 52px;
     display:inline-block;
@@ -154,7 +154,7 @@
 }
 
 #tmWalk[type=checkbox]:disabled + label {
-    background-image: url("images/walk/walkGrey.png");
+    background-image: url("images/walk/walkWhite.png");
     height: 52px;
     width: 52px;
     display:inline-block;
@@ -164,21 +164,21 @@
 /* BICYCLE */
 
 #tmBicycle[type=checkbox] + label {
-    background-image: url("images/bike/bikeGreen.png");
+    background-image: url("images/bike/bikeGrey.png");
     height: 52px;
     width: 52px;
     display:inline-block;
 }
 
 #tmBicycle[type=checkbox]:checked + label {
-    background-image: url("images/bike/bikeBlack.png");
+    background-image: url("images/bike/bikeGreen.png");
     height: 52px;
     width: 52px;
     display:inline-block;
 }
 
 #tmBicycle[type=checkbox]:disabled + label {
-    background-image: url("images/bike/bikeGrey.png");
+    background-image: url("images/bike/bikeWhite.png");
     height: 52px;
     width: 52px;
     display:inline-block;
@@ -187,21 +187,21 @@
 /* CAR */
 
 #tmCar[type=checkbox] + label {
-    background-image: url("images/car/carGreen.png");
+    background-image: url("images/car/carGrey.png");
     height: 52px;
     width: 52px;
     display:inline-block;
 }
 
 #tmCar[type=checkbox]:checked + label {
-    background-image: url("images/car/carBlack.png");
+    background-image: url("images/car/carGreen.png");
     height: 52px;
     width: 52px;
     display:inline-block;
 }
 
 #tmCar[type=checkbox]:disabled + label {
-    background-image: url("images/car/carGrey.png");
+    background-image: url("images/car/carWhite.png");
     height: 52px;
     width: 52px;
     display:inline-block;
@@ -210,7 +210,7 @@
 /* PARK AND RIDE */
 
 #tmParkRide[type=checkbox] + label {
-    background-image: url("images/parkRide/parkrideGreen.png");
+    background-image: url("images/parkRide/parkrideGrey.png");
     height: 52px;
     width: 52px;
     display:inline-block;
@@ -218,7 +218,7 @@
 }
 
 #tmParkRide[type=checkbox]:checked + label {
-    background-image: url("images/parkRide/parkrideBlack.png");
+    background-image: url("images/parkRide/parkrideGreen.png");
     height: 52px;
     width: 52px;
     display:inline-block;
@@ -226,7 +226,7 @@
 }
 
 #tmParkRide[type=checkbox]:disabled + label {
-    background-image: url("images/parkRide/parkrideGrey.png");
+    background-image: url("images/parkRide/parkrideWhite.png");
     height: 52px;
     width: 52px;
     display:inline-block;
@@ -236,21 +236,21 @@
 /* KISS AND RIDE */
 
 #tmKissRide[type=checkbox] + label {
-    background-image: url("images/kissRide/kissrideGreen.png");
+    background-image: url("images/kissRide/kissrideGrey.png");
     height: 52px;
     width: 52px;
     display:inline-block;
 }
 
 #tmKissRide[type=checkbox]:checked + label {
-    background-image: url("images/kissRide/kissrideBlack.png");
+    background-image: url("images/kissRide/kissrideGreen.png");
     height: 52px;
     width: 52px;
     display:inline-block;
 }
 
 #tmKissRide[type=checkbox]:disabled + label {
-    background-image: url("images/kissRide/kissrideGrey.png");
+    background-image: url("images/kissRide/kissrideWhite.png");
     height: 52px;
     width: 52px;
     display:inline-block;
@@ -259,21 +259,21 @@
 /* BIKE AND RIDE */
 
 #tmBikeRide[type=checkbox] + label {
-    background-image: url("images/bikeRide/bikerideGreen.png");
+    background-image: url("images/bikeRide/bikerideGrey.png");
     height: 52px;
     width: 52px;
     display:inline-block;
 }
 
 #tmBikeRide[type=checkbox]:checked + label {
-    background-image: url("images/bikeRide/bikerideBlack.png");
+    background-image: url("images/bikeRide/bikerideGreen.png");
     height: 52px;
     width: 52px;
     display:inline-block;
 }
 
 #tmBikeRide[type=checkbox]:disabled + label {
-    background-image: url("images/bikeRide/bikerideGrey.png");
+    background-image: url("images/bikeRide/bikerideWhite.png");
     height: 52px;
     width: 52px;
     display:inline-block;
@@ -282,7 +282,7 @@
 /* CAR SHARING */
 
 #tmCarSharing[type=checkbox] + label {
-    background-image: url("images/carRental/carrentalGreen.png");
+    background-image: url("images/carRental/carrentalGrey.png");
     height: 52px;
     width: 52px;
     display:inline-block;
@@ -290,7 +290,7 @@
 }
 
 #tmCarSharing[type=checkbox]:checked + label {
-    background-image: url("images/carRental/carrentalBlack.png");
+    background-image: url("images/carRental/carrentalGreen.png");
     height: 52px;
     width: 52px;
     display:inline-block;
@@ -298,7 +298,7 @@
 }
 
 #tmCarSharing[type=checkbox]:disabled + label {
-    background-image: url("images/carRental/carrentalGrey.png");
+    background-image: url("images/carRental/carrentalWhite.png");
     height: 52px;
     width: 52px;
     display:inline-block;
@@ -308,21 +308,21 @@
 /* BIKE SHARING */
 
 #tmBikeSharing[type=checkbox] + label {
-    background-image: url("images/bikeRental/bikerentalGreen.png");
+    background-image: url("images/bikeRental/bikerentalGrey.png");
     height: 52px;
     width: 52px;
     display:inline-block;
 }
 
 #tmBikeSharing[type=checkbox]:checked + label {
-    background-image: url("images/bikeRental/bikerentalBlack.png");
+    background-image: url("images/bikeRental/bikerentalGreen.png");
     height: 52px;
     width: 52px;
     display:inline-block;
 }
 
 #tmBikeSharing[type=checkbox]:disabled + label {
-    background-image: url("images/bikeRental/bikerentalGrey.png");
+    background-image: url("images/bikeRental/bikerentalWhite.png");
     height: 52px;
     width: 52px;
     display:inline-block;

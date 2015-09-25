@@ -2,7 +2,67 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac10c414-85c1-4e02-aa67-1ad62cac0ebe" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bikeRental/bikeRentalWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bikeRental/bikeRentalWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bikeRide/bikeRideWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bikeRide/bikeRideWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bike/bikeWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bike/bikeWhite.png" />
+      <change type="NEW" beforePath="" afterPath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\images\bicikelj1\bikegreen.png" />
+      <change type="NEW" beforePath="" afterPath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\images\bicikelj1\bikegrey.png" />
+      <change type="NEW" beforePath="" afterPath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\images\bicikelj1\bikered.png" />
+      <change type="NEW" beforePath="" afterPath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\images\bicikelj1\bikeyellow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bus/busWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bus/busWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/carRental/carRentalWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/carRental/carRentalWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/car/carWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/car/carWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/kissRide/kissRideWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/kissRide/kissRideWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/parkRide/parkRideWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/parkRide/parkRideWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/train/trainWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/train/trainWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/transit/transitWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/transit/transitWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/walk/walkWhite.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/walk/walkWhite.png" />
+      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\images\bicikelj\bikegreen.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\images\bicikelj\bikegrey.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\images\bicikelj\bikered.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\images\bicikelj\bikeyellow.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\images\bicikelj\bikegreen.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\images\bicikelj\bikegrey.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\images\bicikelj\bikered.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\images\bicikelj\bikeyellow.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/images/car/carGreen.png" afterPath="$PROJECT_DIR$/src/client/images/car/carGreen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/images/car/carGreen.png" afterPath="$PROJECT_DIR$/target/classes/client/images/car/carGreen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/images/car/carRed.png" afterPath="$PROJECT_DIR$/src/client/images/car/carRed.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/images/car/carRed.png" afterPath="$PROJECT_DIR$/target/classes/client/images/car/carRed.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/images/car/cargrey.png" afterPath="$PROJECT_DIR$/src/client/images/car/cargrey.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/images/car/cargrey.png" afterPath="$PROJECT_DIR$/target/classes/client/images/car/cargrey.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/images/car/caryellow.png" afterPath="$PROJECT_DIR$/src/client/images/car/caryellow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/images/car/caryellow.png" afterPath="$PROJECT_DIR$/target/classes/client/images/car/caryellow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/images/stevci/countergreen.png" afterPath="$PROJECT_DIR$/src/client/images/stevci/countergreen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/images/stevci/countergreen.png" afterPath="$PROJECT_DIR$/target/classes/client/images/stevci/countergreen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/images/stevci/countergrey.png" afterPath="$PROJECT_DIR$/src/client/images/stevci/countergrey.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/images/stevci/countergrey.png" afterPath="$PROJECT_DIR$/target/classes/client/images/stevci/countergrey.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/images/stevci/counterred.png" afterPath="$PROJECT_DIR$/src/client/images/stevci/counterred.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/images/stevci/counterred.png" afterPath="$PROJECT_DIR$/target/classes/client/images/stevci/counterred.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/images/stevci/counteryellow.png" afterPath="$PROJECT_DIR$/src/client/images/stevci/counteryellow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/images/stevci/counteryellow.png" afterPath="$PROJECT_DIR$/target/classes/client/images/stevci/counteryellow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/images/parking/parkgreen.png" afterPath="$PROJECT_DIR$/src/client/images/parking/parkgreen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/images/parking/parkgreen.png" afterPath="$PROJECT_DIR$/target/classes/client/images/parking/parkgreen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/images/parking/parkgrey.png" afterPath="$PROJECT_DIR$/src/client/images/parking/parkgrey.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/images/parking/parkgrey.png" afterPath="$PROJECT_DIR$/target/classes/client/images/parking/parkgrey.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/images/parking/parkred.png" afterPath="$PROJECT_DIR$/src/client/images/parking/parkred.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/images/parking/parkred.png" afterPath="$PROJECT_DIR$/target/classes/client/images/parking/parkred.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/images/parking/parkyellow.png" afterPath="$PROJECT_DIR$/src/client/images/parking/parkyellow.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/images/parking/parkyellow.png" afterPath="$PROJECT_DIR$/target/classes/client/images/parking/parkyellow.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/tripoptions-style.css" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/tripoptions-style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/tripoptions-style.css" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/tripoptions-style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="otp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -142,6 +202,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
@@ -162,153 +223,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="otp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OpenTripPlanner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="otp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OpenTripPlanner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="otp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OpenTripPlanner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="otp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="otp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OpenTripPlanner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="otp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="widgets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="otp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OpenTripPlanner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="otp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="widgets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tripoptions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="otp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="OpenTripPlanner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
