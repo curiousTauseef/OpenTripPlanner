@@ -271,7 +271,6 @@ function parserCarSharingPostaje(objCS){
     objCS.forEach(function(stat){
         var ime = stat.name;
         var cars = parseInt(stat.reservableCars);
-        console.log(cars);
         var places = parseInt(stat.parkingPlaces) - cars;
         var y = stat.geoLocation.lat;
         var x = stat.geoLocation.lng;
