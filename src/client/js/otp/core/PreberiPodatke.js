@@ -22,62 +22,62 @@ var resourcePath = otp.config.resourcePath || "";
 
 var yellowParking = L.icon({
     iconUrl: resourcePath + 'images/parking/parkyellow.png',
-    iconAnchor:   [12.5, 45]
+    iconAnchor:   [18, 43]
 });
 
 var greenParking = L.icon({
     iconUrl: resourcePath + 'images/parking/parkgreen.png',
-    iconAnchor:   [12.5, 45]
+    iconAnchor:   [18, 43]
 });
 
 var redParking = L.icon({
     iconUrl: resourcePath + 'images/parking/parkred.png',
-    iconAnchor:   [12.5, 45]
+    iconAnchor:   [18, 43]
 });
 
 var greyParking = L.icon({
     iconUrl: resourcePath + 'images/parking/parkgrey.png',
-    iconAnchor:   [12.5, 45]
+    iconAnchor:   [18, 43]
 });
 
 var yellowBicikelj = L.icon({
     iconUrl: resourcePath + 'images/bicikelj/bikeyellow.png',
-    iconAnchor:   [12.5, 45]
+    iconAnchor:   [18, 43]
 });
 
 var greenBicikelj = L.icon({
     iconUrl: resourcePath + 'images/bicikelj/bikegreen.png',
-    iconAnchor:   [12.5, 45]
+    iconAnchor:   [18, 43]
 });
 
 var redBicikelj = L.icon({
     iconUrl: resourcePath + 'images/bicikelj/bikered.png',
-    iconAnchor:   [12.5, 45]
+    iconAnchor:   [18, 43]
 });
 
 var greyBicikelj = L.icon({
     iconUrl: resourcePath + 'images/bicikelj/bikegrey.png',
-    iconAnchor:   [12.5, 45]
+    iconAnchor:   [18, 43]
 });
 
 var yellowStopwatch = L.icon({
     iconUrl: resourcePath + 'images/stevci/counteryellow.png',
-    iconAnchor:   [12.5, 45]
+    iconAnchor:   [18, 43]
 });
 
 var greenStopwatch = L.icon({
     iconUrl: resourcePath + 'images/stevci/countergreen.png',
-    iconAnchor:   [12.5, 45]
+    iconAnchor:   [18, 43]
 });
 
 var redStopwatch = L.icon({
     iconUrl: resourcePath + 'images/stevci/counterred.png',
-    iconAnchor:   [12.5, 45]
+    iconAnchor:   [18, 43]
 });
 
 var greyStopwatch = L.icon({
     iconUrl: resourcePath + 'images/stevci/countergrey.png',
-    iconAnchor:   [12.5, 45]
+    iconAnchor:   [18, 43]
 });
 
 var work = L.icon({
@@ -107,22 +107,22 @@ var warning = L.icon({
 
 var yellowCar = L.icon({
     iconUrl: resourcePath + 'images/car/caryellow.png',
-    iconAnchor:   [12.5, 45]
+    iconAnchor:   [18, 43]
 });
 
 var greenCar = L.icon({
     iconUrl: resourcePath + 'images/car/cargreen.png',
-    iconAnchor:   [12.5, 45]
+    iconAnchor:   [18, 43]
 });
 
 var redCar = L.icon({
     iconUrl: resourcePath + 'images/car/carred.png',
-    iconAnchor:   [12.5, 45]
+    iconAnchor:   [18, 43]
 });
 
 var greyCar = L.icon({
     iconUrl: resourcePath + 'images/car/cargrey.png',
-    iconAnchor:   [12.5, 45]
+    iconAnchor:   [18, 43]
 });
 
 function parseParkirisca(ObjPa){
