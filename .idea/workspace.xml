@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac10c414-85c1-4e02-aa67-1ad62cac0ebe" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\images\bicikelj11\bikegreen.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\images\bicikelj11\bikegrey.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\images\bicikelj11\bikered.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\images\bicikelj11\bikeyellow.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\images\bicikelj11\bikegreen.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\images\bicikelj11\bikegrey.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\images\bicikelj11\bikered.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\images\bicikelj11\bikeyellow.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/images/ComTrade.png" afterPath="$PROJECT_DIR$/src/client/images/ComTrade.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/images/ComTrade.png" afterPath="$PROJECT_DIR$/target/classes/client/images/ComTrade.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/core/PreberiPodatke.js" afterPath="$PROJECT_DIR$/src/client/js/otp/core/PreberiPodatke.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/TripOptionsWidget.js" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/TripOptionsWidget.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/TripOptionsWidget.js" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/TripOptionsWidget.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="otp.iws" />
@@ -465,7 +456,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />

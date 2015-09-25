@@ -484,7 +484,7 @@ otp.widgets.tripoptions.ModeSelector =
         
         var carSharing  = '<input type="checkbox" class="TraversalMode" id="tmCarSharing" value="CARRENT"><label title="' + _tr("Rented Car") + '" for="tmCarSharing"></label>';
         var bikeSharing = '<input type="checkbox" class="TraversalMode" id="tmBikeSharing" value="WALK,BICYCLE_RENT"><label title="' + _tr("Rented Bicycle") + '" for="tmBikeSharing"></label<br>';
-        
+                
         $(transit).appendTo(this.$());
         $(bus).appendTo(this.$());
         $(train).appendTo(this.$());
@@ -501,7 +501,6 @@ otp.widgets.tripoptions.ModeSelector =
         $(bikeSharing).appendTo(this.$());
 
         $('<div class="notDraggable"><div id="' + this.id + '-widgets" style="overflow: hidden;"></div></div>').appendTo(this.$());
-
     },
 
     doAfterLayout : function() {
@@ -1307,7 +1306,7 @@ otp.widgets.tripoptions.Submit =
 
         //TRANSLATORS: button to send query for trip planning
         $('<div class="notDraggable" style="text-align:center;"><button id="'+this.id+'-button">' + _tr("Plan Your Trip") + '</button></div>').appendTo(this.$());
-        //console.log(this.id+'-button')
+        console.log(this.id+'-button')
 
     },
 
