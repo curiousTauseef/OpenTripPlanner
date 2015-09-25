@@ -2,32 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac10c414-85c1-4e02-aa67-1ad62cac0ebe" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\transportMode\bike&amp;ride.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\transportMode\bike.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\transportMode\bus.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\transportMode\car.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\transportMode\carSharing.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\transportMode\kiss&amp;ride.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\transportMode\park&amp;ride.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\transportMode\train.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\transportMode\walk.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\transportMode\bike&amp;ride.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\transportMode\bike.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\transportMode\bus.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\transportMode\car.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\transportMode\carSharing.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\transportMode\kiss&amp;ride.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\transportMode\park&amp;ride.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\transportMode\train.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\transportMode\walk.png" afterPath="" />
-      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\images\bikeRental\bikerentalGreen.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bikeRental/bikeRentalGreen.png" />
+      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\images\bikeRental\bikerentalBlack.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bikeRental/bikeRentalBlack.png" />
       <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\images\bikeRental\bikerentalGrey.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bikeRental/bikeRentalGrey.png" />
       <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\images\bikeRental\bikerentalRed.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bikeRental/bikeRentalRed.png" />
       <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\images\bikeRide\bikerideBlack.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bikeRide/bikeRideBlack.png" />
-      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\images\bikeRide\bikerideGreen.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bikeRide/bikeRIdeGreen.png" />
+      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\images\bikeRide\bikerideGreen.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bikeRide/bikeRideGreen.png" />
       <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\images\bikeRide\bikerideGrey.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bikeRide/bikeRideGrey.png" />
       <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\images\bikeRide\bikerideRed.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bikeRide/bikeRideRed.png" />
-      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\images\carRental\carRentalGrey.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/carRental/carrentalGrey.png" />
+      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\images\carRental\carrentalBlack.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/carRental/carRentalBlack.png" />
+      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\images\carRental\carrentalGreen.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/carRental/carRentalGreen.png" />
+      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\images\carRental\carrentalRed.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/carRental/carRentalRed.png" />
       <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\images\kissRide\kissrideBlack.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/kissRide/kissRideBlack.png" />
       <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\images\kissRide\kissrideGreen.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/kissRide/kissRideGreen.png" />
       <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\images\kissRide\kissrideGrey.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/kissRide/kissRideGrey.png" />
@@ -36,79 +20,32 @@
       <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\images\parkRide\parkrideGreen.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/parkRide/parkRideGreen.png" />
       <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\images\parkRide\parkrideGrey.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/parkRide/parkRideGrey.png" />
       <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\src\client\js\otp\widgets\tripoptions\images\parkRide\parkrideRed.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/parkRide/parkRideRed.png" />
-      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\images\bikeRental\bikerentalGreen.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bikeRental/bikeRentalGreen.png" />
-      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\images\bikeRental\bikerentalGrey.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bikeRental/bikeRentalGrey.png" />
-      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\images\bikeRental\bikerentalRed.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bikeRental/bikeRentalRed.png" />
-      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\images\bikeRide\bikerideBlack.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bikeRide/bikeRideBlack.png" />
-      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\images\bikeRide\bikerideGreen.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bikeRide/bikeRIdeGreen.png" />
-      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\images\bikeRide\bikerideGrey.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bikeRide/bikeRideGrey.png" />
-      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\images\bikeRide\bikerideRed.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bikeRide/bikeRideRed.png" />
-      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\images\carRental\carRentalGrey.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/carRental/carrentalGrey.png" />
-      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\images\kissRide\kissrideBlack.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/kissRide/kissRideBlack.png" />
-      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\images\kissRide\kissrideGreen.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/kissRide/kissRideGreen.png" />
-      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\images\kissRide\kissrideGrey.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/kissRide/kissRideGrey.png" />
-      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\images\kissRide\kissrideRed.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/kissRide/kissRideRed.png" />
-      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\images\parkRide\parkrideBlack.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/parkRide/parkRideBlack.png" />
-      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\images\parkRide\parkrideGreen.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/parkRide/parkRideGreen.png" />
-      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\images\parkRide\parkrideGrey.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/parkRide/parkRideGrey.png" />
-      <change type="MOVED" beforePath="C:\Users\klemen\Documents\OpenTripPlanner\target\classes\client\js\otp\widgets\tripoptions\images\parkRide\parkrideRed.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/parkRide/parkRideRed.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bike/bikeBlack.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bike/bikeBlack.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bike/bikeBlack.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bike/bikeBlack.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bike/bikeGreen.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bike/bikeGreen.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bike/bikeGreen.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bike/bikeGreen.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bike/bikeGrey.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bike/bikeGrey.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bike/bikeGrey.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bike/bikeGrey.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bike/bikeRed.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bike/bikeRed.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bike/bikeRed.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bike/bikeRed.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bikeRental/bikerentalBlack.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bikeRental/bikerentalBlack.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bikeRental/bikerentalBlack.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bikeRental/bikerentalBlack.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bikeRental/bikerentalGreen.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bikeRental/bikerentalGreen.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bus/busBlack.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bus/busBlack.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bus/busBlack.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bus/busBlack.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bus/busGreen.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bus/busGreen.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bus/busGreen.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bus/busGreen.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bus/busGrey.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bus/busGrey.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bus/busGrey.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bus/busGrey.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bus/busRed.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/bus/busRed.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bus/busRed.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/bus/busRed.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/car/carBlack.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/car/carBlack.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/car/carBlack.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/car/carBlack.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/car/carGreen.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/car/carGreen.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/car/carGreen.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/car/carGreen.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/car/carGrey.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/car/carGrey.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/car/carGrey.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/car/carGrey.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/car/carRed.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/car/carRed.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/car/carRed.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/car/carRed.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/carRental/carrentalBlack.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/carRental/carrentalBlack.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/carRental/carrentalBlack.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/carRental/carrentalBlack.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/carRental/carrentalGreen.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/carRental/carrentalGreen.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/carRental/carrentalGreen.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/carRental/carrentalGreen.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/carRental/carrentalRed.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/carRental/carrentalRed.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/carRental/carrentalRed.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/carRental/carrentalRed.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/carRental/carRentalGrey.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/carRental/carRentalGrey.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/train/trainBlack.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/train/trainBlack.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/train/trainBlack.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/train/trainBlack.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/train/trainGreen.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/train/trainGreen.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/train/trainGreen.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/train/trainGreen.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/train/trainGrey.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/train/trainGrey.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/train/trainGrey.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/train/trainGrey.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/train/trainRed.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/train/trainRed.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/train/trainRed.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/train/trainRed.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/transit/transitBlack.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/transit/transitBlack.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/transit/transitBlack.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/transit/transitBlack.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/transit/transitGreen.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/transit/transitGreen.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/transit/transitGreen.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/transit/transitGreen.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/transit/transitGrey.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/transit/transitGrey.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/transit/transitGrey.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/transit/transitGrey.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/transit/transitRed.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/transit/transitRed.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/transit/transitRed.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/transit/transitRed.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/walk/walkBlack.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/walk/walkBlack.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/walk/walkBlack.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/walk/walkBlack.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/walk/walkGreen.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/walk/walkGreen.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/walk/walkGreen.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/walk/walkGreen.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/walk/walkGrey.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/walk/walkGrey.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/walk/walkGrey.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/walk/walkGrey.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/walk/walkRed.png" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/images/walk/walkRed.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/walk/walkRed.png" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/images/walk/walkRed.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/core/PreberiPodatke.js" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/core/PreberiPodatke.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="otp.iws" />
@@ -249,8 +186,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -415,7 +352,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -651,7 +588,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="7" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
