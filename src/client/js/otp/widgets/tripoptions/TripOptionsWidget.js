@@ -470,6 +470,9 @@ otp.widgets.tripoptions.ModeSelector =
         this.modeControls = [];
         this.optionLookup = {};
 
+
+        var okvir = '<div class="notDraggable" style="text-align:center;">';
+
         var transit     = '<input type="checkbox" class="TraversalMode" id="tmTransit" value="TRANSIT,WALK" checked><label title="' + _tr("Transit") + '" for="tmTransit"></label>';
         var bus         = '<input type="checkbox" class="TraversalMode" id="tmBus" value="BUSISH,WALK" disabled><label title="' + _tr("Bus Only") + '" for="tmBus"></label>';
         var train       = '<input type="checkbox" class="TraversalMode" id="tmTrain" value="TRAINISH,WALK" disabled><label title="' + _tr("Rail Only") + '" for="tmTrain"></label><br>';
@@ -484,23 +487,21 @@ otp.widgets.tripoptions.ModeSelector =
         
         var carSharing  = '<input type="checkbox" class="TraversalMode" id="tmCarSharing" value="CARRENT"><label title="' + _tr("Rented Car") + '" for="tmCarSharing"></label>';
         var bikeSharing = '<input type="checkbox" class="TraversalMode" id="tmBikeSharing" value="WALK,BICYCLE_RENT"><label title="' + _tr("Rented Bicycle") + '" for="tmBikeSharing"></label<br>';
-                
-        $(transit).appendTo(this.$());
-        $(bus).appendTo(this.$());
-        $(train).appendTo(this.$());
-        
-        $(walk).appendTo(this.$());
-        $(bicycle).appendTo(this.$());
-        $(drive).appendTo(this.$());
 
-        $(parkAndRide).appendTo(this.$());
-        $(kissAndRide).appendTo(this.$());
-        $(bikeAndRide).appendTo(this.$());
+        okvir += transit;
+        okvir += bus;
+        okvir += train;
+        okvir += walk;
+        okvir += bicycle;
+        okvir += drive;
+        okvir += parkAndRide;
+        okvir += kissAndRide;
+        okvir += bikeAndRide;
+        okvir += carSharing;
+        okvir += bikeSharing;
+        okvir += '</div>';
+        $(okvir).appendTo(this.$());
 
-        $(carSharing).appendTo(this.$());
-        $(bikeSharing).appendTo(this.$());
-
-        $('<div class="notDraggable"><div id="' + this.id + '-widgets" style="overflow: hidden;"></div></div>').appendTo(this.$());
     },
 
     doAfterLayout : function() {
@@ -1306,8 +1307,6 @@ otp.widgets.tripoptions.Submit =
 
         //TRANSLATORS: button to send query for trip planning
         $('<div class="notDraggable" style="text-align:center;"><button id="'+this.id+'-button">' + _tr("Plan Your Trip") + '</button></div>').appendTo(this.$());
-        console.log(this.id+'-button')
-
     },
 
     doAfterLayout : function() {
