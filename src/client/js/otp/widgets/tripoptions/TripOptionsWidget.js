@@ -502,6 +502,7 @@ otp.widgets.tripoptions.ModeSelector =
         okvir += '</div>';
         $(okvir).appendTo(this.$());
 
+        $('<div class="notDraggable"><div id="' + this.id + '-widgets" style="overflow: hidden;"></div></div>').appendTo(this.$());
     },
 
     doAfterLayout : function() {
