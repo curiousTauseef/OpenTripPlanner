@@ -2,8 +2,123 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac10c414-85c1-4e02-aa67-1ad62cac0ebe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/TripOptionsWidget.js" afterPath="$PROJECT_DIR$/src/client/js/otp/widgets/tripoptions/TripOptionsWidget.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/TripOptionsWidget.js" afterPath="$PROJECT_DIR$/target/classes/client/js/otp/widgets/tripoptions/TripOptionsWidget.js" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\docs\Analyst.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\docs\Basic-Usage.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\docs\Bibliography.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\docs\Changelog.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\docs\Configuration.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\docs\Deployments.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\docs\Developers-Guide.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\docs\Getting-OTP.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\docs\History.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\docs\README-DOCS.txt" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\docs\Scripting.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\docs\Security.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\docs\Version-Notes.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\docs\index.md" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\docs\mkdocs.yml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\lucene\_0.cfe" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\lucene\_0.cfs" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\lucene\_0.si" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\lucene\_1.cfe" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\lucene\_1.cfs" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\lucene\_1.si" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\lucene\segments.gen" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\lucene\segments_1" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\KlemenKozelj\Documents\OpenTripPlanner\lucene\segments_2" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/algorithm/AStar.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/algorithm/AStar.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/scenario/AddTripPattern.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/scenario/AddTripPattern.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/analyst/scenario/AddTripPatternTest.class" afterPath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/analyst/scenario/AddTripPatternTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/cluster/AnalystWorker.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/cluster/AnalystWorker.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/automata/AutomatonState.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/automata/AutomatonState.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/batch/BatchProcessor.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/batch/BatchProcessor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/gtfs/BikeAccess.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/gtfs/BikeAccess.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/bike_rental/BikeRentalUpdater.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/bike_rental/BikeRentalUpdater.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/common/pqueue/BinHeap.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/common/pqueue/BinHeap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/broker/BrokerHttpHandler.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/broker/BrokerHttpHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/impl/CandidateEdgeBundle.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/impl/CandidateEdgeBundle.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/car_rental/CarRentalUpdater.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/car_rental/CarRentalUpdater.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/broker/CircularList.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/broker/CircularList.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/customize/ClassCustomizer.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/customize/ClassCustomizer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/standalone/CommandLineParameters.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/standalone/CommandLineParameters.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/ConstantsForTests.class" afterPath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/ConstantsForTests.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/api/resource/CoordinateArrayListSequence.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/api/resource/CoordinateArrayListSequence.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/graph_builder/services/osm/CustomNamer$CustomNamerFactory.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/graph_builder/services/osm/CustomNamer$CustomNamerFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/profile/DCFareCalculator.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/profile/DCFareCalculator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/util/DateConstants.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/util/DateConstants.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/trippattern/Deduplicator.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/trippattern/Deduplicator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/impl/DefaultFareServiceFactory.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/impl/DefaultFareServiceFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/spt/DominanceFunction.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/spt/DominanceFunction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/model/json_serialization/EdgeSetJSONSerializer.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/model/json_serialization/EdgeSetJSONSerializer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/graph_builder/module/ned/ElevationModule.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/graph_builder/module/ned/ElevationModule.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/util/ElevationUtils.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/util/ElevationUtils.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/algorithm/strategies/EuclideanRemainingWeightHeuristic.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/algorithm/strategies/EuclideanRemainingWeightHeuristic.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/example/ExamplePollingGraphUpdater.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/example/ExamplePollingGraphUpdater.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/edgetype/factory/GTFSPatternHopFactory.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/edgetype/factory/GTFSPatternHopFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/graph/Graph.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/graph/Graph.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/graph_builder/GraphBuilder.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/graph_builder/GraphBuilder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/api/resource/GraphPathToTripPlanConverter.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/api/resource/GraphPathToTripPlanConverter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/api/resource/GraphPathToTripPlanConverterTest.class" afterPath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/api/resource/GraphPathToTripPlanConverterTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/visualizer/GraphVisualizer$OnPopupMenuClickListener.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/visualizer/GraphVisualizer$OnPopupMenuClickListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/visualizer/GraphVisualizer.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/visualizer/GraphVisualizer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/gtfs/GtfsLibrary.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/gtfs/GtfsLibrary.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/GtfsRealtimeFuzzyTripMatcher.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/GtfsRealtimeFuzzyTripMatcher.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/common/geometry/HashGridTest.class" afterPath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/common/geometry/HashGridTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/index/IndexAPI.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/index/IndexAPI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/edgetype/factory/IndexedLineSegment.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/edgetype/factory/IndexedLineSegment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/impl/InputStreamGraphSource.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/impl/InputStreamGraphSource.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/common/geometry/IntPackedCoordinateSequence.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/common/geometry/IntPackedCoordinateSequence.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/cluster/JobSimulator.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/cluster/JobSimulator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/api/resource/LIsochrone.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/api/resource/LIsochrone.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/visibility/LineSegment.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/visibility/LineSegment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/fares/MultipleFareServiceFactory.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/fares/MultipleFareServiceFactory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/routing/fares/MultipleFareServiceTest.class" afterPath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/routing/fares/MultipleFareServiceTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/openstreetmap/model/OSMLevel.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/openstreetmap/model/OSMLevel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/graph_builder/module/osm/OpenStreetMapModule$Handler.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/graph_builder/module/osm/OpenStreetMapModule$Handler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/common/geometry/PackedCoordinateSequence.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/common/geometry/PackedCoordinateSequence.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/routing/edgetype/PartialStreetEdgeTest.class" afterPath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/routing/edgetype/PartialStreetEdgeTest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/PointFeature.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/PointFeature.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/PointSet.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/PointSet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/util/PolylineEncoder.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/util/PolylineEncoder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/profile/ProfileResponse.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/profile/ProfileResponse.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/profile/ProfileState.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/profile/ProfileState.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/profile/RaptorWorker.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/profile/RaptorWorker.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/profile/RaptorWorkerTimetable.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/profile/RaptorWorkerTimetable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/batch/RasterPopulation.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/batch/RasterPopulation.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/common/geometry/RecursiveGridIsolineBuilder.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/common/geometry/RecursiveGridIsolineBuilder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/request/Renderer.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/request/Renderer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/util/ResourceBundleSingleton.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/util/ResourceBundleSingleton.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/api/resource/Routers.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/api/resource/Routers.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/request/SampleGridRenderer$WTWD.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/request/SampleGridRenderer$WTWD.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/visualizer/ShowGraph.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/visualizer/ShowGraph.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/api/resource/SimpleIsochrone.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/api/resource/SimpleIsochrone.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/common/geometry/SphericalDistanceLibrary.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/common/geometry/SphericalDistanceLibrary.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/core/State.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/core/State.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/edgetype/StreetEdge.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/edgetype/StreetEdge.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/impl/StreetVertexIndexServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/impl/StreetVertexIndexServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/routing/TestHalfEdges.class" afterPath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/routing/TestHalfEdges.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/graph_builder/module/map/TestStreetMatcher.class" afterPath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/graph_builder/module/map/TestStreetMatcher.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/util/xml/TestXmlDataListDownloader.class" afterPath="$PROJECT_DIR$/target/test-classes/org/opentripplanner/util/xml/TestXmlDataListDownloader.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/api/resource/TimeGridWs.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/api/resource/TimeGridWs.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/stoptime/TimetableSnapshotSource.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/stoptime/TimetableSnapshotSource.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/core/TransferTable.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/core/TransferTable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/edgetype/TransitBoardAlight.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/edgetype/TransitBoardAlight.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/core/TraverseModeSet.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/core/TraverseModeSet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/edgetype/TripPattern.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/routing/edgetype/TripPattern.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/graph_builder/module/ned/UnifiedGridCoverage.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/graph_builder/module/ned/UnifiedGridCoverage.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/visibility/VLPoint.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/visibility/VLPoint.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/visibility/VLPolygon.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/visibility/VLPolygon.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/model/json_serialization/VertexSetJSONSerializer.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/model/json_serialization/VertexSetJSONSerializer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/visibility/VisibilityGraph.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/visibility/VisibilityGraph.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/visibility/VisibilityPolygon.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/visibility/VisibilityPolygon.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/street_notes/WFSNotePollingGraphUpdater.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/street_notes/WFSNotePollingGraphUpdater.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/graph_builder/module/osm/WayProperties.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/graph_builder/module/osm/WayProperties.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/graph_builder/module/osm/WayPropertySet.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/graph_builder/module/osm/WayPropertySet.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/stoptime/WebsocketGtfsRealtimeUpdater.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/updater/stoptime/WebsocketGtfsRealtimeUpdater.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/core/WeightingFunction.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/core/WeightingFunction.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/broker/WorkerCatalog.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/analyst/broker/WorkerCatalog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/opentripplanner/util/xml/XmlDataListDownloader.class" afterPath="$PROJECT_DIR$/target/classes/org/opentripplanner/util/xml/XmlDataListDownloader.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_conveyal_gtfs_lib_0_1_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_conveyal_gtfs_lib_0_1_SNAPSHOT.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="otp.iws" />
@@ -118,8 +233,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1696" />
-    <option name="height" value="1026" />
+    <option name="width" value="1616" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -146,7 +261,6 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -167,6 +281,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -402,21 +517,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38017428" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37940025" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37472767" sideWeight="0.5190476" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32897604" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3943355" sideWeight="0.48095238" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39374185" sideWeight="0.48095238" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25416666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -477,13 +592,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.ideaLibSources/jersey-server-2.17-sources.jar!/org/glassfish/jersey/server/internal/inject/QueryParamValueFactoryProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/opentripplanner/graph_builder/GraphBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33272058">
@@ -600,13 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_51/jre/lib/rt.jar!/java/util/Currency.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11819235">
-          <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
         </state>
       </provider>
     </entry>
